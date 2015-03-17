@@ -1796,12 +1796,12 @@
             // 
             this.Scoring_Match_Totals_Table.ColumnCount = 7;
             this.Scoring_Match_Totals_Table.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.Scoring_Match_Totals_Table.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 22.65193F));
             this.Scoring_Match_Totals_Table.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.Scoring_Match_Totals_Table.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 17.12707F));
             this.Scoring_Match_Totals_Table.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.Scoring_Match_Totals_Table.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.Scoring_Match_Totals_Table.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.Scoring_Match_Totals_Table.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.Scoring_Match_Totals_Table.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.Scoring_Match_Totals_Table.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 26.51934F));
+            this.Scoring_Match_Totals_Table.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.14917F));
             this.Scoring_Match_Totals_Table.Controls.Add(this.Scoring_Total_Overs_Label, 6, 0);
             this.Scoring_Match_Totals_Table.Controls.Add(this.Scoring_Total_Overs_Value, 5, 0);
             this.Scoring_Match_Totals_Table.Controls.Add(this.Scoring_Wickets_In_Label, 4, 0);
@@ -1822,9 +1822,9 @@
             this.Scoring_Total_Overs_Label.AutoSize = true;
             this.Scoring_Total_Overs_Label.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Scoring_Total_Overs_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Scoring_Total_Overs_Label.Location = new System.Drawing.Point(281, 0);
+            this.Scoring_Total_Overs_Label.Location = new System.Drawing.Point(291, 0);
             this.Scoring_Total_Overs_Label.Name = "Scoring_Total_Overs_Label";
-            this.Scoring_Total_Overs_Label.Size = new System.Drawing.Size(65, 31);
+            this.Scoring_Total_Overs_Label.Size = new System.Drawing.Size(55, 31);
             this.Scoring_Total_Overs_Label.TabIndex = 6;
             this.Scoring_Total_Overs_Label.Text = "Overs";
             this.Scoring_Total_Overs_Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1834,9 +1834,9 @@
             this.Scoring_Total_Overs_Value.AutoSize = true;
             this.Scoring_Total_Overs_Value.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Scoring_Total_Overs_Value.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Scoring_Total_Overs_Value.Location = new System.Drawing.Point(239, 0);
+            this.Scoring_Total_Overs_Value.Location = new System.Drawing.Point(243, 0);
             this.Scoring_Total_Overs_Value.Name = "Scoring_Total_Overs_Value";
-            this.Scoring_Total_Overs_Value.Size = new System.Drawing.Size(36, 31);
+            this.Scoring_Total_Overs_Value.Size = new System.Drawing.Size(42, 31);
             this.Scoring_Total_Overs_Value.TabIndex = 5;
             this.Scoring_Total_Overs_Value.Text = "25.9";
             this.Scoring_Total_Overs_Value.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1846,7 +1846,7 @@
             this.Scoring_Wickets_In_Label.AutoSize = true;
             this.Scoring_Wickets_In_Label.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Scoring_Wickets_In_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Scoring_Wickets_In_Label.Location = new System.Drawing.Point(168, 0);
+            this.Scoring_Wickets_In_Label.Location = new System.Drawing.Point(172, 0);
             this.Scoring_Wickets_In_Label.Name = "Scoring_Wickets_In_Label";
             this.Scoring_Wickets_In_Label.Size = new System.Drawing.Size(65, 31);
             this.Scoring_Wickets_In_Label.TabIndex = 4;
@@ -1858,9 +1858,9 @@
             this.Scoring_Wickets_Down_Value.AutoSize = true;
             this.Scoring_Wickets_Down_Value.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Scoring_Wickets_Down_Value.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Scoring_Wickets_Down_Value.Location = new System.Drawing.Point(138, 0);
+            this.Scoring_Wickets_Down_Value.Location = new System.Drawing.Point(141, 0);
             this.Scoring_Wickets_Down_Value.Name = "Scoring_Wickets_Down_Value";
-            this.Scoring_Wickets_Down_Value.Size = new System.Drawing.Size(24, 31);
+            this.Scoring_Wickets_Down_Value.Size = new System.Drawing.Size(25, 31);
             this.Scoring_Wickets_Down_Value.TabIndex = 3;
             this.Scoring_Wickets_Down_Value.Text = "10";
             this.Scoring_Wickets_Down_Value.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1870,7 +1870,7 @@
             this.Scoring_Wickets_Down_Label.AutoSize = true;
             this.Scoring_Wickets_Down_Label.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Scoring_Wickets_Down_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Scoring_Wickets_Down_Label.Location = new System.Drawing.Point(98, 0);
+            this.Scoring_Wickets_Down_Label.Location = new System.Drawing.Point(101, 0);
             this.Scoring_Wickets_Down_Label.Name = "Scoring_Wickets_Down_Label";
             this.Scoring_Wickets_Down_Label.Size = new System.Drawing.Size(34, 31);
             this.Scoring_Wickets_Down_Label.TabIndex = 2;
@@ -1884,7 +1884,7 @@
             this.Scoring_Total_Value.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Scoring_Total_Value.Location = new System.Drawing.Point(60, 0);
             this.Scoring_Total_Value.Name = "Scoring_Total_Value";
-            this.Scoring_Total_Value.Size = new System.Drawing.Size(32, 31);
+            this.Scoring_Total_Value.Size = new System.Drawing.Size(35, 31);
             this.Scoring_Total_Value.TabIndex = 1;
             this.Scoring_Total_Value.Text = "153";
             this.Scoring_Total_Value.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1942,7 +1942,7 @@
             // 
             // Penalty_Button
             // 
-            this.Penalty_Button.Location = new System.Drawing.Point(726, 62);
+            this.Penalty_Button.Location = new System.Drawing.Point(665, 68);
             this.Penalty_Button.Name = "Penalty_Button";
             this.Penalty_Button.Size = new System.Drawing.Size(41, 23);
             this.Penalty_Button.TabIndex = 17;
@@ -1951,7 +1951,7 @@
             // 
             // Zero_Button
             // 
-            this.Zero_Button.Location = new System.Drawing.Point(679, 62);
+            this.Zero_Button.Location = new System.Drawing.Point(618, 68);
             this.Zero_Button.Name = "Zero_Button";
             this.Zero_Button.Size = new System.Drawing.Size(41, 23);
             this.Zero_Button.TabIndex = 0;
@@ -1964,7 +1964,7 @@
             this.Scoring_Top_Options_Table.ColumnCount = 3;
             this.Scoring_Top_Options_Table.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 160F));
             this.Scoring_Top_Options_Table.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 89.07168F));
-            this.Scoring_Top_Options_Table.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 706F));
+            this.Scoring_Top_Options_Table.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 708F));
             this.Scoring_Top_Options_Table.Controls.Add(this.Score_Buttons_Flow, 2, 0);
             this.Scoring_Top_Options_Table.Controls.Add(this.Scoring_Team_Names_Table, 1, 0);
             this.Scoring_Top_Options_Table.Controls.Add(this.Scoring_Date_Table, 0, 0);
@@ -1993,14 +1993,14 @@
             this.Score_Buttons_Flow.Controls.Add(this.Dot_Button);
             this.Score_Buttons_Flow.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Score_Buttons_Flow.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
-            this.Score_Buttons_Flow.Location = new System.Drawing.Point(565, 5);
+            this.Score_Buttons_Flow.Location = new System.Drawing.Point(563, 5);
             this.Score_Buttons_Flow.Name = "Score_Buttons_Flow";
-            this.Score_Buttons_Flow.Size = new System.Drawing.Size(700, 25);
+            this.Score_Buttons_Flow.Size = new System.Drawing.Size(702, 25);
             this.Score_Buttons_Flow.TabIndex = 0;
             // 
             // Ok_Button
             // 
-            this.Ok_Button.Location = new System.Drawing.Point(656, 3);
+            this.Ok_Button.Location = new System.Drawing.Point(658, 3);
             this.Ok_Button.Margin = new System.Windows.Forms.Padding(3, 3, 3, 100);
             this.Ok_Button.Name = "Ok_Button";
             this.Ok_Button.Size = new System.Drawing.Size(41, 23);
@@ -2012,7 +2012,7 @@
             // Misc_Score_Options
             // 
             this.Misc_Score_Options.FormattingEnabled = true;
-            this.Misc_Score_Options.Location = new System.Drawing.Point(536, 3);
+            this.Misc_Score_Options.Location = new System.Drawing.Point(538, 3);
             this.Misc_Score_Options.Name = "Misc_Score_Options";
             this.Misc_Score_Options.Size = new System.Drawing.Size(114, 21);
             this.Misc_Score_Options.TabIndex = 17;
@@ -2022,7 +2022,7 @@
             // 
             // Wicket_Button
             // 
-            this.Wicket_Button.Location = new System.Drawing.Point(489, 3);
+            this.Wicket_Button.Location = new System.Drawing.Point(491, 3);
             this.Wicket_Button.Margin = new System.Windows.Forms.Padding(3, 3, 3, 100);
             this.Wicket_Button.Name = "Wicket_Button";
             this.Wicket_Button.Size = new System.Drawing.Size(41, 23);
@@ -2033,7 +2033,7 @@
             // 
             // No_Ball_Button
             // 
-            this.No_Ball_Button.Location = new System.Drawing.Point(442, 3);
+            this.No_Ball_Button.Location = new System.Drawing.Point(444, 3);
             this.No_Ball_Button.Margin = new System.Windows.Forms.Padding(3, 3, 3, 100);
             this.No_Ball_Button.Name = "No_Ball_Button";
             this.No_Ball_Button.Size = new System.Drawing.Size(41, 23);
@@ -2044,7 +2044,7 @@
             // 
             // Wide_Button
             // 
-            this.Wide_Button.Location = new System.Drawing.Point(395, 3);
+            this.Wide_Button.Location = new System.Drawing.Point(397, 3);
             this.Wide_Button.Margin = new System.Windows.Forms.Padding(3, 3, 3, 100);
             this.Wide_Button.Name = "Wide_Button";
             this.Wide_Button.Size = new System.Drawing.Size(41, 23);
@@ -2055,7 +2055,7 @@
             // 
             // Leg_Bye_Button
             // 
-            this.Leg_Bye_Button.Location = new System.Drawing.Point(348, 3);
+            this.Leg_Bye_Button.Location = new System.Drawing.Point(350, 3);
             this.Leg_Bye_Button.Margin = new System.Windows.Forms.Padding(3, 3, 3, 100);
             this.Leg_Bye_Button.Name = "Leg_Bye_Button";
             this.Leg_Bye_Button.Size = new System.Drawing.Size(41, 23);
@@ -2066,7 +2066,7 @@
             // 
             // Bye_Button
             // 
-            this.Bye_Button.Location = new System.Drawing.Point(301, 3);
+            this.Bye_Button.Location = new System.Drawing.Point(303, 3);
             this.Bye_Button.Margin = new System.Windows.Forms.Padding(3, 3, 3, 100);
             this.Bye_Button.Name = "Bye_Button";
             this.Bye_Button.Size = new System.Drawing.Size(41, 23);
@@ -2077,7 +2077,7 @@
             // 
             // Six_Button
             // 
-            this.Six_Button.Location = new System.Drawing.Point(254, 3);
+            this.Six_Button.Location = new System.Drawing.Point(256, 3);
             this.Six_Button.Margin = new System.Windows.Forms.Padding(3, 3, 3, 100);
             this.Six_Button.Name = "Six_Button";
             this.Six_Button.Size = new System.Drawing.Size(41, 23);
@@ -2088,7 +2088,7 @@
             // 
             // Four_Button
             // 
-            this.Four_Button.Location = new System.Drawing.Point(207, 3);
+            this.Four_Button.Location = new System.Drawing.Point(209, 3);
             this.Four_Button.Margin = new System.Windows.Forms.Padding(3, 3, 3, 100);
             this.Four_Button.Name = "Four_Button";
             this.Four_Button.Size = new System.Drawing.Size(41, 23);
@@ -2099,7 +2099,7 @@
             // 
             // Three_Button
             // 
-            this.Three_Button.Location = new System.Drawing.Point(160, 3);
+            this.Three_Button.Location = new System.Drawing.Point(162, 3);
             this.Three_Button.Margin = new System.Windows.Forms.Padding(3, 3, 3, 100);
             this.Three_Button.Name = "Three_Button";
             this.Three_Button.Size = new System.Drawing.Size(41, 23);
@@ -2110,7 +2110,7 @@
             // 
             // Two_Button
             // 
-            this.Two_Button.Location = new System.Drawing.Point(113, 3);
+            this.Two_Button.Location = new System.Drawing.Point(115, 3);
             this.Two_Button.Margin = new System.Windows.Forms.Padding(3, 3, 3, 100);
             this.Two_Button.Name = "Two_Button";
             this.Two_Button.Size = new System.Drawing.Size(41, 23);
@@ -2121,7 +2121,7 @@
             // 
             // One_Button
             // 
-            this.One_Button.Location = new System.Drawing.Point(66, 3);
+            this.One_Button.Location = new System.Drawing.Point(68, 3);
             this.One_Button.Margin = new System.Windows.Forms.Padding(3, 3, 3, 100);
             this.One_Button.Name = "One_Button";
             this.One_Button.Size = new System.Drawing.Size(41, 23);
@@ -2133,7 +2133,7 @@
             // Dot_Button
             // 
             this.Dot_Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Dot_Button.Location = new System.Drawing.Point(19, 3);
+            this.Dot_Button.Location = new System.Drawing.Point(21, 3);
             this.Dot_Button.Margin = new System.Windows.Forms.Padding(3, 3, 3, 100);
             this.Dot_Button.Name = "Dot_Button";
             this.Dot_Button.Size = new System.Drawing.Size(41, 23);
@@ -2156,7 +2156,7 @@
             this.Scoring_Team_Names_Table.Name = "Scoring_Team_Names_Table";
             this.Scoring_Team_Names_Table.RowCount = 1;
             this.Scoring_Team_Names_Table.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.Scoring_Team_Names_Table.Size = new System.Drawing.Size(390, 25);
+            this.Scoring_Team_Names_Table.Size = new System.Drawing.Size(388, 25);
             this.Scoring_Team_Names_Table.TabIndex = 1;
             // 
             // Scoring_Home_Team_Name_Value
@@ -2190,7 +2190,7 @@
             this.Scoring_Away_Team_Name_Value.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Scoring_Away_Team_Name_Value.Location = new System.Drawing.Point(199, 0);
             this.Scoring_Away_Team_Name_Value.Name = "Scoring_Away_Team_Name_Value";
-            this.Scoring_Away_Team_Name_Value.Size = new System.Drawing.Size(188, 25);
+            this.Scoring_Away_Team_Name_Value.Size = new System.Drawing.Size(186, 25);
             this.Scoring_Away_Team_Name_Value.TabIndex = 3;
             this.Scoring_Away_Team_Name_Value.Text = "Away Team";
             this.Scoring_Away_Team_Name_Value.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -2235,7 +2235,7 @@
             // 
             // Nine_Button
             // 
-            this.Nine_Button.Location = new System.Drawing.Point(632, 62);
+            this.Nine_Button.Location = new System.Drawing.Point(571, 68);
             this.Nine_Button.Name = "Nine_Button";
             this.Nine_Button.Size = new System.Drawing.Size(41, 23);
             this.Nine_Button.TabIndex = 1;
@@ -2244,7 +2244,7 @@
             // 
             // Eight_Button
             // 
-            this.Eight_Button.Location = new System.Drawing.Point(585, 62);
+            this.Eight_Button.Location = new System.Drawing.Point(524, 68);
             this.Eight_Button.Name = "Eight_Button";
             this.Eight_Button.Size = new System.Drawing.Size(41, 23);
             this.Eight_Button.TabIndex = 2;
@@ -2253,7 +2253,7 @@
             // 
             // Seven_Button
             // 
-            this.Seven_Button.Location = new System.Drawing.Point(538, 62);
+            this.Seven_Button.Location = new System.Drawing.Point(477, 68);
             this.Seven_Button.Name = "Seven_Button";
             this.Seven_Button.Size = new System.Drawing.Size(41, 23);
             this.Seven_Button.TabIndex = 3;
@@ -2262,7 +2262,7 @@
             // 
             // Five_Button
             // 
-            this.Five_Button.Location = new System.Drawing.Point(491, 62);
+            this.Five_Button.Location = new System.Drawing.Point(430, 68);
             this.Five_Button.Name = "Five_Button";
             this.Five_Button.Size = new System.Drawing.Size(41, 23);
             this.Five_Button.TabIndex = 4;

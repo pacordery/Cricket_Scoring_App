@@ -46,7 +46,6 @@ namespace Cricket_Scoring_App
         int Bat_Total_Runs;
         int Current_Batsman_Top_Id;
         int Current_Batsman_Bottom_Id;
-        string Batsman_Batting_Value;
 
         /* Initialising all bowling variables */
         bool Bowl_Bowling;
@@ -58,7 +57,6 @@ namespace Cricket_Scoring_App
         int Bowl_Total_Wickets;
         int Current_Bowler_Top_Id;
         int Current_Bowler_Bottom_Id;
-        string Bowler_Bowling_Value;
         
         /* Initialising all extras variables */
         int Extras_Wides;
@@ -107,7 +105,6 @@ namespace Cricket_Scoring_App
                 Innings1BatsmanList.Insert(0,Batsman_1);
             }
             Current_Batsman_Top_Id = 0;
-            Batsman_Batting_Value = "Innings1BatsmanList[0]";
         }
 
         private void Open_Select_Bat_2_SelectedIndexChanged(object sender, EventArgs e)
@@ -171,7 +168,6 @@ namespace Cricket_Scoring_App
                 Innings1BowlerList.Insert(0, Bowler_1);
             }
             Current_Bowler_Top_Id = 0;
-            Bowler_Bowling_Value = "Innings1BowlerList[0]";
         }
 
         private void Open_Select_Bowl_2_SelectedIndexChanged(object sender, EventArgs e)
@@ -261,7 +257,7 @@ namespace Cricket_Scoring_App
             Current_Batsman_Minutes_Batted_Bottom.Text = Innings1BatsmanList[1].Bat_Minutes.ToString();
             Current_Batsman_Facing_Bottom.BackColor = Color.Transparent;
 
-            // Set top bowler details 
+            // Sets top bowler details 
             Current_Bowler_Name_Top.Text = Innings1BowlerList[0].Bowl_Name;
             Current_Bowler_Wides_Conceded_Top.Text = Innings1BowlerList[0].Bowl_Wides.ToString();
             Current_Bowler_No_Balls_Conceded_Top.Text = Innings1BowlerList[0].Bowl_No_Balls.ToString();
@@ -271,7 +267,7 @@ namespace Cricket_Scoring_App
             Current_Bowler_Wickets_Taken_Top.Text = Innings1BowlerList[0].Bowl_Wickets.ToString();
             Current_Bowler_Top.BackColor = Color.Red;
 
-            // Set bottom bowler details
+            // Sets bottom bowler details
             Current_Bowler_Name_Bottom.Text = Innings1BowlerList[1].Bowl_Name;
             Current_Bowler_Wides_Conceded_Bottom.Text = Innings1BowlerList[1].Bowl_Wides.ToString();
             Current_Bowler_No_Balls_Conceded_Bottom.Text = Innings1BowlerList[1].Bowl_No_Balls.ToString();
@@ -284,7 +280,7 @@ namespace Cricket_Scoring_App
             //Scorecard_Handler ScorecardHandler = new Scorecard_Handler();
             //ScorecardHandler.Scorecard_Initialise(Innings1BatsmanList, Innings1BowlerList);
 
-            // Set Extra table details
+            // Sets Extra table details
             Wides_Total_Value.Text = Extras_Wides.ToString();
             No_Balls_Total_Value.Text = Extras_No_Balls.ToString();
             Byes_Total_Value.Text = Extras_Byes.ToString();
@@ -292,7 +288,7 @@ namespace Cricket_Scoring_App
             Penaltys_Total_Value.Text = Extras_Penaltys.ToString();
             Total_Extras_Value.Text = Extras_Total.ToString();
 
-            // Set match details
+            // Sets match details
             Scoring_Date_Value.Text = Date.ToShortDateString();
             Scoring_Home_Team_Name_Value.Text = Home_Team;
             Scoring_Away_Team_Name_Value.Text = Away_Team;
@@ -308,26 +304,15 @@ namespace Cricket_Scoring_App
 
         }
 
-        /* Initialises and shows the new bowler form which allows
-         * the scorer to select the next bowler from the list of 
-         * players in the fielding side */
+        /* Initialises and shows the new bowler form which allows the scorer
+         * to select the next bowler from the list of players in the fielding side
+         */
         private void New_Bowler_Button_Click(object sender, EventArgs e)
         {
             New_Bowler NewBowler = new New_Bowler();
             NewBowler.Show();
         }
 
-        /* 
-         * Updates:
-         * Adds 1 ball to batsman's total balls
-         * Adds 0.1 overs to the bowlers over column
-         * If over complete: 
-         *      Select other bowler as bowling
-         *      Add new column to Over Analysis
-         *      Trigger save to file function
-         *      Check if total overs have been bowled
-         *          If true: Trigger end of innings function
-         */
         private void Update_Score()
         {
             // Updates top batsman details
@@ -374,20 +359,65 @@ namespace Cricket_Scoring_App
             Scoring_Total_Overs_Value.Text = Innings_Overs.ToString();
         }
 
-        private void Swap_Batsman(string batCondition)
+        /* This function swaps the batsman at the following points in the scoring process:
+            Batsman swapped at:
+                1. End of over where last ball = Dot,2,4,6 or 8
+                2. Run scored = 1,3,5,7,9
+                3. Bye/leg bye with odd amount  
+        */
+        private void Swap_Batsman()
         {
+            if (Innings1BatsmanList[Current_Batsman_Top_Id].Bat_Facing == true)
+            {
+                // Set current facing batsman to not facing and change indicator colour
+                Innings1BatsmanList[Current_Batsman_Top_Id].Bat_Facing = false;
+                Current_Batsman_Facing_Top.BackColor = Color.Transparent;
 
+                // Set non facing batsman to true and change indicator colour
+                Innings1BatsmanList[Current_Batsman_Bottom_Id].Bat_Facing = true;
+                Current_Batsman_Facing_Bottom.BackColor = Color.Red;
+            }
+
+            else
+            {
+                // Set current facing batsman to false and change indicator colour
+                Innings1BatsmanList[Current_Batsman_Bottom_Id].Bat_Facing = false;
+                Current_Batsman_Facing_Bottom.BackColor = Color.Transparent;
+
+                // Set non facing batsman to true and change indicator colour
+                Innings1BatsmanList[Current_Batsman_Top_Id].Bat_Facing = true;
+                Current_Batsman_Facing_Top.BackColor = Color.Red;
+            }
         }
-        /* At end of over:
-         *  1. Round up overs
-         *  2. Swap bowl_bowling flag
-         */
-        private void Swap_Bowler(string bowlCondition)
+
+        // When an over is completed this function swaps to the other bowler
+        private void Swap_Bowler()
         {
+            if (Innings1BowlerList[Current_Bowler_Top_Id].Bowl_Bowling == true)
+            {
+                // Set current bowler to not bowling and change indicator colour
+                Innings1BowlerList[Current_Bowler_Top_Id].Bowl_Bowling = false;
+                Current_Bowler_Top.BackColor = Color.Transparent;
 
+                // Set other bowler to bowling and change indicator colour
+                Innings1BowlerList[Current_Bowler_Bottom_Id].Bowl_Bowling = true;
+                Current_Bowler_Bottom.BackColor = Color.Red;
+            }
+            else
+            {
+                // Set current bowler to not bowling and change indicator colour
+                Innings1BowlerList[Current_Bowler_Bottom_Id].Bowl_Bowling = false;
+                Current_Bowler_Bottom.BackColor = Color.Transparent;
+
+                // Set other bowler to bowling and change indicator colour
+                Innings1BowlerList[Current_Bowler_Top_Id].Bowl_Bowling = true;
+                Current_Bowler_Top.BackColor = Color.Red;
+            }
         }
 
-        private double Check_End_Of_Over(double oversTotal)
+        // Checks if the last deliveery was the last in the over
+        // if so it updates the total overs number to a round number.
+        private void Check_End_Of_Over(double oversTotal)
         {
             oversTotal = Math.Round(oversTotal, 1);
             double Updated_Over_Amount = oversTotal;
@@ -395,14 +425,107 @@ namespace Cricket_Scoring_App
             if (test_total == .6)
             {
                 Updated_Over_Amount = Math.Ceiling(Updated_Over_Amount);
-
-                //Swap_Bowler("endOfOver");
-                //Swap_Batsman("endOfOver");
             }
 
-            return Updated_Over_Amount;
+            if ((Updated_Over_Amount - Math.Truncate(Updated_Over_Amount) == 0) && (Innings1BowlerList[Current_Bowler_Top_Id].Bowl_Bowling == true))
+            {
+                Innings1BowlerList[Current_Bowler_Top_Id].Bowl_Overs = Math.Ceiling(Innings1BowlerList[Current_Bowler_Top_Id].Bowl_Overs);
+                Innings_Overs = Math.Ceiling(Innings_Overs);
+                Swap_Batsman();
+                Swap_Bowler();
+            }
+            else if ((Updated_Over_Amount - Math.Truncate(Updated_Over_Amount) == 0) && (Innings1BowlerList[Current_Bowler_Bottom_Id].Bowl_Bowling == true))
+            {
+                Innings1BowlerList[Current_Bowler_Bottom_Id].Bowl_Overs = Math.Ceiling(Innings1BowlerList[Current_Bowler_Bottom_Id].Bowl_Overs);
+                Innings_Overs = Math.Ceiling(Innings_Overs);
+                Swap_Batsman();
+                Swap_Bowler();
+            }
         }
 
+        // Adds extra run to batsman facing's total balls faced
+        private void Batting_Add_Ball(int bat_id)
+        {
+            Innings1BatsmanList[bat_id].Bat_Balls = Innings1BatsmanList[bat_id].Bat_Balls + 1;
+        }
+
+        // Adds extra ball to bowlers current over total
+        private void Bowling_Add_Ball(int bowl_Id)
+        {
+            Innings1BowlerList[bowl_Id].Bowl_Overs = Innings1BowlerList[bowl_Id].Bowl_Overs + 0.1;
+        }
+
+        private void Run_ScoredOffBat(int numberOfRuns,int batId, int bowlId)
+        {
+            int runsScored = 0;
+            switch (numberOfRuns)
+            {
+                case 1:
+                    runsScored = 1;
+                    Swap_Batsman();
+                    break;
+                case 2:
+                    runsScored = 2;
+                    break;
+                case 3:
+                    runsScored = 3;
+                    Swap_Batsman();
+                    break;
+                case 4:
+                    runsScored = 4;
+                    Innings1BatsmanList[batId].Bat_Fours = Innings1BatsmanList[batId].Bat_Fours + 1;
+                    break;
+                case 6:
+                    runsScored = 6;
+                    Innings1BatsmanList[batId].Bat_Sixes = Innings1BatsmanList[batId].Bat_Sixes + 1;
+                    break;
+            };
+            
+            Batting_Add_Ball(batId);
+            Innings1BatsmanList[batId].Bat_Runs = Innings1BatsmanList[batId].Bat_Runs + runsScored;
+            Innings1BowlerList[bowlId].Bowl_Runs = Innings1BowlerList[bowlId].Bowl_Runs + runsScored;
+            Innings_Total = Innings_Total + runsScored;
+        }
+
+        private void Extra_Run_Scored(string extraId, int batId, int bowlId)
+        {
+            int runsScored = 0;
+            switch (extraId)
+            {
+                case "bye":
+                    runsScored = 1;
+                    Extras_Byes = Extras_Byes + runsScored;
+                    Swap_Batsman();
+                    break;
+                case "legBye":
+                    runsScored = 1;
+                    Extras_Leg_Byes = Extras_Leg_Byes + runsScored;
+                    Swap_Batsman();
+                    break;
+                case "wide":
+                    runsScored = 1;
+                    Innings1BowlerList[bowlId].Bowl_Runs = Innings1BowlerList[bowlId].Bowl_Runs + runsScored;
+                    Extras_Wides = Extras_Wides + runsScored;
+                    break;
+                case "noBall":
+                    runsScored = 1;
+                    Innings1BowlerList[bowlId].Bowl_Runs = Innings1BowlerList[bowlId].Bowl_Runs + runsScored;
+                    Extras_No_Balls = Extras_No_Balls + runsScored;
+                    break;
+                case "penalty":
+                    runsScored = 5;
+                    Innings1BowlerList[bowlId].Bowl_Runs = Innings1BowlerList[bowlId].Bowl_Runs + runsScored;
+                    Extras_Penaltys = Extras_Penaltys + runsScored;
+                    break;
+            };            
+            Innings_Total = Innings_Total + runsScored;
+        }
+
+        /* This function adds:
+         *  1 ball to the batsmans total balls faced
+         *  0.1 overs to the bowlers total overs bowled
+         *  0.1 overs to the total overs bowled
+         */  
         private void Dot_Button_Click(object sender, EventArgs e)
         {
             // Add one ball to total over amount
@@ -411,84 +534,273 @@ namespace Cricket_Scoring_App
             // Adds extra run to batsman facing's total balls faced
             if (Innings1BatsmanList[Current_Batsman_Top_Id].Bat_Facing == true)
             {
-                Innings1BatsmanList[Current_Batsman_Top_Id].Bat_Balls = Innings1BatsmanList[Current_Batsman_Top_Id].Bat_Balls + 1;
+                Batting_Add_Ball(Current_Batsman_Top_Id);
             }
             else
             {
-                Innings1BatsmanList[Current_Batsman_Bottom_Id].Bat_Balls = Innings1BatsmanList[Current_Batsman_Bottom_Id].Bat_Balls + 1;
+                Batting_Add_Ball(Current_Batsman_Bottom_Id);
             }
 
-            // Adds extra ball to bowlers current over total
-            if(Innings1BowlerList[Current_Bowler_Top_Id].Bowl_Bowling == true)
+            if (Innings1BowlerList[Current_Bowler_Top_Id].Bowl_Bowling == true)
             {
-                Innings1BowlerList[Current_Bowler_Top_Id].Bowl_Overs = Innings1BowlerList[Current_Bowler_Top_Id].Bowl_Overs + 0.1;
+                Bowling_Add_Ball(Current_Bowler_Top_Id);
             }
             else
             {
-                Innings1BowlerList[Current_Bowler_Bottom_Id].Bowl_Overs = Innings1BowlerList[Current_Bowler_Bottom_Id].Bowl_Overs + 0.1;
+                Bowling_Add_Ball(Current_Bowler_Bottom_Id);
             }
-
-            Innings_Overs = Check_End_Of_Over(Innings_Overs);
-
-            if ((Innings_Overs - Math.Truncate(Innings_Overs) == 0) && (Innings1BowlerList[Current_Bowler_Top_Id].Bowl_Bowling == true))
-            {
-                Innings1BowlerList[Current_Bowler_Top_Id].Bowl_Overs = Math.Ceiling(Innings1BowlerList[Current_Bowler_Top_Id].Bowl_Overs);
-            }
-            else if ((Innings_Overs - Math.Truncate(Innings_Overs) == 0) && (Innings1BowlerList[Current_Bowler_Bottom_Id].Bowl_Bowling == true))
-            {
-                Innings1BowlerList[Current_Bowler_Bottom_Id].Bowl_Overs = Math.Ceiling(Innings1BowlerList[Current_Bowler_Bottom_Id].Bowl_Overs);
-            }
-
+            Check_End_Of_Over(Innings_Overs);        
             Update_Score();
         }
 
+        /* Adds one run to the batsman, bowler and total runs
+         * Adds one ball to the batsman, bowler and total overs
+        */
         private void One_Button_Click(object sender, EventArgs e)
         {
+            // Add one ball to total over amount
             Innings_Overs = Innings_Overs + 0.1;
+            if ((Innings1BatsmanList[Current_Batsman_Top_Id].Bat_Facing == true) && (Innings1BowlerList[Current_Bowler_Top_Id].Bowl_Bowling == true))
+            {
+                Run_ScoredOffBat(1, Current_Batsman_Top_Id, Current_Bowler_Top_Id);
+                Bowling_Add_Ball(Current_Bowler_Top_Id);
+            }
+            else if ((Innings1BatsmanList[Current_Batsman_Top_Id].Bat_Facing == true) && (Innings1BowlerList[Current_Bowler_Bottom_Id].Bowl_Bowling == true))
+            {
+                Run_ScoredOffBat(1, Current_Batsman_Top_Id, Current_Bowler_Bottom_Id);
+                Bowling_Add_Ball(Current_Bowler_Bottom_Id);
+            }
+            else if ((Innings1BatsmanList[Current_Batsman_Bottom_Id].Bat_Facing == true) && (Innings1BowlerList[Current_Bowler_Top_Id].Bowl_Bowling == true))
+            {
+                Run_ScoredOffBat(1, Current_Batsman_Bottom_Id, Current_Bowler_Top_Id);
+                Bowling_Add_Ball(Current_Bowler_Top_Id);
+            }
+            else
+            {
+                Run_ScoredOffBat(1, Current_Batsman_Bottom_Id, Current_Bowler_Bottom_Id);
+                Bowling_Add_Ball(Current_Bowler_Bottom_Id);
+            }
+            Check_End_Of_Over(Innings_Overs);
+            Update_Score();
         }
 
+        /* Adds two runs to the batsman, bowler and total runs
+         * Adds one ball to the batsman, bowler and total overs
+        */
         private void Two_Button_Click(object sender, EventArgs e)
         {
+            // Add one ball to total over amount
             Innings_Overs = Innings_Overs + 0.1;
+            if ((Innings1BatsmanList[Current_Batsman_Top_Id].Bat_Facing == true) && (Innings1BowlerList[Current_Bowler_Top_Id].Bowl_Bowling == true))
+            {
+                Run_ScoredOffBat(2, Current_Batsman_Top_Id, Current_Bowler_Top_Id);
+                Bowling_Add_Ball(Current_Bowler_Top_Id);
+            }
+            else if ((Innings1BatsmanList[Current_Batsman_Top_Id].Bat_Facing == true) && (Innings1BowlerList[Current_Bowler_Bottom_Id].Bowl_Bowling == true))
+            {
+                Run_ScoredOffBat(2, Current_Batsman_Top_Id, Current_Bowler_Bottom_Id);
+                Bowling_Add_Ball(Current_Bowler_Bottom_Id);
+            }
+            else if ((Innings1BatsmanList[Current_Batsman_Bottom_Id].Bat_Facing == true) && (Innings1BowlerList[Current_Bowler_Top_Id].Bowl_Bowling == true))
+            {
+                Run_ScoredOffBat(2, Current_Batsman_Bottom_Id, Current_Bowler_Top_Id);
+                Bowling_Add_Ball(Current_Bowler_Top_Id);
+            }
+            else
+            {
+                Run_ScoredOffBat(2, Current_Batsman_Bottom_Id, Current_Bowler_Bottom_Id);
+                Bowling_Add_Ball(Current_Bowler_Bottom_Id);
+            }
+            Check_End_Of_Over(Innings_Overs);
+            Update_Score();
         }
 
+        /* Adds three runs to the batsman, bowler and total runs
+         * Adds one ball to the batsman, bowler and total overs
+        */
         private void Three_Button_Click(object sender, EventArgs e)
         {
+            // Add one ball to total over amount
             Innings_Overs = Innings_Overs + 0.1;
+            if ((Innings1BatsmanList[Current_Batsman_Top_Id].Bat_Facing == true) && (Innings1BowlerList[Current_Bowler_Top_Id].Bowl_Bowling == true))
+            {
+                Run_ScoredOffBat(3, Current_Batsman_Top_Id, Current_Bowler_Top_Id);
+                Bowling_Add_Ball(Current_Bowler_Top_Id);
+            }
+            else if ((Innings1BatsmanList[Current_Batsman_Top_Id].Bat_Facing == true) && (Innings1BowlerList[Current_Bowler_Bottom_Id].Bowl_Bowling == true))
+            {
+                Run_ScoredOffBat(3, Current_Batsman_Top_Id, Current_Bowler_Bottom_Id);
+                Bowling_Add_Ball(Current_Bowler_Bottom_Id);
+            }
+            else if ((Innings1BatsmanList[Current_Batsman_Bottom_Id].Bat_Facing == true) && (Innings1BowlerList[Current_Bowler_Top_Id].Bowl_Bowling == true))
+            {
+                Run_ScoredOffBat(3, Current_Batsman_Bottom_Id, Current_Bowler_Top_Id);
+                Bowling_Add_Ball(Current_Bowler_Top_Id);
+            }
+            else
+            {
+                Run_ScoredOffBat(3, Current_Batsman_Bottom_Id, Current_Bowler_Bottom_Id);
+                Bowling_Add_Ball(Current_Bowler_Bottom_Id);
+            }
+            Check_End_Of_Over(Innings_Overs);
+            Update_Score();
         }
 
+        /* Adds four runs to the batsman, bowler and total runs
+         * Adds one ball to the batsman, bowler and total overs
+         * Adds one to the total number of fours scored by the batsman
+        */
         private void Four_Button_Click(object sender, EventArgs e)
         {
+            // Add one ball to total over amount
             Innings_Overs = Innings_Overs + 0.1;
+            if ((Innings1BatsmanList[Current_Batsman_Top_Id].Bat_Facing == true) && (Innings1BowlerList[Current_Bowler_Top_Id].Bowl_Bowling == true))
+            {
+                Run_ScoredOffBat(4, Current_Batsman_Top_Id, Current_Bowler_Top_Id);
+                Bowling_Add_Ball(Current_Bowler_Top_Id);
+            }
+            else if ((Innings1BatsmanList[Current_Batsman_Top_Id].Bat_Facing == true) && (Innings1BowlerList[Current_Bowler_Bottom_Id].Bowl_Bowling == true))
+            {
+                Run_ScoredOffBat(4, Current_Batsman_Top_Id, Current_Bowler_Bottom_Id);
+                Bowling_Add_Ball(Current_Bowler_Bottom_Id);
+            }
+            else if ((Innings1BatsmanList[Current_Batsman_Bottom_Id].Bat_Facing == true) && (Innings1BowlerList[Current_Bowler_Top_Id].Bowl_Bowling == true))
+            {
+                Run_ScoredOffBat(4, Current_Batsman_Bottom_Id, Current_Bowler_Top_Id);
+                Bowling_Add_Ball(Current_Bowler_Top_Id);
+            }
+            else
+            {
+                Run_ScoredOffBat(4, Current_Batsman_Bottom_Id, Current_Bowler_Bottom_Id);
+                Bowling_Add_Ball(Current_Bowler_Bottom_Id);
+            }
+            Check_End_Of_Over(Innings_Overs);
+            Update_Score();
         }
 
+        /* Adds six runs to the batsman, bowler and total runs
+         * Adds one ball to the batsman, bowler and total overs
+         * Adds one to the total number of sixes scored by the batsman
+        */
         private void Six_Button_Click(object sender, EventArgs e)
         {
+            // Add one ball to total over amount
             Innings_Overs = Innings_Overs + 0.1;
+            if ((Innings1BatsmanList[Current_Batsman_Top_Id].Bat_Facing == true) && (Innings1BowlerList[Current_Bowler_Top_Id].Bowl_Bowling == true))
+            {
+                Run_ScoredOffBat(6, Current_Batsman_Top_Id, Current_Bowler_Top_Id);
+                Bowling_Add_Ball(Current_Bowler_Top_Id);
+            }
+            else if ((Innings1BatsmanList[Current_Batsman_Top_Id].Bat_Facing == true) && (Innings1BowlerList[Current_Bowler_Bottom_Id].Bowl_Bowling == true))
+            {
+                Run_ScoredOffBat(6, Current_Batsman_Top_Id, Current_Bowler_Bottom_Id);
+                Bowling_Add_Ball(Current_Bowler_Bottom_Id);
+            }
+            else if ((Innings1BatsmanList[Current_Batsman_Bottom_Id].Bat_Facing == true) && (Innings1BowlerList[Current_Bowler_Top_Id].Bowl_Bowling == true))
+            {
+                Run_ScoredOffBat(6, Current_Batsman_Bottom_Id, Current_Bowler_Top_Id);
+                Bowling_Add_Ball(Current_Bowler_Top_Id);
+            }
+            else
+            {
+                Run_ScoredOffBat(6, Current_Batsman_Bottom_Id, Current_Bowler_Bottom_Id);
+                Bowling_Add_Ball(Current_Bowler_Bottom_Id);
+            }
+
+            Check_End_Of_Over(Innings_Overs);
+            Update_Score();
         }
 
+        /* Adds one run to the total runs
+         * Adds one ball to the batsman, bowler and total overs
+         * Adds one to the total number of byes in the extras table
+        */
         private void Bye_Button_Click(object sender, EventArgs e)
         {
+            // Add one ball to total over amount
             Innings_Overs = Innings_Overs + 0.1;
+            if ((Innings1BatsmanList[Current_Batsman_Top_Id].Bat_Facing == true) && (Innings1BowlerList[Current_Bowler_Top_Id].Bowl_Bowling == true))
+            {
+               Extra_Run_Scored("bye", Current_Batsman_Top_Id, Current_Bowler_Top_Id);
+               Bowling_Add_Ball(Current_Bowler_Top_Id);
+            }
+            else if ((Innings1BatsmanList[Current_Batsman_Top_Id].Bat_Facing == true) && (Innings1BowlerList[Current_Bowler_Bottom_Id].Bowl_Bowling == true))
+            {
+                Extra_Run_Scored("bye", Current_Batsman_Top_Id, Current_Bowler_Bottom_Id);
+                Bowling_Add_Ball(Current_Bowler_Bottom_Id);
+            }
+            else if ((Innings1BatsmanList[Current_Batsman_Bottom_Id].Bat_Facing == true) && (Innings1BowlerList[Current_Bowler_Top_Id].Bowl_Bowling == true))
+            {
+                Extra_Run_Scored("bye", Current_Batsman_Bottom_Id, Current_Bowler_Top_Id);
+                Bowling_Add_Ball(Current_Bowler_Top_Id);
+            }
+            else
+            {
+                Extra_Run_Scored("bye", Current_Batsman_Bottom_Id, Current_Bowler_Bottom_Id);
+                Bowling_Add_Ball(Current_Bowler_Bottom_Id);
+            }
+            Check_End_Of_Over(Innings_Overs);
+            Update_Score();
         }
 
+        /* Adds one run to the total runs
+         * Adds one ball to the batsman, bowler and total overs
+         * Adds one to the total number of leg byes in the extras table
+        */
         private void Leg_Bye_Button_Click(object sender, EventArgs e)
         {
+            // Add one ball to total over amount
             Innings_Overs = Innings_Overs + 0.1;
+            if ((Innings1BatsmanList[Current_Batsman_Top_Id].Bat_Facing == true) && (Innings1BowlerList[Current_Bowler_Top_Id].Bowl_Bowling == true))
+            {
+                Extra_Run_Scored("legBye", Current_Batsman_Top_Id, Current_Bowler_Top_Id);
+                Bowling_Add_Ball(Current_Bowler_Top_Id);
+            }
+            else if ((Innings1BatsmanList[Current_Batsman_Top_Id].Bat_Facing == true) && (Innings1BowlerList[Current_Bowler_Bottom_Id].Bowl_Bowling == true))
+            {
+                Extra_Run_Scored("legBye", Current_Batsman_Top_Id, Current_Bowler_Bottom_Id);
+                Bowling_Add_Ball(Current_Bowler_Bottom_Id);
+            }
+            else if ((Innings1BatsmanList[Current_Batsman_Bottom_Id].Bat_Facing == true) && (Innings1BowlerList[Current_Bowler_Top_Id].Bowl_Bowling == true))
+            {
+                Extra_Run_Scored("legBye", Current_Batsman_Bottom_Id, Current_Bowler_Top_Id);
+                Bowling_Add_Ball(Current_Bowler_Top_Id);
+            }
+            else
+            {
+                Extra_Run_Scored("legBye", Current_Batsman_Bottom_Id, Current_Bowler_Bottom_Id);
+                Bowling_Add_Ball(Current_Bowler_Bottom_Id);
+            }
+            Check_End_Of_Over(Innings_Overs);
+            Update_Score();
         }
 
+        /* Adds one run to the total runs
+         * Adds one to the total number of bowler wides
+         * Adds one to the total number of wides in the extras table
+        */
         private void Wide_Button_Click(object sender, EventArgs e)
         {
 
         }
 
+        /* Adds one run to the total runs
+         * Adds one to the total number of bowler no balls
+         * Adds one to the total number of no balls in the extras table
+        */
         private void No_Ball_Button_Click(object sender, EventArgs e)
         {
 
         }
 
+        /* Adds one wicket to the bowler and total wickets
+         * Adds one ball to the batsman, bowler and total overs
+         * Inserts new row into last man out table
+         * Inserts new batsman after user selection
+        */
         private void Wicket_Button_Click(object sender, EventArgs e)
         {
+            // Add one ball to total over amount
             Innings_Overs = Innings_Overs + 0.1;
         }
 
