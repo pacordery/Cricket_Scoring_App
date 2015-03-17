@@ -25,6 +25,9 @@ namespace Cricket_Scoring_App
         private string MatchWeather;
         private string TossWonBy;
 
+        // ******* Handlers *******
+
+
         // ******* Code for Home tab *******
 
         /* Initialises the Main scoring application form to allow it to be 
@@ -35,7 +38,6 @@ namespace Cricket_Scoring_App
         private void Start_Match_Button_Click(object sender, EventArgs e)
         {
             Details_Tab_Set.SelectedTab = Match_Details_Tab;
-            Toss_Winner_Selector.Items.Clear();
         }
 
         // *******  Code for Match Details tab *******
@@ -103,9 +105,9 @@ namespace Cricket_Scoring_App
         // TODO need to give it a counter to check how many home and away players have been added
         private void Add_Player_Button_Click(object sender, EventArgs e)
         {
-        // Initialises the add player form.
-        Player_Addition_Form AddPlayerForm = new Player_Addition_Form();
-        AddPlayerForm.Show();
+            // Initialises the add player form.
+            Player_Addition_Form AddPlayerForm = new Player_Addition_Form();
+            AddPlayerForm.Show();
         }
 
         // Shows the main scoring application when button is clicked.

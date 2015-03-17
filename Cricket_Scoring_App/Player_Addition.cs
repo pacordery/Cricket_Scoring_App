@@ -17,6 +17,8 @@ namespace Cricket_Scoring_App
             InitializeComponent();
         }
 
+        private string PlayerName;
+
         private void Add_New_Player_Button_Click(object sender, EventArgs e)
         {
 

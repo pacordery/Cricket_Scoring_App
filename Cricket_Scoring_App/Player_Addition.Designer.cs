@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.Add_New_Player_Button = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.Team_Name_Selector = new System.Windows.Forms.ComboBox();
+            this.Player_Name = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
@@ -45,20 +45,23 @@
             this.Add_New_Player_Button.UseVisualStyleBackColor = true;
             this.Add_New_Player_Button.Click += new System.EventHandler(this.Add_New_Player_Button_Click);
             // 
-            // comboBox1
+            // Team_Name_Selector
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(241, 44);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(209, 21);
-            this.comboBox1.TabIndex = 2;
+            this.Team_Name_Selector.FormattingEnabled = true;
+            this.Team_Name_Selector.Items.AddRange(new object[] {
+            "Home",
+            "Away"});
+            this.Team_Name_Selector.Location = new System.Drawing.Point(241, 44);
+            this.Team_Name_Selector.Name = "Team_Name_Selector";
+            this.Team_Name_Selector.Size = new System.Drawing.Size(209, 21);
+            this.Team_Name_Selector.TabIndex = 2;
             // 
-            // textBox1
+            // Player_Name
             // 
-            this.textBox1.Location = new System.Drawing.Point(241, 105);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(209, 20);
-            this.textBox1.TabIndex = 3;
+            this.Player_Name.Location = new System.Drawing.Point(241, 105);
+            this.Player_Name.Name = "Player_Name";
+            this.Player_Name.Size = new System.Drawing.Size(209, 20);
+            this.Player_Name.TabIndex = 3;
             // 
             // label1
             // 
@@ -86,8 +89,8 @@
             this.ClientSize = new System.Drawing.Size(534, 242);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.Player_Name);
+            this.Controls.Add(this.Team_Name_Selector);
             this.Controls.Add(this.Add_New_Player_Button);
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(550, 280);
@@ -104,9 +107,9 @@
         #endregion
 
         private System.Windows.Forms.Button Add_New_Player_Button;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        public System.Windows.Forms.ComboBox Team_Name_Selector;
+        public System.Windows.Forms.TextBox Player_Name;
     }
 }

@@ -51,12 +51,14 @@
     <Compile Include="New_Bowler.Designer.cs">
       <DependentUpon>New_Bowler.cs</DependentUpon>
     </Compile>
+    <Compile Include="Player.cs" />
     <Compile Include="Player_Addition.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Player_Addition.Designer.cs">
       <DependentUpon>Player_Addition.cs</DependentUpon>
     </Compile>
+    <Compile Include="Scorecard_Handler.cs" />
     <Compile Include="Scoring_App.cs">
       <SubType>Form</SubType>
     </Compile>

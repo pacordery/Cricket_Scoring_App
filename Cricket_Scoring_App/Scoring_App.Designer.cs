@@ -817,12 +817,6 @@
         private System.Windows.Forms.Label Lost_Value;
         private System.Windows.Forms.Label Drawn_Value;
         private System.Windows.Forms.Label Won_Value;
-        private System.Windows.Forms.ComboBox Toss_Winner_Selector;
-        private System.Windows.Forms.ComboBox Weather_Selector;
-        private System.Windows.Forms.TextBox Venue_Name;
-        private System.Windows.Forms.TextBox Away_Team_Name;
-        private System.Windows.Forms.TextBox Home_Team_Name;
-        private System.Windows.Forms.DateTimePicker Match_Date_Picker;
         private System.Windows.Forms.Label Toss_Winner_Label;
         private System.Windows.Forms.Label Weather_Label;
         private System.Windows.Forms.Label Venue_Label;
@@ -835,10 +829,8 @@
         private System.Windows.Forms.Label Home_Team_Heading;
         private System.Windows.Forms.Button Begin_Match_Button;
         private System.Windows.Forms.Button Add_Player_Button;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.TextBox Away_Player_Name_1;
         private System.Windows.Forms.Label Away_Player_Number;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.TextBox Home_Player_1;
         private System.Windows.Forms.Label Home_Player_Number;
         private System.Windows.Forms.TableLayoutPanel Innings_1_Table_1;
@@ -851,8 +843,16 @@
         private System.Windows.Forms.Label Match_Result_1;
         private System.Windows.Forms.TableLayoutPanel Previous_Match_Table;
         private System.Windows.Forms.TableLayoutPanel Previous_Match_Table_Row_1;
-        private System.Windows.Forms.ComboBox Match_Type_Selector;
         private System.Windows.Forms.Label label1;
+        public System.Windows.Forms.TextBox Away_Team_Name;
+        public System.Windows.Forms.TextBox Home_Team_Name;
+        public System.Windows.Forms.ComboBox Toss_Winner_Selector;
+        public System.Windows.Forms.ComboBox Weather_Selector;
+        public System.Windows.Forms.TextBox Venue_Name;
+        public System.Windows.Forms.DateTimePicker Match_Date_Picker;
+        public System.Windows.Forms.ComboBox Match_Type_Selector;
+        public System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        public System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
     }
 }
 
