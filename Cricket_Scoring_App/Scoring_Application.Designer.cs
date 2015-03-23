@@ -44,8 +44,70 @@
             this.Open_Select_Bat_Side = new System.Windows.Forms.ComboBox();
             this.Open_Select_Bat_Side_Label = new System.Windows.Forms.Label();
             this.Scoring_Tab = new System.Windows.Forms.TabPage();
-            this.New_Bowler_Button = new System.Windows.Forms.Button();
+            this.Flow_Panel_New_Bowler = new System.Windows.Forms.FlowLayoutPanel();
+            this.New_Bowler_Select = new System.Windows.Forms.Button();
+            this.New_Bowler_Combo_Box = new System.Windows.Forms.ComboBox();
+            this.Flow_Panel_Run_Out = new System.Windows.Forms.GroupBox();
+            this.Run_Out_Fielder_Combo = new System.Windows.Forms.ComboBox();
+            this.Radio_Run_Out_Bat_Bottom = new System.Windows.Forms.RadioButton();
+            this.Radio_Run_Out_Bat_Top = new System.Windows.Forms.RadioButton();
+            this.Flow_Panel_Fielder = new System.Windows.Forms.FlowLayoutPanel();
+            this.Wicket_Fielder_Select_Combo_Box = new System.Windows.Forms.ComboBox();
+            this.Flow_Panel_No_Ball_Question = new System.Windows.Forms.FlowLayoutPanel();
+            this.No_Ball_Question_No = new System.Windows.Forms.Button();
+            this.No_Ball_Question_Yes = new System.Windows.Forms.Button();
+            this.No_Ball_Question_Label = new System.Windows.Forms.Label();
+            this.Flow_Panel_No_Ball_No_Bat = new System.Windows.Forms.FlowLayoutPanel();
+            this.No_Ball_No_Bat_Ok = new System.Windows.Forms.Button();
+            this.No_Ball_No_Bat_Combo_Box = new System.Windows.Forms.ComboBox();
+            this.No_Ball_No_Bat_5 = new System.Windows.Forms.Button();
+            this.No_Ball_No_Bat_4 = new System.Windows.Forms.Button();
+            this.No_Ball_No_Bat_3 = new System.Windows.Forms.Button();
+            this.No_Ball_No_Bat_2 = new System.Windows.Forms.Button();
+            this.No_Ball_No_Bat_1 = new System.Windows.Forms.Button();
+            this.Flow_Panel_Wicket = new System.Windows.Forms.FlowLayoutPanel();
+            this.Wicket_Confirm_Button = new System.Windows.Forms.Button();
+            this.Wicket_Next_Bat_Combo_Box = new System.Windows.Forms.ComboBox();
+            this.Check_Box_Crossed = new System.Windows.Forms.CheckBox();
+            this.Radio_Button_Retired = new System.Windows.Forms.RadioButton();
+            this.Radio_Button_LBW = new System.Windows.Forms.RadioButton();
+            this.Radio_Button_Caught_And_Bowled = new System.Windows.Forms.RadioButton();
+            this.Radio_Button_Stumped = new System.Windows.Forms.RadioButton();
+            this.Radio_Button_Run_Out = new System.Windows.Forms.RadioButton();
+            this.Radio_Button_Caught = new System.Windows.Forms.RadioButton();
+            this.Radio_Button_Bowled = new System.Windows.Forms.RadioButton();
+            this.Flow_Panel_No_Ball_Bat = new System.Windows.Forms.FlowLayoutPanel();
+            this.No_Ball_Bat_Ok = new System.Windows.Forms.Button();
+            this.No_Ball_Bat_Combo_Box = new System.Windows.Forms.ComboBox();
+            this.No_Ball_Bat_7 = new System.Windows.Forms.Button();
+            this.No_Ball_Bat_6 = new System.Windows.Forms.Button();
+            this.No_Ball_Bat_5 = new System.Windows.Forms.Button();
+            this.No_Ball_Bat_4 = new System.Windows.Forms.Button();
+            this.No_Ball_Bat_3 = new System.Windows.Forms.Button();
+            this.No_Ball_Bat_2 = new System.Windows.Forms.Button();
+            this.Flow_Panel_Wides = new System.Windows.Forms.FlowLayoutPanel();
+            this.Wides_Ok = new System.Windows.Forms.Button();
+            this.Wides_Combo_Box = new System.Windows.Forms.ComboBox();
+            this.Wides_5 = new System.Windows.Forms.Button();
+            this.Wides_4 = new System.Windows.Forms.Button();
+            this.Wides_3 = new System.Windows.Forms.Button();
+            this.Wides_2 = new System.Windows.Forms.Button();
+            this.Wides_1 = new System.Windows.Forms.Button();
             this.Last_Man_Out_Table_Heading = new System.Windows.Forms.Label();
+            this.Flow_Panel_Leg_Byes = new System.Windows.Forms.FlowLayoutPanel();
+            this.Leg_Bye_Ok = new System.Windows.Forms.Button();
+            this.Leg_Byes_Combo_Box = new System.Windows.Forms.ComboBox();
+            this.Leg_Bye_4 = new System.Windows.Forms.Button();
+            this.Leg_Bye_3 = new System.Windows.Forms.Button();
+            this.Leg_Bye_2 = new System.Windows.Forms.Button();
+            this.Leg_Bye_1 = new System.Windows.Forms.Button();
+            this.Flow_Panel_Byes = new System.Windows.Forms.FlowLayoutPanel();
+            this.Bye_Ok = new System.Windows.Forms.Button();
+            this.Bye_Combo_Box = new System.Windows.Forms.ComboBox();
+            this.Bye_4 = new System.Windows.Forms.Button();
+            this.Bye_3 = new System.Windows.Forms.Button();
+            this.Bye_2 = new System.Windows.Forms.Button();
+            this.Bye_1 = new System.Windows.Forms.Button();
             this.Last_Man_Out_Table = new System.Windows.Forms.TableLayoutPanel();
             this.Out_Batsman_Number_Value = new System.Windows.Forms.Label();
             this.Out_Batsman_How_Out_Value = new System.Windows.Forms.Label();
@@ -127,9 +189,10 @@
             this.Current_Batsmen_Name_Heading = new System.Windows.Forms.Label();
             this.Current_Batsman_Number_Top = new System.Windows.Forms.Label();
             this.Scoring_Bottom_Information_Table = new System.Windows.Forms.TableLayoutPanel();
-            this.Scoring_Venue_Info_Table = new System.Windows.Forms.TableLayoutPanel();
-            this.Scoring_Venue_Value = new System.Windows.Forms.Label();
-            this.Scoring_Venue_Label = new System.Windows.Forms.Label();
+            this.Scoring_Team_Names_Table = new System.Windows.Forms.TableLayoutPanel();
+            this.Scoring_Home_Team_Name_Value = new System.Windows.Forms.Label();
+            this.Scoring_Vs_Label = new System.Windows.Forms.Label();
+            this.Scoring_Away_Team_Name_Value = new System.Windows.Forms.Label();
             this.Scoring_Innings_Of_Table = new System.Windows.Forms.TableLayoutPanel();
             this.Scoring_Innings_Of_Label = new System.Windows.Forms.Label();
             this.Scoring_Innings_Of_Value = new System.Windows.Forms.Label();
@@ -141,15 +204,9 @@
             this.Scoring_Wickets_Down_Label = new System.Windows.Forms.Label();
             this.Scoring_Total_Value = new System.Windows.Forms.Label();
             this.Scoring_Total_Label = new System.Windows.Forms.Label();
-            this.Scoring_Weather_Table = new System.Windows.Forms.TableLayoutPanel();
-            this.Scoring_Weather_Label = new System.Windows.Forms.Label();
-            this.Scoring_Weather_Value = new System.Windows.Forms.Label();
-            this.Penalty_Button = new System.Windows.Forms.Button();
-            this.Zero_Button = new System.Windows.Forms.Button();
             this.Scoring_Top_Options_Table = new System.Windows.Forms.TableLayoutPanel();
             this.Score_Buttons_Flow = new System.Windows.Forms.FlowLayoutPanel();
-            this.Ok_Button = new System.Windows.Forms.Button();
-            this.Misc_Score_Options = new System.Windows.Forms.ComboBox();
+            this.Penalty_Button = new System.Windows.Forms.Button();
             this.Wicket_Button = new System.Windows.Forms.Button();
             this.No_Ball_Button = new System.Windows.Forms.Button();
             this.Wide_Button = new System.Windows.Forms.Button();
@@ -161,17 +218,15 @@
             this.Two_Button = new System.Windows.Forms.Button();
             this.One_Button = new System.Windows.Forms.Button();
             this.Dot_Button = new System.Windows.Forms.Button();
-            this.Scoring_Team_Names_Table = new System.Windows.Forms.TableLayoutPanel();
-            this.Scoring_Home_Team_Name_Value = new System.Windows.Forms.Label();
-            this.Scoring_Vs_Label = new System.Windows.Forms.Label();
-            this.Scoring_Away_Team_Name_Value = new System.Windows.Forms.Label();
             this.Scoring_Date_Table = new System.Windows.Forms.TableLayoutPanel();
             this.Scoring_Date_Label = new System.Windows.Forms.Label();
             this.Scoring_Date_Value = new System.Windows.Forms.Label();
-            this.Nine_Button = new System.Windows.Forms.Button();
-            this.Eight_Button = new System.Windows.Forms.Button();
-            this.Seven_Button = new System.Windows.Forms.Button();
-            this.Five_Button = new System.Windows.Forms.Button();
+            this.Flow_Panel_Other_Score = new System.Windows.Forms.FlowLayoutPanel();
+            this.Ok_Button = new System.Windows.Forms.Button();
+            this.Other_Score_Combo_Box = new System.Windows.Forms.ComboBox();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.New_Bowler_Button = new System.Windows.Forms.Button();
+            this.Undo_Last_Button = new System.Windows.Forms.Button();
             this.First_Innings_Tab = new System.Windows.Forms.TabPage();
             this.First_Inn_Notes_Table = new System.Windows.Forms.TableLayoutPanel();
             this.First_Inn_Notes_Heading = new System.Windows.Forms.Label();
@@ -375,22 +430,34 @@
             this.Menu_Tab = new System.Windows.Forms.TabPage();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.Other_Score_Tooltip = new System.Windows.Forms.ToolTip(this.components);
+            this.Next_Batsman_Tooltip = new System.Windows.Forms.ToolTip(this.components);
+            this.Fielder_Select_Tooltip = new System.Windows.Forms.ToolTip(this.components);
             this.Scoring_App_Tab_Set.SuspendLayout();
             this.Opener_Selector_Tab.SuspendLayout();
             this.Scoring_Tab.SuspendLayout();
+            this.Flow_Panel_New_Bowler.SuspendLayout();
+            this.Flow_Panel_Run_Out.SuspendLayout();
+            this.Flow_Panel_Fielder.SuspendLayout();
+            this.Flow_Panel_No_Ball_Question.SuspendLayout();
+            this.Flow_Panel_No_Ball_No_Bat.SuspendLayout();
+            this.Flow_Panel_Wicket.SuspendLayout();
+            this.Flow_Panel_No_Ball_Bat.SuspendLayout();
+            this.Flow_Panel_Wides.SuspendLayout();
+            this.Flow_Panel_Leg_Byes.SuspendLayout();
+            this.Flow_Panel_Byes.SuspendLayout();
             this.Last_Man_Out_Table.SuspendLayout();
             this.Extras_Table.SuspendLayout();
             this.Current_Bowlers_Table.SuspendLayout();
             this.Current_Batsmen_Table.SuspendLayout();
             this.Scoring_Bottom_Information_Table.SuspendLayout();
-            this.Scoring_Venue_Info_Table.SuspendLayout();
+            this.Scoring_Team_Names_Table.SuspendLayout();
             this.Scoring_Innings_Of_Table.SuspendLayout();
             this.Scoring_Match_Totals_Table.SuspendLayout();
-            this.Scoring_Weather_Table.SuspendLayout();
             this.Scoring_Top_Options_Table.SuspendLayout();
             this.Score_Buttons_Flow.SuspendLayout();
-            this.Scoring_Team_Names_Table.SuspendLayout();
             this.Scoring_Date_Table.SuspendLayout();
+            this.Flow_Panel_Other_Score.SuspendLayout();
+            this.flowLayoutPanel1.SuspendLayout();
             this.First_Innings_Tab.SuspendLayout();
             this.First_Inn_Notes_Table.SuspendLayout();
             this.First_Inn_Bowling_Totals_Table.SuspendLayout();
@@ -584,8 +651,16 @@
             // Scoring_Tab
             // 
             this.Scoring_Tab.BackColor = System.Drawing.Color.Green;
-            this.Scoring_Tab.Controls.Add(this.New_Bowler_Button);
+            this.Scoring_Tab.Controls.Add(this.Flow_Panel_Run_Out);
+            this.Scoring_Tab.Controls.Add(this.Flow_Panel_New_Bowler);
+            this.Scoring_Tab.Controls.Add(this.Flow_Panel_No_Ball_Question);
+            this.Scoring_Tab.Controls.Add(this.Flow_Panel_No_Ball_No_Bat);
+            this.Scoring_Tab.Controls.Add(this.Flow_Panel_Wicket);
+            this.Scoring_Tab.Controls.Add(this.Flow_Panel_No_Ball_Bat);
+            this.Scoring_Tab.Controls.Add(this.Flow_Panel_Wides);
             this.Scoring_Tab.Controls.Add(this.Last_Man_Out_Table_Heading);
+            this.Scoring_Tab.Controls.Add(this.Flow_Panel_Leg_Byes);
+            this.Scoring_Tab.Controls.Add(this.Flow_Panel_Byes);
             this.Scoring_Tab.Controls.Add(this.Last_Man_Out_Table);
             this.Scoring_Tab.Controls.Add(this.Extras_Table_Heading);
             this.Scoring_Tab.Controls.Add(this.Current_Bowler_Table_Heading);
@@ -594,13 +669,7 @@
             this.Scoring_Tab.Controls.Add(this.Current_Bowlers_Table);
             this.Scoring_Tab.Controls.Add(this.Current_Batsmen_Table);
             this.Scoring_Tab.Controls.Add(this.Scoring_Bottom_Information_Table);
-            this.Scoring_Tab.Controls.Add(this.Penalty_Button);
-            this.Scoring_Tab.Controls.Add(this.Zero_Button);
             this.Scoring_Tab.Controls.Add(this.Scoring_Top_Options_Table);
-            this.Scoring_Tab.Controls.Add(this.Nine_Button);
-            this.Scoring_Tab.Controls.Add(this.Eight_Button);
-            this.Scoring_Tab.Controls.Add(this.Seven_Button);
-            this.Scoring_Tab.Controls.Add(this.Five_Button);
             this.Scoring_Tab.Location = new System.Drawing.Point(4, 22);
             this.Scoring_Tab.Name = "Scoring_Tab";
             this.Scoring_Tab.Padding = new System.Windows.Forms.Padding(3);
@@ -608,40 +677,1230 @@
             this.Scoring_Tab.TabIndex = 0;
             this.Scoring_Tab.Text = "Scoring";
             // 
-            // New_Bowler_Button
+            // Flow_Panel_New_Bowler
             // 
-            this.New_Bowler_Button.BackColor = System.Drawing.Color.Maroon;
-            this.New_Bowler_Button.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.New_Bowler_Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.New_Bowler_Button.ForeColor = System.Drawing.Color.Gold;
-            this.New_Bowler_Button.Location = new System.Drawing.Point(630, 534);
-            this.New_Bowler_Button.Name = "New_Bowler_Button";
-            this.New_Bowler_Button.Size = new System.Drawing.Size(139, 28);
-            this.New_Bowler_Button.TabIndex = 28;
-            this.New_Bowler_Button.Text = "New Bowler";
-            this.New_Bowler_Button.UseVisualStyleBackColor = false;
-            this.New_Bowler_Button.Click += new System.EventHandler(this.New_Bowler_Button_Click);
+            this.Flow_Panel_New_Bowler.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.Flow_Panel_New_Bowler.Controls.Add(this.New_Bowler_Select);
+            this.Flow_Panel_New_Bowler.Controls.Add(this.New_Bowler_Combo_Box);
+            this.Flow_Panel_New_Bowler.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
+            this.Flow_Panel_New_Bowler.Location = new System.Drawing.Point(1036, 38);
+            this.Flow_Panel_New_Bowler.Name = "Flow_Panel_New_Bowler";
+            this.Flow_Panel_New_Bowler.Size = new System.Drawing.Size(237, 32);
+            this.Flow_Panel_New_Bowler.TabIndex = 38;
+            // 
+            // New_Bowler_Select
+            // 
+            this.New_Bowler_Select.Location = new System.Drawing.Point(173, 2);
+            this.New_Bowler_Select.Margin = new System.Windows.Forms.Padding(3, 2, 3, 3);
+            this.New_Bowler_Select.Name = "New_Bowler_Select";
+            this.New_Bowler_Select.Size = new System.Drawing.Size(57, 23);
+            this.New_Bowler_Select.TabIndex = 26;
+            this.New_Bowler_Select.Text = "Select";
+            this.New_Bowler_Select.UseVisualStyleBackColor = true;
+            this.New_Bowler_Select.Click += new System.EventHandler(this.New_Bowler_Select_Click);
+            // 
+            // New_Bowler_Combo_Box
+            // 
+            this.New_Bowler_Combo_Box.FormattingEnabled = true;
+            this.New_Bowler_Combo_Box.Items.AddRange(new object[] {
+            "Paul Chung",
+            "Paul Bell",
+            "Daniel Reidenbach"});
+            this.New_Bowler_Combo_Box.Location = new System.Drawing.Point(4, 3);
+            this.New_Bowler_Combo_Box.Name = "New_Bowler_Combo_Box";
+            this.New_Bowler_Combo_Box.Size = new System.Drawing.Size(163, 21);
+            this.New_Bowler_Combo_Box.TabIndex = 25;
+            this.New_Bowler_Combo_Box.Text = "Select New Bowler";
+            this.Fielder_Select_Tooltip.SetToolTip(this.New_Bowler_Combo_Box, "Select the new bowler");
+            // 
+            // Flow_Panel_Run_Out
+            // 
+            this.Flow_Panel_Run_Out.Controls.Add(this.Run_Out_Fielder_Combo);
+            this.Flow_Panel_Run_Out.Controls.Add(this.Radio_Run_Out_Bat_Bottom);
+            this.Flow_Panel_Run_Out.Controls.Add(this.Flow_Panel_Fielder);
+            this.Flow_Panel_Run_Out.Controls.Add(this.Radio_Run_Out_Bat_Top);
+            this.Flow_Panel_Run_Out.Location = new System.Drawing.Point(348, 72);
+            this.Flow_Panel_Run_Out.Name = "Flow_Panel_Run_Out";
+            this.Flow_Panel_Run_Out.Size = new System.Drawing.Size(287, 44);
+            this.Flow_Panel_Run_Out.TabIndex = 37;
+            this.Flow_Panel_Run_Out.TabStop = false;
+            this.Flow_Panel_Run_Out.Text = "Select out batsman and fielder";
+            // 
+            // Run_Out_Fielder_Combo
+            // 
+            this.Run_Out_Fielder_Combo.FormattingEnabled = true;
+            this.Run_Out_Fielder_Combo.Items.AddRange(new object[] {
+            "Paul Chung",
+            "Paul Bell",
+            "Daniel Reidenbach"});
+            this.Run_Out_Fielder_Combo.Location = new System.Drawing.Point(114, 13);
+            this.Run_Out_Fielder_Combo.Name = "Run_Out_Fielder_Combo";
+            this.Run_Out_Fielder_Combo.Size = new System.Drawing.Size(163, 21);
+            this.Run_Out_Fielder_Combo.TabIndex = 24;
+            this.Run_Out_Fielder_Combo.Text = "Select Fielder";
+            this.Fielder_Select_Tooltip.SetToolTip(this.Run_Out_Fielder_Combo, "Select the fielder that was involved in the wicket");
+            // 
+            // Radio_Run_Out_Bat_Bottom
+            // 
+            this.Radio_Run_Out_Bat_Bottom.AutoSize = true;
+            this.Radio_Run_Out_Bat_Bottom.Location = new System.Drawing.Point(63, 14);
+            this.Radio_Run_Out_Bat_Bottom.Name = "Radio_Run_Out_Bat_Bottom";
+            this.Radio_Run_Out_Bat_Bottom.Size = new System.Drawing.Size(31, 17);
+            this.Radio_Run_Out_Bat_Bottom.TabIndex = 1;
+            this.Radio_Run_Out_Bat_Bottom.TabStop = true;
+            this.Radio_Run_Out_Bat_Bottom.Text = "2";
+            this.Radio_Run_Out_Bat_Bottom.UseVisualStyleBackColor = true;
+            // 
+            // Radio_Run_Out_Bat_Top
+            // 
+            this.Radio_Run_Out_Bat_Top.AutoSize = true;
+            this.Radio_Run_Out_Bat_Top.Location = new System.Drawing.Point(13, 14);
+            this.Radio_Run_Out_Bat_Top.Name = "Radio_Run_Out_Bat_Top";
+            this.Radio_Run_Out_Bat_Top.Size = new System.Drawing.Size(31, 17);
+            this.Radio_Run_Out_Bat_Top.TabIndex = 0;
+            this.Radio_Run_Out_Bat_Top.TabStop = true;
+            this.Radio_Run_Out_Bat_Top.Text = "1";
+            this.Radio_Run_Out_Bat_Top.UseVisualStyleBackColor = true;
+            // 
+            // Flow_Panel_Fielder
+            // 
+            this.Flow_Panel_Fielder.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.Flow_Panel_Fielder.Controls.Add(this.Wicket_Fielder_Select_Combo_Box);
+            this.Flow_Panel_Fielder.Location = new System.Drawing.Point(0, -2);
+            this.Flow_Panel_Fielder.Name = "Flow_Panel_Fielder";
+            this.Flow_Panel_Fielder.Size = new System.Drawing.Size(176, 32);
+            this.Flow_Panel_Fielder.TabIndex = 36;
+            // 
+            // Wicket_Fielder_Select_Combo_Box
+            // 
+            this.Wicket_Fielder_Select_Combo_Box.FormattingEnabled = true;
+            this.Wicket_Fielder_Select_Combo_Box.Items.AddRange(new object[] {
+            "Paul Chung",
+            "Paul Bell",
+            "Daniel Reidenbach"});
+            this.Wicket_Fielder_Select_Combo_Box.Location = new System.Drawing.Point(3, 3);
+            this.Wicket_Fielder_Select_Combo_Box.Name = "Wicket_Fielder_Select_Combo_Box";
+            this.Wicket_Fielder_Select_Combo_Box.Size = new System.Drawing.Size(163, 21);
+            this.Wicket_Fielder_Select_Combo_Box.TabIndex = 23;
+            this.Wicket_Fielder_Select_Combo_Box.Text = "Select Fielder";
+            this.Fielder_Select_Tooltip.SetToolTip(this.Wicket_Fielder_Select_Combo_Box, "Select the fielder that was involved in the wicket");
+            // 
+            // Flow_Panel_No_Ball_Question
+            // 
+            this.Flow_Panel_No_Ball_Question.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.Flow_Panel_No_Ball_Question.Controls.Add(this.No_Ball_Question_No);
+            this.Flow_Panel_No_Ball_Question.Controls.Add(this.No_Ball_Question_Yes);
+            this.Flow_Panel_No_Ball_Question.Controls.Add(this.No_Ball_Question_Label);
+            this.Flow_Panel_No_Ball_Question.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
+            this.Flow_Panel_No_Ball_Question.Location = new System.Drawing.Point(670, 38);
+            this.Flow_Panel_No_Ball_Question.Name = "Flow_Panel_No_Ball_Question";
+            this.Flow_Panel_No_Ball_Question.Size = new System.Drawing.Size(239, 32);
+            this.Flow_Panel_No_Ball_Question.TabIndex = 35;
+            // 
+            // No_Ball_Question_No
+            // 
+            this.No_Ball_Question_No.Location = new System.Drawing.Point(174, 3);
+            this.No_Ball_Question_No.Name = "No_Ball_Question_No";
+            this.No_Ball_Question_No.Size = new System.Drawing.Size(58, 23);
+            this.No_Ball_Question_No.TabIndex = 5;
+            this.No_Ball_Question_No.Text = "No";
+            this.No_Ball_Question_No.UseVisualStyleBackColor = true;
+            this.No_Ball_Question_No.Click += new System.EventHandler(this.No_Ball_Question_No_Click);
+            // 
+            // No_Ball_Question_Yes
+            // 
+            this.No_Ball_Question_Yes.Location = new System.Drawing.Point(110, 3);
+            this.No_Ball_Question_Yes.Name = "No_Ball_Question_Yes";
+            this.No_Ball_Question_Yes.Size = new System.Drawing.Size(58, 23);
+            this.No_Ball_Question_Yes.TabIndex = 6;
+            this.No_Ball_Question_Yes.Text = "Yes";
+            this.No_Ball_Question_Yes.UseVisualStyleBackColor = true;
+            this.No_Ball_Question_Yes.Click += new System.EventHandler(this.No_Ball_Question_Yes_Click);
+            // 
+            // No_Ball_Question_Label
+            // 
+            this.No_Ball_Question_Label.AutoSize = true;
+            this.No_Ball_Question_Label.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.No_Ball_Question_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.No_Ball_Question_Label.Location = new System.Drawing.Point(6, 0);
+            this.No_Ball_Question_Label.Name = "No_Ball_Question_Label";
+            this.No_Ball_Question_Label.Size = new System.Drawing.Size(98, 29);
+            this.No_Ball_Question_Label.TabIndex = 7;
+            this.No_Ball_Question_Label.Text = "Runs off bat?";
+            this.No_Ball_Question_Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // Flow_Panel_No_Ball_No_Bat
+            // 
+            this.Flow_Panel_No_Ball_No_Bat.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.Flow_Panel_No_Ball_No_Bat.Controls.Add(this.No_Ball_No_Bat_Ok);
+            this.Flow_Panel_No_Ball_No_Bat.Controls.Add(this.No_Ball_No_Bat_Combo_Box);
+            this.Flow_Panel_No_Ball_No_Bat.Controls.Add(this.No_Ball_No_Bat_5);
+            this.Flow_Panel_No_Ball_No_Bat.Controls.Add(this.No_Ball_No_Bat_4);
+            this.Flow_Panel_No_Ball_No_Bat.Controls.Add(this.No_Ball_No_Bat_3);
+            this.Flow_Panel_No_Ball_No_Bat.Controls.Add(this.No_Ball_No_Bat_2);
+            this.Flow_Panel_No_Ball_No_Bat.Controls.Add(this.No_Ball_No_Bat_1);
+            this.Flow_Panel_No_Ball_No_Bat.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
+            this.Flow_Panel_No_Ball_No_Bat.Location = new System.Drawing.Point(502, 38);
+            this.Flow_Panel_No_Ball_No_Bat.Name = "Flow_Panel_No_Ball_No_Bat";
+            this.Flow_Panel_No_Ball_No_Bat.Size = new System.Drawing.Size(407, 32);
+            this.Flow_Panel_No_Ball_No_Bat.TabIndex = 34;
+            // 
+            // No_Ball_No_Bat_Ok
+            // 
+            this.No_Ball_No_Bat_Ok.Location = new System.Drawing.Point(359, 2);
+            this.No_Ball_No_Bat_Ok.Margin = new System.Windows.Forms.Padding(3, 2, 3, 3);
+            this.No_Ball_No_Bat_Ok.Name = "No_Ball_No_Bat_Ok";
+            this.No_Ball_No_Bat_Ok.Size = new System.Drawing.Size(41, 23);
+            this.No_Ball_No_Bat_Ok.TabIndex = 21;
+            this.No_Ball_No_Bat_Ok.Text = "Ok";
+            this.No_Ball_No_Bat_Ok.UseVisualStyleBackColor = true;
+            this.No_Ball_No_Bat_Ok.Click += new System.EventHandler(this.No_Ball_No_Bat_Ok_Click);
+            // 
+            // No_Ball_No_Bat_Combo_Box
+            // 
+            this.No_Ball_No_Bat_Combo_Box.FormattingEnabled = true;
+            this.No_Ball_No_Bat_Combo_Box.Items.AddRange(new object[] {
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "20",
+            "21",
+            "22",
+            "23",
+            "24",
+            "25",
+            "26",
+            "27",
+            "28",
+            "29",
+            "30",
+            "31",
+            "32",
+            "33",
+            "34",
+            "35",
+            "36",
+            "37",
+            "38",
+            "39",
+            "40",
+            "41",
+            "42",
+            "43",
+            "44",
+            "45",
+            "46",
+            "47",
+            "48",
+            "49",
+            "50",
+            "51",
+            "52",
+            "53",
+            "54",
+            "55",
+            "56",
+            "57",
+            "58",
+            "59",
+            "60",
+            "61",
+            "62",
+            "63",
+            "64",
+            "65",
+            "66",
+            "67",
+            "68",
+            "69",
+            "70",
+            "71",
+            "72",
+            "73",
+            "74",
+            "75",
+            "76",
+            "77",
+            "78",
+            "79",
+            "80",
+            "81",
+            "82",
+            "83",
+            "84",
+            "85",
+            "86",
+            "87",
+            "88",
+            "89",
+            "90",
+            "91",
+            "92",
+            "93",
+            "94",
+            "95",
+            "96",
+            "97",
+            "98",
+            "99"});
+            this.No_Ball_No_Bat_Combo_Box.Location = new System.Drawing.Point(239, 3);
+            this.No_Ball_No_Bat_Combo_Box.Name = "No_Ball_No_Bat_Combo_Box";
+            this.No_Ball_No_Bat_Combo_Box.Size = new System.Drawing.Size(114, 21);
+            this.No_Ball_No_Bat_Combo_Box.TabIndex = 22;
+            this.No_Ball_No_Bat_Combo_Box.Text = "Other Score";
+            this.Other_Score_Tooltip.SetToolTip(this.No_Ball_No_Bat_Combo_Box, "Select alternative score from the list then click \'Ok\' button to update the score" +
+        ".");
+            // 
+            // No_Ball_No_Bat_5
+            // 
+            this.No_Ball_No_Bat_5.Location = new System.Drawing.Point(192, 3);
+            this.No_Ball_No_Bat_5.Name = "No_Ball_No_Bat_5";
+            this.No_Ball_No_Bat_5.Size = new System.Drawing.Size(41, 23);
+            this.No_Ball_No_Bat_5.TabIndex = 24;
+            this.No_Ball_No_Bat_5.Text = "5";
+            this.No_Ball_No_Bat_5.UseVisualStyleBackColor = true;
+            this.No_Ball_No_Bat_5.Click += new System.EventHandler(this.No_Ball_No_Bat_5_Click);
+            // 
+            // No_Ball_No_Bat_4
+            // 
+            this.No_Ball_No_Bat_4.Location = new System.Drawing.Point(145, 3);
+            this.No_Ball_No_Bat_4.Name = "No_Ball_No_Bat_4";
+            this.No_Ball_No_Bat_4.Size = new System.Drawing.Size(41, 23);
+            this.No_Ball_No_Bat_4.TabIndex = 25;
+            this.No_Ball_No_Bat_4.Text = "4";
+            this.No_Ball_No_Bat_4.UseVisualStyleBackColor = true;
+            this.No_Ball_No_Bat_4.Click += new System.EventHandler(this.No_Ball_No_Bat_4_Click);
+            // 
+            // No_Ball_No_Bat_3
+            // 
+            this.No_Ball_No_Bat_3.Location = new System.Drawing.Point(98, 3);
+            this.No_Ball_No_Bat_3.Name = "No_Ball_No_Bat_3";
+            this.No_Ball_No_Bat_3.Size = new System.Drawing.Size(41, 23);
+            this.No_Ball_No_Bat_3.TabIndex = 26;
+            this.No_Ball_No_Bat_3.Text = "3";
+            this.No_Ball_No_Bat_3.UseVisualStyleBackColor = true;
+            this.No_Ball_No_Bat_3.Click += new System.EventHandler(this.No_Ball_No_Bat_3_Click);
+            // 
+            // No_Ball_No_Bat_2
+            // 
+            this.No_Ball_No_Bat_2.Location = new System.Drawing.Point(51, 3);
+            this.No_Ball_No_Bat_2.Name = "No_Ball_No_Bat_2";
+            this.No_Ball_No_Bat_2.Size = new System.Drawing.Size(41, 23);
+            this.No_Ball_No_Bat_2.TabIndex = 27;
+            this.No_Ball_No_Bat_2.Text = "2";
+            this.No_Ball_No_Bat_2.UseVisualStyleBackColor = true;
+            this.No_Ball_No_Bat_2.Click += new System.EventHandler(this.No_Ball_No_Bat_2_Click);
+            // 
+            // No_Ball_No_Bat_1
+            // 
+            this.No_Ball_No_Bat_1.Location = new System.Drawing.Point(4, 3);
+            this.No_Ball_No_Bat_1.Name = "No_Ball_No_Bat_1";
+            this.No_Ball_No_Bat_1.Size = new System.Drawing.Size(41, 23);
+            this.No_Ball_No_Bat_1.TabIndex = 28;
+            this.No_Ball_No_Bat_1.Text = "1";
+            this.No_Ball_No_Bat_1.UseVisualStyleBackColor = true;
+            this.No_Ball_No_Bat_1.Click += new System.EventHandler(this.No_Ball_No_Bat_1_Click);
+            // 
+            // Flow_Panel_Wicket
+            // 
+            this.Flow_Panel_Wicket.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.Flow_Panel_Wicket.Controls.Add(this.Wicket_Confirm_Button);
+            this.Flow_Panel_Wicket.Controls.Add(this.Wicket_Next_Bat_Combo_Box);
+            this.Flow_Panel_Wicket.Controls.Add(this.Check_Box_Crossed);
+            this.Flow_Panel_Wicket.Controls.Add(this.Radio_Button_Retired);
+            this.Flow_Panel_Wicket.Controls.Add(this.Radio_Button_LBW);
+            this.Flow_Panel_Wicket.Controls.Add(this.Radio_Button_Caught_And_Bowled);
+            this.Flow_Panel_Wicket.Controls.Add(this.Radio_Button_Stumped);
+            this.Flow_Panel_Wicket.Controls.Add(this.Radio_Button_Run_Out);
+            this.Flow_Panel_Wicket.Controls.Add(this.Radio_Button_Caught);
+            this.Flow_Panel_Wicket.Controls.Add(this.Radio_Button_Bowled);
+            this.Flow_Panel_Wicket.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
+            this.Flow_Panel_Wicket.Location = new System.Drawing.Point(272, 38);
+            this.Flow_Panel_Wicket.Name = "Flow_Panel_Wicket";
+            this.Flow_Panel_Wicket.Size = new System.Drawing.Size(637, 32);
+            this.Flow_Panel_Wicket.TabIndex = 33;
+            // 
+            // Wicket_Confirm_Button
+            // 
+            this.Wicket_Confirm_Button.Location = new System.Drawing.Point(574, 2);
+            this.Wicket_Confirm_Button.Margin = new System.Windows.Forms.Padding(3, 2, 3, 100);
+            this.Wicket_Confirm_Button.Name = "Wicket_Confirm_Button";
+            this.Wicket_Confirm_Button.Size = new System.Drawing.Size(56, 23);
+            this.Wicket_Confirm_Button.TabIndex = 22;
+            this.Wicket_Confirm_Button.Text = "Confirm";
+            this.Wicket_Confirm_Button.UseVisualStyleBackColor = true;
+            this.Wicket_Confirm_Button.Click += new System.EventHandler(this.Wicket_Confirm_Button_Click);
+            // 
+            // Wicket_Next_Bat_Combo_Box
+            // 
+            this.Wicket_Next_Bat_Combo_Box.FormattingEnabled = true;
+            this.Wicket_Next_Bat_Combo_Box.Items.AddRange(new object[] {
+            "Steve Davis",
+            "Dave Johnson"});
+            this.Wicket_Next_Bat_Combo_Box.Location = new System.Drawing.Point(454, 2);
+            this.Wicket_Next_Bat_Combo_Box.Margin = new System.Windows.Forms.Padding(3, 2, 3, 3);
+            this.Wicket_Next_Bat_Combo_Box.Name = "Wicket_Next_Bat_Combo_Box";
+            this.Wicket_Next_Bat_Combo_Box.Size = new System.Drawing.Size(114, 21);
+            this.Wicket_Next_Bat_Combo_Box.TabIndex = 31;
+            this.Wicket_Next_Bat_Combo_Box.Text = "Next Batsman";
+            this.Next_Batsman_Tooltip.SetToolTip(this.Wicket_Next_Bat_Combo_Box, "Select the next batsman from the dropdown list");
+            // 
+            // Check_Box_Crossed
+            // 
+            this.Check_Box_Crossed.AutoSize = true;
+            this.Check_Box_Crossed.Location = new System.Drawing.Point(384, 6);
+            this.Check_Box_Crossed.Margin = new System.Windows.Forms.Padding(3, 6, 3, 3);
+            this.Check_Box_Crossed.Name = "Check_Box_Crossed";
+            this.Check_Box_Crossed.Size = new System.Drawing.Size(64, 17);
+            this.Check_Box_Crossed.TabIndex = 23;
+            this.Check_Box_Crossed.Text = "Crossed";
+            this.Check_Box_Crossed.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.Check_Box_Crossed.UseVisualStyleBackColor = true;
+            // 
+            // Radio_Button_Retired
+            // 
+            this.Radio_Button_Retired.AutoSize = true;
+            this.Radio_Button_Retired.Location = new System.Drawing.Point(336, 5);
+            this.Radio_Button_Retired.Margin = new System.Windows.Forms.Padding(3, 5, 3, 3);
+            this.Radio_Button_Retired.Name = "Radio_Button_Retired";
+            this.Radio_Button_Retired.Size = new System.Drawing.Size(42, 17);
+            this.Radio_Button_Retired.TabIndex = 24;
+            this.Radio_Button_Retired.TabStop = true;
+            this.Radio_Button_Retired.Text = "Ret";
+            this.Radio_Button_Retired.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.Radio_Button_Retired.UseVisualStyleBackColor = true;
+            this.Radio_Button_Retired.CheckedChanged += new System.EventHandler(this.Radio_Button_Retired_CheckedChanged);
+            // 
+            // Radio_Button_LBW
+            // 
+            this.Radio_Button_LBW.AutoSize = true;
+            this.Radio_Button_LBW.Location = new System.Drawing.Point(281, 5);
+            this.Radio_Button_LBW.Margin = new System.Windows.Forms.Padding(3, 5, 3, 3);
+            this.Radio_Button_LBW.Name = "Radio_Button_LBW";
+            this.Radio_Button_LBW.Size = new System.Drawing.Size(49, 17);
+            this.Radio_Button_LBW.TabIndex = 25;
+            this.Radio_Button_LBW.TabStop = true;
+            this.Radio_Button_LBW.Text = "LBW";
+            this.Radio_Button_LBW.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.Radio_Button_LBW.UseVisualStyleBackColor = true;
+            this.Radio_Button_LBW.CheckedChanged += new System.EventHandler(this.Radio_Button_LBW_CheckedChanged);
+            // 
+            // Radio_Button_Caught_And_Bowled
+            // 
+            this.Radio_Button_Caught_And_Bowled.AutoSize = true;
+            this.Radio_Button_Caught_And_Bowled.Location = new System.Drawing.Point(227, 5);
+            this.Radio_Button_Caught_And_Bowled.Margin = new System.Windows.Forms.Padding(3, 5, 3, 3);
+            this.Radio_Button_Caught_And_Bowled.Name = "Radio_Button_Caught_And_Bowled";
+            this.Radio_Button_Caught_And_Bowled.Size = new System.Drawing.Size(48, 17);
+            this.Radio_Button_Caught_And_Bowled.TabIndex = 26;
+            this.Radio_Button_Caught_And_Bowled.TabStop = true;
+            this.Radio_Button_Caught_And_Bowled.Text = "Ct+B";
+            this.Radio_Button_Caught_And_Bowled.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.Radio_Button_Caught_And_Bowled.UseVisualStyleBackColor = true;
+            this.Radio_Button_Caught_And_Bowled.CheckedChanged += new System.EventHandler(this.Radio_Button_Caught_And_Bowled_CheckedChanged);
+            // 
+            // Radio_Button_Stumped
+            // 
+            this.Radio_Button_Stumped.AutoSize = true;
+            this.Radio_Button_Stumped.Location = new System.Drawing.Point(186, 5);
+            this.Radio_Button_Stumped.Margin = new System.Windows.Forms.Padding(3, 5, 3, 3);
+            this.Radio_Button_Stumped.Name = "Radio_Button_Stumped";
+            this.Radio_Button_Stumped.Size = new System.Drawing.Size(35, 17);
+            this.Radio_Button_Stumped.TabIndex = 27;
+            this.Radio_Button_Stumped.TabStop = true;
+            this.Radio_Button_Stumped.Text = "St";
+            this.Radio_Button_Stumped.UseVisualStyleBackColor = true;
+            this.Radio_Button_Stumped.CheckedChanged += new System.EventHandler(this.Radio_Button_Stumped_CheckedChanged);
+            // 
+            // Radio_Button_Run_Out
+            // 
+            this.Radio_Button_Run_Out.AutoSize = true;
+            this.Radio_Button_Run_Out.Location = new System.Drawing.Point(115, 5);
+            this.Radio_Button_Run_Out.Margin = new System.Windows.Forms.Padding(3, 5, 3, 3);
+            this.Radio_Button_Run_Out.Name = "Radio_Button_Run_Out";
+            this.Radio_Button_Run_Out.Size = new System.Drawing.Size(65, 17);
+            this.Radio_Button_Run_Out.TabIndex = 28;
+            this.Radio_Button_Run_Out.TabStop = true;
+            this.Radio_Button_Run_Out.Text = "Run Out";
+            this.Radio_Button_Run_Out.UseVisualStyleBackColor = true;
+            this.Radio_Button_Run_Out.CheckedChanged += new System.EventHandler(this.Radio_Button_Run_Out_CheckedChanged);
+            // 
+            // Radio_Button_Caught
+            // 
+            this.Radio_Button_Caught.AutoSize = true;
+            this.Radio_Button_Caught.Location = new System.Drawing.Point(74, 5);
+            this.Radio_Button_Caught.Margin = new System.Windows.Forms.Padding(3, 5, 3, 3);
+            this.Radio_Button_Caught.Name = "Radio_Button_Caught";
+            this.Radio_Button_Caught.Size = new System.Drawing.Size(35, 17);
+            this.Radio_Button_Caught.TabIndex = 29;
+            this.Radio_Button_Caught.TabStop = true;
+            this.Radio_Button_Caught.Text = "Ct";
+            this.Radio_Button_Caught.UseVisualStyleBackColor = true;
+            this.Radio_Button_Caught.CheckedChanged += new System.EventHandler(this.Radio_Button_Caught_CheckedChanged);
+            // 
+            // Radio_Button_Bowled
+            // 
+            this.Radio_Button_Bowled.AutoSize = true;
+            this.Radio_Button_Bowled.Location = new System.Drawing.Point(8, 5);
+            this.Radio_Button_Bowled.Margin = new System.Windows.Forms.Padding(3, 5, 3, 3);
+            this.Radio_Button_Bowled.Name = "Radio_Button_Bowled";
+            this.Radio_Button_Bowled.Size = new System.Drawing.Size(60, 17);
+            this.Radio_Button_Bowled.TabIndex = 30;
+            this.Radio_Button_Bowled.TabStop = true;
+            this.Radio_Button_Bowled.Text = "Bowled";
+            this.Radio_Button_Bowled.UseVisualStyleBackColor = true;
+            this.Radio_Button_Bowled.CheckedChanged += new System.EventHandler(this.Radio_Button_Bowled_CheckedChanged);
+            // 
+            // Flow_Panel_No_Ball_Bat
+            // 
+            this.Flow_Panel_No_Ball_Bat.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.Flow_Panel_No_Ball_Bat.Controls.Add(this.No_Ball_Bat_Ok);
+            this.Flow_Panel_No_Ball_Bat.Controls.Add(this.No_Ball_Bat_Combo_Box);
+            this.Flow_Panel_No_Ball_Bat.Controls.Add(this.No_Ball_Bat_7);
+            this.Flow_Panel_No_Ball_Bat.Controls.Add(this.No_Ball_Bat_6);
+            this.Flow_Panel_No_Ball_Bat.Controls.Add(this.No_Ball_Bat_5);
+            this.Flow_Panel_No_Ball_Bat.Controls.Add(this.No_Ball_Bat_4);
+            this.Flow_Panel_No_Ball_Bat.Controls.Add(this.No_Ball_Bat_3);
+            this.Flow_Panel_No_Ball_Bat.Controls.Add(this.No_Ball_Bat_2);
+            this.Flow_Panel_No_Ball_Bat.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
+            this.Flow_Panel_No_Ball_Bat.Location = new System.Drawing.Point(454, 38);
+            this.Flow_Panel_No_Ball_Bat.Name = "Flow_Panel_No_Ball_Bat";
+            this.Flow_Panel_No_Ball_Bat.Size = new System.Drawing.Size(455, 32);
+            this.Flow_Panel_No_Ball_Bat.TabIndex = 32;
+            // 
+            // No_Ball_Bat_Ok
+            // 
+            this.No_Ball_Bat_Ok.Location = new System.Drawing.Point(407, 3);
+            this.No_Ball_Bat_Ok.Margin = new System.Windows.Forms.Padding(3, 3, 3, 100);
+            this.No_Ball_Bat_Ok.Name = "No_Ball_Bat_Ok";
+            this.No_Ball_Bat_Ok.Size = new System.Drawing.Size(41, 23);
+            this.No_Ball_Bat_Ok.TabIndex = 21;
+            this.No_Ball_Bat_Ok.Text = "Ok";
+            this.No_Ball_Bat_Ok.UseVisualStyleBackColor = true;
+            this.No_Ball_Bat_Ok.Click += new System.EventHandler(this.No_Ball_Bat_Ok_Click);
+            // 
+            // No_Ball_Bat_Combo_Box
+            // 
+            this.No_Ball_Bat_Combo_Box.FormattingEnabled = true;
+            this.No_Ball_Bat_Combo_Box.Items.AddRange(new object[] {
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "20",
+            "21",
+            "22",
+            "23",
+            "24",
+            "25",
+            "26",
+            "27",
+            "28",
+            "29",
+            "30",
+            "31",
+            "32",
+            "33",
+            "34",
+            "35",
+            "36",
+            "37",
+            "38",
+            "39",
+            "40",
+            "41",
+            "42",
+            "43",
+            "44",
+            "45",
+            "46",
+            "47",
+            "48",
+            "49",
+            "50",
+            "51",
+            "52",
+            "53",
+            "54",
+            "55",
+            "56",
+            "57",
+            "58",
+            "59",
+            "60",
+            "61",
+            "62",
+            "63",
+            "64",
+            "65",
+            "66",
+            "67",
+            "68",
+            "69",
+            "70",
+            "71",
+            "72",
+            "73",
+            "74",
+            "75",
+            "76",
+            "77",
+            "78",
+            "79",
+            "80",
+            "81",
+            "82",
+            "83",
+            "84",
+            "85",
+            "86",
+            "87",
+            "88",
+            "89",
+            "90",
+            "91",
+            "92",
+            "93",
+            "94",
+            "95",
+            "96",
+            "97",
+            "98",
+            "99"});
+            this.No_Ball_Bat_Combo_Box.Location = new System.Drawing.Point(287, 3);
+            this.No_Ball_Bat_Combo_Box.Name = "No_Ball_Bat_Combo_Box";
+            this.No_Ball_Bat_Combo_Box.Size = new System.Drawing.Size(114, 21);
+            this.No_Ball_Bat_Combo_Box.TabIndex = 22;
+            this.No_Ball_Bat_Combo_Box.Text = "Other Score";
+            this.Other_Score_Tooltip.SetToolTip(this.No_Ball_Bat_Combo_Box, "Select alternative score from the list then click \'Ok\' button to update the score" +
+        ".");
+            // 
+            // No_Ball_Bat_7
+            // 
+            this.No_Ball_Bat_7.Location = new System.Drawing.Point(240, 3);
+            this.No_Ball_Bat_7.Name = "No_Ball_Bat_7";
+            this.No_Ball_Bat_7.Size = new System.Drawing.Size(41, 23);
+            this.No_Ball_Bat_7.TabIndex = 25;
+            this.No_Ball_Bat_7.Text = "7";
+            this.No_Ball_Bat_7.UseVisualStyleBackColor = true;
+            this.No_Ball_Bat_7.Click += new System.EventHandler(this.No_Ball_Bat_7_Click);
+            // 
+            // No_Ball_Bat_6
+            // 
+            this.No_Ball_Bat_6.Location = new System.Drawing.Point(193, 3);
+            this.No_Ball_Bat_6.Name = "No_Ball_Bat_6";
+            this.No_Ball_Bat_6.Size = new System.Drawing.Size(41, 23);
+            this.No_Ball_Bat_6.TabIndex = 26;
+            this.No_Ball_Bat_6.Text = "6";
+            this.No_Ball_Bat_6.UseVisualStyleBackColor = true;
+            this.No_Ball_Bat_6.Click += new System.EventHandler(this.No_Ball_Bat_6_Click);
+            // 
+            // No_Ball_Bat_5
+            // 
+            this.No_Ball_Bat_5.Location = new System.Drawing.Point(146, 3);
+            this.No_Ball_Bat_5.Name = "No_Ball_Bat_5";
+            this.No_Ball_Bat_5.Size = new System.Drawing.Size(41, 23);
+            this.No_Ball_Bat_5.TabIndex = 27;
+            this.No_Ball_Bat_5.Text = "5";
+            this.No_Ball_Bat_5.UseVisualStyleBackColor = true;
+            this.No_Ball_Bat_5.Click += new System.EventHandler(this.No_Ball_Bat_5_Click);
+            // 
+            // No_Ball_Bat_4
+            // 
+            this.No_Ball_Bat_4.Location = new System.Drawing.Point(99, 3);
+            this.No_Ball_Bat_4.Name = "No_Ball_Bat_4";
+            this.No_Ball_Bat_4.Size = new System.Drawing.Size(41, 23);
+            this.No_Ball_Bat_4.TabIndex = 28;
+            this.No_Ball_Bat_4.Text = "4";
+            this.No_Ball_Bat_4.UseVisualStyleBackColor = true;
+            this.No_Ball_Bat_4.Click += new System.EventHandler(this.No_Ball_Bat_4_Click);
+            // 
+            // No_Ball_Bat_3
+            // 
+            this.No_Ball_Bat_3.Location = new System.Drawing.Point(52, 3);
+            this.No_Ball_Bat_3.Name = "No_Ball_Bat_3";
+            this.No_Ball_Bat_3.Size = new System.Drawing.Size(41, 23);
+            this.No_Ball_Bat_3.TabIndex = 29;
+            this.No_Ball_Bat_3.Text = "3";
+            this.No_Ball_Bat_3.UseVisualStyleBackColor = true;
+            this.No_Ball_Bat_3.Click += new System.EventHandler(this.No_Ball_Bat_3_Click);
+            // 
+            // No_Ball_Bat_2
+            // 
+            this.No_Ball_Bat_2.Location = new System.Drawing.Point(5, 3);
+            this.No_Ball_Bat_2.Name = "No_Ball_Bat_2";
+            this.No_Ball_Bat_2.Size = new System.Drawing.Size(41, 23);
+            this.No_Ball_Bat_2.TabIndex = 30;
+            this.No_Ball_Bat_2.Text = "2";
+            this.No_Ball_Bat_2.UseVisualStyleBackColor = true;
+            this.No_Ball_Bat_2.Click += new System.EventHandler(this.No_Ball_Bat_2_Click);
+            // 
+            // Flow_Panel_Wides
+            // 
+            this.Flow_Panel_Wides.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.Flow_Panel_Wides.Controls.Add(this.Wides_Ok);
+            this.Flow_Panel_Wides.Controls.Add(this.Wides_Combo_Box);
+            this.Flow_Panel_Wides.Controls.Add(this.Wides_5);
+            this.Flow_Panel_Wides.Controls.Add(this.Wides_4);
+            this.Flow_Panel_Wides.Controls.Add(this.Wides_3);
+            this.Flow_Panel_Wides.Controls.Add(this.Wides_2);
+            this.Flow_Panel_Wides.Controls.Add(this.Wides_1);
+            this.Flow_Panel_Wides.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
+            this.Flow_Panel_Wides.Location = new System.Drawing.Point(499, 38);
+            this.Flow_Panel_Wides.Name = "Flow_Panel_Wides";
+            this.Flow_Panel_Wides.Size = new System.Drawing.Size(410, 32);
+            this.Flow_Panel_Wides.TabIndex = 31;
+            // 
+            // Wides_Ok
+            // 
+            this.Wides_Ok.Location = new System.Drawing.Point(362, 3);
+            this.Wides_Ok.Margin = new System.Windows.Forms.Padding(3, 3, 3, 100);
+            this.Wides_Ok.Name = "Wides_Ok";
+            this.Wides_Ok.Size = new System.Drawing.Size(41, 23);
+            this.Wides_Ok.TabIndex = 20;
+            this.Wides_Ok.Text = "Ok";
+            this.Wides_Ok.UseVisualStyleBackColor = true;
+            this.Wides_Ok.Click += new System.EventHandler(this.Wides_Ok_Click);
+            // 
+            // Wides_Combo_Box
+            // 
+            this.Wides_Combo_Box.FormattingEnabled = true;
+            this.Wides_Combo_Box.Items.AddRange(new object[] {
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "20",
+            "21",
+            "22",
+            "23",
+            "24",
+            "25",
+            "26",
+            "27",
+            "28",
+            "29",
+            "30",
+            "31",
+            "32",
+            "33",
+            "34",
+            "35",
+            "36",
+            "37",
+            "38",
+            "39",
+            "40",
+            "41",
+            "42",
+            "43",
+            "44",
+            "45",
+            "46",
+            "47",
+            "48",
+            "49",
+            "50",
+            "51",
+            "52",
+            "53",
+            "54",
+            "55",
+            "56",
+            "57",
+            "58",
+            "59",
+            "60",
+            "61",
+            "62",
+            "63",
+            "64",
+            "65",
+            "66",
+            "67",
+            "68",
+            "69",
+            "70",
+            "71",
+            "72",
+            "73",
+            "74",
+            "75",
+            "76",
+            "77",
+            "78",
+            "79",
+            "80",
+            "81",
+            "82",
+            "83",
+            "84",
+            "85",
+            "86",
+            "87",
+            "88",
+            "89",
+            "90",
+            "91",
+            "92",
+            "93",
+            "94",
+            "95",
+            "96",
+            "97",
+            "98",
+            "99"});
+            this.Wides_Combo_Box.Location = new System.Drawing.Point(242, 3);
+            this.Wides_Combo_Box.Name = "Wides_Combo_Box";
+            this.Wides_Combo_Box.Size = new System.Drawing.Size(114, 21);
+            this.Wides_Combo_Box.TabIndex = 21;
+            this.Wides_Combo_Box.Text = "Other Score";
+            this.Other_Score_Tooltip.SetToolTip(this.Wides_Combo_Box, "Select alternative score from the list then click \'Ok\' button to update the score" +
+        ".");
+            // 
+            // Wides_5
+            // 
+            this.Wides_5.Location = new System.Drawing.Point(195, 3);
+            this.Wides_5.Name = "Wides_5";
+            this.Wides_5.Size = new System.Drawing.Size(41, 23);
+            this.Wides_5.TabIndex = 22;
+            this.Wides_5.Text = "5";
+            this.Wides_5.UseVisualStyleBackColor = true;
+            this.Wides_5.Click += new System.EventHandler(this.Wides_5_Click);
+            // 
+            // Wides_4
+            // 
+            this.Wides_4.Location = new System.Drawing.Point(148, 3);
+            this.Wides_4.Name = "Wides_4";
+            this.Wides_4.Size = new System.Drawing.Size(41, 23);
+            this.Wides_4.TabIndex = 23;
+            this.Wides_4.Text = "4";
+            this.Wides_4.UseVisualStyleBackColor = true;
+            this.Wides_4.Click += new System.EventHandler(this.Wides_4_Click);
+            // 
+            // Wides_3
+            // 
+            this.Wides_3.Location = new System.Drawing.Point(101, 3);
+            this.Wides_3.Name = "Wides_3";
+            this.Wides_3.Size = new System.Drawing.Size(41, 23);
+            this.Wides_3.TabIndex = 24;
+            this.Wides_3.Text = "3";
+            this.Wides_3.UseVisualStyleBackColor = true;
+            this.Wides_3.Click += new System.EventHandler(this.Wides_3_Click);
+            // 
+            // Wides_2
+            // 
+            this.Wides_2.Location = new System.Drawing.Point(54, 3);
+            this.Wides_2.Name = "Wides_2";
+            this.Wides_2.Size = new System.Drawing.Size(41, 23);
+            this.Wides_2.TabIndex = 25;
+            this.Wides_2.Text = "2";
+            this.Wides_2.UseVisualStyleBackColor = true;
+            this.Wides_2.Click += new System.EventHandler(this.Wides_2_Click);
+            // 
+            // Wides_1
+            // 
+            this.Wides_1.Location = new System.Drawing.Point(7, 3);
+            this.Wides_1.Name = "Wides_1";
+            this.Wides_1.Size = new System.Drawing.Size(41, 23);
+            this.Wides_1.TabIndex = 26;
+            this.Wides_1.Text = "1";
+            this.Wides_1.UseVisualStyleBackColor = true;
+            this.Wides_1.Click += new System.EventHandler(this.Wides_1_Click);
             // 
             // Last_Man_Out_Table_Heading
             // 
             this.Last_Man_Out_Table_Heading.AutoSize = true;
             this.Last_Man_Out_Table_Heading.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Last_Man_Out_Table_Heading.Location = new System.Drawing.Point(852, 134);
+            this.Last_Man_Out_Table_Heading.Location = new System.Drawing.Point(842, 132);
             this.Last_Man_Out_Table_Heading.Name = "Last_Man_Out_Table_Heading";
             this.Last_Man_Out_Table_Heading.Size = new System.Drawing.Size(132, 24);
             this.Last_Man_Out_Table_Heading.TabIndex = 27;
             this.Last_Man_Out_Table_Heading.Text = "Last Man Out";
             this.Last_Man_Out_Table_Heading.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // Flow_Panel_Leg_Byes
+            // 
+            this.Flow_Panel_Leg_Byes.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.Flow_Panel_Leg_Byes.Controls.Add(this.Leg_Bye_Ok);
+            this.Flow_Panel_Leg_Byes.Controls.Add(this.Leg_Byes_Combo_Box);
+            this.Flow_Panel_Leg_Byes.Controls.Add(this.Leg_Bye_4);
+            this.Flow_Panel_Leg_Byes.Controls.Add(this.Leg_Bye_3);
+            this.Flow_Panel_Leg_Byes.Controls.Add(this.Leg_Bye_2);
+            this.Flow_Panel_Leg_Byes.Controls.Add(this.Leg_Bye_1);
+            this.Flow_Panel_Leg_Byes.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
+            this.Flow_Panel_Leg_Byes.Location = new System.Drawing.Point(548, 38);
+            this.Flow_Panel_Leg_Byes.Name = "Flow_Panel_Leg_Byes";
+            this.Flow_Panel_Leg_Byes.Size = new System.Drawing.Size(361, 32);
+            this.Flow_Panel_Leg_Byes.TabIndex = 30;
+            // 
+            // Leg_Bye_Ok
+            // 
+            this.Leg_Bye_Ok.Location = new System.Drawing.Point(313, 3);
+            this.Leg_Bye_Ok.Margin = new System.Windows.Forms.Padding(3, 3, 3, 100);
+            this.Leg_Bye_Ok.Name = "Leg_Bye_Ok";
+            this.Leg_Bye_Ok.Size = new System.Drawing.Size(41, 23);
+            this.Leg_Bye_Ok.TabIndex = 21;
+            this.Leg_Bye_Ok.Text = "Ok";
+            this.Leg_Bye_Ok.UseVisualStyleBackColor = true;
+            this.Leg_Bye_Ok.Click += new System.EventHandler(this.Leg_Bye_Ok_Click);
+            // 
+            // Leg_Byes_Combo_Box
+            // 
+            this.Leg_Byes_Combo_Box.FormattingEnabled = true;
+            this.Leg_Byes_Combo_Box.Items.AddRange(new object[] {
+            "5",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "20",
+            "21",
+            "22",
+            "23",
+            "24",
+            "25",
+            "26",
+            "27",
+            "28",
+            "29",
+            "30",
+            "31",
+            "32",
+            "33",
+            "34",
+            "35",
+            "36",
+            "37",
+            "38",
+            "39",
+            "40",
+            "41",
+            "42",
+            "43",
+            "44",
+            "45",
+            "46",
+            "47",
+            "48",
+            "49",
+            "50",
+            "51",
+            "52",
+            "53",
+            "54",
+            "55",
+            "56",
+            "57",
+            "58",
+            "59",
+            "60",
+            "61",
+            "62",
+            "63",
+            "64",
+            "65",
+            "66",
+            "67",
+            "68",
+            "69",
+            "70",
+            "71",
+            "72",
+            "73",
+            "74",
+            "75",
+            "76",
+            "77",
+            "78",
+            "79",
+            "80",
+            "81",
+            "82",
+            "83",
+            "84",
+            "85",
+            "86",
+            "87",
+            "88",
+            "89",
+            "90",
+            "91",
+            "92",
+            "93",
+            "94",
+            "95",
+            "96",
+            "97",
+            "98",
+            "99"});
+            this.Leg_Byes_Combo_Box.Location = new System.Drawing.Point(193, 3);
+            this.Leg_Byes_Combo_Box.Name = "Leg_Byes_Combo_Box";
+            this.Leg_Byes_Combo_Box.Size = new System.Drawing.Size(114, 21);
+            this.Leg_Byes_Combo_Box.TabIndex = 20;
+            this.Leg_Byes_Combo_Box.Text = "Other Score";
+            this.Other_Score_Tooltip.SetToolTip(this.Leg_Byes_Combo_Box, "Select alternative score from the list then click \'Ok\' button to update the score" +
+        ".");
+            // 
+            // Leg_Bye_4
+            // 
+            this.Leg_Bye_4.Location = new System.Drawing.Point(146, 3);
+            this.Leg_Bye_4.Name = "Leg_Bye_4";
+            this.Leg_Bye_4.Size = new System.Drawing.Size(41, 23);
+            this.Leg_Bye_4.TabIndex = 8;
+            this.Leg_Bye_4.Text = "4";
+            this.Leg_Bye_4.UseVisualStyleBackColor = true;
+            this.Leg_Bye_4.Click += new System.EventHandler(this.Leg_Bye_4_Click);
+            // 
+            // Leg_Bye_3
+            // 
+            this.Leg_Bye_3.Location = new System.Drawing.Point(99, 3);
+            this.Leg_Bye_3.Name = "Leg_Bye_3";
+            this.Leg_Bye_3.Size = new System.Drawing.Size(41, 23);
+            this.Leg_Bye_3.TabIndex = 7;
+            this.Leg_Bye_3.Text = "3";
+            this.Leg_Bye_3.UseVisualStyleBackColor = true;
+            this.Leg_Bye_3.Click += new System.EventHandler(this.Leg_Bye_3_Click);
+            // 
+            // Leg_Bye_2
+            // 
+            this.Leg_Bye_2.Location = new System.Drawing.Point(52, 3);
+            this.Leg_Bye_2.Name = "Leg_Bye_2";
+            this.Leg_Bye_2.Size = new System.Drawing.Size(41, 23);
+            this.Leg_Bye_2.TabIndex = 6;
+            this.Leg_Bye_2.Text = "2";
+            this.Leg_Bye_2.UseVisualStyleBackColor = true;
+            this.Leg_Bye_2.Click += new System.EventHandler(this.Leg_Bye_2_Click);
+            // 
+            // Leg_Bye_1
+            // 
+            this.Leg_Bye_1.Location = new System.Drawing.Point(5, 3);
+            this.Leg_Bye_1.Name = "Leg_Bye_1";
+            this.Leg_Bye_1.Size = new System.Drawing.Size(41, 23);
+            this.Leg_Bye_1.TabIndex = 5;
+            this.Leg_Bye_1.Text = "1";
+            this.Leg_Bye_1.UseVisualStyleBackColor = true;
+            this.Leg_Bye_1.Click += new System.EventHandler(this.Leg_Bye_1_Click);
+            // 
+            // Flow_Panel_Byes
+            // 
+            this.Flow_Panel_Byes.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.Flow_Panel_Byes.Controls.Add(this.Bye_Ok);
+            this.Flow_Panel_Byes.Controls.Add(this.Bye_Combo_Box);
+            this.Flow_Panel_Byes.Controls.Add(this.Bye_4);
+            this.Flow_Panel_Byes.Controls.Add(this.Bye_3);
+            this.Flow_Panel_Byes.Controls.Add(this.Bye_2);
+            this.Flow_Panel_Byes.Controls.Add(this.Bye_1);
+            this.Flow_Panel_Byes.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
+            this.Flow_Panel_Byes.Location = new System.Drawing.Point(548, 38);
+            this.Flow_Panel_Byes.Name = "Flow_Panel_Byes";
+            this.Flow_Panel_Byes.Size = new System.Drawing.Size(361, 32);
+            this.Flow_Panel_Byes.TabIndex = 29;
+            // 
+            // Bye_Ok
+            // 
+            this.Bye_Ok.Location = new System.Drawing.Point(313, 3);
+            this.Bye_Ok.Margin = new System.Windows.Forms.Padding(3, 3, 3, 100);
+            this.Bye_Ok.Name = "Bye_Ok";
+            this.Bye_Ok.Size = new System.Drawing.Size(41, 23);
+            this.Bye_Ok.TabIndex = 19;
+            this.Bye_Ok.Text = "Ok";
+            this.Bye_Ok.UseVisualStyleBackColor = true;
+            this.Bye_Ok.Click += new System.EventHandler(this.Bye_Ok_Click);
+            // 
+            // Bye_Combo_Box
+            // 
+            this.Bye_Combo_Box.FormattingEnabled = true;
+            this.Bye_Combo_Box.Items.AddRange(new object[] {
+            "5",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "20",
+            "21",
+            "22",
+            "23",
+            "24",
+            "25",
+            "26",
+            "27",
+            "28",
+            "29",
+            "30",
+            "31",
+            "32",
+            "33",
+            "34",
+            "35",
+            "36",
+            "37",
+            "38",
+            "39",
+            "40",
+            "41",
+            "42",
+            "43",
+            "44",
+            "45",
+            "46",
+            "47",
+            "48",
+            "49",
+            "50",
+            "51",
+            "52",
+            "53",
+            "54",
+            "55",
+            "56",
+            "57",
+            "58",
+            "59",
+            "60",
+            "61",
+            "62",
+            "63",
+            "64",
+            "65",
+            "66",
+            "67",
+            "68",
+            "69",
+            "70",
+            "71",
+            "72",
+            "73",
+            "74",
+            "75",
+            "76",
+            "77",
+            "78",
+            "79",
+            "80",
+            "81",
+            "82",
+            "83",
+            "84",
+            "85",
+            "86",
+            "87",
+            "88",
+            "89",
+            "90",
+            "91",
+            "92",
+            "93",
+            "94",
+            "95",
+            "96",
+            "97",
+            "98",
+            "99"});
+            this.Bye_Combo_Box.Location = new System.Drawing.Point(193, 3);
+            this.Bye_Combo_Box.Name = "Bye_Combo_Box";
+            this.Bye_Combo_Box.Size = new System.Drawing.Size(114, 21);
+            this.Bye_Combo_Box.TabIndex = 19;
+            this.Bye_Combo_Box.Text = "Other Score";
+            this.Other_Score_Tooltip.SetToolTip(this.Bye_Combo_Box, "Select alternative score from the list then click \'Ok\' button to update the score" +
+        ".");
+            // 
+            // Bye_4
+            // 
+            this.Bye_4.Location = new System.Drawing.Point(146, 3);
+            this.Bye_4.Name = "Bye_4";
+            this.Bye_4.Size = new System.Drawing.Size(41, 23);
+            this.Bye_4.TabIndex = 8;
+            this.Bye_4.Text = "4";
+            this.Bye_4.UseVisualStyleBackColor = true;
+            this.Bye_4.Click += new System.EventHandler(this.Bye_4_Click);
+            // 
+            // Bye_3
+            // 
+            this.Bye_3.Location = new System.Drawing.Point(99, 3);
+            this.Bye_3.Name = "Bye_3";
+            this.Bye_3.Size = new System.Drawing.Size(41, 23);
+            this.Bye_3.TabIndex = 7;
+            this.Bye_3.Text = "3";
+            this.Bye_3.UseVisualStyleBackColor = true;
+            this.Bye_3.Click += new System.EventHandler(this.Bye_3_Click);
+            // 
+            // Bye_2
+            // 
+            this.Bye_2.Location = new System.Drawing.Point(52, 3);
+            this.Bye_2.Name = "Bye_2";
+            this.Bye_2.Size = new System.Drawing.Size(41, 23);
+            this.Bye_2.TabIndex = 6;
+            this.Bye_2.Text = "2";
+            this.Bye_2.UseVisualStyleBackColor = true;
+            this.Bye_2.Click += new System.EventHandler(this.Bye_2_Click);
+            // 
+            // Bye_1
+            // 
+            this.Bye_1.Location = new System.Drawing.Point(5, 3);
+            this.Bye_1.Name = "Bye_1";
+            this.Bye_1.Size = new System.Drawing.Size(41, 23);
+            this.Bye_1.TabIndex = 5;
+            this.Bye_1.Text = "1";
+            this.Bye_1.UseVisualStyleBackColor = true;
+            this.Bye_1.Click += new System.EventHandler(this.Bye_1_Click);
+            // 
             // Last_Man_Out_Table
             // 
             this.Last_Man_Out_Table.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Inset;
             this.Last_Man_Out_Table.ColumnCount = 5;
+            this.Last_Man_Out_Table.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 29.45737F));
             this.Last_Man_Out_Table.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.Last_Man_Out_Table.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.Last_Man_Out_Table.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.Last_Man_Out_Table.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.Last_Man_Out_Table.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.Last_Man_Out_Table.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70.54263F));
             this.Last_Man_Out_Table.Controls.Add(this.Out_Batsman_Number_Value, 0, 1);
             this.Last_Man_Out_Table.Controls.Add(this.Out_Batsman_How_Out_Value, 0, 1);
             this.Last_Man_Out_Table.Controls.Add(this.Out_Batsman_Name, 0, 1);
@@ -652,12 +1911,12 @@
             this.Last_Man_Out_Table.Controls.Add(this.Out_Batsman_How_Out_Heading, 2, 0);
             this.Last_Man_Out_Table.Controls.Add(this.Out_Batsman_Name_Heading, 1, 0);
             this.Last_Man_Out_Table.Controls.Add(this.Out_Batsman_Number_Heading, 0, 0);
-            this.Last_Man_Out_Table.Location = new System.Drawing.Point(856, 186);
+            this.Last_Man_Out_Table.Location = new System.Drawing.Point(846, 186);
             this.Last_Man_Out_Table.Name = "Last_Man_Out_Table";
             this.Last_Man_Out_Table.RowCount = 2;
             this.Last_Man_Out_Table.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.Last_Man_Out_Table.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.Last_Man_Out_Table.Size = new System.Drawing.Size(400, 64);
+            this.Last_Man_Out_Table.Size = new System.Drawing.Size(410, 64);
             this.Last_Man_Out_Table.TabIndex = 26;
             // 
             // Out_Batsman_Number_Value
@@ -667,7 +1926,7 @@
             this.Out_Batsman_Number_Value.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Out_Batsman_Number_Value.Location = new System.Drawing.Point(5, 33);
             this.Out_Batsman_Number_Value.Name = "Out_Batsman_Number_Value";
-            this.Out_Batsman_Number_Value.Size = new System.Drawing.Size(19, 29);
+            this.Out_Batsman_Number_Value.Size = new System.Drawing.Size(24, 29);
             this.Out_Batsman_Number_Value.TabIndex = 9;
             this.Out_Batsman_Number_Value.Text = "-";
             this.Out_Batsman_Number_Value.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -677,7 +1936,7 @@
             this.Out_Batsman_How_Out_Value.AutoSize = true;
             this.Out_Batsman_How_Out_Value.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Out_Batsman_How_Out_Value.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Out_Batsman_How_Out_Value.Location = new System.Drawing.Point(176, 33);
+            this.Out_Batsman_How_Out_Value.Location = new System.Drawing.Point(181, 33);
             this.Out_Batsman_How_Out_Value.Name = "Out_Batsman_How_Out_Value";
             this.Out_Batsman_How_Out_Value.Size = new System.Drawing.Size(78, 29);
             this.Out_Batsman_How_Out_Value.TabIndex = 8;
@@ -689,7 +1948,7 @@
             this.Out_Batsman_Name.AutoSize = true;
             this.Out_Batsman_Name.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Out_Batsman_Name.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Out_Batsman_Name.Location = new System.Drawing.Point(32, 33);
+            this.Out_Batsman_Name.Location = new System.Drawing.Point(37, 33);
             this.Out_Batsman_Name.Name = "Out_Batsman_Name";
             this.Out_Batsman_Name.Size = new System.Drawing.Size(136, 29);
             this.Out_Batsman_Name.TabIndex = 7;
@@ -701,9 +1960,9 @@
             this.Out_Batsman_Total_Runs_Scored_Value.AutoSize = true;
             this.Out_Batsman_Total_Runs_Scored_Value.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Out_Batsman_Total_Runs_Scored_Value.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Out_Batsman_Total_Runs_Scored_Value.Location = new System.Drawing.Point(333, 33);
+            this.Out_Batsman_Total_Runs_Scored_Value.Location = new System.Drawing.Point(338, 33);
             this.Out_Batsman_Total_Runs_Scored_Value.Name = "Out_Batsman_Total_Runs_Scored_Value";
-            this.Out_Batsman_Total_Runs_Scored_Value.Size = new System.Drawing.Size(62, 29);
+            this.Out_Batsman_Total_Runs_Scored_Value.Size = new System.Drawing.Size(67, 29);
             this.Out_Batsman_Total_Runs_Scored_Value.TabIndex = 6;
             this.Out_Batsman_Total_Runs_Scored_Value.Text = "-";
             this.Out_Batsman_Total_Runs_Scored_Value.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -713,7 +1972,7 @@
             this.Out_Batsman_Bowler_Value.AutoSize = true;
             this.Out_Batsman_Bowler_Value.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Out_Batsman_Bowler_Value.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Out_Batsman_Bowler_Value.Location = new System.Drawing.Point(262, 33);
+            this.Out_Batsman_Bowler_Value.Location = new System.Drawing.Point(267, 33);
             this.Out_Batsman_Bowler_Value.Name = "Out_Batsman_Bowler_Value";
             this.Out_Batsman_Bowler_Value.Size = new System.Drawing.Size(63, 29);
             this.Out_Batsman_Bowler_Value.TabIndex = 5;
@@ -725,9 +1984,9 @@
             this.Out_Batsman_Runs_Scored_Heading.AutoSize = true;
             this.Out_Batsman_Runs_Scored_Heading.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Out_Batsman_Runs_Scored_Heading.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Out_Batsman_Runs_Scored_Heading.Location = new System.Drawing.Point(333, 2);
+            this.Out_Batsman_Runs_Scored_Heading.Location = new System.Drawing.Point(338, 2);
             this.Out_Batsman_Runs_Scored_Heading.Name = "Out_Batsman_Runs_Scored_Heading";
-            this.Out_Batsman_Runs_Scored_Heading.Size = new System.Drawing.Size(62, 29);
+            this.Out_Batsman_Runs_Scored_Heading.Size = new System.Drawing.Size(67, 29);
             this.Out_Batsman_Runs_Scored_Heading.TabIndex = 4;
             this.Out_Batsman_Runs_Scored_Heading.Text = "Runs";
             this.Out_Batsman_Runs_Scored_Heading.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -737,7 +1996,7 @@
             this.Out_Batsman_Bowler_Heading.AutoSize = true;
             this.Out_Batsman_Bowler_Heading.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Out_Batsman_Bowler_Heading.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Out_Batsman_Bowler_Heading.Location = new System.Drawing.Point(262, 2);
+            this.Out_Batsman_Bowler_Heading.Location = new System.Drawing.Point(267, 2);
             this.Out_Batsman_Bowler_Heading.Name = "Out_Batsman_Bowler_Heading";
             this.Out_Batsman_Bowler_Heading.Size = new System.Drawing.Size(63, 29);
             this.Out_Batsman_Bowler_Heading.TabIndex = 3;
@@ -749,7 +2008,7 @@
             this.Out_Batsman_How_Out_Heading.AutoSize = true;
             this.Out_Batsman_How_Out_Heading.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Out_Batsman_How_Out_Heading.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Out_Batsman_How_Out_Heading.Location = new System.Drawing.Point(176, 2);
+            this.Out_Batsman_How_Out_Heading.Location = new System.Drawing.Point(181, 2);
             this.Out_Batsman_How_Out_Heading.Name = "Out_Batsman_How_Out_Heading";
             this.Out_Batsman_How_Out_Heading.Size = new System.Drawing.Size(78, 29);
             this.Out_Batsman_How_Out_Heading.TabIndex = 2;
@@ -761,7 +2020,7 @@
             this.Out_Batsman_Name_Heading.AutoSize = true;
             this.Out_Batsman_Name_Heading.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Out_Batsman_Name_Heading.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Out_Batsman_Name_Heading.Location = new System.Drawing.Point(32, 2);
+            this.Out_Batsman_Name_Heading.Location = new System.Drawing.Point(37, 2);
             this.Out_Batsman_Name_Heading.Name = "Out_Batsman_Name_Heading";
             this.Out_Batsman_Name_Heading.Size = new System.Drawing.Size(136, 29);
             this.Out_Batsman_Name_Heading.TabIndex = 1;
@@ -775,7 +2034,7 @@
             this.Out_Batsman_Number_Heading.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Out_Batsman_Number_Heading.Location = new System.Drawing.Point(5, 2);
             this.Out_Batsman_Number_Heading.Name = "Out_Batsman_Number_Heading";
-            this.Out_Batsman_Number_Heading.Size = new System.Drawing.Size(19, 29);
+            this.Out_Batsman_Number_Heading.Size = new System.Drawing.Size(24, 29);
             this.Out_Batsman_Number_Heading.TabIndex = 0;
             this.Out_Batsman_Number_Heading.Text = "#";
             this.Out_Batsman_Number_Heading.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1697,15 +2956,14 @@
             // Scoring_Bottom_Information_Table
             // 
             this.Scoring_Bottom_Information_Table.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Inset;
-            this.Scoring_Bottom_Information_Table.ColumnCount = 4;
-            this.Scoring_Bottom_Information_Table.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 18.69085F));
-            this.Scoring_Bottom_Information_Table.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 24.92113F));
-            this.Scoring_Bottom_Information_Table.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 28.23344F));
-            this.Scoring_Bottom_Information_Table.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 27.99685F));
-            this.Scoring_Bottom_Information_Table.Controls.Add(this.Scoring_Venue_Info_Table, 1, 0);
-            this.Scoring_Bottom_Information_Table.Controls.Add(this.Scoring_Innings_Of_Table, 2, 0);
-            this.Scoring_Bottom_Information_Table.Controls.Add(this.Scoring_Match_Totals_Table, 3, 0);
-            this.Scoring_Bottom_Information_Table.Controls.Add(this.Scoring_Weather_Table, 0, 0);
+            this.Scoring_Bottom_Information_Table.ColumnCount = 3;
+            this.Scoring_Bottom_Information_Table.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 34.46372F));
+            this.Scoring_Bottom_Information_Table.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30.99369F));
+            this.Scoring_Bottom_Information_Table.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 34.49952F));
+            this.Scoring_Bottom_Information_Table.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.Scoring_Bottom_Information_Table.Controls.Add(this.Scoring_Team_Names_Table, 0, 0);
+            this.Scoring_Bottom_Information_Table.Controls.Add(this.Scoring_Innings_Of_Table, 1, 0);
+            this.Scoring_Bottom_Information_Table.Controls.Add(this.Scoring_Match_Totals_Table, 2, 0);
             this.Scoring_Bottom_Information_Table.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.Scoring_Bottom_Information_Table.Location = new System.Drawing.Point(3, 642);
             this.Scoring_Bottom_Information_Table.Name = "Scoring_Bottom_Information_Table";
@@ -1714,44 +2972,58 @@
             this.Scoring_Bottom_Information_Table.Size = new System.Drawing.Size(1270, 41);
             this.Scoring_Bottom_Information_Table.TabIndex = 19;
             // 
-            // Scoring_Venue_Info_Table
+            // Scoring_Team_Names_Table
             // 
-            this.Scoring_Venue_Info_Table.ColumnCount = 2;
-            this.Scoring_Venue_Info_Table.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 21.75325F));
-            this.Scoring_Venue_Info_Table.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 78.24675F));
-            this.Scoring_Venue_Info_Table.Controls.Add(this.Scoring_Venue_Value, 1, 0);
-            this.Scoring_Venue_Info_Table.Controls.Add(this.Scoring_Venue_Label, 0, 0);
-            this.Scoring_Venue_Info_Table.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Scoring_Venue_Info_Table.Location = new System.Drawing.Point(242, 5);
-            this.Scoring_Venue_Info_Table.Name = "Scoring_Venue_Info_Table";
-            this.Scoring_Venue_Info_Table.RowCount = 1;
-            this.Scoring_Venue_Info_Table.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.Scoring_Venue_Info_Table.Size = new System.Drawing.Size(308, 31);
-            this.Scoring_Venue_Info_Table.TabIndex = 0;
+            this.Scoring_Team_Names_Table.ColumnCount = 3;
+            this.Scoring_Team_Names_Table.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 46.23656F));
+            this.Scoring_Team_Names_Table.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.Scoring_Team_Names_Table.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 53.76344F));
+            this.Scoring_Team_Names_Table.Controls.Add(this.Scoring_Home_Team_Name_Value, 0, 0);
+            this.Scoring_Team_Names_Table.Controls.Add(this.Scoring_Vs_Label, 1, 0);
+            this.Scoring_Team_Names_Table.Controls.Add(this.Scoring_Away_Team_Name_Value, 2, 0);
+            this.Scoring_Team_Names_Table.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Scoring_Team_Names_Table.Location = new System.Drawing.Point(5, 5);
+            this.Scoring_Team_Names_Table.Name = "Scoring_Team_Names_Table";
+            this.Scoring_Team_Names_Table.RowCount = 1;
+            this.Scoring_Team_Names_Table.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.Scoring_Team_Names_Table.Size = new System.Drawing.Size(429, 31);
+            this.Scoring_Team_Names_Table.TabIndex = 37;
             // 
-            // Scoring_Venue_Value
+            // Scoring_Home_Team_Name_Value
             // 
-            this.Scoring_Venue_Value.AutoSize = true;
-            this.Scoring_Venue_Value.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Scoring_Venue_Value.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Scoring_Venue_Value.Location = new System.Drawing.Point(70, 0);
-            this.Scoring_Venue_Value.Name = "Scoring_Venue_Value";
-            this.Scoring_Venue_Value.Size = new System.Drawing.Size(235, 31);
-            this.Scoring_Venue_Value.TabIndex = 19;
-            this.Scoring_Venue_Value.Text = "Ground Name";
-            this.Scoring_Venue_Value.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Scoring_Home_Team_Name_Value.AutoSize = true;
+            this.Scoring_Home_Team_Name_Value.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Scoring_Home_Team_Name_Value.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Scoring_Home_Team_Name_Value.Location = new System.Drawing.Point(3, 0);
+            this.Scoring_Home_Team_Name_Value.Name = "Scoring_Home_Team_Name_Value";
+            this.Scoring_Home_Team_Name_Value.Size = new System.Drawing.Size(178, 31);
+            this.Scoring_Home_Team_Name_Value.TabIndex = 1;
+            this.Scoring_Home_Team_Name_Value.Text = "Home Team";
+            this.Scoring_Home_Team_Name_Value.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // Scoring_Venue_Label
+            // Scoring_Vs_Label
             // 
-            this.Scoring_Venue_Label.AutoSize = true;
-            this.Scoring_Venue_Label.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Scoring_Venue_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Scoring_Venue_Label.Location = new System.Drawing.Point(3, 0);
-            this.Scoring_Venue_Label.Name = "Scoring_Venue_Label";
-            this.Scoring_Venue_Label.Size = new System.Drawing.Size(61, 31);
-            this.Scoring_Venue_Label.TabIndex = 4;
-            this.Scoring_Venue_Label.Text = "Venue:";
-            this.Scoring_Venue_Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Scoring_Vs_Label.AutoSize = true;
+            this.Scoring_Vs_Label.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Scoring_Vs_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Scoring_Vs_Label.Location = new System.Drawing.Point(187, 0);
+            this.Scoring_Vs_Label.Name = "Scoring_Vs_Label";
+            this.Scoring_Vs_Label.Size = new System.Drawing.Size(25, 31);
+            this.Scoring_Vs_Label.TabIndex = 2;
+            this.Scoring_Vs_Label.Text = "vs";
+            this.Scoring_Vs_Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // Scoring_Away_Team_Name_Value
+            // 
+            this.Scoring_Away_Team_Name_Value.AutoSize = true;
+            this.Scoring_Away_Team_Name_Value.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Scoring_Away_Team_Name_Value.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Scoring_Away_Team_Name_Value.Location = new System.Drawing.Point(218, 0);
+            this.Scoring_Away_Team_Name_Value.Name = "Scoring_Away_Team_Name_Value";
+            this.Scoring_Away_Team_Name_Value.Size = new System.Drawing.Size(208, 31);
+            this.Scoring_Away_Team_Name_Value.TabIndex = 3;
+            this.Scoring_Away_Team_Name_Value.Text = "Away Team";
+            this.Scoring_Away_Team_Name_Value.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Scoring_Innings_Of_Table
             // 
@@ -1761,11 +3033,11 @@
             this.Scoring_Innings_Of_Table.Controls.Add(this.Scoring_Innings_Of_Label, 0, 0);
             this.Scoring_Innings_Of_Table.Controls.Add(this.Scoring_Innings_Of_Value, 1, 0);
             this.Scoring_Innings_Of_Table.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Scoring_Innings_Of_Table.Location = new System.Drawing.Point(558, 5);
+            this.Scoring_Innings_Of_Table.Location = new System.Drawing.Point(442, 5);
             this.Scoring_Innings_Of_Table.Name = "Scoring_Innings_Of_Table";
             this.Scoring_Innings_Of_Table.RowCount = 1;
             this.Scoring_Innings_Of_Table.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.Scoring_Innings_Of_Table.Size = new System.Drawing.Size(350, 31);
+            this.Scoring_Innings_Of_Table.Size = new System.Drawing.Size(385, 31);
             this.Scoring_Innings_Of_Table.TabIndex = 1;
             // 
             // Scoring_Innings_Of_Label
@@ -1775,7 +3047,7 @@
             this.Scoring_Innings_Of_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Scoring_Innings_Of_Label.Location = new System.Drawing.Point(3, 0);
             this.Scoring_Innings_Of_Label.Name = "Scoring_Innings_Of_Label";
-            this.Scoring_Innings_Of_Label.Size = new System.Drawing.Size(89, 31);
+            this.Scoring_Innings_Of_Label.Size = new System.Drawing.Size(99, 31);
             this.Scoring_Innings_Of_Label.TabIndex = 0;
             this.Scoring_Innings_Of_Label.Text = "Innings Of:";
             this.Scoring_Innings_Of_Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1785,9 +3057,9 @@
             this.Scoring_Innings_Of_Value.AutoSize = true;
             this.Scoring_Innings_Of_Value.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Scoring_Innings_Of_Value.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Scoring_Innings_Of_Value.Location = new System.Drawing.Point(98, 0);
+            this.Scoring_Innings_Of_Value.Location = new System.Drawing.Point(108, 0);
             this.Scoring_Innings_Of_Value.Name = "Scoring_Innings_Of_Value";
-            this.Scoring_Innings_Of_Value.Size = new System.Drawing.Size(249, 31);
+            this.Scoring_Innings_Of_Value.Size = new System.Drawing.Size(274, 31);
             this.Scoring_Innings_Of_Value.TabIndex = 1;
             this.Scoring_Innings_Of_Value.Text = "Batting Side Name";
             this.Scoring_Innings_Of_Value.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1810,11 +3082,11 @@
             this.Scoring_Match_Totals_Table.Controls.Add(this.Scoring_Total_Value, 1, 0);
             this.Scoring_Match_Totals_Table.Controls.Add(this.Scoring_Total_Label, 0, 0);
             this.Scoring_Match_Totals_Table.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Scoring_Match_Totals_Table.Location = new System.Drawing.Point(916, 5);
+            this.Scoring_Match_Totals_Table.Location = new System.Drawing.Point(835, 5);
             this.Scoring_Match_Totals_Table.Name = "Scoring_Match_Totals_Table";
             this.Scoring_Match_Totals_Table.RowCount = 1;
             this.Scoring_Match_Totals_Table.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.Scoring_Match_Totals_Table.Size = new System.Drawing.Size(349, 31);
+            this.Scoring_Match_Totals_Table.Size = new System.Drawing.Size(430, 31);
             this.Scoring_Match_Totals_Table.TabIndex = 2;
             // 
             // Scoring_Total_Overs_Label
@@ -1822,9 +3094,9 @@
             this.Scoring_Total_Overs_Label.AutoSize = true;
             this.Scoring_Total_Overs_Label.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Scoring_Total_Overs_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Scoring_Total_Overs_Label.Location = new System.Drawing.Point(291, 0);
+            this.Scoring_Total_Overs_Label.Location = new System.Drawing.Point(344, 0);
             this.Scoring_Total_Overs_Label.Name = "Scoring_Total_Overs_Label";
-            this.Scoring_Total_Overs_Label.Size = new System.Drawing.Size(55, 31);
+            this.Scoring_Total_Overs_Label.Size = new System.Drawing.Size(83, 31);
             this.Scoring_Total_Overs_Label.TabIndex = 6;
             this.Scoring_Total_Overs_Label.Text = "Overs";
             this.Scoring_Total_Overs_Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1834,9 +3106,9 @@
             this.Scoring_Total_Overs_Value.AutoSize = true;
             this.Scoring_Total_Overs_Value.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Scoring_Total_Overs_Value.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Scoring_Total_Overs_Value.Location = new System.Drawing.Point(243, 0);
+            this.Scoring_Total_Overs_Value.Location = new System.Drawing.Point(275, 0);
             this.Scoring_Total_Overs_Value.Name = "Scoring_Total_Overs_Value";
-            this.Scoring_Total_Overs_Value.Size = new System.Drawing.Size(42, 31);
+            this.Scoring_Total_Overs_Value.Size = new System.Drawing.Size(63, 31);
             this.Scoring_Total_Overs_Value.TabIndex = 5;
             this.Scoring_Total_Overs_Value.Text = "25.9";
             this.Scoring_Total_Overs_Value.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1846,7 +3118,7 @@
             this.Scoring_Wickets_In_Label.AutoSize = true;
             this.Scoring_Wickets_In_Label.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Scoring_Wickets_In_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Scoring_Wickets_In_Label.Location = new System.Drawing.Point(172, 0);
+            this.Scoring_Wickets_In_Label.Location = new System.Drawing.Point(204, 0);
             this.Scoring_Wickets_In_Label.Name = "Scoring_Wickets_In_Label";
             this.Scoring_Wickets_In_Label.Size = new System.Drawing.Size(65, 31);
             this.Scoring_Wickets_In_Label.TabIndex = 4;
@@ -1858,9 +3130,9 @@
             this.Scoring_Wickets_Down_Value.AutoSize = true;
             this.Scoring_Wickets_Down_Value.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Scoring_Wickets_Down_Value.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Scoring_Wickets_Down_Value.Location = new System.Drawing.Point(141, 0);
+            this.Scoring_Wickets_Down_Value.Location = new System.Drawing.Point(159, 0);
             this.Scoring_Wickets_Down_Value.Name = "Scoring_Wickets_Down_Value";
-            this.Scoring_Wickets_Down_Value.Size = new System.Drawing.Size(25, 31);
+            this.Scoring_Wickets_Down_Value.Size = new System.Drawing.Size(39, 31);
             this.Scoring_Wickets_Down_Value.TabIndex = 3;
             this.Scoring_Wickets_Down_Value.Text = "10";
             this.Scoring_Wickets_Down_Value.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1870,7 +3142,7 @@
             this.Scoring_Wickets_Down_Label.AutoSize = true;
             this.Scoring_Wickets_Down_Label.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Scoring_Wickets_Down_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Scoring_Wickets_Down_Label.Location = new System.Drawing.Point(101, 0);
+            this.Scoring_Wickets_Down_Label.Location = new System.Drawing.Point(119, 0);
             this.Scoring_Wickets_Down_Label.Name = "Scoring_Wickets_Down_Label";
             this.Scoring_Wickets_Down_Label.Size = new System.Drawing.Size(34, 31);
             this.Scoring_Wickets_Down_Label.TabIndex = 2;
@@ -1884,7 +3156,7 @@
             this.Scoring_Total_Value.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Scoring_Total_Value.Location = new System.Drawing.Point(60, 0);
             this.Scoring_Total_Value.Name = "Scoring_Total_Value";
-            this.Scoring_Total_Value.Size = new System.Drawing.Size(35, 31);
+            this.Scoring_Total_Value.Size = new System.Drawing.Size(53, 31);
             this.Scoring_Total_Value.TabIndex = 1;
             this.Scoring_Total_Value.Text = "153";
             this.Scoring_Total_Value.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1901,85 +3173,29 @@
             this.Scoring_Total_Label.Text = "Total:";
             this.Scoring_Total_Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // Scoring_Weather_Table
-            // 
-            this.Scoring_Weather_Table.ColumnCount = 2;
-            this.Scoring_Weather_Table.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 36.24454F));
-            this.Scoring_Weather_Table.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 63.75546F));
-            this.Scoring_Weather_Table.Controls.Add(this.Scoring_Weather_Label, 0, 0);
-            this.Scoring_Weather_Table.Controls.Add(this.Scoring_Weather_Value, 1, 0);
-            this.Scoring_Weather_Table.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Scoring_Weather_Table.Location = new System.Drawing.Point(5, 5);
-            this.Scoring_Weather_Table.Name = "Scoring_Weather_Table";
-            this.Scoring_Weather_Table.RowCount = 1;
-            this.Scoring_Weather_Table.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.Scoring_Weather_Table.Size = new System.Drawing.Size(229, 31);
-            this.Scoring_Weather_Table.TabIndex = 3;
-            // 
-            // Scoring_Weather_Label
-            // 
-            this.Scoring_Weather_Label.AutoSize = true;
-            this.Scoring_Weather_Label.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Scoring_Weather_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Scoring_Weather_Label.Location = new System.Drawing.Point(3, 0);
-            this.Scoring_Weather_Label.Name = "Scoring_Weather_Label";
-            this.Scoring_Weather_Label.Size = new System.Drawing.Size(76, 31);
-            this.Scoring_Weather_Label.TabIndex = 0;
-            this.Scoring_Weather_Label.Text = "Weather:";
-            this.Scoring_Weather_Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // Scoring_Weather_Value
-            // 
-            this.Scoring_Weather_Value.AutoSize = true;
-            this.Scoring_Weather_Value.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Scoring_Weather_Value.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Scoring_Weather_Value.Location = new System.Drawing.Point(85, 0);
-            this.Scoring_Weather_Value.Name = "Scoring_Weather_Value";
-            this.Scoring_Weather_Value.Size = new System.Drawing.Size(141, 31);
-            this.Scoring_Weather_Value.TabIndex = 1;
-            this.Scoring_Weather_Value.Text = "Weather";
-            this.Scoring_Weather_Value.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // Penalty_Button
-            // 
-            this.Penalty_Button.Location = new System.Drawing.Point(665, 68);
-            this.Penalty_Button.Name = "Penalty_Button";
-            this.Penalty_Button.Size = new System.Drawing.Size(41, 23);
-            this.Penalty_Button.TabIndex = 17;
-            this.Penalty_Button.Text = "P";
-            this.Penalty_Button.UseVisualStyleBackColor = true;
-            // 
-            // Zero_Button
-            // 
-            this.Zero_Button.Location = new System.Drawing.Point(618, 68);
-            this.Zero_Button.Name = "Zero_Button";
-            this.Zero_Button.Size = new System.Drawing.Size(41, 23);
-            this.Zero_Button.TabIndex = 0;
-            this.Zero_Button.Text = "0";
-            this.Zero_Button.UseVisualStyleBackColor = true;
-            // 
             // Scoring_Top_Options_Table
             // 
             this.Scoring_Top_Options_Table.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Inset;
-            this.Scoring_Top_Options_Table.ColumnCount = 3;
-            this.Scoring_Top_Options_Table.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 160F));
-            this.Scoring_Top_Options_Table.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 89.07168F));
-            this.Scoring_Top_Options_Table.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 708F));
-            this.Scoring_Top_Options_Table.Controls.Add(this.Score_Buttons_Flow, 2, 0);
-            this.Scoring_Top_Options_Table.Controls.Add(this.Scoring_Team_Names_Table, 1, 0);
+            this.Scoring_Top_Options_Table.ColumnCount = 4;
+            this.Scoring_Top_Options_Table.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 167F));
+            this.Scoring_Top_Options_Table.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 733F));
+            this.Scoring_Top_Options_Table.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.Scoring_Top_Options_Table.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.Scoring_Top_Options_Table.Controls.Add(this.Score_Buttons_Flow, 1, 0);
             this.Scoring_Top_Options_Table.Controls.Add(this.Scoring_Date_Table, 0, 0);
+            this.Scoring_Top_Options_Table.Controls.Add(this.Flow_Panel_Other_Score, 2, 0);
+            this.Scoring_Top_Options_Table.Controls.Add(this.flowLayoutPanel1, 3, 0);
             this.Scoring_Top_Options_Table.Dock = System.Windows.Forms.DockStyle.Top;
             this.Scoring_Top_Options_Table.Location = new System.Drawing.Point(3, 3);
             this.Scoring_Top_Options_Table.Name = "Scoring_Top_Options_Table";
             this.Scoring_Top_Options_Table.RowCount = 1;
-            this.Scoring_Top_Options_Table.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.Scoring_Top_Options_Table.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.Scoring_Top_Options_Table.Size = new System.Drawing.Size(1270, 35);
             this.Scoring_Top_Options_Table.TabIndex = 16;
             // 
             // Score_Buttons_Flow
             // 
-            this.Score_Buttons_Flow.Controls.Add(this.Ok_Button);
-            this.Score_Buttons_Flow.Controls.Add(this.Misc_Score_Options);
+            this.Score_Buttons_Flow.Controls.Add(this.Penalty_Button);
             this.Score_Buttons_Flow.Controls.Add(this.Wicket_Button);
             this.Score_Buttons_Flow.Controls.Add(this.No_Ball_Button);
             this.Score_Buttons_Flow.Controls.Add(this.Wide_Button);
@@ -1993,37 +3209,26 @@
             this.Score_Buttons_Flow.Controls.Add(this.Dot_Button);
             this.Score_Buttons_Flow.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Score_Buttons_Flow.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
-            this.Score_Buttons_Flow.Location = new System.Drawing.Point(563, 5);
+            this.Score_Buttons_Flow.Location = new System.Drawing.Point(174, 5);
             this.Score_Buttons_Flow.Name = "Score_Buttons_Flow";
-            this.Score_Buttons_Flow.Size = new System.Drawing.Size(702, 25);
+            this.Score_Buttons_Flow.Size = new System.Drawing.Size(727, 25);
             this.Score_Buttons_Flow.TabIndex = 0;
             // 
-            // Ok_Button
+            // Penalty_Button
             // 
-            this.Ok_Button.Location = new System.Drawing.Point(658, 3);
-            this.Ok_Button.Margin = new System.Windows.Forms.Padding(3, 3, 3, 100);
-            this.Ok_Button.Name = "Ok_Button";
-            this.Ok_Button.Size = new System.Drawing.Size(41, 23);
-            this.Ok_Button.TabIndex = 18;
-            this.Ok_Button.Text = "Ok";
-            this.Ok_Button.UseVisualStyleBackColor = true;
-            this.Ok_Button.Click += new System.EventHandler(this.Ok_Button_Click);
-            // 
-            // Misc_Score_Options
-            // 
-            this.Misc_Score_Options.FormattingEnabled = true;
-            this.Misc_Score_Options.Location = new System.Drawing.Point(538, 3);
-            this.Misc_Score_Options.Name = "Misc_Score_Options";
-            this.Misc_Score_Options.Size = new System.Drawing.Size(114, 21);
-            this.Misc_Score_Options.TabIndex = 17;
-            this.Misc_Score_Options.Text = "Other Score";
-            this.Other_Score_Tooltip.SetToolTip(this.Misc_Score_Options, "Select alternative score from the list then click \'Ok\' button to update the score" +
-        ".");
+            this.Penalty_Button.Location = new System.Drawing.Point(683, 1);
+            this.Penalty_Button.Margin = new System.Windows.Forms.Padding(3, 1, 3, 3);
+            this.Penalty_Button.Name = "Penalty_Button";
+            this.Penalty_Button.Size = new System.Drawing.Size(41, 23);
+            this.Penalty_Button.TabIndex = 17;
+            this.Penalty_Button.Text = "P";
+            this.Penalty_Button.UseVisualStyleBackColor = true;
+            this.Penalty_Button.Click += new System.EventHandler(this.Penalty_Button_Click);
             // 
             // Wicket_Button
             // 
-            this.Wicket_Button.Location = new System.Drawing.Point(491, 3);
-            this.Wicket_Button.Margin = new System.Windows.Forms.Padding(3, 3, 3, 100);
+            this.Wicket_Button.Location = new System.Drawing.Point(636, 2);
+            this.Wicket_Button.Margin = new System.Windows.Forms.Padding(3, 2, 3, 3);
             this.Wicket_Button.Name = "Wicket_Button";
             this.Wicket_Button.Size = new System.Drawing.Size(41, 23);
             this.Wicket_Button.TabIndex = 9;
@@ -2033,8 +3238,8 @@
             // 
             // No_Ball_Button
             // 
-            this.No_Ball_Button.Location = new System.Drawing.Point(444, 3);
-            this.No_Ball_Button.Margin = new System.Windows.Forms.Padding(3, 3, 3, 100);
+            this.No_Ball_Button.Location = new System.Drawing.Point(589, 2);
+            this.No_Ball_Button.Margin = new System.Windows.Forms.Padding(3, 2, 3, 3);
             this.No_Ball_Button.Name = "No_Ball_Button";
             this.No_Ball_Button.Size = new System.Drawing.Size(41, 23);
             this.No_Ball_Button.TabIndex = 5;
@@ -2044,8 +3249,8 @@
             // 
             // Wide_Button
             // 
-            this.Wide_Button.Location = new System.Drawing.Point(397, 3);
-            this.Wide_Button.Margin = new System.Windows.Forms.Padding(3, 3, 3, 100);
+            this.Wide_Button.Location = new System.Drawing.Point(542, 2);
+            this.Wide_Button.Margin = new System.Windows.Forms.Padding(3, 2, 3, 3);
             this.Wide_Button.Name = "Wide_Button";
             this.Wide_Button.Size = new System.Drawing.Size(41, 23);
             this.Wide_Button.TabIndex = 6;
@@ -2055,8 +3260,8 @@
             // 
             // Leg_Bye_Button
             // 
-            this.Leg_Bye_Button.Location = new System.Drawing.Point(350, 3);
-            this.Leg_Bye_Button.Margin = new System.Windows.Forms.Padding(3, 3, 3, 100);
+            this.Leg_Bye_Button.Location = new System.Drawing.Point(495, 2);
+            this.Leg_Bye_Button.Margin = new System.Windows.Forms.Padding(3, 2, 3, 3);
             this.Leg_Bye_Button.Name = "Leg_Bye_Button";
             this.Leg_Bye_Button.Size = new System.Drawing.Size(41, 23);
             this.Leg_Bye_Button.TabIndex = 7;
@@ -2066,8 +3271,8 @@
             // 
             // Bye_Button
             // 
-            this.Bye_Button.Location = new System.Drawing.Point(303, 3);
-            this.Bye_Button.Margin = new System.Windows.Forms.Padding(3, 3, 3, 100);
+            this.Bye_Button.Location = new System.Drawing.Point(448, 2);
+            this.Bye_Button.Margin = new System.Windows.Forms.Padding(3, 2, 3, 3);
             this.Bye_Button.Name = "Bye_Button";
             this.Bye_Button.Size = new System.Drawing.Size(41, 23);
             this.Bye_Button.TabIndex = 8;
@@ -2077,8 +3282,8 @@
             // 
             // Six_Button
             // 
-            this.Six_Button.Location = new System.Drawing.Point(256, 3);
-            this.Six_Button.Margin = new System.Windows.Forms.Padding(3, 3, 3, 100);
+            this.Six_Button.Location = new System.Drawing.Point(401, 2);
+            this.Six_Button.Margin = new System.Windows.Forms.Padding(3, 2, 3, 3);
             this.Six_Button.Name = "Six_Button";
             this.Six_Button.Size = new System.Drawing.Size(41, 23);
             this.Six_Button.TabIndex = 10;
@@ -2088,8 +3293,8 @@
             // 
             // Four_Button
             // 
-            this.Four_Button.Location = new System.Drawing.Point(209, 3);
-            this.Four_Button.Margin = new System.Windows.Forms.Padding(3, 3, 3, 100);
+            this.Four_Button.Location = new System.Drawing.Point(354, 2);
+            this.Four_Button.Margin = new System.Windows.Forms.Padding(3, 2, 3, 3);
             this.Four_Button.Name = "Four_Button";
             this.Four_Button.Size = new System.Drawing.Size(41, 23);
             this.Four_Button.TabIndex = 11;
@@ -2099,8 +3304,8 @@
             // 
             // Three_Button
             // 
-            this.Three_Button.Location = new System.Drawing.Point(162, 3);
-            this.Three_Button.Margin = new System.Windows.Forms.Padding(3, 3, 3, 100);
+            this.Three_Button.Location = new System.Drawing.Point(307, 2);
+            this.Three_Button.Margin = new System.Windows.Forms.Padding(3, 2, 3, 3);
             this.Three_Button.Name = "Three_Button";
             this.Three_Button.Size = new System.Drawing.Size(41, 23);
             this.Three_Button.TabIndex = 12;
@@ -2110,8 +3315,8 @@
             // 
             // Two_Button
             // 
-            this.Two_Button.Location = new System.Drawing.Point(115, 3);
-            this.Two_Button.Margin = new System.Windows.Forms.Padding(3, 3, 3, 100);
+            this.Two_Button.Location = new System.Drawing.Point(260, 2);
+            this.Two_Button.Margin = new System.Windows.Forms.Padding(3, 2, 3, 3);
             this.Two_Button.Name = "Two_Button";
             this.Two_Button.Size = new System.Drawing.Size(41, 23);
             this.Two_Button.TabIndex = 13;
@@ -2121,8 +3326,8 @@
             // 
             // One_Button
             // 
-            this.One_Button.Location = new System.Drawing.Point(68, 3);
-            this.One_Button.Margin = new System.Windows.Forms.Padding(3, 3, 3, 100);
+            this.One_Button.Location = new System.Drawing.Point(213, 2);
+            this.One_Button.Margin = new System.Windows.Forms.Padding(3, 2, 3, 3);
             this.One_Button.Name = "One_Button";
             this.One_Button.Size = new System.Drawing.Size(41, 23);
             this.One_Button.TabIndex = 14;
@@ -2133,67 +3338,14 @@
             // Dot_Button
             // 
             this.Dot_Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Dot_Button.Location = new System.Drawing.Point(21, 3);
-            this.Dot_Button.Margin = new System.Windows.Forms.Padding(3, 3, 3, 100);
+            this.Dot_Button.Location = new System.Drawing.Point(166, 2);
+            this.Dot_Button.Margin = new System.Windows.Forms.Padding(3, 2, 3, 3);
             this.Dot_Button.Name = "Dot_Button";
             this.Dot_Button.Size = new System.Drawing.Size(41, 23);
             this.Dot_Button.TabIndex = 15;
             this.Dot_Button.Text = "Dot";
             this.Dot_Button.UseVisualStyleBackColor = true;
             this.Dot_Button.Click += new System.EventHandler(this.Dot_Button_Click);
-            // 
-            // Scoring_Team_Names_Table
-            // 
-            this.Scoring_Team_Names_Table.ColumnCount = 3;
-            this.Scoring_Team_Names_Table.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 46.23656F));
-            this.Scoring_Team_Names_Table.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.Scoring_Team_Names_Table.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 53.76344F));
-            this.Scoring_Team_Names_Table.Controls.Add(this.Scoring_Home_Team_Name_Value, 0, 0);
-            this.Scoring_Team_Names_Table.Controls.Add(this.Scoring_Vs_Label, 1, 0);
-            this.Scoring_Team_Names_Table.Controls.Add(this.Scoring_Away_Team_Name_Value, 2, 0);
-            this.Scoring_Team_Names_Table.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Scoring_Team_Names_Table.Location = new System.Drawing.Point(167, 5);
-            this.Scoring_Team_Names_Table.Name = "Scoring_Team_Names_Table";
-            this.Scoring_Team_Names_Table.RowCount = 1;
-            this.Scoring_Team_Names_Table.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.Scoring_Team_Names_Table.Size = new System.Drawing.Size(388, 25);
-            this.Scoring_Team_Names_Table.TabIndex = 1;
-            // 
-            // Scoring_Home_Team_Name_Value
-            // 
-            this.Scoring_Home_Team_Name_Value.AutoSize = true;
-            this.Scoring_Home_Team_Name_Value.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Scoring_Home_Team_Name_Value.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Scoring_Home_Team_Name_Value.Location = new System.Drawing.Point(3, 0);
-            this.Scoring_Home_Team_Name_Value.Name = "Scoring_Home_Team_Name_Value";
-            this.Scoring_Home_Team_Name_Value.Size = new System.Drawing.Size(159, 25);
-            this.Scoring_Home_Team_Name_Value.TabIndex = 1;
-            this.Scoring_Home_Team_Name_Value.Text = "Home Team";
-            this.Scoring_Home_Team_Name_Value.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // Scoring_Vs_Label
-            // 
-            this.Scoring_Vs_Label.AutoSize = true;
-            this.Scoring_Vs_Label.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Scoring_Vs_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Scoring_Vs_Label.Location = new System.Drawing.Point(168, 0);
-            this.Scoring_Vs_Label.Name = "Scoring_Vs_Label";
-            this.Scoring_Vs_Label.Size = new System.Drawing.Size(25, 25);
-            this.Scoring_Vs_Label.TabIndex = 2;
-            this.Scoring_Vs_Label.Text = "vs";
-            this.Scoring_Vs_Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // Scoring_Away_Team_Name_Value
-            // 
-            this.Scoring_Away_Team_Name_Value.AutoSize = true;
-            this.Scoring_Away_Team_Name_Value.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Scoring_Away_Team_Name_Value.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Scoring_Away_Team_Name_Value.Location = new System.Drawing.Point(199, 0);
-            this.Scoring_Away_Team_Name_Value.Name = "Scoring_Away_Team_Name_Value";
-            this.Scoring_Away_Team_Name_Value.Size = new System.Drawing.Size(186, 25);
-            this.Scoring_Away_Team_Name_Value.TabIndex = 3;
-            this.Scoring_Away_Team_Name_Value.Text = "Away Team";
-            this.Scoring_Away_Team_Name_Value.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Scoring_Date_Table
             // 
@@ -2233,41 +3385,168 @@
             this.Scoring_Date_Value.Text = "03/05/2015";
             this.Scoring_Date_Value.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // Nine_Button
+            // Flow_Panel_Other_Score
             // 
-            this.Nine_Button.Location = new System.Drawing.Point(571, 68);
-            this.Nine_Button.Name = "Nine_Button";
-            this.Nine_Button.Size = new System.Drawing.Size(41, 23);
-            this.Nine_Button.TabIndex = 1;
-            this.Nine_Button.Text = "9";
-            this.Nine_Button.UseVisualStyleBackColor = true;
+            this.Flow_Panel_Other_Score.Controls.Add(this.Ok_Button);
+            this.Flow_Panel_Other_Score.Controls.Add(this.Other_Score_Combo_Box);
+            this.Flow_Panel_Other_Score.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Flow_Panel_Other_Score.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
+            this.Flow_Panel_Other_Score.Location = new System.Drawing.Point(909, 5);
+            this.Flow_Panel_Other_Score.Name = "Flow_Panel_Other_Score";
+            this.Flow_Panel_Other_Score.Size = new System.Drawing.Size(171, 25);
+            this.Flow_Panel_Other_Score.TabIndex = 3;
             // 
-            // Eight_Button
+            // Ok_Button
             // 
-            this.Eight_Button.Location = new System.Drawing.Point(524, 68);
-            this.Eight_Button.Name = "Eight_Button";
-            this.Eight_Button.Size = new System.Drawing.Size(41, 23);
-            this.Eight_Button.TabIndex = 2;
-            this.Eight_Button.Text = "8";
-            this.Eight_Button.UseVisualStyleBackColor = true;
+            this.Ok_Button.Location = new System.Drawing.Point(127, 1);
+            this.Ok_Button.Margin = new System.Windows.Forms.Padding(3, 1, 3, 3);
+            this.Ok_Button.Name = "Ok_Button";
+            this.Ok_Button.Size = new System.Drawing.Size(41, 23);
+            this.Ok_Button.TabIndex = 18;
+            this.Ok_Button.Text = "Ok";
+            this.Ok_Button.UseVisualStyleBackColor = true;
+            this.Ok_Button.Click += new System.EventHandler(this.Ok_Button_Click);
             // 
-            // Seven_Button
+            // Other_Score_Combo_Box
             // 
-            this.Seven_Button.Location = new System.Drawing.Point(477, 68);
-            this.Seven_Button.Name = "Seven_Button";
-            this.Seven_Button.Size = new System.Drawing.Size(41, 23);
-            this.Seven_Button.TabIndex = 3;
-            this.Seven_Button.Text = "7";
-            this.Seven_Button.UseVisualStyleBackColor = true;
+            this.Other_Score_Combo_Box.FormattingEnabled = true;
+            this.Other_Score_Combo_Box.Items.AddRange(new object[] {
+            "5",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "20",
+            "21",
+            "22",
+            "23",
+            "24",
+            "25",
+            "26",
+            "27",
+            "28",
+            "29",
+            "30",
+            "31",
+            "32",
+            "33",
+            "34",
+            "35",
+            "36",
+            "37",
+            "38",
+            "39",
+            "40",
+            "41",
+            "42",
+            "43",
+            "44",
+            "45",
+            "46",
+            "47",
+            "48",
+            "49",
+            "50",
+            "51",
+            "52",
+            "53",
+            "54",
+            "55",
+            "56",
+            "57",
+            "58",
+            "59",
+            "60",
+            "61",
+            "62",
+            "63",
+            "64",
+            "65",
+            "66",
+            "67",
+            "68",
+            "69",
+            "70",
+            "71",
+            "72",
+            "73",
+            "74",
+            "75",
+            "76",
+            "77",
+            "78",
+            "79",
+            "80",
+            "81",
+            "82",
+            "83",
+            "84",
+            "85",
+            "86",
+            "87",
+            "88",
+            "89",
+            "90",
+            "91",
+            "92",
+            "93",
+            "94",
+            "95",
+            "96",
+            "97",
+            "98",
+            "99"});
+            this.Other_Score_Combo_Box.Location = new System.Drawing.Point(7, 2);
+            this.Other_Score_Combo_Box.Margin = new System.Windows.Forms.Padding(3, 2, 3, 3);
+            this.Other_Score_Combo_Box.Name = "Other_Score_Combo_Box";
+            this.Other_Score_Combo_Box.Size = new System.Drawing.Size(114, 21);
+            this.Other_Score_Combo_Box.TabIndex = 17;
+            this.Other_Score_Combo_Box.Text = "Other Score";
+            this.Other_Score_Tooltip.SetToolTip(this.Other_Score_Combo_Box, "Select alternative score from the list then click \'Ok\' button to update the score" +
+        ".");
             // 
-            // Five_Button
+            // flowLayoutPanel1
             // 
-            this.Five_Button.Location = new System.Drawing.Point(430, 68);
-            this.Five_Button.Name = "Five_Button";
-            this.Five_Button.Size = new System.Drawing.Size(41, 23);
-            this.Five_Button.TabIndex = 4;
-            this.Five_Button.Text = "5";
-            this.Five_Button.UseVisualStyleBackColor = true;
+            this.flowLayoutPanel1.Controls.Add(this.New_Bowler_Button);
+            this.flowLayoutPanel1.Controls.Add(this.Undo_Last_Button);
+            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(1088, 5);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(177, 25);
+            this.flowLayoutPanel1.TabIndex = 4;
+            // 
+            // New_Bowler_Button
+            // 
+            this.New_Bowler_Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.New_Bowler_Button.Location = new System.Drawing.Point(86, 1);
+            this.New_Bowler_Button.Margin = new System.Windows.Forms.Padding(3, 1, 3, 3);
+            this.New_Bowler_Button.Name = "New_Bowler_Button";
+            this.New_Bowler_Button.Size = new System.Drawing.Size(88, 23);
+            this.New_Bowler_Button.TabIndex = 18;
+            this.New_Bowler_Button.Text = "New Bowler";
+            this.New_Bowler_Button.UseVisualStyleBackColor = true;
+            this.New_Bowler_Button.Click += new System.EventHandler(this.New_Bowler_Button_Click);
+            // 
+            // Undo_Last_Button
+            // 
+            this.Undo_Last_Button.Location = new System.Drawing.Point(7, 1);
+            this.Undo_Last_Button.Margin = new System.Windows.Forms.Padding(3, 1, 3, 3);
+            this.Undo_Last_Button.Name = "Undo_Last_Button";
+            this.Undo_Last_Button.Size = new System.Drawing.Size(73, 23);
+            this.Undo_Last_Button.TabIndex = 0;
+            this.Undo_Last_Button.Text = "Undo Last";
+            this.Undo_Last_Button.UseVisualStyleBackColor = true;
+            this.Undo_Last_Button.Click += new System.EventHandler(this.Undo_Last_Button_Click);
             // 
             // First_Innings_Tab
             // 
@@ -4992,6 +6271,19 @@
             this.Opener_Selector_Tab.PerformLayout();
             this.Scoring_Tab.ResumeLayout(false);
             this.Scoring_Tab.PerformLayout();
+            this.Flow_Panel_New_Bowler.ResumeLayout(false);
+            this.Flow_Panel_Run_Out.ResumeLayout(false);
+            this.Flow_Panel_Run_Out.PerformLayout();
+            this.Flow_Panel_Fielder.ResumeLayout(false);
+            this.Flow_Panel_No_Ball_Question.ResumeLayout(false);
+            this.Flow_Panel_No_Ball_Question.PerformLayout();
+            this.Flow_Panel_No_Ball_No_Bat.ResumeLayout(false);
+            this.Flow_Panel_Wicket.ResumeLayout(false);
+            this.Flow_Panel_Wicket.PerformLayout();
+            this.Flow_Panel_No_Ball_Bat.ResumeLayout(false);
+            this.Flow_Panel_Wides.ResumeLayout(false);
+            this.Flow_Panel_Leg_Byes.ResumeLayout(false);
+            this.Flow_Panel_Byes.ResumeLayout(false);
             this.Last_Man_Out_Table.ResumeLayout(false);
             this.Last_Man_Out_Table.PerformLayout();
             this.Extras_Table.ResumeLayout(false);
@@ -5001,20 +6293,18 @@
             this.Current_Batsmen_Table.ResumeLayout(false);
             this.Current_Batsmen_Table.PerformLayout();
             this.Scoring_Bottom_Information_Table.ResumeLayout(false);
-            this.Scoring_Venue_Info_Table.ResumeLayout(false);
-            this.Scoring_Venue_Info_Table.PerformLayout();
+            this.Scoring_Team_Names_Table.ResumeLayout(false);
+            this.Scoring_Team_Names_Table.PerformLayout();
             this.Scoring_Innings_Of_Table.ResumeLayout(false);
             this.Scoring_Innings_Of_Table.PerformLayout();
             this.Scoring_Match_Totals_Table.ResumeLayout(false);
             this.Scoring_Match_Totals_Table.PerformLayout();
-            this.Scoring_Weather_Table.ResumeLayout(false);
-            this.Scoring_Weather_Table.PerformLayout();
             this.Scoring_Top_Options_Table.ResumeLayout(false);
             this.Score_Buttons_Flow.ResumeLayout(false);
-            this.Scoring_Team_Names_Table.ResumeLayout(false);
-            this.Scoring_Team_Names_Table.PerformLayout();
             this.Scoring_Date_Table.ResumeLayout(false);
             this.Scoring_Date_Table.PerformLayout();
+            this.Flow_Panel_Other_Score.ResumeLayout(false);
+            this.flowLayoutPanel1.ResumeLayout(false);
             this.First_Innings_Tab.ResumeLayout(false);
             this.First_Inn_Notes_Table.ResumeLayout(false);
             this.First_Inn_Notes_Table.PerformLayout();
@@ -5053,11 +6343,11 @@
         private System.Windows.Forms.TabPage Scoring_Tab;
         private System.Windows.Forms.TabPage Graph_Tab;
         private System.Windows.Forms.TabPage Menu_Tab;
-        private System.Windows.Forms.Button Zero_Button;
+        private System.Windows.Forms.Button Undo_Last_Button;
         private System.Windows.Forms.TableLayoutPanel Scoring_Top_Options_Table;
         private System.Windows.Forms.FlowLayoutPanel Score_Buttons_Flow;
         private System.Windows.Forms.Button Ok_Button;
-        private System.Windows.Forms.ComboBox Misc_Score_Options;
+        private System.Windows.Forms.ComboBox Other_Score_Combo_Box;
         private System.Windows.Forms.Button Wicket_Button;
         private System.Windows.Forms.Button No_Ball_Button;
         private System.Windows.Forms.Button Wide_Button;
@@ -5069,20 +6359,9 @@
         private System.Windows.Forms.Button Two_Button;
         private System.Windows.Forms.Button One_Button;
         private System.Windows.Forms.Button Dot_Button;
-        private System.Windows.Forms.TableLayoutPanel Scoring_Team_Names_Table;
-        private System.Windows.Forms.Label Scoring_Home_Team_Name_Value;
-        private System.Windows.Forms.Label Scoring_Vs_Label;
-        private System.Windows.Forms.Label Scoring_Away_Team_Name_Value;
-        private System.Windows.Forms.Button Nine_Button;
-        private System.Windows.Forms.Button Eight_Button;
-        private System.Windows.Forms.Button Seven_Button;
-        private System.Windows.Forms.Button Five_Button;
         private System.Windows.Forms.ToolTip Other_Score_Tooltip;
         private System.Windows.Forms.Button Penalty_Button;
         private System.Windows.Forms.TableLayoutPanel Scoring_Bottom_Information_Table;
-        private System.Windows.Forms.TableLayoutPanel Scoring_Venue_Info_Table;
-        private System.Windows.Forms.Label Scoring_Venue_Value;
-        private System.Windows.Forms.Label Scoring_Venue_Label;
         private System.Windows.Forms.TableLayoutPanel Scoring_Match_Totals_Table;
         private System.Windows.Forms.Label Scoring_Total_Overs_Label;
         private System.Windows.Forms.Label Scoring_Total_Overs_Value;
@@ -5172,7 +6451,6 @@
         private System.Windows.Forms.Label Out_Batsman_Name_Heading;
         private System.Windows.Forms.Label Out_Batsman_Number_Heading;
         private System.Windows.Forms.Label Last_Man_Out_Table_Heading;
-        private System.Windows.Forms.Button New_Bowler_Button;
         private System.Windows.Forms.TabPage First_Innings_Tab;
         private System.Windows.Forms.TableLayoutPanel First_Inn_Bat_Table;
         private System.Windows.Forms.Label First_Inn_Bat_Num_6;
@@ -5312,9 +6590,6 @@
         private System.Windows.Forms.TableLayoutPanel Scoring_Date_Table;
         private System.Windows.Forms.Label Scoring_Date_Label;
         private System.Windows.Forms.Label Scoring_Date_Value;
-        private System.Windows.Forms.TableLayoutPanel Scoring_Weather_Table;
-        private System.Windows.Forms.Label Scoring_Weather_Label;
-        private System.Windows.Forms.Label Scoring_Weather_Value;
         private System.Windows.Forms.TableLayoutPanel First_Inn_Bat_Total_Table;
         private System.Windows.Forms.Label First_Inn_Bat_Total_Label;
         private System.Windows.Forms.Label First_Inn_Bat_Total_Runs;
@@ -5396,6 +6671,78 @@
         public System.Windows.Forms.ComboBox Open_Select_Bat_Side;
         private System.Windows.Forms.Label Open_Select_Bat_Side_Label;
         public System.Windows.Forms.TabControl Scoring_App_Tab_Set;
+        private System.Windows.Forms.FlowLayoutPanel Flow_Panel_Wicket;
+        private System.Windows.Forms.FlowLayoutPanel Flow_Panel_No_Ball_Bat;
+        private System.Windows.Forms.FlowLayoutPanel Flow_Panel_Wides;
+        private System.Windows.Forms.FlowLayoutPanel Flow_Panel_Leg_Byes;
+        private System.Windows.Forms.FlowLayoutPanel Flow_Panel_Byes;
+        private System.Windows.Forms.Button Bye_1;
+        private System.Windows.Forms.Button Bye_2;
+        private System.Windows.Forms.Button Bye_3;
+        private System.Windows.Forms.Button Bye_4;
+        private System.Windows.Forms.ComboBox Bye_Combo_Box;
+        private System.Windows.Forms.Button Bye_Ok;
+        private System.Windows.Forms.Button Leg_Bye_1;
+        private System.Windows.Forms.Button Leg_Bye_2;
+        private System.Windows.Forms.Button Leg_Bye_3;
+        private System.Windows.Forms.Button Leg_Bye_4;
+        private System.Windows.Forms.ComboBox Leg_Byes_Combo_Box;
+        private System.Windows.Forms.Button Leg_Bye_Ok;
+        private System.Windows.Forms.Button Wides_Ok;
+        private System.Windows.Forms.ComboBox Wides_Combo_Box;
+        private System.Windows.Forms.Button Wides_5;
+        private System.Windows.Forms.Button Wides_4;
+        private System.Windows.Forms.Button Wides_3;
+        private System.Windows.Forms.Button Wides_2;
+        private System.Windows.Forms.Button Wides_1;
+        private System.Windows.Forms.FlowLayoutPanel Flow_Panel_No_Ball_No_Bat;
+        private System.Windows.Forms.Button No_Ball_No_Bat_Ok;
+        private System.Windows.Forms.ComboBox No_Ball_No_Bat_Combo_Box;
+        private System.Windows.Forms.Button No_Ball_No_Bat_5;
+        private System.Windows.Forms.Button No_Ball_No_Bat_4;
+        private System.Windows.Forms.Button No_Ball_No_Bat_3;
+        private System.Windows.Forms.Button No_Ball_No_Bat_2;
+        private System.Windows.Forms.Button No_Ball_No_Bat_1;
+        private System.Windows.Forms.Button No_Ball_Bat_Ok;
+        private System.Windows.Forms.ComboBox No_Ball_Bat_Combo_Box;
+        private System.Windows.Forms.Button No_Ball_Bat_7;
+        private System.Windows.Forms.Button No_Ball_Bat_6;
+        private System.Windows.Forms.Button No_Ball_Bat_5;
+        private System.Windows.Forms.Button No_Ball_Bat_4;
+        private System.Windows.Forms.Button No_Ball_Bat_3;
+        private System.Windows.Forms.Button No_Ball_Bat_2;
+        private System.Windows.Forms.FlowLayoutPanel Flow_Panel_No_Ball_Question;
+        private System.Windows.Forms.Button No_Ball_Question_No;
+        private System.Windows.Forms.Button No_Ball_Question_Yes;
+        private System.Windows.Forms.Label No_Ball_Question_Label;
+        private System.Windows.Forms.Button Wicket_Confirm_Button;
+        private System.Windows.Forms.ComboBox Wicket_Next_Bat_Combo_Box;
+        private System.Windows.Forms.CheckBox Check_Box_Crossed;
+        private System.Windows.Forms.RadioButton Radio_Button_Retired;
+        private System.Windows.Forms.RadioButton Radio_Button_LBW;
+        private System.Windows.Forms.RadioButton Radio_Button_Caught_And_Bowled;
+        private System.Windows.Forms.RadioButton Radio_Button_Stumped;
+        private System.Windows.Forms.RadioButton Radio_Button_Run_Out;
+        private System.Windows.Forms.RadioButton Radio_Button_Caught;
+        private System.Windows.Forms.RadioButton Radio_Button_Bowled;
+        private System.Windows.Forms.ToolTip Next_Batsman_Tooltip;
+        private System.Windows.Forms.FlowLayoutPanel Flow_Panel_Fielder;
+        private System.Windows.Forms.ComboBox Wicket_Fielder_Select_Combo_Box;
+        private System.Windows.Forms.ToolTip Fielder_Select_Tooltip;
+        private System.Windows.Forms.TableLayoutPanel Scoring_Team_Names_Table;
+        private System.Windows.Forms.Label Scoring_Home_Team_Name_Value;
+        private System.Windows.Forms.Label Scoring_Vs_Label;
+        private System.Windows.Forms.Label Scoring_Away_Team_Name_Value;
+        private System.Windows.Forms.FlowLayoutPanel Flow_Panel_Other_Score;
+        private System.Windows.Forms.GroupBox Flow_Panel_Run_Out;
+        private System.Windows.Forms.ComboBox Run_Out_Fielder_Combo;
+        private System.Windows.Forms.RadioButton Radio_Run_Out_Bat_Bottom;
+        private System.Windows.Forms.RadioButton Radio_Run_Out_Bat_Top;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.Button New_Bowler_Button;
+        private System.Windows.Forms.FlowLayoutPanel Flow_Panel_New_Bowler;
+        private System.Windows.Forms.Button New_Bowler_Select;
+        private System.Windows.Forms.ComboBox New_Bowler_Combo_Box;
 
     }
 }
