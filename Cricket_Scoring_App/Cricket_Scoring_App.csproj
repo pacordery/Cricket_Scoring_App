@@ -45,12 +45,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="New_Bowler.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="New_Bowler.Designer.cs">
-      <DependentUpon>New_Bowler.cs</DependentUpon>
-    </Compile>
     <Compile Include="Player.cs" />
     <Compile Include="Player_Addition.cs">
       <SubType>Form</SubType>
@@ -73,9 +67,6 @@
     <Compile Include="Scoring_Application.Designer.cs">
       <DependentUpon>Scoring_Application.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="New_Bowler.resx">
-      <DependentUpon>New_Bowler.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Player_Addition.resx">
       <DependentUpon>Player_Addition.cs</DependentUpon>
     </EmbeddedResource>

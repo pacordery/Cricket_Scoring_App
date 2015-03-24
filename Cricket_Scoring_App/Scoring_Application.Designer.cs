@@ -44,15 +44,15 @@
             this.Open_Select_Bat_Side = new System.Windows.Forms.ComboBox();
             this.Open_Select_Bat_Side_Label = new System.Windows.Forms.Label();
             this.Scoring_Tab = new System.Windows.Forms.TabPage();
-            this.Flow_Panel_New_Bowler = new System.Windows.Forms.FlowLayoutPanel();
-            this.New_Bowler_Select = new System.Windows.Forms.Button();
-            this.New_Bowler_Combo_Box = new System.Windows.Forms.ComboBox();
             this.Flow_Panel_Run_Out = new System.Windows.Forms.GroupBox();
             this.Run_Out_Fielder_Combo = new System.Windows.Forms.ComboBox();
             this.Radio_Run_Out_Bat_Bottom = new System.Windows.Forms.RadioButton();
-            this.Radio_Run_Out_Bat_Top = new System.Windows.Forms.RadioButton();
             this.Flow_Panel_Fielder = new System.Windows.Forms.FlowLayoutPanel();
             this.Wicket_Fielder_Select_Combo_Box = new System.Windows.Forms.ComboBox();
+            this.Radio_Run_Out_Bat_Top = new System.Windows.Forms.RadioButton();
+            this.Flow_Panel_New_Bowler = new System.Windows.Forms.FlowLayoutPanel();
+            this.New_Bowler_Select = new System.Windows.Forms.Button();
+            this.New_Bowler_Combo_Box = new System.Windows.Forms.ComboBox();
             this.Flow_Panel_No_Ball_Question = new System.Windows.Forms.FlowLayoutPanel();
             this.No_Ball_Question_No = new System.Windows.Forms.Button();
             this.No_Ball_Question_Yes = new System.Windows.Forms.Button();
@@ -232,7 +232,7 @@
             this.First_Inn_Notes_Heading = new System.Windows.Forms.Label();
             this.First_Inn_Notes_Textbox = new System.Windows.Forms.TextBox();
             this.First_Inn_Bowling_Totals_Table = new System.Windows.Forms.TableLayoutPanel();
-            this.First_Inn_Bwl_Ttls_wkts = new System.Windows.Forms.Label();
+            this.First_Inn_Bwl_Ttls_Wkts = new System.Windows.Forms.Label();
             this.First_Inn_Bwl_Ttls_Runs = new System.Windows.Forms.Label();
             this.First_Inn_Bwl_Ttls_Mdns = new System.Windows.Forms.Label();
             this.First_Inn_Bwl_Ttls_Ovrs = new System.Windows.Forms.Label();
@@ -245,13 +245,65 @@
             this.First_Inn_Ovr_Anlys_Runs_Head = new System.Windows.Forms.Label();
             this.First_Inn_Ovr_Anlys_Wkt_Head = new System.Windows.Forms.Label();
             this.First_Inn_Extras_Table = new System.Windows.Forms.TableLayoutPanel();
+            this.First_Inn_Extras_Total_Value = new System.Windows.Forms.Label();
+            this.First_Inn_Penaltys_Value = new System.Windows.Forms.Label();
+            this.First_Inn_Leg_Byes_Value = new System.Windows.Forms.Label();
+            this.First_Inn_Byes_Value = new System.Windows.Forms.Label();
+            this.First_Inn_No_Balls_Value = new System.Windows.Forms.Label();
             this.First_Inn_Wides = new System.Windows.Forms.Label();
             this.First_Inn_No_Balls = new System.Windows.Forms.Label();
             this.First_Inn_Byes = new System.Windows.Forms.Label();
             this.First_Inn_Leg_Byes = new System.Windows.Forms.Label();
             this.First_Inn_Penaltys = new System.Windows.Forms.Label();
             this.First_Inn_Extras_Total = new System.Windows.Forms.Label();
+            this.First_Inn_Wides_Value = new System.Windows.Forms.Label();
             this.First_Inn_Fall_Of_Wckt_Table = new System.Windows.Forms.TableLayoutPanel();
+            this.First_Inn_FOW_Over_Num_10 = new System.Windows.Forms.Label();
+            this.First_Inn_FOW_Over_Num_9 = new System.Windows.Forms.Label();
+            this.First_Inn_FOW_Over_Num_8 = new System.Windows.Forms.Label();
+            this.First_Inn_FOW_Over_Num_7 = new System.Windows.Forms.Label();
+            this.First_Inn_FOW_Over_Num_6 = new System.Windows.Forms.Label();
+            this.First_Inn_FOW_Over_Num_5 = new System.Windows.Forms.Label();
+            this.First_Inn_FOW_Over_Num_4 = new System.Windows.Forms.Label();
+            this.First_Inn_FOW_Over_Num_3 = new System.Windows.Forms.Label();
+            this.First_Inn_FOW_Over_Num_2 = new System.Windows.Forms.Label();
+            this.First_Inn_FOW_Partnership_10 = new System.Windows.Forms.Label();
+            this.First_Inn_FOW_Partnership_9 = new System.Windows.Forms.Label();
+            this.First_Inn_FOW_Partnership_8 = new System.Windows.Forms.Label();
+            this.First_Inn_FOW_Partnership_7 = new System.Windows.Forms.Label();
+            this.First_Inn_FOW_Partnership_6 = new System.Windows.Forms.Label();
+            this.First_Inn_FOW_Partnership_5 = new System.Windows.Forms.Label();
+            this.First_Inn_FOW_Partnership_4 = new System.Windows.Forms.Label();
+            this.First_Inn_FOW_Partnership_3 = new System.Windows.Forms.Label();
+            this.First_Inn_FOW_Partnership_2 = new System.Windows.Forms.Label();
+            this.First_Inn_FOW_Not_Out_Bat_10 = new System.Windows.Forms.Label();
+            this.First_Inn_FOW_Not_Out_Bat_9 = new System.Windows.Forms.Label();
+            this.First_Inn_FOW_Not_Out_Bat_8 = new System.Windows.Forms.Label();
+            this.First_Inn_FOW_Not_Out_Bat_7 = new System.Windows.Forms.Label();
+            this.First_Inn_FOW_Not_Out_Bat_6 = new System.Windows.Forms.Label();
+            this.First_Inn_FOW_Not_Out_Bat_5 = new System.Windows.Forms.Label();
+            this.First_Inn_FOW_Not_Out_Bat_4 = new System.Windows.Forms.Label();
+            this.First_Inn_FOW_Not_Out_Bat_3 = new System.Windows.Forms.Label();
+            this.First_Inn_FOW_Not_Out_Bat_2 = new System.Windows.Forms.Label();
+            this.First_Inn_FOW_Out_Bat_10 = new System.Windows.Forms.Label();
+            this.First_Inn_FOW_Out_Bat_9 = new System.Windows.Forms.Label();
+            this.First_Inn_FOW_Out_Bat_8 = new System.Windows.Forms.Label();
+            this.First_Inn_FOW_Out_Bat_7 = new System.Windows.Forms.Label();
+            this.First_Inn_FOW_Out_Bat_6 = new System.Windows.Forms.Label();
+            this.First_Inn_FOW_Out_Bat_5 = new System.Windows.Forms.Label();
+            this.First_Inn_FOW_Out_Bat_4 = new System.Windows.Forms.Label();
+            this.First_Inn_FOW_Out_Bat_3 = new System.Windows.Forms.Label();
+            this.First_Inn_FOW_Out_Bat_2 = new System.Windows.Forms.Label();
+            this.First_Inn_FOW_Score_10 = new System.Windows.Forms.Label();
+            this.First_Inn_FOW_Score_9 = new System.Windows.Forms.Label();
+            this.First_Inn_FOW_Score_8 = new System.Windows.Forms.Label();
+            this.First_Inn_FOW_Score_7 = new System.Windows.Forms.Label();
+            this.First_Inn_FOW_Score_6 = new System.Windows.Forms.Label();
+            this.First_Inn_FOW_Score_5 = new System.Windows.Forms.Label();
+            this.First_Inn_FOW_Score_4 = new System.Windows.Forms.Label();
+            this.First_Inn_FOW_Score_3 = new System.Windows.Forms.Label();
+            this.First_Inn_FOW_Score_2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.First_Inn_FOW_Score_Head = new System.Windows.Forms.Label();
             this.First_Inn_FOW_Head_1 = new System.Windows.Forms.Label();
             this.First_Inn_Fall_Of_Wkt_Head = new System.Windows.Forms.Label();
@@ -259,16 +311,89 @@
             this.First_Inn_FOW_Not_Out_Bat_Head = new System.Windows.Forms.Label();
             this.First_Inn_FOW_Partnership_Head = new System.Windows.Forms.Label();
             this.First_Inn_FOW_Over_Num_Head = new System.Windows.Forms.Label();
+            this.First_Inn_FOW_Score_1 = new System.Windows.Forms.Label();
+            this.First_Inn_FOW_Out_Bat_1 = new System.Windows.Forms.Label();
+            this.First_Inn_FOW_Not_Out_Bat_1 = new System.Windows.Forms.Label();
+            this.First_Inn_FOW_Partnership_1 = new System.Windows.Forms.Label();
+            this.First_Inn_FOW_Over_Num_1 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
             this.First_Inn_Bat_Total_Table = new System.Windows.Forms.TableLayoutPanel();
             this.First_Inn_Bat_Total_Label = new System.Windows.Forms.Label();
             this.First_Inn_Bat_Total_Runs = new System.Windows.Forms.Label();
             this.First_Inn_Bowl_Table = new System.Windows.Forms.TableLayoutPanel();
+            this.First_Inn_Bowl_Nb_8 = new System.Windows.Forms.Label();
+            this.First_Inn_Bowl_Overs_8 = new System.Windows.Forms.Label();
+            this.First_Inn_Bowl_Wd_8 = new System.Windows.Forms.Label();
+            this.First_Inn_Bowl_Num_8 = new System.Windows.Forms.Label();
+            this.First_Inn_Bowl_Name_8 = new System.Windows.Forms.Label();
+            this.First_Inn_Bowl_Avg_8 = new System.Windows.Forms.Label();
+            this.First_Inn_Bowl_Econ_8 = new System.Windows.Forms.Label();
+            this.First_Inn_Bowl_Wkts_8 = new System.Windows.Forms.Label();
+            this.First_Inn_Bowl_Mdns_8 = new System.Windows.Forms.Label();
+            this.First_Inn_Bowl_Runs_8 = new System.Windows.Forms.Label();
+            this.First_Inn_Bowl_Nb_7 = new System.Windows.Forms.Label();
+            this.First_Inn_Bowl_Overs_7 = new System.Windows.Forms.Label();
+            this.First_Inn_Bowl_Wd_7 = new System.Windows.Forms.Label();
+            this.First_Inn_Bowl_Num_7 = new System.Windows.Forms.Label();
+            this.First_Inn_Bowl_Name_7 = new System.Windows.Forms.Label();
+            this.First_Inn_Bowl_Avg_7 = new System.Windows.Forms.Label();
+            this.First_Inn_Bowl_Econ_7 = new System.Windows.Forms.Label();
+            this.First_Inn_Bowl_Wkts_7 = new System.Windows.Forms.Label();
+            this.First_Inn_Bowl_Mdns_7 = new System.Windows.Forms.Label();
+            this.First_Inn_Bowl_Runs_7 = new System.Windows.Forms.Label();
+            this.First_Inn_Bowl_Nb_6 = new System.Windows.Forms.Label();
+            this.First_Inn_Bowl_Overs_6 = new System.Windows.Forms.Label();
+            this.First_Inn_Bowl_Wd_6 = new System.Windows.Forms.Label();
+            this.First_Inn_Bowl_Num_6 = new System.Windows.Forms.Label();
+            this.First_Inn_Bowl_Name_6 = new System.Windows.Forms.Label();
+            this.First_Inn_Bowl_Avg_6 = new System.Windows.Forms.Label();
+            this.First_Inn_Bowl_Econ_6 = new System.Windows.Forms.Label();
+            this.First_Inn_Bowl_Wkts_6 = new System.Windows.Forms.Label();
+            this.First_Inn_Bowl_Mdns_6 = new System.Windows.Forms.Label();
+            this.First_Inn_Bowl_Runs_6 = new System.Windows.Forms.Label();
+            this.First_Inn_Bowl_Nb_5 = new System.Windows.Forms.Label();
+            this.First_Inn_Bowl_Overs_5 = new System.Windows.Forms.Label();
+            this.First_Inn_Bowl_Wd_5 = new System.Windows.Forms.Label();
+            this.First_Inn_Bowl_Num_5 = new System.Windows.Forms.Label();
+            this.First_Inn_Bowl_Name_5 = new System.Windows.Forms.Label();
+            this.First_Inn_Bowl_Avg_5 = new System.Windows.Forms.Label();
+            this.First_Inn_Bowl_Econ_5 = new System.Windows.Forms.Label();
+            this.First_Inn_Bowl_Wkts_5 = new System.Windows.Forms.Label();
+            this.First_Inn_Bowl_Mdns_5 = new System.Windows.Forms.Label();
+            this.First_Inn_Bowl_Runs_5 = new System.Windows.Forms.Label();
+            this.First_Inn_Bowl_Runs_4 = new System.Windows.Forms.Label();
+            this.First_Inn_Bowl_Mdns_4 = new System.Windows.Forms.Label();
+            this.First_Inn_Bowl_Wkts_4 = new System.Windows.Forms.Label();
+            this.First_Inn_Bowl_Econ_4 = new System.Windows.Forms.Label();
+            this.First_Inn_Bowl_Avg_4 = new System.Windows.Forms.Label();
+            this.First_Inn_Bowl_Wd_4 = new System.Windows.Forms.Label();
+            this.First_Inn_Bowl_Name_4 = new System.Windows.Forms.Label();
+            this.First_Inn_Bowl_Overs_4 = new System.Windows.Forms.Label();
+            this.First_Inn_Bowl_Nb_4 = new System.Windows.Forms.Label();
+            this.First_Inn_Bowl_Nb_3 = new System.Windows.Forms.Label();
+            this.First_Inn_Bowl_Overs_3 = new System.Windows.Forms.Label();
+            this.First_Inn_Bowl_Wd_3 = new System.Windows.Forms.Label();
+            this.First_Inn_Bowl_Num_3 = new System.Windows.Forms.Label();
+            this.First_Inn_Bowl_Name_3 = new System.Windows.Forms.Label();
+            this.First_Inn_Bowl_Mdns_3 = new System.Windows.Forms.Label();
+            this.First_Inn_Bowl_Econ_3 = new System.Windows.Forms.Label();
+            this.First_Inn_Bowl_Num_4 = new System.Windows.Forms.Label();
+            this.First_Inn_Bowl_Avg_3 = new System.Windows.Forms.Label();
+            this.First_Inn_Bowl_Runs_3 = new System.Windows.Forms.Label();
+            this.First_Inn_Bowl_Wkts_3 = new System.Windows.Forms.Label();
             this.First_Inn_Bowl_Wkts_2 = new System.Windows.Forms.Label();
             this.First_Inn_Bowl_Runs_2 = new System.Windows.Forms.Label();
             this.First_Inn_Bowl_Mdns_2 = new System.Windows.Forms.Label();
             this.First_Inn_Bowl_Overs_2 = new System.Windows.Forms.Label();
-            this.First_Inn_Bowl_Total_Nb_2 = new System.Windows.Forms.Label();
-            this.First_Inn_Bowl_Total_Wd_2 = new System.Windows.Forms.Label();
+            this.First_Inn_Bowl_Nb_2 = new System.Windows.Forms.Label();
+            this.First_Inn_Bowl_Wd_2 = new System.Windows.Forms.Label();
             this.First_Inn_Bowl_Name_2 = new System.Windows.Forms.Label();
             this.First_Inn_Bowl_Num_2 = new System.Windows.Forms.Label();
             this.First_Inn_Bowl_Wkts_1 = new System.Windows.Forms.Label();
@@ -435,9 +560,9 @@
             this.Scoring_App_Tab_Set.SuspendLayout();
             this.Opener_Selector_Tab.SuspendLayout();
             this.Scoring_Tab.SuspendLayout();
-            this.Flow_Panel_New_Bowler.SuspendLayout();
             this.Flow_Panel_Run_Out.SuspendLayout();
             this.Flow_Panel_Fielder.SuspendLayout();
+            this.Flow_Panel_New_Bowler.SuspendLayout();
             this.Flow_Panel_No_Ball_Question.SuspendLayout();
             this.Flow_Panel_No_Ball_No_Bat.SuspendLayout();
             this.Flow_Panel_Wicket.SuspendLayout();
@@ -542,8 +667,18 @@
             // 
             this.Open_Select_Bat_1.FormattingEnabled = true;
             this.Open_Select_Bat_1.Items.AddRange(new object[] {
-            "Philip Cordery",
-            "Russell Lock"});
+            "Adam Gilchrist",
+            "Simon Katich",
+            "Ricky Ponting",
+            "Daimian Martyn",
+            "Andrew Symonds",
+            "Micheal Clark",
+            "Mike Hussey",
+            "Brett Lee",
+            "Nathan Bracken",
+            "Stuart Clark",
+            "Mick Lewis",
+            "Brad Hogg"});
             this.Open_Select_Bat_1.Location = new System.Drawing.Point(609, 223);
             this.Open_Select_Bat_1.Name = "Open_Select_Bat_1";
             this.Open_Select_Bat_1.Size = new System.Drawing.Size(179, 21);
@@ -554,8 +689,18 @@
             // 
             this.Open_Select_Bat_2.FormattingEnabled = true;
             this.Open_Select_Bat_2.Items.AddRange(new object[] {
-            "Philip Cordery",
-            "Russell Lock"});
+            "Adam Gilchrist",
+            "Simon Katich",
+            "Ricky Ponting",
+            "Daimian Martyn",
+            "Andrew Symonds",
+            "Micheal Clark",
+            "Mike Hussey",
+            "Brett Lee",
+            "Nathan Bracken",
+            "Stuart Clark",
+            "Mick Lewis",
+            "Brad Hogg"});
             this.Open_Select_Bat_2.Location = new System.Drawing.Point(609, 276);
             this.Open_Select_Bat_2.Name = "Open_Select_Bat_2";
             this.Open_Select_Bat_2.Size = new System.Drawing.Size(179, 21);
@@ -566,8 +711,17 @@
             // 
             this.Open_Select_Bowl_1.FormattingEnabled = true;
             this.Open_Select_Bowl_1.Items.AddRange(new object[] {
-            "Chris Dawson",
-            "Ray Dawson"});
+            "Greame Smith",
+            "Boeta Dippenaar",
+            "Herschelle Gibbs",
+            "AB De Villiers",
+            "Jacque Kallis",
+            "Mark Boucher",
+            "Justin Kemp",
+            "Johan Van Der Wath",
+            "Roger Telemachus",
+            "Andrew Hall",
+            "Makhaya Ntini"});
             this.Open_Select_Bowl_1.Location = new System.Drawing.Point(609, 332);
             this.Open_Select_Bowl_1.Name = "Open_Select_Bowl_1";
             this.Open_Select_Bowl_1.Size = new System.Drawing.Size(179, 21);
@@ -578,8 +732,17 @@
             // 
             this.Open_Select_Bowl_2.FormattingEnabled = true;
             this.Open_Select_Bowl_2.Items.AddRange(new object[] {
-            "Chris Dawson",
-            "Ray Dawson"});
+            "Greame Smith",
+            "Boeta Dippenaar",
+            "Herschelle Gibbs",
+            "AB De Villiers",
+            "Jacque Kallis",
+            "Mark Boucher",
+            "Justin Kemp",
+            "Johan Van Der Wath",
+            "Roger Telemachus",
+            "Andrew Hall",
+            "Makhaya Ntini"});
             this.Open_Select_Bowl_2.Location = new System.Drawing.Point(609, 389);
             this.Open_Select_Bowl_2.Name = "Open_Select_Bowl_2";
             this.Open_Select_Bowl_2.Size = new System.Drawing.Size(179, 21);
@@ -630,8 +793,8 @@
             // 
             this.Open_Select_Bat_Side.FormattingEnabled = true;
             this.Open_Select_Bat_Side.Items.AddRange(new object[] {
-            "Home",
-            "Away"});
+            "Australia",
+            "South Africa"});
             this.Open_Select_Bat_Side.Location = new System.Drawing.Point(609, 171);
             this.Open_Select_Bat_Side.Name = "Open_Select_Bat_Side";
             this.Open_Select_Bat_Side.Size = new System.Drawing.Size(179, 21);
@@ -677,6 +840,94 @@
             this.Scoring_Tab.TabIndex = 0;
             this.Scoring_Tab.Text = "Scoring";
             // 
+            // Flow_Panel_Run_Out
+            // 
+            this.Flow_Panel_Run_Out.Controls.Add(this.Run_Out_Fielder_Combo);
+            this.Flow_Panel_Run_Out.Controls.Add(this.Radio_Run_Out_Bat_Bottom);
+            this.Flow_Panel_Run_Out.Controls.Add(this.Flow_Panel_Fielder);
+            this.Flow_Panel_Run_Out.Controls.Add(this.Radio_Run_Out_Bat_Top);
+            this.Flow_Panel_Run_Out.Location = new System.Drawing.Point(348, 72);
+            this.Flow_Panel_Run_Out.Name = "Flow_Panel_Run_Out";
+            this.Flow_Panel_Run_Out.Size = new System.Drawing.Size(287, 44);
+            this.Flow_Panel_Run_Out.TabIndex = 37;
+            this.Flow_Panel_Run_Out.TabStop = false;
+            this.Flow_Panel_Run_Out.Text = "Select out batsman and fielder";
+            // 
+            // Run_Out_Fielder_Combo
+            // 
+            this.Run_Out_Fielder_Combo.FormattingEnabled = true;
+            this.Run_Out_Fielder_Combo.Items.AddRange(new object[] {
+            "Greame Smith",
+            "Boeta Dippenaar",
+            "Herschelle Gibbs",
+            "AB De Villiers",
+            "Jacque Kallis",
+            "Mark Boucher",
+            "Justin Kemp",
+            "Johan Van Der Wath",
+            "Roger Telemachus",
+            "Andrew Hall",
+            "Makhaya Ntini"});
+            this.Run_Out_Fielder_Combo.Location = new System.Drawing.Point(114, 13);
+            this.Run_Out_Fielder_Combo.Name = "Run_Out_Fielder_Combo";
+            this.Run_Out_Fielder_Combo.Size = new System.Drawing.Size(163, 21);
+            this.Run_Out_Fielder_Combo.TabIndex = 24;
+            this.Run_Out_Fielder_Combo.Text = "Select Fielder";
+            this.Fielder_Select_Tooltip.SetToolTip(this.Run_Out_Fielder_Combo, "Select the fielder that was involved in the wicket");
+            // 
+            // Radio_Run_Out_Bat_Bottom
+            // 
+            this.Radio_Run_Out_Bat_Bottom.AutoSize = true;
+            this.Radio_Run_Out_Bat_Bottom.Location = new System.Drawing.Point(63, 14);
+            this.Radio_Run_Out_Bat_Bottom.Name = "Radio_Run_Out_Bat_Bottom";
+            this.Radio_Run_Out_Bat_Bottom.Size = new System.Drawing.Size(31, 17);
+            this.Radio_Run_Out_Bat_Bottom.TabIndex = 1;
+            this.Radio_Run_Out_Bat_Bottom.TabStop = true;
+            this.Radio_Run_Out_Bat_Bottom.Text = "2";
+            this.Radio_Run_Out_Bat_Bottom.UseVisualStyleBackColor = true;
+            // 
+            // Flow_Panel_Fielder
+            // 
+            this.Flow_Panel_Fielder.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.Flow_Panel_Fielder.Controls.Add(this.Wicket_Fielder_Select_Combo_Box);
+            this.Flow_Panel_Fielder.Location = new System.Drawing.Point(0, -2);
+            this.Flow_Panel_Fielder.Name = "Flow_Panel_Fielder";
+            this.Flow_Panel_Fielder.Size = new System.Drawing.Size(176, 32);
+            this.Flow_Panel_Fielder.TabIndex = 36;
+            // 
+            // Wicket_Fielder_Select_Combo_Box
+            // 
+            this.Wicket_Fielder_Select_Combo_Box.FormattingEnabled = true;
+            this.Wicket_Fielder_Select_Combo_Box.Items.AddRange(new object[] {
+            "Greame Smith",
+            "Boeta Dippenaar",
+            "Herschelle Gibbs",
+            "AB De Villiers",
+            "Jacque Kallis",
+            "Mark Boucher",
+            "Justin Kemp",
+            "Johan Van Der Wath",
+            "Roger Telemachus",
+            "Andrew Hall",
+            "Makhaya Ntini"});
+            this.Wicket_Fielder_Select_Combo_Box.Location = new System.Drawing.Point(3, 3);
+            this.Wicket_Fielder_Select_Combo_Box.Name = "Wicket_Fielder_Select_Combo_Box";
+            this.Wicket_Fielder_Select_Combo_Box.Size = new System.Drawing.Size(163, 21);
+            this.Wicket_Fielder_Select_Combo_Box.TabIndex = 23;
+            this.Wicket_Fielder_Select_Combo_Box.Text = "Select Fielder";
+            this.Fielder_Select_Tooltip.SetToolTip(this.Wicket_Fielder_Select_Combo_Box, "Select the fielder that was involved in the wicket");
+            // 
+            // Radio_Run_Out_Bat_Top
+            // 
+            this.Radio_Run_Out_Bat_Top.AutoSize = true;
+            this.Radio_Run_Out_Bat_Top.Location = new System.Drawing.Point(13, 14);
+            this.Radio_Run_Out_Bat_Top.Name = "Radio_Run_Out_Bat_Top";
+            this.Radio_Run_Out_Bat_Top.Size = new System.Drawing.Size(31, 17);
+            this.Radio_Run_Out_Bat_Top.TabIndex = 0;
+            this.Radio_Run_Out_Bat_Top.TabStop = true;
+            this.Radio_Run_Out_Bat_Top.Text = "1";
+            this.Radio_Run_Out_Bat_Top.UseVisualStyleBackColor = true;
+            // 
             // Flow_Panel_New_Bowler
             // 
             this.Flow_Panel_New_Bowler.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
@@ -703,87 +954,23 @@
             // 
             this.New_Bowler_Combo_Box.FormattingEnabled = true;
             this.New_Bowler_Combo_Box.Items.AddRange(new object[] {
-            "Paul Chung",
-            "Paul Bell",
-            "Daniel Reidenbach"});
+            "Greame Smith",
+            "Boeta Dippenaar",
+            "Herschelle Gibbs",
+            "AB De Villiers",
+            "Jacque Kallis",
+            "Mark Boucher",
+            "Justin Kemp",
+            "Johan Van Der Wath",
+            "Roger Telemachus",
+            "Andrew Hall",
+            "Makhaya Ntini"});
             this.New_Bowler_Combo_Box.Location = new System.Drawing.Point(4, 3);
             this.New_Bowler_Combo_Box.Name = "New_Bowler_Combo_Box";
             this.New_Bowler_Combo_Box.Size = new System.Drawing.Size(163, 21);
             this.New_Bowler_Combo_Box.TabIndex = 25;
             this.New_Bowler_Combo_Box.Text = "Select New Bowler";
             this.Fielder_Select_Tooltip.SetToolTip(this.New_Bowler_Combo_Box, "Select the new bowler");
-            // 
-            // Flow_Panel_Run_Out
-            // 
-            this.Flow_Panel_Run_Out.Controls.Add(this.Run_Out_Fielder_Combo);
-            this.Flow_Panel_Run_Out.Controls.Add(this.Radio_Run_Out_Bat_Bottom);
-            this.Flow_Panel_Run_Out.Controls.Add(this.Flow_Panel_Fielder);
-            this.Flow_Panel_Run_Out.Controls.Add(this.Radio_Run_Out_Bat_Top);
-            this.Flow_Panel_Run_Out.Location = new System.Drawing.Point(348, 72);
-            this.Flow_Panel_Run_Out.Name = "Flow_Panel_Run_Out";
-            this.Flow_Panel_Run_Out.Size = new System.Drawing.Size(287, 44);
-            this.Flow_Panel_Run_Out.TabIndex = 37;
-            this.Flow_Panel_Run_Out.TabStop = false;
-            this.Flow_Panel_Run_Out.Text = "Select out batsman and fielder";
-            // 
-            // Run_Out_Fielder_Combo
-            // 
-            this.Run_Out_Fielder_Combo.FormattingEnabled = true;
-            this.Run_Out_Fielder_Combo.Items.AddRange(new object[] {
-            "Paul Chung",
-            "Paul Bell",
-            "Daniel Reidenbach"});
-            this.Run_Out_Fielder_Combo.Location = new System.Drawing.Point(114, 13);
-            this.Run_Out_Fielder_Combo.Name = "Run_Out_Fielder_Combo";
-            this.Run_Out_Fielder_Combo.Size = new System.Drawing.Size(163, 21);
-            this.Run_Out_Fielder_Combo.TabIndex = 24;
-            this.Run_Out_Fielder_Combo.Text = "Select Fielder";
-            this.Fielder_Select_Tooltip.SetToolTip(this.Run_Out_Fielder_Combo, "Select the fielder that was involved in the wicket");
-            // 
-            // Radio_Run_Out_Bat_Bottom
-            // 
-            this.Radio_Run_Out_Bat_Bottom.AutoSize = true;
-            this.Radio_Run_Out_Bat_Bottom.Location = new System.Drawing.Point(63, 14);
-            this.Radio_Run_Out_Bat_Bottom.Name = "Radio_Run_Out_Bat_Bottom";
-            this.Radio_Run_Out_Bat_Bottom.Size = new System.Drawing.Size(31, 17);
-            this.Radio_Run_Out_Bat_Bottom.TabIndex = 1;
-            this.Radio_Run_Out_Bat_Bottom.TabStop = true;
-            this.Radio_Run_Out_Bat_Bottom.Text = "2";
-            this.Radio_Run_Out_Bat_Bottom.UseVisualStyleBackColor = true;
-            // 
-            // Radio_Run_Out_Bat_Top
-            // 
-            this.Radio_Run_Out_Bat_Top.AutoSize = true;
-            this.Radio_Run_Out_Bat_Top.Location = new System.Drawing.Point(13, 14);
-            this.Radio_Run_Out_Bat_Top.Name = "Radio_Run_Out_Bat_Top";
-            this.Radio_Run_Out_Bat_Top.Size = new System.Drawing.Size(31, 17);
-            this.Radio_Run_Out_Bat_Top.TabIndex = 0;
-            this.Radio_Run_Out_Bat_Top.TabStop = true;
-            this.Radio_Run_Out_Bat_Top.Text = "1";
-            this.Radio_Run_Out_Bat_Top.UseVisualStyleBackColor = true;
-            // 
-            // Flow_Panel_Fielder
-            // 
-            this.Flow_Panel_Fielder.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.Flow_Panel_Fielder.Controls.Add(this.Wicket_Fielder_Select_Combo_Box);
-            this.Flow_Panel_Fielder.Location = new System.Drawing.Point(0, -2);
-            this.Flow_Panel_Fielder.Name = "Flow_Panel_Fielder";
-            this.Flow_Panel_Fielder.Size = new System.Drawing.Size(176, 32);
-            this.Flow_Panel_Fielder.TabIndex = 36;
-            // 
-            // Wicket_Fielder_Select_Combo_Box
-            // 
-            this.Wicket_Fielder_Select_Combo_Box.FormattingEnabled = true;
-            this.Wicket_Fielder_Select_Combo_Box.Items.AddRange(new object[] {
-            "Paul Chung",
-            "Paul Bell",
-            "Daniel Reidenbach"});
-            this.Wicket_Fielder_Select_Combo_Box.Location = new System.Drawing.Point(3, 3);
-            this.Wicket_Fielder_Select_Combo_Box.Name = "Wicket_Fielder_Select_Combo_Box";
-            this.Wicket_Fielder_Select_Combo_Box.Size = new System.Drawing.Size(163, 21);
-            this.Wicket_Fielder_Select_Combo_Box.TabIndex = 23;
-            this.Wicket_Fielder_Select_Combo_Box.Text = "Select Fielder";
-            this.Fielder_Select_Tooltip.SetToolTip(this.Wicket_Fielder_Select_Combo_Box, "Select the fielder that was involved in the wicket");
             // 
             // Flow_Panel_No_Ball_Question
             // 
@@ -1046,8 +1233,16 @@
             // 
             this.Wicket_Next_Bat_Combo_Box.FormattingEnabled = true;
             this.Wicket_Next_Bat_Combo_Box.Items.AddRange(new object[] {
-            "Steve Davis",
-            "Dave Johnson"});
+            "Ricky Ponting",
+            "Daimian Martyn",
+            "Andrew Symonds",
+            "Micheal Clark",
+            "Mike Hussey",
+            "Brett Lee",
+            "Nathan Bracken",
+            "Stuart Clark",
+            "Mick Lewis",
+            "Brad Hogg"});
             this.Wicket_Next_Bat_Combo_Box.Location = new System.Drawing.Point(454, 2);
             this.Wicket_Next_Bat_Combo_Box.Margin = new System.Windows.Forms.Padding(3, 2, 3, 3);
             this.Wicket_Next_Bat_Combo_Box.Name = "Wicket_Next_Bat_Combo_Box";
@@ -3617,7 +3812,7 @@
             this.First_Inn_Bowling_Totals_Table.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 19.11263F));
             this.First_Inn_Bowling_Totals_Table.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 18.43003F));
             this.First_Inn_Bowling_Totals_Table.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 17.74744F));
-            this.First_Inn_Bowling_Totals_Table.Controls.Add(this.First_Inn_Bwl_Ttls_wkts, 6, 0);
+            this.First_Inn_Bowling_Totals_Table.Controls.Add(this.First_Inn_Bwl_Ttls_Wkts, 6, 0);
             this.First_Inn_Bowling_Totals_Table.Controls.Add(this.First_Inn_Bwl_Ttls_Runs, 5, 0);
             this.First_Inn_Bowling_Totals_Table.Controls.Add(this.First_Inn_Bwl_Ttls_Mdns, 4, 0);
             this.First_Inn_Bowling_Totals_Table.Controls.Add(this.First_Inn_Bwl_Ttls_Ovrs, 3, 0);
@@ -3625,24 +3820,24 @@
             this.First_Inn_Bowling_Totals_Table.Controls.Add(this.First_Inn_Bwl_Ttls_Wds, 1, 0);
             this.First_Inn_Bowling_Totals_Table.Controls.Add(this.First_Inn_Bwl_Ttls_Head, 0, 0);
             this.First_Inn_Bowling_Totals_Table.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.First_Inn_Bowling_Totals_Table.Location = new System.Drawing.Point(745, 311);
+            this.First_Inn_Bowling_Totals_Table.Location = new System.Drawing.Point(745, 309);
             this.First_Inn_Bowling_Totals_Table.Name = "First_Inn_Bowling_Totals_Table";
             this.First_Inn_Bowling_Totals_Table.RowCount = 1;
             this.First_Inn_Bowling_Totals_Table.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.First_Inn_Bowling_Totals_Table.Size = new System.Drawing.Size(425, 21);
             this.First_Inn_Bowling_Totals_Table.TabIndex = 35;
             // 
-            // First_Inn_Bwl_Ttls_wkts
+            // First_Inn_Bwl_Ttls_Wkts
             // 
-            this.First_Inn_Bwl_Ttls_wkts.AutoSize = true;
-            this.First_Inn_Bwl_Ttls_wkts.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.First_Inn_Bwl_Ttls_wkts.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.First_Inn_Bwl_Ttls_wkts.Location = new System.Drawing.Point(374, 1);
-            this.First_Inn_Bwl_Ttls_wkts.Name = "First_Inn_Bwl_Ttls_wkts";
-            this.First_Inn_Bwl_Ttls_wkts.Size = new System.Drawing.Size(47, 19);
-            this.First_Inn_Bwl_Ttls_wkts.TabIndex = 6;
-            this.First_Inn_Bwl_Ttls_wkts.Text = "0";
-            this.First_Inn_Bwl_Ttls_wkts.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.First_Inn_Bwl_Ttls_Wkts.AutoSize = true;
+            this.First_Inn_Bwl_Ttls_Wkts.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.First_Inn_Bwl_Ttls_Wkts.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.First_Inn_Bwl_Ttls_Wkts.Location = new System.Drawing.Point(374, 1);
+            this.First_Inn_Bwl_Ttls_Wkts.Name = "First_Inn_Bwl_Ttls_Wkts";
+            this.First_Inn_Bwl_Ttls_Wkts.Size = new System.Drawing.Size(47, 19);
+            this.First_Inn_Bwl_Ttls_Wkts.TabIndex = 6;
+            this.First_Inn_Bwl_Ttls_Wkts.Text = "-";
+            this.First_Inn_Bwl_Ttls_Wkts.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // First_Inn_Bwl_Ttls_Runs
             // 
@@ -3653,7 +3848,7 @@
             this.First_Inn_Bwl_Ttls_Runs.Name = "First_Inn_Bwl_Ttls_Runs";
             this.First_Inn_Bwl_Ttls_Runs.Size = new System.Drawing.Size(47, 19);
             this.First_Inn_Bwl_Ttls_Runs.TabIndex = 5;
-            this.First_Inn_Bwl_Ttls_Runs.Text = "95";
+            this.First_Inn_Bwl_Ttls_Runs.Text = "-";
             this.First_Inn_Bwl_Ttls_Runs.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // First_Inn_Bwl_Ttls_Mdns
@@ -3665,7 +3860,7 @@
             this.First_Inn_Bwl_Ttls_Mdns.Name = "First_Inn_Bwl_Ttls_Mdns";
             this.First_Inn_Bwl_Ttls_Mdns.Size = new System.Drawing.Size(49, 19);
             this.First_Inn_Bwl_Ttls_Mdns.TabIndex = 4;
-            this.First_Inn_Bwl_Ttls_Mdns.Text = "5";
+            this.First_Inn_Bwl_Ttls_Mdns.Text = "-";
             this.First_Inn_Bwl_Ttls_Mdns.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // First_Inn_Bwl_Ttls_Ovrs
@@ -3677,7 +3872,7 @@
             this.First_Inn_Bwl_Ttls_Ovrs.Name = "First_Inn_Bwl_Ttls_Ovrs";
             this.First_Inn_Bwl_Ttls_Ovrs.Size = new System.Drawing.Size(53, 19);
             this.First_Inn_Bwl_Ttls_Ovrs.TabIndex = 3;
-            this.First_Inn_Bwl_Ttls_Ovrs.Text = "13.3";
+            this.First_Inn_Bwl_Ttls_Ovrs.Text = "-";
             this.First_Inn_Bwl_Ttls_Ovrs.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // First_Inn_Bwl_Ttls_Nbs
@@ -3689,7 +3884,7 @@
             this.First_Inn_Bwl_Ttls_Nbs.Name = "First_Inn_Bwl_Ttls_Nbs";
             this.First_Inn_Bwl_Ttls_Nbs.Size = new System.Drawing.Size(26, 19);
             this.First_Inn_Bwl_Ttls_Nbs.TabIndex = 2;
-            this.First_Inn_Bwl_Ttls_Nbs.Text = "3";
+            this.First_Inn_Bwl_Ttls_Nbs.Text = "-";
             this.First_Inn_Bwl_Ttls_Nbs.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // First_Inn_Bwl_Ttls_Wds
@@ -3701,7 +3896,7 @@
             this.First_Inn_Bwl_Ttls_Wds.Name = "First_Inn_Bwl_Ttls_Wds";
             this.First_Inn_Bwl_Ttls_Wds.Size = new System.Drawing.Size(29, 19);
             this.First_Inn_Bwl_Ttls_Wds.TabIndex = 1;
-            this.First_Inn_Bwl_Ttls_Wds.Text = "4";
+            this.First_Inn_Bwl_Ttls_Wds.Text = "-";
             this.First_Inn_Bwl_Ttls_Wds.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // First_Inn_Bwl_Ttls_Head
@@ -3794,12 +3989,18 @@
             this.First_Inn_Extras_Table.ColumnCount = 2;
             this.First_Inn_Extras_Table.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.First_Inn_Extras_Table.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.First_Inn_Extras_Table.Controls.Add(this.First_Inn_Extras_Total_Value, 1, 5);
+            this.First_Inn_Extras_Table.Controls.Add(this.First_Inn_Penaltys_Value, 1, 4);
+            this.First_Inn_Extras_Table.Controls.Add(this.First_Inn_Leg_Byes_Value, 1, 3);
+            this.First_Inn_Extras_Table.Controls.Add(this.First_Inn_Byes_Value, 1, 2);
+            this.First_Inn_Extras_Table.Controls.Add(this.First_Inn_No_Balls_Value, 1, 1);
             this.First_Inn_Extras_Table.Controls.Add(this.First_Inn_Wides, 0, 0);
             this.First_Inn_Extras_Table.Controls.Add(this.First_Inn_No_Balls, 0, 1);
             this.First_Inn_Extras_Table.Controls.Add(this.First_Inn_Byes, 0, 2);
             this.First_Inn_Extras_Table.Controls.Add(this.First_Inn_Leg_Byes, 0, 3);
             this.First_Inn_Extras_Table.Controls.Add(this.First_Inn_Penaltys, 0, 4);
             this.First_Inn_Extras_Table.Controls.Add(this.First_Inn_Extras_Total, 0, 5);
+            this.First_Inn_Extras_Table.Controls.Add(this.First_Inn_Wides_Value, 1, 0);
             this.First_Inn_Extras_Table.Location = new System.Drawing.Point(666, 349);
             this.First_Inn_Extras_Table.Name = "First_Inn_Extras_Table";
             this.First_Inn_Extras_Table.RowCount = 6;
@@ -3811,6 +4012,66 @@
             this.First_Inn_Extras_Table.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.First_Inn_Extras_Table.Size = new System.Drawing.Size(164, 124);
             this.First_Inn_Extras_Table.TabIndex = 33;
+            // 
+            // First_Inn_Extras_Total_Value
+            // 
+            this.First_Inn_Extras_Total_Value.AutoSize = true;
+            this.First_Inn_Extras_Total_Value.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.First_Inn_Extras_Total_Value.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.First_Inn_Extras_Total_Value.Location = new System.Drawing.Point(110, 101);
+            this.First_Inn_Extras_Total_Value.Name = "First_Inn_Extras_Total_Value";
+            this.First_Inn_Extras_Total_Value.Size = new System.Drawing.Size(50, 22);
+            this.First_Inn_Extras_Total_Value.TabIndex = 11;
+            this.First_Inn_Extras_Total_Value.Text = "-";
+            this.First_Inn_Extras_Total_Value.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // First_Inn_Penaltys_Value
+            // 
+            this.First_Inn_Penaltys_Value.AutoSize = true;
+            this.First_Inn_Penaltys_Value.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.First_Inn_Penaltys_Value.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.First_Inn_Penaltys_Value.Location = new System.Drawing.Point(110, 81);
+            this.First_Inn_Penaltys_Value.Name = "First_Inn_Penaltys_Value";
+            this.First_Inn_Penaltys_Value.Size = new System.Drawing.Size(50, 19);
+            this.First_Inn_Penaltys_Value.TabIndex = 10;
+            this.First_Inn_Penaltys_Value.Text = "-";
+            this.First_Inn_Penaltys_Value.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // First_Inn_Leg_Byes_Value
+            // 
+            this.First_Inn_Leg_Byes_Value.AutoSize = true;
+            this.First_Inn_Leg_Byes_Value.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.First_Inn_Leg_Byes_Value.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.First_Inn_Leg_Byes_Value.Location = new System.Drawing.Point(110, 61);
+            this.First_Inn_Leg_Byes_Value.Name = "First_Inn_Leg_Byes_Value";
+            this.First_Inn_Leg_Byes_Value.Size = new System.Drawing.Size(50, 19);
+            this.First_Inn_Leg_Byes_Value.TabIndex = 9;
+            this.First_Inn_Leg_Byes_Value.Text = "-";
+            this.First_Inn_Leg_Byes_Value.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // First_Inn_Byes_Value
+            // 
+            this.First_Inn_Byes_Value.AutoSize = true;
+            this.First_Inn_Byes_Value.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.First_Inn_Byes_Value.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.First_Inn_Byes_Value.Location = new System.Drawing.Point(110, 41);
+            this.First_Inn_Byes_Value.Name = "First_Inn_Byes_Value";
+            this.First_Inn_Byes_Value.Size = new System.Drawing.Size(50, 19);
+            this.First_Inn_Byes_Value.TabIndex = 8;
+            this.First_Inn_Byes_Value.Text = "-";
+            this.First_Inn_Byes_Value.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // First_Inn_No_Balls_Value
+            // 
+            this.First_Inn_No_Balls_Value.AutoSize = true;
+            this.First_Inn_No_Balls_Value.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.First_Inn_No_Balls_Value.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.First_Inn_No_Balls_Value.Location = new System.Drawing.Point(110, 21);
+            this.First_Inn_No_Balls_Value.Name = "First_Inn_No_Balls_Value";
+            this.First_Inn_No_Balls_Value.Size = new System.Drawing.Size(50, 19);
+            this.First_Inn_No_Balls_Value.TabIndex = 7;
+            this.First_Inn_No_Balls_Value.Text = "-";
+            this.First_Inn_No_Balls_Value.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // First_Inn_Wides
             // 
@@ -3884,22 +4145,80 @@
             this.First_Inn_Extras_Total.Text = "Total Extras";
             this.First_Inn_Extras_Total.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // First_Inn_Wides_Value
+            // 
+            this.First_Inn_Wides_Value.AutoSize = true;
+            this.First_Inn_Wides_Value.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.First_Inn_Wides_Value.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.First_Inn_Wides_Value.Location = new System.Drawing.Point(110, 1);
+            this.First_Inn_Wides_Value.Name = "First_Inn_Wides_Value";
+            this.First_Inn_Wides_Value.Size = new System.Drawing.Size(50, 19);
+            this.First_Inn_Wides_Value.TabIndex = 6;
+            this.First_Inn_Wides_Value.Text = "-";
+            this.First_Inn_Wides_Value.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // First_Inn_Fall_Of_Wckt_Table
             // 
             this.First_Inn_Fall_Of_Wckt_Table.BackColor = System.Drawing.Color.PaleTurquoise;
             this.First_Inn_Fall_Of_Wckt_Table.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
-            this.First_Inn_Fall_Of_Wckt_Table.ColumnCount = 2;
+            this.First_Inn_Fall_Of_Wckt_Table.ColumnCount = 11;
             this.First_Inn_Fall_Of_Wckt_Table.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.First_Inn_Fall_Of_Wckt_Table.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.First_Inn_Fall_Of_Wckt_Table.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.First_Inn_Fall_Of_Wckt_Table.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.First_Inn_Fall_Of_Wckt_Table.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.First_Inn_Fall_Of_Wckt_Table.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.First_Inn_Fall_Of_Wckt_Table.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.First_Inn_Fall_Of_Wckt_Table.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.First_Inn_Fall_Of_Wckt_Table.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.First_Inn_Fall_Of_Wckt_Table.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.First_Inn_Fall_Of_Wckt_Table.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.First_Inn_Fall_Of_Wckt_Table.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.First_Inn_Fall_Of_Wckt_Table.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.First_Inn_Fall_Of_Wckt_Table.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.First_Inn_Fall_Of_Wckt_Table.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.First_Inn_Fall_Of_Wckt_Table.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.First_Inn_Fall_Of_Wckt_Table.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.First_Inn_Fall_Of_Wckt_Table.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.First_Inn_Fall_Of_Wckt_Table.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.First_Inn_Fall_Of_Wckt_Table.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.First_Inn_Fall_Of_Wckt_Table.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.First_Inn_Fall_Of_Wckt_Table.Controls.Add(this.First_Inn_FOW_Over_Num_10, 10, 5);
+            this.First_Inn_Fall_Of_Wckt_Table.Controls.Add(this.First_Inn_FOW_Over_Num_9, 9, 5);
+            this.First_Inn_Fall_Of_Wckt_Table.Controls.Add(this.First_Inn_FOW_Over_Num_8, 8, 5);
+            this.First_Inn_Fall_Of_Wckt_Table.Controls.Add(this.First_Inn_FOW_Over_Num_7, 7, 5);
+            this.First_Inn_Fall_Of_Wckt_Table.Controls.Add(this.First_Inn_FOW_Over_Num_6, 6, 5);
+            this.First_Inn_Fall_Of_Wckt_Table.Controls.Add(this.First_Inn_FOW_Over_Num_5, 5, 5);
+            this.First_Inn_Fall_Of_Wckt_Table.Controls.Add(this.First_Inn_FOW_Over_Num_4, 4, 5);
+            this.First_Inn_Fall_Of_Wckt_Table.Controls.Add(this.First_Inn_FOW_Over_Num_3, 3, 5);
+            this.First_Inn_Fall_Of_Wckt_Table.Controls.Add(this.First_Inn_FOW_Over_Num_2, 2, 5);
+            this.First_Inn_Fall_Of_Wckt_Table.Controls.Add(this.First_Inn_FOW_Partnership_10, 10, 4);
+            this.First_Inn_Fall_Of_Wckt_Table.Controls.Add(this.First_Inn_FOW_Partnership_9, 9, 4);
+            this.First_Inn_Fall_Of_Wckt_Table.Controls.Add(this.First_Inn_FOW_Partnership_8, 8, 4);
+            this.First_Inn_Fall_Of_Wckt_Table.Controls.Add(this.First_Inn_FOW_Partnership_7, 7, 4);
+            this.First_Inn_Fall_Of_Wckt_Table.Controls.Add(this.First_Inn_FOW_Partnership_6, 6, 4);
+            this.First_Inn_Fall_Of_Wckt_Table.Controls.Add(this.First_Inn_FOW_Partnership_5, 5, 4);
+            this.First_Inn_Fall_Of_Wckt_Table.Controls.Add(this.First_Inn_FOW_Partnership_4, 4, 4);
+            this.First_Inn_Fall_Of_Wckt_Table.Controls.Add(this.First_Inn_FOW_Partnership_3, 3, 4);
+            this.First_Inn_Fall_Of_Wckt_Table.Controls.Add(this.First_Inn_FOW_Partnership_2, 2, 4);
+            this.First_Inn_Fall_Of_Wckt_Table.Controls.Add(this.First_Inn_FOW_Not_Out_Bat_10, 10, 3);
+            this.First_Inn_Fall_Of_Wckt_Table.Controls.Add(this.First_Inn_FOW_Not_Out_Bat_9, 9, 3);
+            this.First_Inn_Fall_Of_Wckt_Table.Controls.Add(this.First_Inn_FOW_Not_Out_Bat_8, 8, 3);
+            this.First_Inn_Fall_Of_Wckt_Table.Controls.Add(this.First_Inn_FOW_Not_Out_Bat_7, 7, 3);
+            this.First_Inn_Fall_Of_Wckt_Table.Controls.Add(this.First_Inn_FOW_Not_Out_Bat_6, 6, 3);
+            this.First_Inn_Fall_Of_Wckt_Table.Controls.Add(this.First_Inn_FOW_Not_Out_Bat_5, 5, 3);
+            this.First_Inn_Fall_Of_Wckt_Table.Controls.Add(this.First_Inn_FOW_Not_Out_Bat_4, 4, 3);
+            this.First_Inn_Fall_Of_Wckt_Table.Controls.Add(this.First_Inn_FOW_Not_Out_Bat_3, 3, 3);
+            this.First_Inn_Fall_Of_Wckt_Table.Controls.Add(this.First_Inn_FOW_Not_Out_Bat_2, 2, 3);
+            this.First_Inn_Fall_Of_Wckt_Table.Controls.Add(this.First_Inn_FOW_Out_Bat_10, 10, 2);
+            this.First_Inn_Fall_Of_Wckt_Table.Controls.Add(this.First_Inn_FOW_Out_Bat_9, 9, 2);
+            this.First_Inn_Fall_Of_Wckt_Table.Controls.Add(this.First_Inn_FOW_Out_Bat_8, 8, 2);
+            this.First_Inn_Fall_Of_Wckt_Table.Controls.Add(this.First_Inn_FOW_Out_Bat_7, 7, 2);
+            this.First_Inn_Fall_Of_Wckt_Table.Controls.Add(this.First_Inn_FOW_Out_Bat_6, 6, 2);
+            this.First_Inn_Fall_Of_Wckt_Table.Controls.Add(this.First_Inn_FOW_Out_Bat_5, 5, 2);
+            this.First_Inn_Fall_Of_Wckt_Table.Controls.Add(this.First_Inn_FOW_Out_Bat_4, 4, 2);
+            this.First_Inn_Fall_Of_Wckt_Table.Controls.Add(this.First_Inn_FOW_Out_Bat_3, 3, 2);
+            this.First_Inn_Fall_Of_Wckt_Table.Controls.Add(this.First_Inn_FOW_Out_Bat_2, 2, 2);
+            this.First_Inn_Fall_Of_Wckt_Table.Controls.Add(this.First_Inn_FOW_Score_10, 10, 1);
+            this.First_Inn_Fall_Of_Wckt_Table.Controls.Add(this.First_Inn_FOW_Score_9, 9, 1);
+            this.First_Inn_Fall_Of_Wckt_Table.Controls.Add(this.First_Inn_FOW_Score_8, 8, 1);
+            this.First_Inn_Fall_Of_Wckt_Table.Controls.Add(this.First_Inn_FOW_Score_7, 7, 1);
+            this.First_Inn_Fall_Of_Wckt_Table.Controls.Add(this.First_Inn_FOW_Score_6, 6, 1);
+            this.First_Inn_Fall_Of_Wckt_Table.Controls.Add(this.First_Inn_FOW_Score_5, 5, 1);
+            this.First_Inn_Fall_Of_Wckt_Table.Controls.Add(this.First_Inn_FOW_Score_4, 4, 1);
+            this.First_Inn_Fall_Of_Wckt_Table.Controls.Add(this.First_Inn_FOW_Score_3, 3, 1);
+            this.First_Inn_Fall_Of_Wckt_Table.Controls.Add(this.First_Inn_FOW_Score_2, 2, 1);
+            this.First_Inn_Fall_Of_Wckt_Table.Controls.Add(this.label1, 10, 0);
             this.First_Inn_Fall_Of_Wckt_Table.Controls.Add(this.First_Inn_FOW_Score_Head, 0, 1);
             this.First_Inn_Fall_Of_Wckt_Table.Controls.Add(this.First_Inn_FOW_Head_1, 1, 0);
             this.First_Inn_Fall_Of_Wckt_Table.Controls.Add(this.First_Inn_Fall_Of_Wkt_Head, 0, 0);
@@ -3907,6 +4226,19 @@
             this.First_Inn_Fall_Of_Wckt_Table.Controls.Add(this.First_Inn_FOW_Not_Out_Bat_Head, 0, 3);
             this.First_Inn_Fall_Of_Wckt_Table.Controls.Add(this.First_Inn_FOW_Partnership_Head, 0, 4);
             this.First_Inn_Fall_Of_Wckt_Table.Controls.Add(this.First_Inn_FOW_Over_Num_Head, 0, 5);
+            this.First_Inn_Fall_Of_Wckt_Table.Controls.Add(this.First_Inn_FOW_Score_1, 1, 1);
+            this.First_Inn_Fall_Of_Wckt_Table.Controls.Add(this.First_Inn_FOW_Out_Bat_1, 1, 2);
+            this.First_Inn_Fall_Of_Wckt_Table.Controls.Add(this.First_Inn_FOW_Not_Out_Bat_1, 1, 3);
+            this.First_Inn_Fall_Of_Wckt_Table.Controls.Add(this.First_Inn_FOW_Partnership_1, 1, 4);
+            this.First_Inn_Fall_Of_Wckt_Table.Controls.Add(this.First_Inn_FOW_Over_Num_1, 1, 5);
+            this.First_Inn_Fall_Of_Wckt_Table.Controls.Add(this.label7, 2, 0);
+            this.First_Inn_Fall_Of_Wckt_Table.Controls.Add(this.label8, 3, 0);
+            this.First_Inn_Fall_Of_Wckt_Table.Controls.Add(this.label9, 4, 0);
+            this.First_Inn_Fall_Of_Wckt_Table.Controls.Add(this.label10, 5, 0);
+            this.First_Inn_Fall_Of_Wckt_Table.Controls.Add(this.label11, 6, 0);
+            this.First_Inn_Fall_Of_Wckt_Table.Controls.Add(this.label12, 7, 0);
+            this.First_Inn_Fall_Of_Wckt_Table.Controls.Add(this.label13, 8, 0);
+            this.First_Inn_Fall_Of_Wckt_Table.Controls.Add(this.label14, 9, 0);
             this.First_Inn_Fall_Of_Wckt_Table.GrowStyle = System.Windows.Forms.TableLayoutPanelGrowStyle.AddColumns;
             this.First_Inn_Fall_Of_Wckt_Table.Location = new System.Drawing.Point(22, 359);
             this.First_Inn_Fall_Of_Wckt_Table.MaximumSize = new System.Drawing.Size(607, 115);
@@ -3918,8 +4250,560 @@
             this.First_Inn_Fall_Of_Wckt_Table.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.First_Inn_Fall_Of_Wckt_Table.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.First_Inn_Fall_Of_Wckt_Table.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.First_Inn_Fall_Of_Wckt_Table.Size = new System.Drawing.Size(268, 115);
+            this.First_Inn_Fall_Of_Wckt_Table.Size = new System.Drawing.Size(607, 115);
             this.First_Inn_Fall_Of_Wckt_Table.TabIndex = 31;
+            // 
+            // First_Inn_FOW_Over_Num_10
+            // 
+            this.First_Inn_FOW_Over_Num_10.AutoSize = true;
+            this.First_Inn_FOW_Over_Num_10.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.First_Inn_FOW_Over_Num_10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.First_Inn_FOW_Over_Num_10.Location = new System.Drawing.Point(567, 96);
+            this.First_Inn_FOW_Over_Num_10.Name = "First_Inn_FOW_Over_Num_10";
+            this.First_Inn_FOW_Over_Num_10.Size = new System.Drawing.Size(36, 18);
+            this.First_Inn_FOW_Over_Num_10.TabIndex = 81;
+            this.First_Inn_FOW_Over_Num_10.Text = "-";
+            this.First_Inn_FOW_Over_Num_10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // First_Inn_FOW_Over_Num_9
+            // 
+            this.First_Inn_FOW_Over_Num_9.AutoSize = true;
+            this.First_Inn_FOW_Over_Num_9.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.First_Inn_FOW_Over_Num_9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.First_Inn_FOW_Over_Num_9.Location = new System.Drawing.Point(526, 96);
+            this.First_Inn_FOW_Over_Num_9.Name = "First_Inn_FOW_Over_Num_9";
+            this.First_Inn_FOW_Over_Num_9.Size = new System.Drawing.Size(34, 18);
+            this.First_Inn_FOW_Over_Num_9.TabIndex = 80;
+            this.First_Inn_FOW_Over_Num_9.Text = "-";
+            this.First_Inn_FOW_Over_Num_9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // First_Inn_FOW_Over_Num_8
+            // 
+            this.First_Inn_FOW_Over_Num_8.AutoSize = true;
+            this.First_Inn_FOW_Over_Num_8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.First_Inn_FOW_Over_Num_8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.First_Inn_FOW_Over_Num_8.Location = new System.Drawing.Point(485, 96);
+            this.First_Inn_FOW_Over_Num_8.Name = "First_Inn_FOW_Over_Num_8";
+            this.First_Inn_FOW_Over_Num_8.Size = new System.Drawing.Size(34, 18);
+            this.First_Inn_FOW_Over_Num_8.TabIndex = 79;
+            this.First_Inn_FOW_Over_Num_8.Text = "-";
+            this.First_Inn_FOW_Over_Num_8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // First_Inn_FOW_Over_Num_7
+            // 
+            this.First_Inn_FOW_Over_Num_7.AutoSize = true;
+            this.First_Inn_FOW_Over_Num_7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.First_Inn_FOW_Over_Num_7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.First_Inn_FOW_Over_Num_7.Location = new System.Drawing.Point(444, 96);
+            this.First_Inn_FOW_Over_Num_7.Name = "First_Inn_FOW_Over_Num_7";
+            this.First_Inn_FOW_Over_Num_7.Size = new System.Drawing.Size(34, 18);
+            this.First_Inn_FOW_Over_Num_7.TabIndex = 78;
+            this.First_Inn_FOW_Over_Num_7.Text = "-";
+            this.First_Inn_FOW_Over_Num_7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // First_Inn_FOW_Over_Num_6
+            // 
+            this.First_Inn_FOW_Over_Num_6.AutoSize = true;
+            this.First_Inn_FOW_Over_Num_6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.First_Inn_FOW_Over_Num_6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.First_Inn_FOW_Over_Num_6.Location = new System.Drawing.Point(403, 96);
+            this.First_Inn_FOW_Over_Num_6.Name = "First_Inn_FOW_Over_Num_6";
+            this.First_Inn_FOW_Over_Num_6.Size = new System.Drawing.Size(34, 18);
+            this.First_Inn_FOW_Over_Num_6.TabIndex = 77;
+            this.First_Inn_FOW_Over_Num_6.Text = "-";
+            this.First_Inn_FOW_Over_Num_6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // First_Inn_FOW_Over_Num_5
+            // 
+            this.First_Inn_FOW_Over_Num_5.AutoSize = true;
+            this.First_Inn_FOW_Over_Num_5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.First_Inn_FOW_Over_Num_5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.First_Inn_FOW_Over_Num_5.Location = new System.Drawing.Point(362, 96);
+            this.First_Inn_FOW_Over_Num_5.Name = "First_Inn_FOW_Over_Num_5";
+            this.First_Inn_FOW_Over_Num_5.Size = new System.Drawing.Size(34, 18);
+            this.First_Inn_FOW_Over_Num_5.TabIndex = 76;
+            this.First_Inn_FOW_Over_Num_5.Text = "-";
+            this.First_Inn_FOW_Over_Num_5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // First_Inn_FOW_Over_Num_4
+            // 
+            this.First_Inn_FOW_Over_Num_4.AutoSize = true;
+            this.First_Inn_FOW_Over_Num_4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.First_Inn_FOW_Over_Num_4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.First_Inn_FOW_Over_Num_4.Location = new System.Drawing.Point(321, 96);
+            this.First_Inn_FOW_Over_Num_4.Name = "First_Inn_FOW_Over_Num_4";
+            this.First_Inn_FOW_Over_Num_4.Size = new System.Drawing.Size(34, 18);
+            this.First_Inn_FOW_Over_Num_4.TabIndex = 75;
+            this.First_Inn_FOW_Over_Num_4.Text = "-";
+            this.First_Inn_FOW_Over_Num_4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // First_Inn_FOW_Over_Num_3
+            // 
+            this.First_Inn_FOW_Over_Num_3.AutoSize = true;
+            this.First_Inn_FOW_Over_Num_3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.First_Inn_FOW_Over_Num_3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.First_Inn_FOW_Over_Num_3.Location = new System.Drawing.Point(280, 96);
+            this.First_Inn_FOW_Over_Num_3.Name = "First_Inn_FOW_Over_Num_3";
+            this.First_Inn_FOW_Over_Num_3.Size = new System.Drawing.Size(34, 18);
+            this.First_Inn_FOW_Over_Num_3.TabIndex = 74;
+            this.First_Inn_FOW_Over_Num_3.Text = "-";
+            this.First_Inn_FOW_Over_Num_3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // First_Inn_FOW_Over_Num_2
+            // 
+            this.First_Inn_FOW_Over_Num_2.AutoSize = true;
+            this.First_Inn_FOW_Over_Num_2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.First_Inn_FOW_Over_Num_2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.First_Inn_FOW_Over_Num_2.Location = new System.Drawing.Point(239, 96);
+            this.First_Inn_FOW_Over_Num_2.Name = "First_Inn_FOW_Over_Num_2";
+            this.First_Inn_FOW_Over_Num_2.Size = new System.Drawing.Size(34, 18);
+            this.First_Inn_FOW_Over_Num_2.TabIndex = 73;
+            this.First_Inn_FOW_Over_Num_2.Text = "-";
+            this.First_Inn_FOW_Over_Num_2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // First_Inn_FOW_Partnership_10
+            // 
+            this.First_Inn_FOW_Partnership_10.AutoSize = true;
+            this.First_Inn_FOW_Partnership_10.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.First_Inn_FOW_Partnership_10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.First_Inn_FOW_Partnership_10.Location = new System.Drawing.Point(567, 77);
+            this.First_Inn_FOW_Partnership_10.Name = "First_Inn_FOW_Partnership_10";
+            this.First_Inn_FOW_Partnership_10.Size = new System.Drawing.Size(36, 18);
+            this.First_Inn_FOW_Partnership_10.TabIndex = 72;
+            this.First_Inn_FOW_Partnership_10.Text = "-";
+            this.First_Inn_FOW_Partnership_10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // First_Inn_FOW_Partnership_9
+            // 
+            this.First_Inn_FOW_Partnership_9.AutoSize = true;
+            this.First_Inn_FOW_Partnership_9.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.First_Inn_FOW_Partnership_9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.First_Inn_FOW_Partnership_9.Location = new System.Drawing.Point(526, 77);
+            this.First_Inn_FOW_Partnership_9.Name = "First_Inn_FOW_Partnership_9";
+            this.First_Inn_FOW_Partnership_9.Size = new System.Drawing.Size(34, 18);
+            this.First_Inn_FOW_Partnership_9.TabIndex = 71;
+            this.First_Inn_FOW_Partnership_9.Text = "-";
+            this.First_Inn_FOW_Partnership_9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // First_Inn_FOW_Partnership_8
+            // 
+            this.First_Inn_FOW_Partnership_8.AutoSize = true;
+            this.First_Inn_FOW_Partnership_8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.First_Inn_FOW_Partnership_8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.First_Inn_FOW_Partnership_8.Location = new System.Drawing.Point(485, 77);
+            this.First_Inn_FOW_Partnership_8.Name = "First_Inn_FOW_Partnership_8";
+            this.First_Inn_FOW_Partnership_8.Size = new System.Drawing.Size(34, 18);
+            this.First_Inn_FOW_Partnership_8.TabIndex = 70;
+            this.First_Inn_FOW_Partnership_8.Text = "-";
+            this.First_Inn_FOW_Partnership_8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // First_Inn_FOW_Partnership_7
+            // 
+            this.First_Inn_FOW_Partnership_7.AutoSize = true;
+            this.First_Inn_FOW_Partnership_7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.First_Inn_FOW_Partnership_7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.First_Inn_FOW_Partnership_7.Location = new System.Drawing.Point(444, 77);
+            this.First_Inn_FOW_Partnership_7.Name = "First_Inn_FOW_Partnership_7";
+            this.First_Inn_FOW_Partnership_7.Size = new System.Drawing.Size(34, 18);
+            this.First_Inn_FOW_Partnership_7.TabIndex = 69;
+            this.First_Inn_FOW_Partnership_7.Text = "-";
+            this.First_Inn_FOW_Partnership_7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // First_Inn_FOW_Partnership_6
+            // 
+            this.First_Inn_FOW_Partnership_6.AutoSize = true;
+            this.First_Inn_FOW_Partnership_6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.First_Inn_FOW_Partnership_6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.First_Inn_FOW_Partnership_6.Location = new System.Drawing.Point(403, 77);
+            this.First_Inn_FOW_Partnership_6.Name = "First_Inn_FOW_Partnership_6";
+            this.First_Inn_FOW_Partnership_6.Size = new System.Drawing.Size(34, 18);
+            this.First_Inn_FOW_Partnership_6.TabIndex = 68;
+            this.First_Inn_FOW_Partnership_6.Text = "-";
+            this.First_Inn_FOW_Partnership_6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // First_Inn_FOW_Partnership_5
+            // 
+            this.First_Inn_FOW_Partnership_5.AutoSize = true;
+            this.First_Inn_FOW_Partnership_5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.First_Inn_FOW_Partnership_5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.First_Inn_FOW_Partnership_5.Location = new System.Drawing.Point(362, 77);
+            this.First_Inn_FOW_Partnership_5.Name = "First_Inn_FOW_Partnership_5";
+            this.First_Inn_FOW_Partnership_5.Size = new System.Drawing.Size(34, 18);
+            this.First_Inn_FOW_Partnership_5.TabIndex = 67;
+            this.First_Inn_FOW_Partnership_5.Text = "-";
+            this.First_Inn_FOW_Partnership_5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // First_Inn_FOW_Partnership_4
+            // 
+            this.First_Inn_FOW_Partnership_4.AutoSize = true;
+            this.First_Inn_FOW_Partnership_4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.First_Inn_FOW_Partnership_4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.First_Inn_FOW_Partnership_4.Location = new System.Drawing.Point(321, 77);
+            this.First_Inn_FOW_Partnership_4.Name = "First_Inn_FOW_Partnership_4";
+            this.First_Inn_FOW_Partnership_4.Size = new System.Drawing.Size(34, 18);
+            this.First_Inn_FOW_Partnership_4.TabIndex = 66;
+            this.First_Inn_FOW_Partnership_4.Text = "-";
+            this.First_Inn_FOW_Partnership_4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // First_Inn_FOW_Partnership_3
+            // 
+            this.First_Inn_FOW_Partnership_3.AutoSize = true;
+            this.First_Inn_FOW_Partnership_3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.First_Inn_FOW_Partnership_3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.First_Inn_FOW_Partnership_3.Location = new System.Drawing.Point(280, 77);
+            this.First_Inn_FOW_Partnership_3.Name = "First_Inn_FOW_Partnership_3";
+            this.First_Inn_FOW_Partnership_3.Size = new System.Drawing.Size(34, 18);
+            this.First_Inn_FOW_Partnership_3.TabIndex = 65;
+            this.First_Inn_FOW_Partnership_3.Text = "-";
+            this.First_Inn_FOW_Partnership_3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // First_Inn_FOW_Partnership_2
+            // 
+            this.First_Inn_FOW_Partnership_2.AutoSize = true;
+            this.First_Inn_FOW_Partnership_2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.First_Inn_FOW_Partnership_2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.First_Inn_FOW_Partnership_2.Location = new System.Drawing.Point(239, 77);
+            this.First_Inn_FOW_Partnership_2.Name = "First_Inn_FOW_Partnership_2";
+            this.First_Inn_FOW_Partnership_2.Size = new System.Drawing.Size(34, 18);
+            this.First_Inn_FOW_Partnership_2.TabIndex = 64;
+            this.First_Inn_FOW_Partnership_2.Text = "-";
+            this.First_Inn_FOW_Partnership_2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // First_Inn_FOW_Not_Out_Bat_10
+            // 
+            this.First_Inn_FOW_Not_Out_Bat_10.AutoSize = true;
+            this.First_Inn_FOW_Not_Out_Bat_10.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.First_Inn_FOW_Not_Out_Bat_10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.First_Inn_FOW_Not_Out_Bat_10.Location = new System.Drawing.Point(567, 58);
+            this.First_Inn_FOW_Not_Out_Bat_10.Name = "First_Inn_FOW_Not_Out_Bat_10";
+            this.First_Inn_FOW_Not_Out_Bat_10.Size = new System.Drawing.Size(36, 18);
+            this.First_Inn_FOW_Not_Out_Bat_10.TabIndex = 63;
+            this.First_Inn_FOW_Not_Out_Bat_10.Text = "-";
+            this.First_Inn_FOW_Not_Out_Bat_10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // First_Inn_FOW_Not_Out_Bat_9
+            // 
+            this.First_Inn_FOW_Not_Out_Bat_9.AutoSize = true;
+            this.First_Inn_FOW_Not_Out_Bat_9.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.First_Inn_FOW_Not_Out_Bat_9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.First_Inn_FOW_Not_Out_Bat_9.Location = new System.Drawing.Point(526, 58);
+            this.First_Inn_FOW_Not_Out_Bat_9.Name = "First_Inn_FOW_Not_Out_Bat_9";
+            this.First_Inn_FOW_Not_Out_Bat_9.Size = new System.Drawing.Size(34, 18);
+            this.First_Inn_FOW_Not_Out_Bat_9.TabIndex = 62;
+            this.First_Inn_FOW_Not_Out_Bat_9.Text = "-";
+            this.First_Inn_FOW_Not_Out_Bat_9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // First_Inn_FOW_Not_Out_Bat_8
+            // 
+            this.First_Inn_FOW_Not_Out_Bat_8.AutoSize = true;
+            this.First_Inn_FOW_Not_Out_Bat_8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.First_Inn_FOW_Not_Out_Bat_8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.First_Inn_FOW_Not_Out_Bat_8.Location = new System.Drawing.Point(485, 58);
+            this.First_Inn_FOW_Not_Out_Bat_8.Name = "First_Inn_FOW_Not_Out_Bat_8";
+            this.First_Inn_FOW_Not_Out_Bat_8.Size = new System.Drawing.Size(34, 18);
+            this.First_Inn_FOW_Not_Out_Bat_8.TabIndex = 61;
+            this.First_Inn_FOW_Not_Out_Bat_8.Text = "-";
+            this.First_Inn_FOW_Not_Out_Bat_8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // First_Inn_FOW_Not_Out_Bat_7
+            // 
+            this.First_Inn_FOW_Not_Out_Bat_7.AutoSize = true;
+            this.First_Inn_FOW_Not_Out_Bat_7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.First_Inn_FOW_Not_Out_Bat_7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.First_Inn_FOW_Not_Out_Bat_7.Location = new System.Drawing.Point(444, 58);
+            this.First_Inn_FOW_Not_Out_Bat_7.Name = "First_Inn_FOW_Not_Out_Bat_7";
+            this.First_Inn_FOW_Not_Out_Bat_7.Size = new System.Drawing.Size(34, 18);
+            this.First_Inn_FOW_Not_Out_Bat_7.TabIndex = 60;
+            this.First_Inn_FOW_Not_Out_Bat_7.Text = "-";
+            this.First_Inn_FOW_Not_Out_Bat_7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // First_Inn_FOW_Not_Out_Bat_6
+            // 
+            this.First_Inn_FOW_Not_Out_Bat_6.AutoSize = true;
+            this.First_Inn_FOW_Not_Out_Bat_6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.First_Inn_FOW_Not_Out_Bat_6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.First_Inn_FOW_Not_Out_Bat_6.Location = new System.Drawing.Point(403, 58);
+            this.First_Inn_FOW_Not_Out_Bat_6.Name = "First_Inn_FOW_Not_Out_Bat_6";
+            this.First_Inn_FOW_Not_Out_Bat_6.Size = new System.Drawing.Size(34, 18);
+            this.First_Inn_FOW_Not_Out_Bat_6.TabIndex = 59;
+            this.First_Inn_FOW_Not_Out_Bat_6.Text = "-";
+            this.First_Inn_FOW_Not_Out_Bat_6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // First_Inn_FOW_Not_Out_Bat_5
+            // 
+            this.First_Inn_FOW_Not_Out_Bat_5.AutoSize = true;
+            this.First_Inn_FOW_Not_Out_Bat_5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.First_Inn_FOW_Not_Out_Bat_5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.First_Inn_FOW_Not_Out_Bat_5.Location = new System.Drawing.Point(362, 58);
+            this.First_Inn_FOW_Not_Out_Bat_5.Name = "First_Inn_FOW_Not_Out_Bat_5";
+            this.First_Inn_FOW_Not_Out_Bat_5.Size = new System.Drawing.Size(34, 18);
+            this.First_Inn_FOW_Not_Out_Bat_5.TabIndex = 58;
+            this.First_Inn_FOW_Not_Out_Bat_5.Text = "-";
+            this.First_Inn_FOW_Not_Out_Bat_5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // First_Inn_FOW_Not_Out_Bat_4
+            // 
+            this.First_Inn_FOW_Not_Out_Bat_4.AutoSize = true;
+            this.First_Inn_FOW_Not_Out_Bat_4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.First_Inn_FOW_Not_Out_Bat_4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.First_Inn_FOW_Not_Out_Bat_4.Location = new System.Drawing.Point(321, 58);
+            this.First_Inn_FOW_Not_Out_Bat_4.Name = "First_Inn_FOW_Not_Out_Bat_4";
+            this.First_Inn_FOW_Not_Out_Bat_4.Size = new System.Drawing.Size(34, 18);
+            this.First_Inn_FOW_Not_Out_Bat_4.TabIndex = 57;
+            this.First_Inn_FOW_Not_Out_Bat_4.Text = "-";
+            this.First_Inn_FOW_Not_Out_Bat_4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // First_Inn_FOW_Not_Out_Bat_3
+            // 
+            this.First_Inn_FOW_Not_Out_Bat_3.AutoSize = true;
+            this.First_Inn_FOW_Not_Out_Bat_3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.First_Inn_FOW_Not_Out_Bat_3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.First_Inn_FOW_Not_Out_Bat_3.Location = new System.Drawing.Point(280, 58);
+            this.First_Inn_FOW_Not_Out_Bat_3.Name = "First_Inn_FOW_Not_Out_Bat_3";
+            this.First_Inn_FOW_Not_Out_Bat_3.Size = new System.Drawing.Size(34, 18);
+            this.First_Inn_FOW_Not_Out_Bat_3.TabIndex = 56;
+            this.First_Inn_FOW_Not_Out_Bat_3.Text = "-";
+            this.First_Inn_FOW_Not_Out_Bat_3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // First_Inn_FOW_Not_Out_Bat_2
+            // 
+            this.First_Inn_FOW_Not_Out_Bat_2.AutoSize = true;
+            this.First_Inn_FOW_Not_Out_Bat_2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.First_Inn_FOW_Not_Out_Bat_2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.First_Inn_FOW_Not_Out_Bat_2.Location = new System.Drawing.Point(239, 58);
+            this.First_Inn_FOW_Not_Out_Bat_2.Name = "First_Inn_FOW_Not_Out_Bat_2";
+            this.First_Inn_FOW_Not_Out_Bat_2.Size = new System.Drawing.Size(34, 18);
+            this.First_Inn_FOW_Not_Out_Bat_2.TabIndex = 55;
+            this.First_Inn_FOW_Not_Out_Bat_2.Text = "-";
+            this.First_Inn_FOW_Not_Out_Bat_2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // First_Inn_FOW_Out_Bat_10
+            // 
+            this.First_Inn_FOW_Out_Bat_10.AutoSize = true;
+            this.First_Inn_FOW_Out_Bat_10.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.First_Inn_FOW_Out_Bat_10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.First_Inn_FOW_Out_Bat_10.Location = new System.Drawing.Point(567, 39);
+            this.First_Inn_FOW_Out_Bat_10.Name = "First_Inn_FOW_Out_Bat_10";
+            this.First_Inn_FOW_Out_Bat_10.Size = new System.Drawing.Size(36, 18);
+            this.First_Inn_FOW_Out_Bat_10.TabIndex = 54;
+            this.First_Inn_FOW_Out_Bat_10.Text = "-";
+            this.First_Inn_FOW_Out_Bat_10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // First_Inn_FOW_Out_Bat_9
+            // 
+            this.First_Inn_FOW_Out_Bat_9.AutoSize = true;
+            this.First_Inn_FOW_Out_Bat_9.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.First_Inn_FOW_Out_Bat_9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.First_Inn_FOW_Out_Bat_9.Location = new System.Drawing.Point(526, 39);
+            this.First_Inn_FOW_Out_Bat_9.Name = "First_Inn_FOW_Out_Bat_9";
+            this.First_Inn_FOW_Out_Bat_9.Size = new System.Drawing.Size(34, 18);
+            this.First_Inn_FOW_Out_Bat_9.TabIndex = 53;
+            this.First_Inn_FOW_Out_Bat_9.Text = "-";
+            this.First_Inn_FOW_Out_Bat_9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // First_Inn_FOW_Out_Bat_8
+            // 
+            this.First_Inn_FOW_Out_Bat_8.AutoSize = true;
+            this.First_Inn_FOW_Out_Bat_8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.First_Inn_FOW_Out_Bat_8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.First_Inn_FOW_Out_Bat_8.Location = new System.Drawing.Point(485, 39);
+            this.First_Inn_FOW_Out_Bat_8.Name = "First_Inn_FOW_Out_Bat_8";
+            this.First_Inn_FOW_Out_Bat_8.Size = new System.Drawing.Size(34, 18);
+            this.First_Inn_FOW_Out_Bat_8.TabIndex = 52;
+            this.First_Inn_FOW_Out_Bat_8.Text = "-";
+            this.First_Inn_FOW_Out_Bat_8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // First_Inn_FOW_Out_Bat_7
+            // 
+            this.First_Inn_FOW_Out_Bat_7.AutoSize = true;
+            this.First_Inn_FOW_Out_Bat_7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.First_Inn_FOW_Out_Bat_7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.First_Inn_FOW_Out_Bat_7.Location = new System.Drawing.Point(444, 39);
+            this.First_Inn_FOW_Out_Bat_7.Name = "First_Inn_FOW_Out_Bat_7";
+            this.First_Inn_FOW_Out_Bat_7.Size = new System.Drawing.Size(34, 18);
+            this.First_Inn_FOW_Out_Bat_7.TabIndex = 51;
+            this.First_Inn_FOW_Out_Bat_7.Text = "-";
+            this.First_Inn_FOW_Out_Bat_7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // First_Inn_FOW_Out_Bat_6
+            // 
+            this.First_Inn_FOW_Out_Bat_6.AutoSize = true;
+            this.First_Inn_FOW_Out_Bat_6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.First_Inn_FOW_Out_Bat_6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.First_Inn_FOW_Out_Bat_6.Location = new System.Drawing.Point(403, 39);
+            this.First_Inn_FOW_Out_Bat_6.Name = "First_Inn_FOW_Out_Bat_6";
+            this.First_Inn_FOW_Out_Bat_6.Size = new System.Drawing.Size(34, 18);
+            this.First_Inn_FOW_Out_Bat_6.TabIndex = 50;
+            this.First_Inn_FOW_Out_Bat_6.Text = "-";
+            this.First_Inn_FOW_Out_Bat_6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // First_Inn_FOW_Out_Bat_5
+            // 
+            this.First_Inn_FOW_Out_Bat_5.AutoSize = true;
+            this.First_Inn_FOW_Out_Bat_5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.First_Inn_FOW_Out_Bat_5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.First_Inn_FOW_Out_Bat_5.Location = new System.Drawing.Point(362, 39);
+            this.First_Inn_FOW_Out_Bat_5.Name = "First_Inn_FOW_Out_Bat_5";
+            this.First_Inn_FOW_Out_Bat_5.Size = new System.Drawing.Size(34, 18);
+            this.First_Inn_FOW_Out_Bat_5.TabIndex = 49;
+            this.First_Inn_FOW_Out_Bat_5.Text = "-";
+            this.First_Inn_FOW_Out_Bat_5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // First_Inn_FOW_Out_Bat_4
+            // 
+            this.First_Inn_FOW_Out_Bat_4.AutoSize = true;
+            this.First_Inn_FOW_Out_Bat_4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.First_Inn_FOW_Out_Bat_4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.First_Inn_FOW_Out_Bat_4.Location = new System.Drawing.Point(321, 39);
+            this.First_Inn_FOW_Out_Bat_4.Name = "First_Inn_FOW_Out_Bat_4";
+            this.First_Inn_FOW_Out_Bat_4.Size = new System.Drawing.Size(34, 18);
+            this.First_Inn_FOW_Out_Bat_4.TabIndex = 48;
+            this.First_Inn_FOW_Out_Bat_4.Text = "-";
+            this.First_Inn_FOW_Out_Bat_4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // First_Inn_FOW_Out_Bat_3
+            // 
+            this.First_Inn_FOW_Out_Bat_3.AutoSize = true;
+            this.First_Inn_FOW_Out_Bat_3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.First_Inn_FOW_Out_Bat_3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.First_Inn_FOW_Out_Bat_3.Location = new System.Drawing.Point(280, 39);
+            this.First_Inn_FOW_Out_Bat_3.Name = "First_Inn_FOW_Out_Bat_3";
+            this.First_Inn_FOW_Out_Bat_3.Size = new System.Drawing.Size(34, 18);
+            this.First_Inn_FOW_Out_Bat_3.TabIndex = 47;
+            this.First_Inn_FOW_Out_Bat_3.Text = "-";
+            this.First_Inn_FOW_Out_Bat_3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // First_Inn_FOW_Out_Bat_2
+            // 
+            this.First_Inn_FOW_Out_Bat_2.AutoSize = true;
+            this.First_Inn_FOW_Out_Bat_2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.First_Inn_FOW_Out_Bat_2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.First_Inn_FOW_Out_Bat_2.Location = new System.Drawing.Point(239, 39);
+            this.First_Inn_FOW_Out_Bat_2.Name = "First_Inn_FOW_Out_Bat_2";
+            this.First_Inn_FOW_Out_Bat_2.Size = new System.Drawing.Size(34, 18);
+            this.First_Inn_FOW_Out_Bat_2.TabIndex = 46;
+            this.First_Inn_FOW_Out_Bat_2.Text = "-";
+            this.First_Inn_FOW_Out_Bat_2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // First_Inn_FOW_Score_10
+            // 
+            this.First_Inn_FOW_Score_10.AutoSize = true;
+            this.First_Inn_FOW_Score_10.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.First_Inn_FOW_Score_10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.First_Inn_FOW_Score_10.Location = new System.Drawing.Point(567, 20);
+            this.First_Inn_FOW_Score_10.Name = "First_Inn_FOW_Score_10";
+            this.First_Inn_FOW_Score_10.Size = new System.Drawing.Size(36, 18);
+            this.First_Inn_FOW_Score_10.TabIndex = 45;
+            this.First_Inn_FOW_Score_10.Text = "-";
+            this.First_Inn_FOW_Score_10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // First_Inn_FOW_Score_9
+            // 
+            this.First_Inn_FOW_Score_9.AutoSize = true;
+            this.First_Inn_FOW_Score_9.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.First_Inn_FOW_Score_9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.First_Inn_FOW_Score_9.Location = new System.Drawing.Point(526, 20);
+            this.First_Inn_FOW_Score_9.Name = "First_Inn_FOW_Score_9";
+            this.First_Inn_FOW_Score_9.Size = new System.Drawing.Size(34, 18);
+            this.First_Inn_FOW_Score_9.TabIndex = 44;
+            this.First_Inn_FOW_Score_9.Text = "-";
+            this.First_Inn_FOW_Score_9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // First_Inn_FOW_Score_8
+            // 
+            this.First_Inn_FOW_Score_8.AutoSize = true;
+            this.First_Inn_FOW_Score_8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.First_Inn_FOW_Score_8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.First_Inn_FOW_Score_8.Location = new System.Drawing.Point(485, 20);
+            this.First_Inn_FOW_Score_8.Name = "First_Inn_FOW_Score_8";
+            this.First_Inn_FOW_Score_8.Size = new System.Drawing.Size(34, 18);
+            this.First_Inn_FOW_Score_8.TabIndex = 43;
+            this.First_Inn_FOW_Score_8.Text = "-";
+            this.First_Inn_FOW_Score_8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // First_Inn_FOW_Score_7
+            // 
+            this.First_Inn_FOW_Score_7.AutoSize = true;
+            this.First_Inn_FOW_Score_7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.First_Inn_FOW_Score_7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.First_Inn_FOW_Score_7.Location = new System.Drawing.Point(444, 20);
+            this.First_Inn_FOW_Score_7.Name = "First_Inn_FOW_Score_7";
+            this.First_Inn_FOW_Score_7.Size = new System.Drawing.Size(34, 18);
+            this.First_Inn_FOW_Score_7.TabIndex = 42;
+            this.First_Inn_FOW_Score_7.Text = "-";
+            this.First_Inn_FOW_Score_7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // First_Inn_FOW_Score_6
+            // 
+            this.First_Inn_FOW_Score_6.AutoSize = true;
+            this.First_Inn_FOW_Score_6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.First_Inn_FOW_Score_6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.First_Inn_FOW_Score_6.Location = new System.Drawing.Point(403, 20);
+            this.First_Inn_FOW_Score_6.Name = "First_Inn_FOW_Score_6";
+            this.First_Inn_FOW_Score_6.Size = new System.Drawing.Size(34, 18);
+            this.First_Inn_FOW_Score_6.TabIndex = 41;
+            this.First_Inn_FOW_Score_6.Text = "-";
+            this.First_Inn_FOW_Score_6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // First_Inn_FOW_Score_5
+            // 
+            this.First_Inn_FOW_Score_5.AutoSize = true;
+            this.First_Inn_FOW_Score_5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.First_Inn_FOW_Score_5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.First_Inn_FOW_Score_5.Location = new System.Drawing.Point(362, 20);
+            this.First_Inn_FOW_Score_5.Name = "First_Inn_FOW_Score_5";
+            this.First_Inn_FOW_Score_5.Size = new System.Drawing.Size(34, 18);
+            this.First_Inn_FOW_Score_5.TabIndex = 40;
+            this.First_Inn_FOW_Score_5.Text = "-";
+            this.First_Inn_FOW_Score_5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // First_Inn_FOW_Score_4
+            // 
+            this.First_Inn_FOW_Score_4.AutoSize = true;
+            this.First_Inn_FOW_Score_4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.First_Inn_FOW_Score_4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.First_Inn_FOW_Score_4.Location = new System.Drawing.Point(321, 20);
+            this.First_Inn_FOW_Score_4.Name = "First_Inn_FOW_Score_4";
+            this.First_Inn_FOW_Score_4.Size = new System.Drawing.Size(34, 18);
+            this.First_Inn_FOW_Score_4.TabIndex = 39;
+            this.First_Inn_FOW_Score_4.Text = "-";
+            this.First_Inn_FOW_Score_4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // First_Inn_FOW_Score_3
+            // 
+            this.First_Inn_FOW_Score_3.AutoSize = true;
+            this.First_Inn_FOW_Score_3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.First_Inn_FOW_Score_3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.First_Inn_FOW_Score_3.Location = new System.Drawing.Point(280, 20);
+            this.First_Inn_FOW_Score_3.Name = "First_Inn_FOW_Score_3";
+            this.First_Inn_FOW_Score_3.Size = new System.Drawing.Size(34, 18);
+            this.First_Inn_FOW_Score_3.TabIndex = 38;
+            this.First_Inn_FOW_Score_3.Text = "-";
+            this.First_Inn_FOW_Score_3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // First_Inn_FOW_Score_2
+            // 
+            this.First_Inn_FOW_Score_2.AutoSize = true;
+            this.First_Inn_FOW_Score_2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.First_Inn_FOW_Score_2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.First_Inn_FOW_Score_2.Location = new System.Drawing.Point(239, 20);
+            this.First_Inn_FOW_Score_2.Name = "First_Inn_FOW_Score_2";
+            this.First_Inn_FOW_Score_2.Size = new System.Drawing.Size(34, 18);
+            this.First_Inn_FOW_Score_2.TabIndex = 37;
+            this.First_Inn_FOW_Score_2.Text = "-";
+            this.First_Inn_FOW_Score_2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(567, 1);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(36, 18);
+            this.label1.TabIndex = 16;
+            this.label1.Text = "10";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // First_Inn_FOW_Score_Head
             // 
@@ -3940,7 +4824,7 @@
             this.First_Inn_FOW_Head_1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.First_Inn_FOW_Head_1.Location = new System.Drawing.Point(198, 1);
             this.First_Inn_FOW_Head_1.Name = "First_Inn_FOW_Head_1";
-            this.First_Inn_FOW_Head_1.Size = new System.Drawing.Size(66, 18);
+            this.First_Inn_FOW_Head_1.Size = new System.Drawing.Size(34, 18);
             this.First_Inn_FOW_Head_1.TabIndex = 1;
             this.First_Inn_FOW_Head_1.Text = "1";
             this.First_Inn_FOW_Head_1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -4005,6 +4889,162 @@
             this.First_Inn_FOW_Over_Num_Head.Text = "Over Number";
             this.First_Inn_FOW_Over_Num_Head.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // First_Inn_FOW_Score_1
+            // 
+            this.First_Inn_FOW_Score_1.AutoSize = true;
+            this.First_Inn_FOW_Score_1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.First_Inn_FOW_Score_1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.First_Inn_FOW_Score_1.Location = new System.Drawing.Point(198, 20);
+            this.First_Inn_FOW_Score_1.Name = "First_Inn_FOW_Score_1";
+            this.First_Inn_FOW_Score_1.Size = new System.Drawing.Size(34, 18);
+            this.First_Inn_FOW_Score_1.TabIndex = 17;
+            this.First_Inn_FOW_Score_1.Text = "-";
+            this.First_Inn_FOW_Score_1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // First_Inn_FOW_Out_Bat_1
+            // 
+            this.First_Inn_FOW_Out_Bat_1.AutoSize = true;
+            this.First_Inn_FOW_Out_Bat_1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.First_Inn_FOW_Out_Bat_1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.First_Inn_FOW_Out_Bat_1.Location = new System.Drawing.Point(198, 39);
+            this.First_Inn_FOW_Out_Bat_1.Name = "First_Inn_FOW_Out_Bat_1";
+            this.First_Inn_FOW_Out_Bat_1.Size = new System.Drawing.Size(34, 18);
+            this.First_Inn_FOW_Out_Bat_1.TabIndex = 18;
+            this.First_Inn_FOW_Out_Bat_1.Text = "-";
+            this.First_Inn_FOW_Out_Bat_1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // First_Inn_FOW_Not_Out_Bat_1
+            // 
+            this.First_Inn_FOW_Not_Out_Bat_1.AutoSize = true;
+            this.First_Inn_FOW_Not_Out_Bat_1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.First_Inn_FOW_Not_Out_Bat_1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.First_Inn_FOW_Not_Out_Bat_1.Location = new System.Drawing.Point(198, 58);
+            this.First_Inn_FOW_Not_Out_Bat_1.Name = "First_Inn_FOW_Not_Out_Bat_1";
+            this.First_Inn_FOW_Not_Out_Bat_1.Size = new System.Drawing.Size(34, 18);
+            this.First_Inn_FOW_Not_Out_Bat_1.TabIndex = 19;
+            this.First_Inn_FOW_Not_Out_Bat_1.Text = "-";
+            this.First_Inn_FOW_Not_Out_Bat_1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // First_Inn_FOW_Partnership_1
+            // 
+            this.First_Inn_FOW_Partnership_1.AutoSize = true;
+            this.First_Inn_FOW_Partnership_1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.First_Inn_FOW_Partnership_1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.First_Inn_FOW_Partnership_1.Location = new System.Drawing.Point(198, 77);
+            this.First_Inn_FOW_Partnership_1.Name = "First_Inn_FOW_Partnership_1";
+            this.First_Inn_FOW_Partnership_1.Size = new System.Drawing.Size(34, 18);
+            this.First_Inn_FOW_Partnership_1.TabIndex = 20;
+            this.First_Inn_FOW_Partnership_1.Text = "-";
+            this.First_Inn_FOW_Partnership_1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // First_Inn_FOW_Over_Num_1
+            // 
+            this.First_Inn_FOW_Over_Num_1.AutoSize = true;
+            this.First_Inn_FOW_Over_Num_1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.First_Inn_FOW_Over_Num_1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.First_Inn_FOW_Over_Num_1.Location = new System.Drawing.Point(198, 96);
+            this.First_Inn_FOW_Over_Num_1.Name = "First_Inn_FOW_Over_Num_1";
+            this.First_Inn_FOW_Over_Num_1.Size = new System.Drawing.Size(34, 18);
+            this.First_Inn_FOW_Over_Num_1.TabIndex = 21;
+            this.First_Inn_FOW_Over_Num_1.Text = "-";
+            this.First_Inn_FOW_Over_Num_1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(239, 1);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(34, 18);
+            this.label7.TabIndex = 22;
+            this.label7.Text = "2";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(280, 1);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(34, 18);
+            this.label8.TabIndex = 23;
+            this.label8.Text = "3";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(321, 1);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(34, 18);
+            this.label9.TabIndex = 24;
+            this.label9.Text = "4";
+            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(362, 1);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(34, 18);
+            this.label10.TabIndex = 25;
+            this.label10.Text = "5";
+            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(403, 1);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(34, 18);
+            this.label11.TabIndex = 26;
+            this.label11.Text = "6";
+            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(444, 1);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(34, 18);
+            this.label12.TabIndex = 27;
+            this.label12.Text = "7";
+            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(485, 1);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(34, 18);
+            this.label13.TabIndex = 28;
+            this.label13.Text = "8";
+            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(526, 1);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(34, 18);
+            this.label14.TabIndex = 29;
+            this.label14.Text = "9";
+            this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // First_Inn_Bat_Total_Table
             // 
             this.First_Inn_Bat_Total_Table.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
@@ -4060,12 +5100,72 @@
             this.First_Inn_Bowl_Table.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.First_Inn_Bowl_Table.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.First_Inn_Bowl_Table.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.First_Inn_Bowl_Table.Controls.Add(this.First_Inn_Bowl_Nb_8, 0, 8);
+            this.First_Inn_Bowl_Table.Controls.Add(this.First_Inn_Bowl_Overs_8, 0, 8);
+            this.First_Inn_Bowl_Table.Controls.Add(this.First_Inn_Bowl_Wd_8, 0, 8);
+            this.First_Inn_Bowl_Table.Controls.Add(this.First_Inn_Bowl_Num_8, 0, 8);
+            this.First_Inn_Bowl_Table.Controls.Add(this.First_Inn_Bowl_Name_8, 0, 8);
+            this.First_Inn_Bowl_Table.Controls.Add(this.First_Inn_Bowl_Avg_8, 0, 8);
+            this.First_Inn_Bowl_Table.Controls.Add(this.First_Inn_Bowl_Econ_8, 0, 8);
+            this.First_Inn_Bowl_Table.Controls.Add(this.First_Inn_Bowl_Wkts_8, 0, 8);
+            this.First_Inn_Bowl_Table.Controls.Add(this.First_Inn_Bowl_Mdns_8, 0, 8);
+            this.First_Inn_Bowl_Table.Controls.Add(this.First_Inn_Bowl_Runs_8, 0, 8);
+            this.First_Inn_Bowl_Table.Controls.Add(this.First_Inn_Bowl_Nb_7, 0, 7);
+            this.First_Inn_Bowl_Table.Controls.Add(this.First_Inn_Bowl_Overs_7, 0, 7);
+            this.First_Inn_Bowl_Table.Controls.Add(this.First_Inn_Bowl_Wd_7, 0, 7);
+            this.First_Inn_Bowl_Table.Controls.Add(this.First_Inn_Bowl_Num_7, 0, 7);
+            this.First_Inn_Bowl_Table.Controls.Add(this.First_Inn_Bowl_Name_7, 0, 7);
+            this.First_Inn_Bowl_Table.Controls.Add(this.First_Inn_Bowl_Avg_7, 0, 7);
+            this.First_Inn_Bowl_Table.Controls.Add(this.First_Inn_Bowl_Econ_7, 0, 7);
+            this.First_Inn_Bowl_Table.Controls.Add(this.First_Inn_Bowl_Wkts_7, 0, 7);
+            this.First_Inn_Bowl_Table.Controls.Add(this.First_Inn_Bowl_Mdns_7, 0, 7);
+            this.First_Inn_Bowl_Table.Controls.Add(this.First_Inn_Bowl_Runs_7, 0, 7);
+            this.First_Inn_Bowl_Table.Controls.Add(this.First_Inn_Bowl_Nb_6, 0, 6);
+            this.First_Inn_Bowl_Table.Controls.Add(this.First_Inn_Bowl_Overs_6, 0, 6);
+            this.First_Inn_Bowl_Table.Controls.Add(this.First_Inn_Bowl_Wd_6, 0, 6);
+            this.First_Inn_Bowl_Table.Controls.Add(this.First_Inn_Bowl_Num_6, 0, 6);
+            this.First_Inn_Bowl_Table.Controls.Add(this.First_Inn_Bowl_Name_6, 0, 6);
+            this.First_Inn_Bowl_Table.Controls.Add(this.First_Inn_Bowl_Avg_6, 0, 6);
+            this.First_Inn_Bowl_Table.Controls.Add(this.First_Inn_Bowl_Econ_6, 0, 6);
+            this.First_Inn_Bowl_Table.Controls.Add(this.First_Inn_Bowl_Wkts_6, 0, 6);
+            this.First_Inn_Bowl_Table.Controls.Add(this.First_Inn_Bowl_Mdns_6, 0, 6);
+            this.First_Inn_Bowl_Table.Controls.Add(this.First_Inn_Bowl_Runs_6, 0, 6);
+            this.First_Inn_Bowl_Table.Controls.Add(this.First_Inn_Bowl_Nb_5, 0, 5);
+            this.First_Inn_Bowl_Table.Controls.Add(this.First_Inn_Bowl_Overs_5, 0, 5);
+            this.First_Inn_Bowl_Table.Controls.Add(this.First_Inn_Bowl_Wd_5, 0, 5);
+            this.First_Inn_Bowl_Table.Controls.Add(this.First_Inn_Bowl_Num_5, 0, 5);
+            this.First_Inn_Bowl_Table.Controls.Add(this.First_Inn_Bowl_Name_5, 0, 5);
+            this.First_Inn_Bowl_Table.Controls.Add(this.First_Inn_Bowl_Avg_5, 0, 5);
+            this.First_Inn_Bowl_Table.Controls.Add(this.First_Inn_Bowl_Econ_5, 0, 5);
+            this.First_Inn_Bowl_Table.Controls.Add(this.First_Inn_Bowl_Wkts_5, 0, 5);
+            this.First_Inn_Bowl_Table.Controls.Add(this.First_Inn_Bowl_Mdns_5, 0, 5);
+            this.First_Inn_Bowl_Table.Controls.Add(this.First_Inn_Bowl_Runs_5, 0, 5);
+            this.First_Inn_Bowl_Table.Controls.Add(this.First_Inn_Bowl_Runs_4, 0, 4);
+            this.First_Inn_Bowl_Table.Controls.Add(this.First_Inn_Bowl_Mdns_4, 0, 4);
+            this.First_Inn_Bowl_Table.Controls.Add(this.First_Inn_Bowl_Wkts_4, 0, 4);
+            this.First_Inn_Bowl_Table.Controls.Add(this.First_Inn_Bowl_Econ_4, 0, 4);
+            this.First_Inn_Bowl_Table.Controls.Add(this.First_Inn_Bowl_Avg_4, 0, 4);
+            this.First_Inn_Bowl_Table.Controls.Add(this.First_Inn_Bowl_Wd_4, 0, 4);
+            this.First_Inn_Bowl_Table.Controls.Add(this.First_Inn_Bowl_Name_4, 0, 4);
+            this.First_Inn_Bowl_Table.Controls.Add(this.First_Inn_Bowl_Overs_4, 0, 4);
+            this.First_Inn_Bowl_Table.Controls.Add(this.First_Inn_Bowl_Nb_4, 0, 4);
+            this.First_Inn_Bowl_Table.Controls.Add(this.First_Inn_Bowl_Nb_3, 0, 3);
+            this.First_Inn_Bowl_Table.Controls.Add(this.First_Inn_Bowl_Overs_3, 0, 3);
+            this.First_Inn_Bowl_Table.Controls.Add(this.First_Inn_Bowl_Wd_3, 0, 3);
+            this.First_Inn_Bowl_Table.Controls.Add(this.First_Inn_Bowl_Num_3, 0, 3);
+            this.First_Inn_Bowl_Table.Controls.Add(this.First_Inn_Bowl_Name_3, 0, 3);
+            this.First_Inn_Bowl_Table.Controls.Add(this.First_Inn_Bowl_Mdns_3, 0, 3);
+            this.First_Inn_Bowl_Table.Controls.Add(this.First_Inn_Bowl_Econ_3, 0, 3);
+            this.First_Inn_Bowl_Table.Controls.Add(this.First_Inn_Bowl_Num_4, 0, 3);
+            this.First_Inn_Bowl_Table.Controls.Add(this.First_Inn_Bowl_Avg_3, 0, 3);
+            this.First_Inn_Bowl_Table.Controls.Add(this.First_Inn_Bowl_Runs_3, 0, 3);
+            this.First_Inn_Bowl_Table.Controls.Add(this.First_Inn_Bowl_Wkts_3, 0, 3);
             this.First_Inn_Bowl_Table.Controls.Add(this.First_Inn_Bowl_Wkts_2, 7, 2);
             this.First_Inn_Bowl_Table.Controls.Add(this.First_Inn_Bowl_Runs_2, 6, 2);
             this.First_Inn_Bowl_Table.Controls.Add(this.First_Inn_Bowl_Mdns_2, 5, 2);
             this.First_Inn_Bowl_Table.Controls.Add(this.First_Inn_Bowl_Overs_2, 4, 2);
-            this.First_Inn_Bowl_Table.Controls.Add(this.First_Inn_Bowl_Total_Nb_2, 3, 2);
-            this.First_Inn_Bowl_Table.Controls.Add(this.First_Inn_Bowl_Total_Wd_2, 2, 2);
+            this.First_Inn_Bowl_Table.Controls.Add(this.First_Inn_Bowl_Nb_2, 3, 2);
+            this.First_Inn_Bowl_Table.Controls.Add(this.First_Inn_Bowl_Wd_2, 2, 2);
             this.First_Inn_Bowl_Table.Controls.Add(this.First_Inn_Bowl_Name_2, 1, 2);
             this.First_Inn_Bowl_Table.Controls.Add(this.First_Inn_Bowl_Num_2, 0, 2);
             this.First_Inn_Bowl_Table.Controls.Add(this.First_Inn_Bowl_Wkts_1, 7, 1);
@@ -4090,26 +5190,752 @@
             this.First_Inn_Bowl_Table.Controls.Add(this.First_Inn_Bowl_Econ_1, 9, 1);
             this.First_Inn_Bowl_Table.Controls.Add(this.First_Inn_Bowl_Avg_2, 8, 2);
             this.First_Inn_Bowl_Table.Controls.Add(this.First_Inn_Bowl_Econ_2, 9, 2);
-            this.First_Inn_Bowl_Table.Location = new System.Drawing.Point(659, 60);
+            this.First_Inn_Bowl_Table.Location = new System.Drawing.Point(659, 58);
             this.First_Inn_Bowl_Table.MaximumSize = new System.Drawing.Size(607, 252);
             this.First_Inn_Bowl_Table.Name = "First_Inn_Bowl_Table";
-            this.First_Inn_Bowl_Table.RowCount = 3;
-            this.First_Inn_Bowl_Table.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.First_Inn_Bowl_Table.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.First_Inn_Bowl_Table.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.First_Inn_Bowl_Table.Size = new System.Drawing.Size(607, 59);
+            this.First_Inn_Bowl_Table.RowCount = 9;
+            this.First_Inn_Bowl_Table.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.First_Inn_Bowl_Table.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.First_Inn_Bowl_Table.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.First_Inn_Bowl_Table.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.First_Inn_Bowl_Table.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.First_Inn_Bowl_Table.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.First_Inn_Bowl_Table.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.First_Inn_Bowl_Table.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.First_Inn_Bowl_Table.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.First_Inn_Bowl_Table.Size = new System.Drawing.Size(607, 252);
             this.First_Inn_Bowl_Table.TabIndex = 28;
+            // 
+            // First_Inn_Bowl_Nb_8
+            // 
+            this.First_Inn_Bowl_Nb_8.AutoSize = true;
+            this.First_Inn_Bowl_Nb_8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.First_Inn_Bowl_Nb_8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.First_Inn_Bowl_Nb_8.Location = new System.Drawing.Point(257, 223);
+            this.First_Inn_Bowl_Nb_8.Name = "First_Inn_Bowl_Nb_8";
+            this.First_Inn_Bowl_Nb_8.Size = new System.Drawing.Size(26, 28);
+            this.First_Inn_Bowl_Nb_8.TabIndex = 89;
+            this.First_Inn_Bowl_Nb_8.Text = "-";
+            this.First_Inn_Bowl_Nb_8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // First_Inn_Bowl_Overs_8
+            // 
+            this.First_Inn_Bowl_Overs_8.AutoSize = true;
+            this.First_Inn_Bowl_Overs_8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.First_Inn_Bowl_Overs_8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.First_Inn_Bowl_Overs_8.Location = new System.Drawing.Point(290, 223);
+            this.First_Inn_Bowl_Overs_8.Name = "First_Inn_Bowl_Overs_8";
+            this.First_Inn_Bowl_Overs_8.Size = new System.Drawing.Size(53, 28);
+            this.First_Inn_Bowl_Overs_8.TabIndex = 88;
+            this.First_Inn_Bowl_Overs_8.Text = "-";
+            this.First_Inn_Bowl_Overs_8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // First_Inn_Bowl_Wd_8
+            // 
+            this.First_Inn_Bowl_Wd_8.AutoSize = true;
+            this.First_Inn_Bowl_Wd_8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.First_Inn_Bowl_Wd_8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.First_Inn_Bowl_Wd_8.Location = new System.Drawing.Point(221, 223);
+            this.First_Inn_Bowl_Wd_8.Name = "First_Inn_Bowl_Wd_8";
+            this.First_Inn_Bowl_Wd_8.Size = new System.Drawing.Size(29, 28);
+            this.First_Inn_Bowl_Wd_8.TabIndex = 87;
+            this.First_Inn_Bowl_Wd_8.Text = "-";
+            this.First_Inn_Bowl_Wd_8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // First_Inn_Bowl_Num_8
+            // 
+            this.First_Inn_Bowl_Num_8.AutoSize = true;
+            this.First_Inn_Bowl_Num_8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.First_Inn_Bowl_Num_8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.First_Inn_Bowl_Num_8.Location = new System.Drawing.Point(4, 223);
+            this.First_Inn_Bowl_Num_8.Name = "First_Inn_Bowl_Num_8";
+            this.First_Inn_Bowl_Num_8.Size = new System.Drawing.Size(17, 28);
+            this.First_Inn_Bowl_Num_8.TabIndex = 86;
+            this.First_Inn_Bowl_Num_8.Text = "8";
+            this.First_Inn_Bowl_Num_8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // First_Inn_Bowl_Name_8
+            // 
+            this.First_Inn_Bowl_Name_8.AutoSize = true;
+            this.First_Inn_Bowl_Name_8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.First_Inn_Bowl_Name_8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.First_Inn_Bowl_Name_8.Location = new System.Drawing.Point(28, 223);
+            this.First_Inn_Bowl_Name_8.Name = "First_Inn_Bowl_Name_8";
+            this.First_Inn_Bowl_Name_8.Size = new System.Drawing.Size(186, 28);
+            this.First_Inn_Bowl_Name_8.TabIndex = 85;
+            this.First_Inn_Bowl_Name_8.Text = "-";
+            this.First_Inn_Bowl_Name_8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // First_Inn_Bowl_Avg_8
+            // 
+            this.First_Inn_Bowl_Avg_8.AutoSize = true;
+            this.First_Inn_Bowl_Avg_8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.First_Inn_Bowl_Avg_8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.First_Inn_Bowl_Avg_8.Location = new System.Drawing.Point(514, 223);
+            this.First_Inn_Bowl_Avg_8.Name = "First_Inn_Bowl_Avg_8";
+            this.First_Inn_Bowl_Avg_8.Size = new System.Drawing.Size(35, 28);
+            this.First_Inn_Bowl_Avg_8.TabIndex = 84;
+            this.First_Inn_Bowl_Avg_8.Text = "-";
+            this.First_Inn_Bowl_Avg_8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // First_Inn_Bowl_Econ_8
+            // 
+            this.First_Inn_Bowl_Econ_8.AutoSize = true;
+            this.First_Inn_Bowl_Econ_8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.First_Inn_Bowl_Econ_8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.First_Inn_Bowl_Econ_8.Location = new System.Drawing.Point(556, 223);
+            this.First_Inn_Bowl_Econ_8.Name = "First_Inn_Bowl_Econ_8";
+            this.First_Inn_Bowl_Econ_8.Size = new System.Drawing.Size(47, 28);
+            this.First_Inn_Bowl_Econ_8.TabIndex = 83;
+            this.First_Inn_Bowl_Econ_8.Text = "-";
+            this.First_Inn_Bowl_Econ_8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // First_Inn_Bowl_Wkts_8
+            // 
+            this.First_Inn_Bowl_Wkts_8.AutoSize = true;
+            this.First_Inn_Bowl_Wkts_8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.First_Inn_Bowl_Wkts_8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.First_Inn_Bowl_Wkts_8.Location = new System.Drawing.Point(460, 223);
+            this.First_Inn_Bowl_Wkts_8.Name = "First_Inn_Bowl_Wkts_8";
+            this.First_Inn_Bowl_Wkts_8.Size = new System.Drawing.Size(47, 28);
+            this.First_Inn_Bowl_Wkts_8.TabIndex = 82;
+            this.First_Inn_Bowl_Wkts_8.Text = "-";
+            this.First_Inn_Bowl_Wkts_8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // First_Inn_Bowl_Mdns_8
+            // 
+            this.First_Inn_Bowl_Mdns_8.AutoSize = true;
+            this.First_Inn_Bowl_Mdns_8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.First_Inn_Bowl_Mdns_8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.First_Inn_Bowl_Mdns_8.Location = new System.Drawing.Point(350, 223);
+            this.First_Inn_Bowl_Mdns_8.Name = "First_Inn_Bowl_Mdns_8";
+            this.First_Inn_Bowl_Mdns_8.Size = new System.Drawing.Size(49, 28);
+            this.First_Inn_Bowl_Mdns_8.TabIndex = 81;
+            this.First_Inn_Bowl_Mdns_8.Text = "-";
+            this.First_Inn_Bowl_Mdns_8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // First_Inn_Bowl_Runs_8
+            // 
+            this.First_Inn_Bowl_Runs_8.AutoSize = true;
+            this.First_Inn_Bowl_Runs_8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.First_Inn_Bowl_Runs_8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.First_Inn_Bowl_Runs_8.Location = new System.Drawing.Point(406, 223);
+            this.First_Inn_Bowl_Runs_8.Name = "First_Inn_Bowl_Runs_8";
+            this.First_Inn_Bowl_Runs_8.Size = new System.Drawing.Size(47, 28);
+            this.First_Inn_Bowl_Runs_8.TabIndex = 80;
+            this.First_Inn_Bowl_Runs_8.Text = "-";
+            this.First_Inn_Bowl_Runs_8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // First_Inn_Bowl_Nb_7
+            // 
+            this.First_Inn_Bowl_Nb_7.AutoSize = true;
+            this.First_Inn_Bowl_Nb_7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.First_Inn_Bowl_Nb_7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.First_Inn_Bowl_Nb_7.Location = new System.Drawing.Point(257, 194);
+            this.First_Inn_Bowl_Nb_7.Name = "First_Inn_Bowl_Nb_7";
+            this.First_Inn_Bowl_Nb_7.Size = new System.Drawing.Size(26, 28);
+            this.First_Inn_Bowl_Nb_7.TabIndex = 79;
+            this.First_Inn_Bowl_Nb_7.Text = "-";
+            this.First_Inn_Bowl_Nb_7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // First_Inn_Bowl_Overs_7
+            // 
+            this.First_Inn_Bowl_Overs_7.AutoSize = true;
+            this.First_Inn_Bowl_Overs_7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.First_Inn_Bowl_Overs_7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.First_Inn_Bowl_Overs_7.Location = new System.Drawing.Point(290, 194);
+            this.First_Inn_Bowl_Overs_7.Name = "First_Inn_Bowl_Overs_7";
+            this.First_Inn_Bowl_Overs_7.Size = new System.Drawing.Size(53, 28);
+            this.First_Inn_Bowl_Overs_7.TabIndex = 78;
+            this.First_Inn_Bowl_Overs_7.Text = "-";
+            this.First_Inn_Bowl_Overs_7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // First_Inn_Bowl_Wd_7
+            // 
+            this.First_Inn_Bowl_Wd_7.AutoSize = true;
+            this.First_Inn_Bowl_Wd_7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.First_Inn_Bowl_Wd_7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.First_Inn_Bowl_Wd_7.Location = new System.Drawing.Point(221, 194);
+            this.First_Inn_Bowl_Wd_7.Name = "First_Inn_Bowl_Wd_7";
+            this.First_Inn_Bowl_Wd_7.Size = new System.Drawing.Size(29, 28);
+            this.First_Inn_Bowl_Wd_7.TabIndex = 77;
+            this.First_Inn_Bowl_Wd_7.Text = "-";
+            this.First_Inn_Bowl_Wd_7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // First_Inn_Bowl_Num_7
+            // 
+            this.First_Inn_Bowl_Num_7.AutoSize = true;
+            this.First_Inn_Bowl_Num_7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.First_Inn_Bowl_Num_7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.First_Inn_Bowl_Num_7.Location = new System.Drawing.Point(4, 194);
+            this.First_Inn_Bowl_Num_7.Name = "First_Inn_Bowl_Num_7";
+            this.First_Inn_Bowl_Num_7.Size = new System.Drawing.Size(17, 28);
+            this.First_Inn_Bowl_Num_7.TabIndex = 76;
+            this.First_Inn_Bowl_Num_7.Text = "7";
+            this.First_Inn_Bowl_Num_7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // First_Inn_Bowl_Name_7
+            // 
+            this.First_Inn_Bowl_Name_7.AutoSize = true;
+            this.First_Inn_Bowl_Name_7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.First_Inn_Bowl_Name_7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.First_Inn_Bowl_Name_7.Location = new System.Drawing.Point(28, 194);
+            this.First_Inn_Bowl_Name_7.Name = "First_Inn_Bowl_Name_7";
+            this.First_Inn_Bowl_Name_7.Size = new System.Drawing.Size(186, 28);
+            this.First_Inn_Bowl_Name_7.TabIndex = 75;
+            this.First_Inn_Bowl_Name_7.Text = "-";
+            this.First_Inn_Bowl_Name_7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // First_Inn_Bowl_Avg_7
+            // 
+            this.First_Inn_Bowl_Avg_7.AutoSize = true;
+            this.First_Inn_Bowl_Avg_7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.First_Inn_Bowl_Avg_7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.First_Inn_Bowl_Avg_7.Location = new System.Drawing.Point(514, 194);
+            this.First_Inn_Bowl_Avg_7.Name = "First_Inn_Bowl_Avg_7";
+            this.First_Inn_Bowl_Avg_7.Size = new System.Drawing.Size(35, 28);
+            this.First_Inn_Bowl_Avg_7.TabIndex = 74;
+            this.First_Inn_Bowl_Avg_7.Text = "-";
+            this.First_Inn_Bowl_Avg_7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // First_Inn_Bowl_Econ_7
+            // 
+            this.First_Inn_Bowl_Econ_7.AutoSize = true;
+            this.First_Inn_Bowl_Econ_7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.First_Inn_Bowl_Econ_7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.First_Inn_Bowl_Econ_7.Location = new System.Drawing.Point(556, 194);
+            this.First_Inn_Bowl_Econ_7.Name = "First_Inn_Bowl_Econ_7";
+            this.First_Inn_Bowl_Econ_7.Size = new System.Drawing.Size(47, 28);
+            this.First_Inn_Bowl_Econ_7.TabIndex = 73;
+            this.First_Inn_Bowl_Econ_7.Text = "-";
+            this.First_Inn_Bowl_Econ_7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // First_Inn_Bowl_Wkts_7
+            // 
+            this.First_Inn_Bowl_Wkts_7.AutoSize = true;
+            this.First_Inn_Bowl_Wkts_7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.First_Inn_Bowl_Wkts_7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.First_Inn_Bowl_Wkts_7.Location = new System.Drawing.Point(460, 194);
+            this.First_Inn_Bowl_Wkts_7.Name = "First_Inn_Bowl_Wkts_7";
+            this.First_Inn_Bowl_Wkts_7.Size = new System.Drawing.Size(47, 28);
+            this.First_Inn_Bowl_Wkts_7.TabIndex = 72;
+            this.First_Inn_Bowl_Wkts_7.Text = "-";
+            this.First_Inn_Bowl_Wkts_7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // First_Inn_Bowl_Mdns_7
+            // 
+            this.First_Inn_Bowl_Mdns_7.AutoSize = true;
+            this.First_Inn_Bowl_Mdns_7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.First_Inn_Bowl_Mdns_7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.First_Inn_Bowl_Mdns_7.Location = new System.Drawing.Point(350, 194);
+            this.First_Inn_Bowl_Mdns_7.Name = "First_Inn_Bowl_Mdns_7";
+            this.First_Inn_Bowl_Mdns_7.Size = new System.Drawing.Size(49, 28);
+            this.First_Inn_Bowl_Mdns_7.TabIndex = 71;
+            this.First_Inn_Bowl_Mdns_7.Text = "-";
+            this.First_Inn_Bowl_Mdns_7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // First_Inn_Bowl_Runs_7
+            // 
+            this.First_Inn_Bowl_Runs_7.AutoSize = true;
+            this.First_Inn_Bowl_Runs_7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.First_Inn_Bowl_Runs_7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.First_Inn_Bowl_Runs_7.Location = new System.Drawing.Point(406, 194);
+            this.First_Inn_Bowl_Runs_7.Name = "First_Inn_Bowl_Runs_7";
+            this.First_Inn_Bowl_Runs_7.Size = new System.Drawing.Size(47, 28);
+            this.First_Inn_Bowl_Runs_7.TabIndex = 70;
+            this.First_Inn_Bowl_Runs_7.Text = "-";
+            this.First_Inn_Bowl_Runs_7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // First_Inn_Bowl_Nb_6
+            // 
+            this.First_Inn_Bowl_Nb_6.AutoSize = true;
+            this.First_Inn_Bowl_Nb_6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.First_Inn_Bowl_Nb_6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.First_Inn_Bowl_Nb_6.Location = new System.Drawing.Point(257, 165);
+            this.First_Inn_Bowl_Nb_6.Name = "First_Inn_Bowl_Nb_6";
+            this.First_Inn_Bowl_Nb_6.Size = new System.Drawing.Size(26, 28);
+            this.First_Inn_Bowl_Nb_6.TabIndex = 69;
+            this.First_Inn_Bowl_Nb_6.Text = "-";
+            this.First_Inn_Bowl_Nb_6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // First_Inn_Bowl_Overs_6
+            // 
+            this.First_Inn_Bowl_Overs_6.AutoSize = true;
+            this.First_Inn_Bowl_Overs_6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.First_Inn_Bowl_Overs_6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.First_Inn_Bowl_Overs_6.Location = new System.Drawing.Point(290, 165);
+            this.First_Inn_Bowl_Overs_6.Name = "First_Inn_Bowl_Overs_6";
+            this.First_Inn_Bowl_Overs_6.Size = new System.Drawing.Size(53, 28);
+            this.First_Inn_Bowl_Overs_6.TabIndex = 68;
+            this.First_Inn_Bowl_Overs_6.Text = "-";
+            this.First_Inn_Bowl_Overs_6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // First_Inn_Bowl_Wd_6
+            // 
+            this.First_Inn_Bowl_Wd_6.AutoSize = true;
+            this.First_Inn_Bowl_Wd_6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.First_Inn_Bowl_Wd_6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.First_Inn_Bowl_Wd_6.Location = new System.Drawing.Point(221, 165);
+            this.First_Inn_Bowl_Wd_6.Name = "First_Inn_Bowl_Wd_6";
+            this.First_Inn_Bowl_Wd_6.Size = new System.Drawing.Size(29, 28);
+            this.First_Inn_Bowl_Wd_6.TabIndex = 67;
+            this.First_Inn_Bowl_Wd_6.Text = "-";
+            this.First_Inn_Bowl_Wd_6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // First_Inn_Bowl_Num_6
+            // 
+            this.First_Inn_Bowl_Num_6.AutoSize = true;
+            this.First_Inn_Bowl_Num_6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.First_Inn_Bowl_Num_6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.First_Inn_Bowl_Num_6.Location = new System.Drawing.Point(4, 165);
+            this.First_Inn_Bowl_Num_6.Name = "First_Inn_Bowl_Num_6";
+            this.First_Inn_Bowl_Num_6.Size = new System.Drawing.Size(17, 28);
+            this.First_Inn_Bowl_Num_6.TabIndex = 66;
+            this.First_Inn_Bowl_Num_6.Text = "6";
+            this.First_Inn_Bowl_Num_6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // First_Inn_Bowl_Name_6
+            // 
+            this.First_Inn_Bowl_Name_6.AutoSize = true;
+            this.First_Inn_Bowl_Name_6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.First_Inn_Bowl_Name_6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.First_Inn_Bowl_Name_6.Location = new System.Drawing.Point(28, 165);
+            this.First_Inn_Bowl_Name_6.Name = "First_Inn_Bowl_Name_6";
+            this.First_Inn_Bowl_Name_6.Size = new System.Drawing.Size(186, 28);
+            this.First_Inn_Bowl_Name_6.TabIndex = 65;
+            this.First_Inn_Bowl_Name_6.Text = "-";
+            this.First_Inn_Bowl_Name_6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // First_Inn_Bowl_Avg_6
+            // 
+            this.First_Inn_Bowl_Avg_6.AutoSize = true;
+            this.First_Inn_Bowl_Avg_6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.First_Inn_Bowl_Avg_6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.First_Inn_Bowl_Avg_6.Location = new System.Drawing.Point(514, 165);
+            this.First_Inn_Bowl_Avg_6.Name = "First_Inn_Bowl_Avg_6";
+            this.First_Inn_Bowl_Avg_6.Size = new System.Drawing.Size(35, 28);
+            this.First_Inn_Bowl_Avg_6.TabIndex = 64;
+            this.First_Inn_Bowl_Avg_6.Text = "-";
+            this.First_Inn_Bowl_Avg_6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // First_Inn_Bowl_Econ_6
+            // 
+            this.First_Inn_Bowl_Econ_6.AutoSize = true;
+            this.First_Inn_Bowl_Econ_6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.First_Inn_Bowl_Econ_6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.First_Inn_Bowl_Econ_6.Location = new System.Drawing.Point(556, 165);
+            this.First_Inn_Bowl_Econ_6.Name = "First_Inn_Bowl_Econ_6";
+            this.First_Inn_Bowl_Econ_6.Size = new System.Drawing.Size(47, 28);
+            this.First_Inn_Bowl_Econ_6.TabIndex = 63;
+            this.First_Inn_Bowl_Econ_6.Text = "-";
+            this.First_Inn_Bowl_Econ_6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // First_Inn_Bowl_Wkts_6
+            // 
+            this.First_Inn_Bowl_Wkts_6.AutoSize = true;
+            this.First_Inn_Bowl_Wkts_6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.First_Inn_Bowl_Wkts_6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.First_Inn_Bowl_Wkts_6.Location = new System.Drawing.Point(460, 165);
+            this.First_Inn_Bowl_Wkts_6.Name = "First_Inn_Bowl_Wkts_6";
+            this.First_Inn_Bowl_Wkts_6.Size = new System.Drawing.Size(47, 28);
+            this.First_Inn_Bowl_Wkts_6.TabIndex = 62;
+            this.First_Inn_Bowl_Wkts_6.Text = "-";
+            this.First_Inn_Bowl_Wkts_6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // First_Inn_Bowl_Mdns_6
+            // 
+            this.First_Inn_Bowl_Mdns_6.AutoSize = true;
+            this.First_Inn_Bowl_Mdns_6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.First_Inn_Bowl_Mdns_6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.First_Inn_Bowl_Mdns_6.Location = new System.Drawing.Point(350, 165);
+            this.First_Inn_Bowl_Mdns_6.Name = "First_Inn_Bowl_Mdns_6";
+            this.First_Inn_Bowl_Mdns_6.Size = new System.Drawing.Size(49, 28);
+            this.First_Inn_Bowl_Mdns_6.TabIndex = 61;
+            this.First_Inn_Bowl_Mdns_6.Text = "-";
+            this.First_Inn_Bowl_Mdns_6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // First_Inn_Bowl_Runs_6
+            // 
+            this.First_Inn_Bowl_Runs_6.AutoSize = true;
+            this.First_Inn_Bowl_Runs_6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.First_Inn_Bowl_Runs_6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.First_Inn_Bowl_Runs_6.Location = new System.Drawing.Point(406, 165);
+            this.First_Inn_Bowl_Runs_6.Name = "First_Inn_Bowl_Runs_6";
+            this.First_Inn_Bowl_Runs_6.Size = new System.Drawing.Size(47, 28);
+            this.First_Inn_Bowl_Runs_6.TabIndex = 60;
+            this.First_Inn_Bowl_Runs_6.Text = "-";
+            this.First_Inn_Bowl_Runs_6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // First_Inn_Bowl_Nb_5
+            // 
+            this.First_Inn_Bowl_Nb_5.AutoSize = true;
+            this.First_Inn_Bowl_Nb_5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.First_Inn_Bowl_Nb_5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.First_Inn_Bowl_Nb_5.Location = new System.Drawing.Point(257, 136);
+            this.First_Inn_Bowl_Nb_5.Name = "First_Inn_Bowl_Nb_5";
+            this.First_Inn_Bowl_Nb_5.Size = new System.Drawing.Size(26, 28);
+            this.First_Inn_Bowl_Nb_5.TabIndex = 59;
+            this.First_Inn_Bowl_Nb_5.Text = "-";
+            this.First_Inn_Bowl_Nb_5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // First_Inn_Bowl_Overs_5
+            // 
+            this.First_Inn_Bowl_Overs_5.AutoSize = true;
+            this.First_Inn_Bowl_Overs_5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.First_Inn_Bowl_Overs_5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.First_Inn_Bowl_Overs_5.Location = new System.Drawing.Point(290, 136);
+            this.First_Inn_Bowl_Overs_5.Name = "First_Inn_Bowl_Overs_5";
+            this.First_Inn_Bowl_Overs_5.Size = new System.Drawing.Size(53, 28);
+            this.First_Inn_Bowl_Overs_5.TabIndex = 58;
+            this.First_Inn_Bowl_Overs_5.Text = "-";
+            this.First_Inn_Bowl_Overs_5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // First_Inn_Bowl_Wd_5
+            // 
+            this.First_Inn_Bowl_Wd_5.AutoSize = true;
+            this.First_Inn_Bowl_Wd_5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.First_Inn_Bowl_Wd_5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.First_Inn_Bowl_Wd_5.Location = new System.Drawing.Point(221, 136);
+            this.First_Inn_Bowl_Wd_5.Name = "First_Inn_Bowl_Wd_5";
+            this.First_Inn_Bowl_Wd_5.Size = new System.Drawing.Size(29, 28);
+            this.First_Inn_Bowl_Wd_5.TabIndex = 57;
+            this.First_Inn_Bowl_Wd_5.Text = "-";
+            this.First_Inn_Bowl_Wd_5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // First_Inn_Bowl_Num_5
+            // 
+            this.First_Inn_Bowl_Num_5.AutoSize = true;
+            this.First_Inn_Bowl_Num_5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.First_Inn_Bowl_Num_5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.First_Inn_Bowl_Num_5.Location = new System.Drawing.Point(4, 136);
+            this.First_Inn_Bowl_Num_5.Name = "First_Inn_Bowl_Num_5";
+            this.First_Inn_Bowl_Num_5.Size = new System.Drawing.Size(17, 28);
+            this.First_Inn_Bowl_Num_5.TabIndex = 56;
+            this.First_Inn_Bowl_Num_5.Text = "5";
+            this.First_Inn_Bowl_Num_5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // First_Inn_Bowl_Name_5
+            // 
+            this.First_Inn_Bowl_Name_5.AutoSize = true;
+            this.First_Inn_Bowl_Name_5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.First_Inn_Bowl_Name_5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.First_Inn_Bowl_Name_5.Location = new System.Drawing.Point(28, 136);
+            this.First_Inn_Bowl_Name_5.Name = "First_Inn_Bowl_Name_5";
+            this.First_Inn_Bowl_Name_5.Size = new System.Drawing.Size(186, 28);
+            this.First_Inn_Bowl_Name_5.TabIndex = 55;
+            this.First_Inn_Bowl_Name_5.Text = "-";
+            this.First_Inn_Bowl_Name_5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // First_Inn_Bowl_Avg_5
+            // 
+            this.First_Inn_Bowl_Avg_5.AutoSize = true;
+            this.First_Inn_Bowl_Avg_5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.First_Inn_Bowl_Avg_5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.First_Inn_Bowl_Avg_5.Location = new System.Drawing.Point(514, 136);
+            this.First_Inn_Bowl_Avg_5.Name = "First_Inn_Bowl_Avg_5";
+            this.First_Inn_Bowl_Avg_5.Size = new System.Drawing.Size(35, 28);
+            this.First_Inn_Bowl_Avg_5.TabIndex = 54;
+            this.First_Inn_Bowl_Avg_5.Text = "-";
+            this.First_Inn_Bowl_Avg_5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // First_Inn_Bowl_Econ_5
+            // 
+            this.First_Inn_Bowl_Econ_5.AutoSize = true;
+            this.First_Inn_Bowl_Econ_5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.First_Inn_Bowl_Econ_5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.First_Inn_Bowl_Econ_5.Location = new System.Drawing.Point(556, 136);
+            this.First_Inn_Bowl_Econ_5.Name = "First_Inn_Bowl_Econ_5";
+            this.First_Inn_Bowl_Econ_5.Size = new System.Drawing.Size(47, 28);
+            this.First_Inn_Bowl_Econ_5.TabIndex = 53;
+            this.First_Inn_Bowl_Econ_5.Text = "-";
+            this.First_Inn_Bowl_Econ_5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // First_Inn_Bowl_Wkts_5
+            // 
+            this.First_Inn_Bowl_Wkts_5.AutoSize = true;
+            this.First_Inn_Bowl_Wkts_5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.First_Inn_Bowl_Wkts_5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.First_Inn_Bowl_Wkts_5.Location = new System.Drawing.Point(460, 136);
+            this.First_Inn_Bowl_Wkts_5.Name = "First_Inn_Bowl_Wkts_5";
+            this.First_Inn_Bowl_Wkts_5.Size = new System.Drawing.Size(47, 28);
+            this.First_Inn_Bowl_Wkts_5.TabIndex = 52;
+            this.First_Inn_Bowl_Wkts_5.Text = "-";
+            this.First_Inn_Bowl_Wkts_5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // First_Inn_Bowl_Mdns_5
+            // 
+            this.First_Inn_Bowl_Mdns_5.AutoSize = true;
+            this.First_Inn_Bowl_Mdns_5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.First_Inn_Bowl_Mdns_5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.First_Inn_Bowl_Mdns_5.Location = new System.Drawing.Point(350, 136);
+            this.First_Inn_Bowl_Mdns_5.Name = "First_Inn_Bowl_Mdns_5";
+            this.First_Inn_Bowl_Mdns_5.Size = new System.Drawing.Size(49, 28);
+            this.First_Inn_Bowl_Mdns_5.TabIndex = 51;
+            this.First_Inn_Bowl_Mdns_5.Text = "-";
+            this.First_Inn_Bowl_Mdns_5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // First_Inn_Bowl_Runs_5
+            // 
+            this.First_Inn_Bowl_Runs_5.AutoSize = true;
+            this.First_Inn_Bowl_Runs_5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.First_Inn_Bowl_Runs_5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.First_Inn_Bowl_Runs_5.Location = new System.Drawing.Point(406, 136);
+            this.First_Inn_Bowl_Runs_5.Name = "First_Inn_Bowl_Runs_5";
+            this.First_Inn_Bowl_Runs_5.Size = new System.Drawing.Size(47, 28);
+            this.First_Inn_Bowl_Runs_5.TabIndex = 50;
+            this.First_Inn_Bowl_Runs_5.Text = "-";
+            this.First_Inn_Bowl_Runs_5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // First_Inn_Bowl_Runs_4
+            // 
+            this.First_Inn_Bowl_Runs_4.AutoSize = true;
+            this.First_Inn_Bowl_Runs_4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.First_Inn_Bowl_Runs_4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.First_Inn_Bowl_Runs_4.Location = new System.Drawing.Point(406, 107);
+            this.First_Inn_Bowl_Runs_4.Name = "First_Inn_Bowl_Runs_4";
+            this.First_Inn_Bowl_Runs_4.Size = new System.Drawing.Size(47, 28);
+            this.First_Inn_Bowl_Runs_4.TabIndex = 49;
+            this.First_Inn_Bowl_Runs_4.Text = "-";
+            this.First_Inn_Bowl_Runs_4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // First_Inn_Bowl_Mdns_4
+            // 
+            this.First_Inn_Bowl_Mdns_4.AutoSize = true;
+            this.First_Inn_Bowl_Mdns_4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.First_Inn_Bowl_Mdns_4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.First_Inn_Bowl_Mdns_4.Location = new System.Drawing.Point(350, 107);
+            this.First_Inn_Bowl_Mdns_4.Name = "First_Inn_Bowl_Mdns_4";
+            this.First_Inn_Bowl_Mdns_4.Size = new System.Drawing.Size(49, 28);
+            this.First_Inn_Bowl_Mdns_4.TabIndex = 48;
+            this.First_Inn_Bowl_Mdns_4.Text = "-";
+            this.First_Inn_Bowl_Mdns_4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // First_Inn_Bowl_Wkts_4
+            // 
+            this.First_Inn_Bowl_Wkts_4.AutoSize = true;
+            this.First_Inn_Bowl_Wkts_4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.First_Inn_Bowl_Wkts_4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.First_Inn_Bowl_Wkts_4.Location = new System.Drawing.Point(460, 107);
+            this.First_Inn_Bowl_Wkts_4.Name = "First_Inn_Bowl_Wkts_4";
+            this.First_Inn_Bowl_Wkts_4.Size = new System.Drawing.Size(47, 28);
+            this.First_Inn_Bowl_Wkts_4.TabIndex = 47;
+            this.First_Inn_Bowl_Wkts_4.Text = "-";
+            this.First_Inn_Bowl_Wkts_4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // First_Inn_Bowl_Econ_4
+            // 
+            this.First_Inn_Bowl_Econ_4.AutoSize = true;
+            this.First_Inn_Bowl_Econ_4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.First_Inn_Bowl_Econ_4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.First_Inn_Bowl_Econ_4.Location = new System.Drawing.Point(556, 107);
+            this.First_Inn_Bowl_Econ_4.Name = "First_Inn_Bowl_Econ_4";
+            this.First_Inn_Bowl_Econ_4.Size = new System.Drawing.Size(47, 28);
+            this.First_Inn_Bowl_Econ_4.TabIndex = 46;
+            this.First_Inn_Bowl_Econ_4.Text = "-";
+            this.First_Inn_Bowl_Econ_4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // First_Inn_Bowl_Avg_4
+            // 
+            this.First_Inn_Bowl_Avg_4.AutoSize = true;
+            this.First_Inn_Bowl_Avg_4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.First_Inn_Bowl_Avg_4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.First_Inn_Bowl_Avg_4.Location = new System.Drawing.Point(514, 107);
+            this.First_Inn_Bowl_Avg_4.Name = "First_Inn_Bowl_Avg_4";
+            this.First_Inn_Bowl_Avg_4.Size = new System.Drawing.Size(35, 28);
+            this.First_Inn_Bowl_Avg_4.TabIndex = 45;
+            this.First_Inn_Bowl_Avg_4.Text = "-";
+            this.First_Inn_Bowl_Avg_4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // First_Inn_Bowl_Wd_4
+            // 
+            this.First_Inn_Bowl_Wd_4.AutoSize = true;
+            this.First_Inn_Bowl_Wd_4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.First_Inn_Bowl_Wd_4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.First_Inn_Bowl_Wd_4.Location = new System.Drawing.Point(221, 107);
+            this.First_Inn_Bowl_Wd_4.Name = "First_Inn_Bowl_Wd_4";
+            this.First_Inn_Bowl_Wd_4.Size = new System.Drawing.Size(29, 28);
+            this.First_Inn_Bowl_Wd_4.TabIndex = 44;
+            this.First_Inn_Bowl_Wd_4.Text = "-";
+            this.First_Inn_Bowl_Wd_4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // First_Inn_Bowl_Name_4
+            // 
+            this.First_Inn_Bowl_Name_4.AutoSize = true;
+            this.First_Inn_Bowl_Name_4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.First_Inn_Bowl_Name_4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.First_Inn_Bowl_Name_4.Location = new System.Drawing.Point(28, 107);
+            this.First_Inn_Bowl_Name_4.Name = "First_Inn_Bowl_Name_4";
+            this.First_Inn_Bowl_Name_4.Size = new System.Drawing.Size(186, 28);
+            this.First_Inn_Bowl_Name_4.TabIndex = 43;
+            this.First_Inn_Bowl_Name_4.Text = "-";
+            this.First_Inn_Bowl_Name_4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // First_Inn_Bowl_Overs_4
+            // 
+            this.First_Inn_Bowl_Overs_4.AutoSize = true;
+            this.First_Inn_Bowl_Overs_4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.First_Inn_Bowl_Overs_4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.First_Inn_Bowl_Overs_4.Location = new System.Drawing.Point(290, 107);
+            this.First_Inn_Bowl_Overs_4.Name = "First_Inn_Bowl_Overs_4";
+            this.First_Inn_Bowl_Overs_4.Size = new System.Drawing.Size(53, 28);
+            this.First_Inn_Bowl_Overs_4.TabIndex = 42;
+            this.First_Inn_Bowl_Overs_4.Text = "-";
+            this.First_Inn_Bowl_Overs_4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // First_Inn_Bowl_Nb_4
+            // 
+            this.First_Inn_Bowl_Nb_4.AutoSize = true;
+            this.First_Inn_Bowl_Nb_4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.First_Inn_Bowl_Nb_4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.First_Inn_Bowl_Nb_4.Location = new System.Drawing.Point(257, 107);
+            this.First_Inn_Bowl_Nb_4.Name = "First_Inn_Bowl_Nb_4";
+            this.First_Inn_Bowl_Nb_4.Size = new System.Drawing.Size(26, 28);
+            this.First_Inn_Bowl_Nb_4.TabIndex = 41;
+            this.First_Inn_Bowl_Nb_4.Text = "-";
+            this.First_Inn_Bowl_Nb_4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // First_Inn_Bowl_Nb_3
+            // 
+            this.First_Inn_Bowl_Nb_3.AutoSize = true;
+            this.First_Inn_Bowl_Nb_3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.First_Inn_Bowl_Nb_3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.First_Inn_Bowl_Nb_3.Location = new System.Drawing.Point(257, 78);
+            this.First_Inn_Bowl_Nb_3.Name = "First_Inn_Bowl_Nb_3";
+            this.First_Inn_Bowl_Nb_3.Size = new System.Drawing.Size(26, 28);
+            this.First_Inn_Bowl_Nb_3.TabIndex = 40;
+            this.First_Inn_Bowl_Nb_3.Text = "-";
+            this.First_Inn_Bowl_Nb_3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // First_Inn_Bowl_Overs_3
+            // 
+            this.First_Inn_Bowl_Overs_3.AutoSize = true;
+            this.First_Inn_Bowl_Overs_3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.First_Inn_Bowl_Overs_3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.First_Inn_Bowl_Overs_3.Location = new System.Drawing.Point(290, 78);
+            this.First_Inn_Bowl_Overs_3.Name = "First_Inn_Bowl_Overs_3";
+            this.First_Inn_Bowl_Overs_3.Size = new System.Drawing.Size(53, 28);
+            this.First_Inn_Bowl_Overs_3.TabIndex = 39;
+            this.First_Inn_Bowl_Overs_3.Text = "-";
+            this.First_Inn_Bowl_Overs_3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // First_Inn_Bowl_Wd_3
+            // 
+            this.First_Inn_Bowl_Wd_3.AutoSize = true;
+            this.First_Inn_Bowl_Wd_3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.First_Inn_Bowl_Wd_3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.First_Inn_Bowl_Wd_3.Location = new System.Drawing.Point(221, 78);
+            this.First_Inn_Bowl_Wd_3.Name = "First_Inn_Bowl_Wd_3";
+            this.First_Inn_Bowl_Wd_3.Size = new System.Drawing.Size(29, 28);
+            this.First_Inn_Bowl_Wd_3.TabIndex = 38;
+            this.First_Inn_Bowl_Wd_3.Text = "-";
+            this.First_Inn_Bowl_Wd_3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // First_Inn_Bowl_Num_3
+            // 
+            this.First_Inn_Bowl_Num_3.AutoSize = true;
+            this.First_Inn_Bowl_Num_3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.First_Inn_Bowl_Num_3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.First_Inn_Bowl_Num_3.Location = new System.Drawing.Point(4, 78);
+            this.First_Inn_Bowl_Num_3.Name = "First_Inn_Bowl_Num_3";
+            this.First_Inn_Bowl_Num_3.Size = new System.Drawing.Size(17, 28);
+            this.First_Inn_Bowl_Num_3.TabIndex = 37;
+            this.First_Inn_Bowl_Num_3.Text = "3";
+            this.First_Inn_Bowl_Num_3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // First_Inn_Bowl_Name_3
+            // 
+            this.First_Inn_Bowl_Name_3.AutoSize = true;
+            this.First_Inn_Bowl_Name_3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.First_Inn_Bowl_Name_3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.First_Inn_Bowl_Name_3.Location = new System.Drawing.Point(28, 78);
+            this.First_Inn_Bowl_Name_3.Name = "First_Inn_Bowl_Name_3";
+            this.First_Inn_Bowl_Name_3.Size = new System.Drawing.Size(186, 28);
+            this.First_Inn_Bowl_Name_3.TabIndex = 36;
+            this.First_Inn_Bowl_Name_3.Text = "-";
+            this.First_Inn_Bowl_Name_3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // First_Inn_Bowl_Mdns_3
+            // 
+            this.First_Inn_Bowl_Mdns_3.AutoSize = true;
+            this.First_Inn_Bowl_Mdns_3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.First_Inn_Bowl_Mdns_3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.First_Inn_Bowl_Mdns_3.Location = new System.Drawing.Point(350, 78);
+            this.First_Inn_Bowl_Mdns_3.Name = "First_Inn_Bowl_Mdns_3";
+            this.First_Inn_Bowl_Mdns_3.Size = new System.Drawing.Size(49, 28);
+            this.First_Inn_Bowl_Mdns_3.TabIndex = 35;
+            this.First_Inn_Bowl_Mdns_3.Text = "-";
+            this.First_Inn_Bowl_Mdns_3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // First_Inn_Bowl_Econ_3
+            // 
+            this.First_Inn_Bowl_Econ_3.AutoSize = true;
+            this.First_Inn_Bowl_Econ_3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.First_Inn_Bowl_Econ_3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.First_Inn_Bowl_Econ_3.Location = new System.Drawing.Point(556, 78);
+            this.First_Inn_Bowl_Econ_3.Name = "First_Inn_Bowl_Econ_3";
+            this.First_Inn_Bowl_Econ_3.Size = new System.Drawing.Size(47, 28);
+            this.First_Inn_Bowl_Econ_3.TabIndex = 34;
+            this.First_Inn_Bowl_Econ_3.Text = "-";
+            this.First_Inn_Bowl_Econ_3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // First_Inn_Bowl_Num_4
+            // 
+            this.First_Inn_Bowl_Num_4.AutoSize = true;
+            this.First_Inn_Bowl_Num_4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.First_Inn_Bowl_Num_4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.First_Inn_Bowl_Num_4.Location = new System.Drawing.Point(4, 107);
+            this.First_Inn_Bowl_Num_4.Name = "First_Inn_Bowl_Num_4";
+            this.First_Inn_Bowl_Num_4.Size = new System.Drawing.Size(17, 28);
+            this.First_Inn_Bowl_Num_4.TabIndex = 33;
+            this.First_Inn_Bowl_Num_4.Text = "4";
+            this.First_Inn_Bowl_Num_4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // First_Inn_Bowl_Avg_3
+            // 
+            this.First_Inn_Bowl_Avg_3.AutoSize = true;
+            this.First_Inn_Bowl_Avg_3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.First_Inn_Bowl_Avg_3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.First_Inn_Bowl_Avg_3.Location = new System.Drawing.Point(514, 78);
+            this.First_Inn_Bowl_Avg_3.Name = "First_Inn_Bowl_Avg_3";
+            this.First_Inn_Bowl_Avg_3.Size = new System.Drawing.Size(35, 28);
+            this.First_Inn_Bowl_Avg_3.TabIndex = 32;
+            this.First_Inn_Bowl_Avg_3.Text = "-";
+            this.First_Inn_Bowl_Avg_3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // First_Inn_Bowl_Runs_3
+            // 
+            this.First_Inn_Bowl_Runs_3.AutoSize = true;
+            this.First_Inn_Bowl_Runs_3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.First_Inn_Bowl_Runs_3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.First_Inn_Bowl_Runs_3.Location = new System.Drawing.Point(406, 78);
+            this.First_Inn_Bowl_Runs_3.Name = "First_Inn_Bowl_Runs_3";
+            this.First_Inn_Bowl_Runs_3.Size = new System.Drawing.Size(47, 28);
+            this.First_Inn_Bowl_Runs_3.TabIndex = 31;
+            this.First_Inn_Bowl_Runs_3.Text = "-";
+            this.First_Inn_Bowl_Runs_3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // First_Inn_Bowl_Wkts_3
+            // 
+            this.First_Inn_Bowl_Wkts_3.AutoSize = true;
+            this.First_Inn_Bowl_Wkts_3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.First_Inn_Bowl_Wkts_3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.First_Inn_Bowl_Wkts_3.Location = new System.Drawing.Point(460, 78);
+            this.First_Inn_Bowl_Wkts_3.Name = "First_Inn_Bowl_Wkts_3";
+            this.First_Inn_Bowl_Wkts_3.Size = new System.Drawing.Size(47, 28);
+            this.First_Inn_Bowl_Wkts_3.TabIndex = 30;
+            this.First_Inn_Bowl_Wkts_3.Text = "-";
+            this.First_Inn_Bowl_Wkts_3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // First_Inn_Bowl_Wkts_2
             // 
             this.First_Inn_Bowl_Wkts_2.AutoSize = true;
             this.First_Inn_Bowl_Wkts_2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.First_Inn_Bowl_Wkts_2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.First_Inn_Bowl_Wkts_2.Location = new System.Drawing.Point(460, 39);
+            this.First_Inn_Bowl_Wkts_2.Location = new System.Drawing.Point(460, 49);
             this.First_Inn_Bowl_Wkts_2.Name = "First_Inn_Bowl_Wkts_2";
-            this.First_Inn_Bowl_Wkts_2.Size = new System.Drawing.Size(47, 19);
+            this.First_Inn_Bowl_Wkts_2.Size = new System.Drawing.Size(47, 28);
             this.First_Inn_Bowl_Wkts_2.TabIndex = 23;
-            this.First_Inn_Bowl_Wkts_2.Text = "0";
+            this.First_Inn_Bowl_Wkts_2.Text = "-";
             this.First_Inn_Bowl_Wkts_2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // First_Inn_Bowl_Runs_2
@@ -4117,11 +5943,11 @@
             this.First_Inn_Bowl_Runs_2.AutoSize = true;
             this.First_Inn_Bowl_Runs_2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.First_Inn_Bowl_Runs_2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.First_Inn_Bowl_Runs_2.Location = new System.Drawing.Point(406, 39);
+            this.First_Inn_Bowl_Runs_2.Location = new System.Drawing.Point(406, 49);
             this.First_Inn_Bowl_Runs_2.Name = "First_Inn_Bowl_Runs_2";
-            this.First_Inn_Bowl_Runs_2.Size = new System.Drawing.Size(47, 19);
+            this.First_Inn_Bowl_Runs_2.Size = new System.Drawing.Size(47, 28);
             this.First_Inn_Bowl_Runs_2.TabIndex = 22;
-            this.First_Inn_Bowl_Runs_2.Text = "50";
+            this.First_Inn_Bowl_Runs_2.Text = "-";
             this.First_Inn_Bowl_Runs_2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // First_Inn_Bowl_Mdns_2
@@ -4129,11 +5955,11 @@
             this.First_Inn_Bowl_Mdns_2.AutoSize = true;
             this.First_Inn_Bowl_Mdns_2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.First_Inn_Bowl_Mdns_2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.First_Inn_Bowl_Mdns_2.Location = new System.Drawing.Point(350, 39);
+            this.First_Inn_Bowl_Mdns_2.Location = new System.Drawing.Point(350, 49);
             this.First_Inn_Bowl_Mdns_2.Name = "First_Inn_Bowl_Mdns_2";
-            this.First_Inn_Bowl_Mdns_2.Size = new System.Drawing.Size(49, 19);
+            this.First_Inn_Bowl_Mdns_2.Size = new System.Drawing.Size(49, 28);
             this.First_Inn_Bowl_Mdns_2.TabIndex = 21;
-            this.First_Inn_Bowl_Mdns_2.Text = "3";
+            this.First_Inn_Bowl_Mdns_2.Text = "-";
             this.First_Inn_Bowl_Mdns_2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // First_Inn_Bowl_Overs_2
@@ -4141,47 +5967,47 @@
             this.First_Inn_Bowl_Overs_2.AutoSize = true;
             this.First_Inn_Bowl_Overs_2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.First_Inn_Bowl_Overs_2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.First_Inn_Bowl_Overs_2.Location = new System.Drawing.Point(290, 39);
+            this.First_Inn_Bowl_Overs_2.Location = new System.Drawing.Point(290, 49);
             this.First_Inn_Bowl_Overs_2.Name = "First_Inn_Bowl_Overs_2";
-            this.First_Inn_Bowl_Overs_2.Size = new System.Drawing.Size(53, 19);
+            this.First_Inn_Bowl_Overs_2.Size = new System.Drawing.Size(53, 28);
             this.First_Inn_Bowl_Overs_2.TabIndex = 20;
-            this.First_Inn_Bowl_Overs_2.Text = "7";
+            this.First_Inn_Bowl_Overs_2.Text = "-";
             this.First_Inn_Bowl_Overs_2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // First_Inn_Bowl_Total_Nb_2
+            // First_Inn_Bowl_Nb_2
             // 
-            this.First_Inn_Bowl_Total_Nb_2.AutoSize = true;
-            this.First_Inn_Bowl_Total_Nb_2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.First_Inn_Bowl_Total_Nb_2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.First_Inn_Bowl_Total_Nb_2.Location = new System.Drawing.Point(257, 39);
-            this.First_Inn_Bowl_Total_Nb_2.Name = "First_Inn_Bowl_Total_Nb_2";
-            this.First_Inn_Bowl_Total_Nb_2.Size = new System.Drawing.Size(26, 19);
-            this.First_Inn_Bowl_Total_Nb_2.TabIndex = 19;
-            this.First_Inn_Bowl_Total_Nb_2.Text = "1";
-            this.First_Inn_Bowl_Total_Nb_2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.First_Inn_Bowl_Nb_2.AutoSize = true;
+            this.First_Inn_Bowl_Nb_2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.First_Inn_Bowl_Nb_2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.First_Inn_Bowl_Nb_2.Location = new System.Drawing.Point(257, 49);
+            this.First_Inn_Bowl_Nb_2.Name = "First_Inn_Bowl_Nb_2";
+            this.First_Inn_Bowl_Nb_2.Size = new System.Drawing.Size(26, 28);
+            this.First_Inn_Bowl_Nb_2.TabIndex = 19;
+            this.First_Inn_Bowl_Nb_2.Text = "-";
+            this.First_Inn_Bowl_Nb_2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // First_Inn_Bowl_Total_Wd_2
+            // First_Inn_Bowl_Wd_2
             // 
-            this.First_Inn_Bowl_Total_Wd_2.AutoSize = true;
-            this.First_Inn_Bowl_Total_Wd_2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.First_Inn_Bowl_Total_Wd_2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.First_Inn_Bowl_Total_Wd_2.Location = new System.Drawing.Point(221, 39);
-            this.First_Inn_Bowl_Total_Wd_2.Name = "First_Inn_Bowl_Total_Wd_2";
-            this.First_Inn_Bowl_Total_Wd_2.Size = new System.Drawing.Size(29, 19);
-            this.First_Inn_Bowl_Total_Wd_2.TabIndex = 18;
-            this.First_Inn_Bowl_Total_Wd_2.Text = "1";
-            this.First_Inn_Bowl_Total_Wd_2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.First_Inn_Bowl_Wd_2.AutoSize = true;
+            this.First_Inn_Bowl_Wd_2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.First_Inn_Bowl_Wd_2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.First_Inn_Bowl_Wd_2.Location = new System.Drawing.Point(221, 49);
+            this.First_Inn_Bowl_Wd_2.Name = "First_Inn_Bowl_Wd_2";
+            this.First_Inn_Bowl_Wd_2.Size = new System.Drawing.Size(29, 28);
+            this.First_Inn_Bowl_Wd_2.TabIndex = 18;
+            this.First_Inn_Bowl_Wd_2.Text = "-";
+            this.First_Inn_Bowl_Wd_2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // First_Inn_Bowl_Name_2
             // 
             this.First_Inn_Bowl_Name_2.AutoSize = true;
             this.First_Inn_Bowl_Name_2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.First_Inn_Bowl_Name_2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.First_Inn_Bowl_Name_2.Location = new System.Drawing.Point(28, 39);
+            this.First_Inn_Bowl_Name_2.Location = new System.Drawing.Point(28, 49);
             this.First_Inn_Bowl_Name_2.Name = "First_Inn_Bowl_Name_2";
-            this.First_Inn_Bowl_Name_2.Size = new System.Drawing.Size(186, 19);
+            this.First_Inn_Bowl_Name_2.Size = new System.Drawing.Size(186, 28);
             this.First_Inn_Bowl_Name_2.TabIndex = 17;
-            this.First_Inn_Bowl_Name_2.Text = "Ray Dawson";
+            this.First_Inn_Bowl_Name_2.Text = "-";
             this.First_Inn_Bowl_Name_2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // First_Inn_Bowl_Num_2
@@ -4189,9 +6015,9 @@
             this.First_Inn_Bowl_Num_2.AutoSize = true;
             this.First_Inn_Bowl_Num_2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.First_Inn_Bowl_Num_2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.First_Inn_Bowl_Num_2.Location = new System.Drawing.Point(4, 39);
+            this.First_Inn_Bowl_Num_2.Location = new System.Drawing.Point(4, 49);
             this.First_Inn_Bowl_Num_2.Name = "First_Inn_Bowl_Num_2";
-            this.First_Inn_Bowl_Num_2.Size = new System.Drawing.Size(17, 19);
+            this.First_Inn_Bowl_Num_2.Size = new System.Drawing.Size(17, 28);
             this.First_Inn_Bowl_Num_2.TabIndex = 16;
             this.First_Inn_Bowl_Num_2.Text = "2";
             this.First_Inn_Bowl_Num_2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -4204,9 +6030,9 @@
             this.First_Inn_Bowl_Wkts_1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.First_Inn_Bowl_Wkts_1.Location = new System.Drawing.Point(460, 20);
             this.First_Inn_Bowl_Wkts_1.Name = "First_Inn_Bowl_Wkts_1";
-            this.First_Inn_Bowl_Wkts_1.Size = new System.Drawing.Size(47, 18);
+            this.First_Inn_Bowl_Wkts_1.Size = new System.Drawing.Size(47, 28);
             this.First_Inn_Bowl_Wkts_1.TabIndex = 15;
-            this.First_Inn_Bowl_Wkts_1.Text = "0";
+            this.First_Inn_Bowl_Wkts_1.Text = "-";
             this.First_Inn_Bowl_Wkts_1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // First_Inn_Bowl_Runs_1
@@ -4216,9 +6042,9 @@
             this.First_Inn_Bowl_Runs_1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.First_Inn_Bowl_Runs_1.Location = new System.Drawing.Point(406, 20);
             this.First_Inn_Bowl_Runs_1.Name = "First_Inn_Bowl_Runs_1";
-            this.First_Inn_Bowl_Runs_1.Size = new System.Drawing.Size(47, 18);
+            this.First_Inn_Bowl_Runs_1.Size = new System.Drawing.Size(47, 28);
             this.First_Inn_Bowl_Runs_1.TabIndex = 14;
-            this.First_Inn_Bowl_Runs_1.Text = "45";
+            this.First_Inn_Bowl_Runs_1.Text = "-";
             this.First_Inn_Bowl_Runs_1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // First_Inn_Bowl_Mdns_1
@@ -4228,9 +6054,9 @@
             this.First_Inn_Bowl_Mdns_1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.First_Inn_Bowl_Mdns_1.Location = new System.Drawing.Point(350, 20);
             this.First_Inn_Bowl_Mdns_1.Name = "First_Inn_Bowl_Mdns_1";
-            this.First_Inn_Bowl_Mdns_1.Size = new System.Drawing.Size(49, 18);
+            this.First_Inn_Bowl_Mdns_1.Size = new System.Drawing.Size(49, 28);
             this.First_Inn_Bowl_Mdns_1.TabIndex = 13;
-            this.First_Inn_Bowl_Mdns_1.Text = "2";
+            this.First_Inn_Bowl_Mdns_1.Text = "-";
             this.First_Inn_Bowl_Mdns_1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // First_Inn_Bowl_Overs_1
@@ -4240,9 +6066,9 @@
             this.First_Inn_Bowl_Overs_1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.First_Inn_Bowl_Overs_1.Location = new System.Drawing.Point(290, 20);
             this.First_Inn_Bowl_Overs_1.Name = "First_Inn_Bowl_Overs_1";
-            this.First_Inn_Bowl_Overs_1.Size = new System.Drawing.Size(53, 18);
+            this.First_Inn_Bowl_Overs_1.Size = new System.Drawing.Size(53, 28);
             this.First_Inn_Bowl_Overs_1.TabIndex = 12;
-            this.First_Inn_Bowl_Overs_1.Text = "6.3";
+            this.First_Inn_Bowl_Overs_1.Text = "-";
             this.First_Inn_Bowl_Overs_1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // First_Inn_Bowl_Nb_1
@@ -4252,9 +6078,9 @@
             this.First_Inn_Bowl_Nb_1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.First_Inn_Bowl_Nb_1.Location = new System.Drawing.Point(257, 20);
             this.First_Inn_Bowl_Nb_1.Name = "First_Inn_Bowl_Nb_1";
-            this.First_Inn_Bowl_Nb_1.Size = new System.Drawing.Size(26, 18);
+            this.First_Inn_Bowl_Nb_1.Size = new System.Drawing.Size(26, 28);
             this.First_Inn_Bowl_Nb_1.TabIndex = 11;
-            this.First_Inn_Bowl_Nb_1.Text = "2";
+            this.First_Inn_Bowl_Nb_1.Text = "-";
             this.First_Inn_Bowl_Nb_1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // First_Inn_Bowl_Wd_1
@@ -4264,9 +6090,9 @@
             this.First_Inn_Bowl_Wd_1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.First_Inn_Bowl_Wd_1.Location = new System.Drawing.Point(221, 20);
             this.First_Inn_Bowl_Wd_1.Name = "First_Inn_Bowl_Wd_1";
-            this.First_Inn_Bowl_Wd_1.Size = new System.Drawing.Size(29, 18);
+            this.First_Inn_Bowl_Wd_1.Size = new System.Drawing.Size(29, 28);
             this.First_Inn_Bowl_Wd_1.TabIndex = 10;
-            this.First_Inn_Bowl_Wd_1.Text = "3";
+            this.First_Inn_Bowl_Wd_1.Text = "-";
             this.First_Inn_Bowl_Wd_1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // First_Inn_Bowl_Name_1
@@ -4276,9 +6102,9 @@
             this.First_Inn_Bowl_Name_1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.First_Inn_Bowl_Name_1.Location = new System.Drawing.Point(28, 20);
             this.First_Inn_Bowl_Name_1.Name = "First_Inn_Bowl_Name_1";
-            this.First_Inn_Bowl_Name_1.Size = new System.Drawing.Size(186, 18);
+            this.First_Inn_Bowl_Name_1.Size = new System.Drawing.Size(186, 28);
             this.First_Inn_Bowl_Name_1.TabIndex = 9;
-            this.First_Inn_Bowl_Name_1.Text = "Chris Dawson";
+            this.First_Inn_Bowl_Name_1.Text = "-";
             this.First_Inn_Bowl_Name_1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // First_Inn_Bowl_Wkts_Head
@@ -4384,7 +6210,7 @@
             this.First_Inn_Bowl_Num_1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.First_Inn_Bowl_Num_1.Location = new System.Drawing.Point(4, 20);
             this.First_Inn_Bowl_Num_1.Name = "First_Inn_Bowl_Num_1";
-            this.First_Inn_Bowl_Num_1.Size = new System.Drawing.Size(17, 18);
+            this.First_Inn_Bowl_Num_1.Size = new System.Drawing.Size(17, 28);
             this.First_Inn_Bowl_Num_1.TabIndex = 8;
             this.First_Inn_Bowl_Num_1.Text = "1";
             this.First_Inn_Bowl_Num_1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -4420,9 +6246,9 @@
             this.First_Inn_Bowl_Avg_1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.First_Inn_Bowl_Avg_1.Location = new System.Drawing.Point(514, 20);
             this.First_Inn_Bowl_Avg_1.Name = "First_Inn_Bowl_Avg_1";
-            this.First_Inn_Bowl_Avg_1.Size = new System.Drawing.Size(35, 18);
+            this.First_Inn_Bowl_Avg_1.Size = new System.Drawing.Size(35, 28);
             this.First_Inn_Bowl_Avg_1.TabIndex = 26;
-            this.First_Inn_Bowl_Avg_1.Text = "21";
+            this.First_Inn_Bowl_Avg_1.Text = "-";
             this.First_Inn_Bowl_Avg_1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // First_Inn_Bowl_Econ_1
@@ -4432,9 +6258,9 @@
             this.First_Inn_Bowl_Econ_1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.First_Inn_Bowl_Econ_1.Location = new System.Drawing.Point(556, 20);
             this.First_Inn_Bowl_Econ_1.Name = "First_Inn_Bowl_Econ_1";
-            this.First_Inn_Bowl_Econ_1.Size = new System.Drawing.Size(47, 18);
+            this.First_Inn_Bowl_Econ_1.Size = new System.Drawing.Size(47, 28);
             this.First_Inn_Bowl_Econ_1.TabIndex = 27;
-            this.First_Inn_Bowl_Econ_1.Text = "4";
+            this.First_Inn_Bowl_Econ_1.Text = "-";
             this.First_Inn_Bowl_Econ_1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // First_Inn_Bowl_Avg_2
@@ -4442,11 +6268,11 @@
             this.First_Inn_Bowl_Avg_2.AutoSize = true;
             this.First_Inn_Bowl_Avg_2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.First_Inn_Bowl_Avg_2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.First_Inn_Bowl_Avg_2.Location = new System.Drawing.Point(514, 39);
+            this.First_Inn_Bowl_Avg_2.Location = new System.Drawing.Point(514, 49);
             this.First_Inn_Bowl_Avg_2.Name = "First_Inn_Bowl_Avg_2";
-            this.First_Inn_Bowl_Avg_2.Size = new System.Drawing.Size(35, 19);
+            this.First_Inn_Bowl_Avg_2.Size = new System.Drawing.Size(35, 28);
             this.First_Inn_Bowl_Avg_2.TabIndex = 28;
-            this.First_Inn_Bowl_Avg_2.Text = "19";
+            this.First_Inn_Bowl_Avg_2.Text = "-";
             this.First_Inn_Bowl_Avg_2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // First_Inn_Bowl_Econ_2
@@ -4454,11 +6280,11 @@
             this.First_Inn_Bowl_Econ_2.AutoSize = true;
             this.First_Inn_Bowl_Econ_2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.First_Inn_Bowl_Econ_2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.First_Inn_Bowl_Econ_2.Location = new System.Drawing.Point(556, 39);
+            this.First_Inn_Bowl_Econ_2.Location = new System.Drawing.Point(556, 49);
             this.First_Inn_Bowl_Econ_2.Name = "First_Inn_Bowl_Econ_2";
-            this.First_Inn_Bowl_Econ_2.Size = new System.Drawing.Size(47, 19);
+            this.First_Inn_Bowl_Econ_2.Size = new System.Drawing.Size(47, 28);
             this.First_Inn_Bowl_Econ_2.TabIndex = 29;
-            this.First_Inn_Bowl_Econ_2.Text = "3.5";
+            this.First_Inn_Bowl_Econ_2.Text = "-";
             this.First_Inn_Bowl_Econ_2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // First_Inn_Info_Btm_Table
@@ -4778,7 +6604,7 @@
             this.First_Inn_Bat_Minutes_1.Name = "First_Inn_Bat_Minutes_1";
             this.First_Inn_Bat_Minutes_1.Size = new System.Drawing.Size(67, 20);
             this.First_Inn_Bat_Minutes_1.TabIndex = 137;
-            this.First_Inn_Bat_Minutes_1.Text = "m";
+            this.First_Inn_Bat_Minutes_1.Text = "-";
             this.First_Inn_Bat_Minutes_1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // First_Inn_Bat_Balls_7
@@ -4790,7 +6616,7 @@
             this.First_Inn_Bat_Balls_7.Name = "First_Inn_Bat_Balls_7";
             this.First_Inn_Bat_Balls_7.Size = new System.Drawing.Size(45, 20);
             this.First_Inn_Bat_Balls_7.TabIndex = 203;
-            this.First_Inn_Bat_Balls_7.Text = "b";
+            this.First_Inn_Bat_Balls_7.Text = "-";
             this.First_Inn_Bat_Balls_7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // First_Inn_Bat_Runs_1
@@ -4802,7 +6628,7 @@
             this.First_Inn_Bat_Runs_1.Name = "First_Inn_Bat_Runs_1";
             this.First_Inn_Bat_Runs_1.Size = new System.Drawing.Size(47, 20);
             this.First_Inn_Bat_Runs_1.TabIndex = 136;
-            this.First_Inn_Bat_Runs_1.Text = "r";
+            this.First_Inn_Bat_Runs_1.Text = "-";
             this.First_Inn_Bat_Runs_1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // First_Inn_Bat_Sixes_11
@@ -4814,7 +6640,7 @@
             this.First_Inn_Bat_Sixes_11.Name = "First_Inn_Bat_Sixes_11";
             this.First_Inn_Bat_Sixes_11.Size = new System.Drawing.Size(30, 21);
             this.First_Inn_Bat_Sixes_11.TabIndex = 211;
-            this.First_Inn_Bat_Sixes_11.Text = "6";
+            this.First_Inn_Bat_Sixes_11.Text = "-";
             this.First_Inn_Bat_Sixes_11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // First_Inn_Bat_Balls_5
@@ -4826,7 +6652,7 @@
             this.First_Inn_Bat_Balls_5.Name = "First_Inn_Bat_Balls_5";
             this.First_Inn_Bat_Balls_5.Size = new System.Drawing.Size(45, 20);
             this.First_Inn_Bat_Balls_5.TabIndex = 206;
-            this.First_Inn_Bat_Balls_5.Text = "b";
+            this.First_Inn_Bat_Balls_5.Text = "-";
             this.First_Inn_Bat_Balls_5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // First_Inn_Bat_Balls_4
@@ -4838,7 +6664,7 @@
             this.First_Inn_Bat_Balls_4.Name = "First_Inn_Bat_Balls_4";
             this.First_Inn_Bat_Balls_4.Size = new System.Drawing.Size(45, 20);
             this.First_Inn_Bat_Balls_4.TabIndex = 205;
-            this.First_Inn_Bat_Balls_4.Text = "b";
+            this.First_Inn_Bat_Balls_4.Text = "-";
             this.First_Inn_Bat_Balls_4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // First_Inn_Bat_Balls_3
@@ -4850,7 +6676,7 @@
             this.First_Inn_Bat_Balls_3.Name = "First_Inn_Bat_Balls_3";
             this.First_Inn_Bat_Balls_3.Size = new System.Drawing.Size(45, 20);
             this.First_Inn_Bat_Balls_3.TabIndex = 204;
-            this.First_Inn_Bat_Balls_3.Text = "b";
+            this.First_Inn_Bat_Balls_3.Text = "-";
             this.First_Inn_Bat_Balls_3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // First_Inn_Bat_Balls_2
@@ -4862,7 +6688,7 @@
             this.First_Inn_Bat_Balls_2.Name = "First_Inn_Bat_Balls_2";
             this.First_Inn_Bat_Balls_2.Size = new System.Drawing.Size(45, 20);
             this.First_Inn_Bat_Balls_2.TabIndex = 201;
-            this.First_Inn_Bat_Balls_2.Text = "b";
+            this.First_Inn_Bat_Balls_2.Text = "-";
             this.First_Inn_Bat_Balls_2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // First_Inn_Bat_Balls_6
@@ -4874,7 +6700,7 @@
             this.First_Inn_Bat_Balls_6.Name = "First_Inn_Bat_Balls_6";
             this.First_Inn_Bat_Balls_6.Size = new System.Drawing.Size(45, 20);
             this.First_Inn_Bat_Balls_6.TabIndex = 202;
-            this.First_Inn_Bat_Balls_6.Text = "b";
+            this.First_Inn_Bat_Balls_6.Text = "-";
             this.First_Inn_Bat_Balls_6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // First_Inn_Bat_Balls_1
@@ -4886,7 +6712,7 @@
             this.First_Inn_Bat_Balls_1.Name = "First_Inn_Bat_Balls_1";
             this.First_Inn_Bat_Balls_1.Size = new System.Drawing.Size(45, 20);
             this.First_Inn_Bat_Balls_1.TabIndex = 200;
-            this.First_Inn_Bat_Balls_1.Text = "b";
+            this.First_Inn_Bat_Balls_1.Text = "-";
             this.First_Inn_Bat_Balls_1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // First_Inn_Bat_Num_6
@@ -4910,7 +6736,7 @@
             this.First_Inn_Bat_Sixes_6.Name = "First_Inn_Bat_Sixes_6";
             this.First_Inn_Bat_Sixes_6.Size = new System.Drawing.Size(30, 20);
             this.First_Inn_Bat_Sixes_6.TabIndex = 201;
-            this.First_Inn_Bat_Sixes_6.Text = "6";
+            this.First_Inn_Bat_Sixes_6.Text = "-";
             this.First_Inn_Bat_Sixes_6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // First_Inn_Bat_Sixes_9
@@ -4922,7 +6748,7 @@
             this.First_Inn_Bat_Sixes_9.Name = "First_Inn_Bat_Sixes_9";
             this.First_Inn_Bat_Sixes_9.Size = new System.Drawing.Size(30, 20);
             this.First_Inn_Bat_Sixes_9.TabIndex = 207;
-            this.First_Inn_Bat_Sixes_9.Text = "6";
+            this.First_Inn_Bat_Sixes_9.Text = "-";
             this.First_Inn_Bat_Sixes_9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // First_Inn_Bat_Sixes_10
@@ -4934,7 +6760,7 @@
             this.First_Inn_Bat_Sixes_10.Name = "First_Inn_Bat_Sixes_10";
             this.First_Inn_Bat_Sixes_10.Size = new System.Drawing.Size(30, 20);
             this.First_Inn_Bat_Sixes_10.TabIndex = 209;
-            this.First_Inn_Bat_Sixes_10.Text = "6";
+            this.First_Inn_Bat_Sixes_10.Text = "-";
             this.First_Inn_Bat_Sixes_10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // First_Inn_Bat_Fours_11
@@ -4946,7 +6772,7 @@
             this.First_Inn_Bat_Fours_11.Name = "First_Inn_Bat_Fours_11";
             this.First_Inn_Bat_Fours_11.Size = new System.Drawing.Size(30, 21);
             this.First_Inn_Bat_Fours_11.TabIndex = 210;
-            this.First_Inn_Bat_Fours_11.Text = "4";
+            this.First_Inn_Bat_Fours_11.Text = "-";
             this.First_Inn_Bat_Fours_11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // First_Inn_Bat_Fours_10
@@ -4958,7 +6784,7 @@
             this.First_Inn_Bat_Fours_10.Name = "First_Inn_Bat_Fours_10";
             this.First_Inn_Bat_Fours_10.Size = new System.Drawing.Size(30, 20);
             this.First_Inn_Bat_Fours_10.TabIndex = 208;
-            this.First_Inn_Bat_Fours_10.Text = "4";
+            this.First_Inn_Bat_Fours_10.Text = "-";
             this.First_Inn_Bat_Fours_10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // First_Inn_Bat_Sixes_8
@@ -4970,7 +6796,7 @@
             this.First_Inn_Bat_Sixes_8.Name = "First_Inn_Bat_Sixes_8";
             this.First_Inn_Bat_Sixes_8.Size = new System.Drawing.Size(30, 20);
             this.First_Inn_Bat_Sixes_8.TabIndex = 205;
-            this.First_Inn_Bat_Sixes_8.Text = "6";
+            this.First_Inn_Bat_Sixes_8.Text = "-";
             this.First_Inn_Bat_Sixes_8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // First_Inn_Bat_Name_11
@@ -4982,7 +6808,7 @@
             this.First_Inn_Bat_Name_11.Name = "First_Inn_Bat_Name_11";
             this.First_Inn_Bat_Name_11.Size = new System.Drawing.Size(154, 21);
             this.First_Inn_Bat_Name_11.TabIndex = 226;
-            this.First_Inn_Bat_Name_11.Text = "Batsman 11";
+            this.First_Inn_Bat_Name_11.Text = "-";
             this.First_Inn_Bat_Name_11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // First_Inn_Bat_Sixes_7
@@ -4994,7 +6820,7 @@
             this.First_Inn_Bat_Sixes_7.Name = "First_Inn_Bat_Sixes_7";
             this.First_Inn_Bat_Sixes_7.Size = new System.Drawing.Size(30, 20);
             this.First_Inn_Bat_Sixes_7.TabIndex = 203;
-            this.First_Inn_Bat_Sixes_7.Text = "6";
+            this.First_Inn_Bat_Sixes_7.Text = "-";
             this.First_Inn_Bat_Sixes_7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // First_Inn_Bat_Num_1
@@ -5030,7 +6856,7 @@
             this.First_Inn_Bat_Sixes_5.Name = "First_Inn_Bat_Sixes_5";
             this.First_Inn_Bat_Sixes_5.Size = new System.Drawing.Size(30, 20);
             this.First_Inn_Bat_Sixes_5.TabIndex = 217;
-            this.First_Inn_Bat_Sixes_5.Text = "6";
+            this.First_Inn_Bat_Sixes_5.Text = "-";
             this.First_Inn_Bat_Sixes_5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // First_Inn_Bat_Sixes_4
@@ -5042,7 +6868,7 @@
             this.First_Inn_Bat_Sixes_4.Name = "First_Inn_Bat_Sixes_4";
             this.First_Inn_Bat_Sixes_4.Size = new System.Drawing.Size(30, 20);
             this.First_Inn_Bat_Sixes_4.TabIndex = 216;
-            this.First_Inn_Bat_Sixes_4.Text = "6";
+            this.First_Inn_Bat_Sixes_4.Text = "-";
             this.First_Inn_Bat_Sixes_4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // First_Inn_Bat_Sixes_3
@@ -5054,7 +6880,7 @@
             this.First_Inn_Bat_Sixes_3.Name = "First_Inn_Bat_Sixes_3";
             this.First_Inn_Bat_Sixes_3.Size = new System.Drawing.Size(30, 20);
             this.First_Inn_Bat_Sixes_3.TabIndex = 213;
-            this.First_Inn_Bat_Sixes_3.Text = "6";
+            this.First_Inn_Bat_Sixes_3.Text = "-";
             this.First_Inn_Bat_Sixes_3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // First_Inn_Bat_Sixes_2
@@ -5066,7 +6892,7 @@
             this.First_Inn_Bat_Sixes_2.Name = "First_Inn_Bat_Sixes_2";
             this.First_Inn_Bat_Sixes_2.Size = new System.Drawing.Size(30, 20);
             this.First_Inn_Bat_Sixes_2.TabIndex = 200;
-            this.First_Inn_Bat_Sixes_2.Text = "6";
+            this.First_Inn_Bat_Sixes_2.Text = "-";
             this.First_Inn_Bat_Sixes_2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // First_Inn_Bat_Fours_8
@@ -5078,7 +6904,7 @@
             this.First_Inn_Bat_Fours_8.Name = "First_Inn_Bat_Fours_8";
             this.First_Inn_Bat_Fours_8.Size = new System.Drawing.Size(30, 20);
             this.First_Inn_Bat_Fours_8.TabIndex = 204;
-            this.First_Inn_Bat_Fours_8.Text = "4";
+            this.First_Inn_Bat_Fours_8.Text = "-";
             this.First_Inn_Bat_Fours_8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // First_Inn_Bat_Sixes_1
@@ -5090,7 +6916,7 @@
             this.First_Inn_Bat_Sixes_1.Name = "First_Inn_Bat_Sixes_1";
             this.First_Inn_Bat_Sixes_1.Size = new System.Drawing.Size(30, 20);
             this.First_Inn_Bat_Sixes_1.TabIndex = 198;
-            this.First_Inn_Bat_Sixes_1.Text = "6";
+            this.First_Inn_Bat_Sixes_1.Text = "-";
             this.First_Inn_Bat_Sixes_1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // First_Inn_Bat_Name_10
@@ -5102,7 +6928,7 @@
             this.First_Inn_Bat_Name_10.Name = "First_Inn_Bat_Name_10";
             this.First_Inn_Bat_Name_10.Size = new System.Drawing.Size(154, 20);
             this.First_Inn_Bat_Name_10.TabIndex = 224;
-            this.First_Inn_Bat_Name_10.Text = "Batsman 10";
+            this.First_Inn_Bat_Name_10.Text = "-";
             this.First_Inn_Bat_Name_10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // First_Inn_Bat_Fours_1
@@ -5114,7 +6940,7 @@
             this.First_Inn_Bat_Fours_1.Name = "First_Inn_Bat_Fours_1";
             this.First_Inn_Bat_Fours_1.Size = new System.Drawing.Size(30, 20);
             this.First_Inn_Bat_Fours_1.TabIndex = 197;
-            this.First_Inn_Bat_Fours_1.Text = "4";
+            this.First_Inn_Bat_Fours_1.Text = "-";
             this.First_Inn_Bat_Fours_1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // First_Inn_Bat_Fours_9
@@ -5126,7 +6952,7 @@
             this.First_Inn_Bat_Fours_9.Name = "First_Inn_Bat_Fours_9";
             this.First_Inn_Bat_Fours_9.Size = new System.Drawing.Size(30, 20);
             this.First_Inn_Bat_Fours_9.TabIndex = 206;
-            this.First_Inn_Bat_Fours_9.Text = "4";
+            this.First_Inn_Bat_Fours_9.Text = "-";
             this.First_Inn_Bat_Fours_9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // First_Inn_Bat_Runs_Head
@@ -5162,7 +6988,7 @@
             this.First_Inn_Bat_Fours_7.Name = "First_Inn_Bat_Fours_7";
             this.First_Inn_Bat_Fours_7.Size = new System.Drawing.Size(30, 20);
             this.First_Inn_Bat_Fours_7.TabIndex = 202;
-            this.First_Inn_Bat_Fours_7.Text = "4";
+            this.First_Inn_Bat_Fours_7.Text = "-";
             this.First_Inn_Bat_Fours_7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // First_Inn_Bat_Name_9
@@ -5174,7 +7000,7 @@
             this.First_Inn_Bat_Name_9.Name = "First_Inn_Bat_Name_9";
             this.First_Inn_Bat_Name_9.Size = new System.Drawing.Size(154, 20);
             this.First_Inn_Bat_Name_9.TabIndex = 222;
-            this.First_Inn_Bat_Name_9.Text = "Batsman 9";
+            this.First_Inn_Bat_Name_9.Text = "-";
             this.First_Inn_Bat_Name_9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // First_Inn_Bat_Total_Sixes_Head
@@ -5210,7 +7036,7 @@
             this.First_Inn_Bat_Fours_2.Name = "First_Inn_Bat_Fours_2";
             this.First_Inn_Bat_Fours_2.Size = new System.Drawing.Size(30, 20);
             this.First_Inn_Bat_Fours_2.TabIndex = 199;
-            this.First_Inn_Bat_Fours_2.Text = "4";
+            this.First_Inn_Bat_Fours_2.Text = "-";
             this.First_Inn_Bat_Fours_2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // First_Inn_Bat_Name_8
@@ -5222,7 +7048,7 @@
             this.First_Inn_Bat_Name_8.Name = "First_Inn_Bat_Name_8";
             this.First_Inn_Bat_Name_8.Size = new System.Drawing.Size(154, 20);
             this.First_Inn_Bat_Name_8.TabIndex = 220;
-            this.First_Inn_Bat_Name_8.Text = "Batsman 8";
+            this.First_Inn_Bat_Name_8.Text = "-";
             this.First_Inn_Bat_Name_8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // First_Inn_Bat_Fours_3
@@ -5234,7 +7060,7 @@
             this.First_Inn_Bat_Fours_3.Name = "First_Inn_Bat_Fours_3";
             this.First_Inn_Bat_Fours_3.Size = new System.Drawing.Size(30, 20);
             this.First_Inn_Bat_Fours_3.TabIndex = 212;
-            this.First_Inn_Bat_Fours_3.Text = "4";
+            this.First_Inn_Bat_Fours_3.Text = "-";
             this.First_Inn_Bat_Fours_3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // First_Inn_Bat_Fours_5
@@ -5246,7 +7072,7 @@
             this.First_Inn_Bat_Fours_5.Name = "First_Inn_Bat_Fours_5";
             this.First_Inn_Bat_Fours_5.Size = new System.Drawing.Size(30, 20);
             this.First_Inn_Bat_Fours_5.TabIndex = 215;
-            this.First_Inn_Bat_Fours_5.Text = "4";
+            this.First_Inn_Bat_Fours_5.Text = "-";
             this.First_Inn_Bat_Fours_5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // First_Inn_Bat_Fours_4
@@ -5258,7 +7084,7 @@
             this.First_Inn_Bat_Fours_4.Name = "First_Inn_Bat_Fours_4";
             this.First_Inn_Bat_Fours_4.Size = new System.Drawing.Size(30, 20);
             this.First_Inn_Bat_Fours_4.TabIndex = 214;
-            this.First_Inn_Bat_Fours_4.Text = "4";
+            this.First_Inn_Bat_Fours_4.Text = "-";
             this.First_Inn_Bat_Fours_4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // First_Inn_Bat_Number_Head
@@ -5294,7 +7120,7 @@
             this.First_Inn_Bat_Name_7.Name = "First_Inn_Bat_Name_7";
             this.First_Inn_Bat_Name_7.Size = new System.Drawing.Size(154, 20);
             this.First_Inn_Bat_Name_7.TabIndex = 218;
-            this.First_Inn_Bat_Name_7.Text = "Batsman 7";
+            this.First_Inn_Bat_Name_7.Text = "-";
             this.First_Inn_Bat_Name_7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // First_Inn_Bat_How_Out_Head
@@ -5330,7 +7156,7 @@
             this.First_Inn_Bat_Name_6.Name = "First_Inn_Bat_Name_6";
             this.First_Inn_Bat_Name_6.Size = new System.Drawing.Size(154, 20);
             this.First_Inn_Bat_Name_6.TabIndex = 216;
-            this.First_Inn_Bat_Name_6.Text = "Batsman 6";
+            this.First_Inn_Bat_Name_6.Text = "-";
             this.First_Inn_Bat_Name_6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // First_Inn_Bat_Name_1
@@ -5342,7 +7168,7 @@
             this.First_Inn_Bat_Name_1.Name = "First_Inn_Bat_Name_1";
             this.First_Inn_Bat_Name_1.Size = new System.Drawing.Size(154, 20);
             this.First_Inn_Bat_Name_1.TabIndex = 212;
-            this.First_Inn_Bat_Name_1.Text = "Philip Cordery";
+            this.First_Inn_Bat_Name_1.Text = "-";
             this.First_Inn_Bat_Name_1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // First_Inn_Bat_Name_2
@@ -5354,7 +7180,7 @@
             this.First_Inn_Bat_Name_2.Name = "First_Inn_Bat_Name_2";
             this.First_Inn_Bat_Name_2.Size = new System.Drawing.Size(154, 20);
             this.First_Inn_Bat_Name_2.TabIndex = 214;
-            this.First_Inn_Bat_Name_2.Text = "Russell Lock";
+            this.First_Inn_Bat_Name_2.Text = "-";
             this.First_Inn_Bat_Name_2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // First_Inn_Bat_Name_3
@@ -5366,7 +7192,7 @@
             this.First_Inn_Bat_Name_3.Name = "First_Inn_Bat_Name_3";
             this.First_Inn_Bat_Name_3.Size = new System.Drawing.Size(154, 20);
             this.First_Inn_Bat_Name_3.TabIndex = 230;
-            this.First_Inn_Bat_Name_3.Text = "Batsman 3";
+            this.First_Inn_Bat_Name_3.Text = "-";
             this.First_Inn_Bat_Name_3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // First_Inn_Bat_Name_4
@@ -5378,7 +7204,7 @@
             this.First_Inn_Bat_Name_4.Name = "First_Inn_Bat_Name_4";
             this.First_Inn_Bat_Name_4.Size = new System.Drawing.Size(154, 20);
             this.First_Inn_Bat_Name_4.TabIndex = 231;
-            this.First_Inn_Bat_Name_4.Text = "Batsman 4";
+            this.First_Inn_Bat_Name_4.Text = "-";
             this.First_Inn_Bat_Name_4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // First_Inn_Bat_Name_5
@@ -5390,7 +7216,7 @@
             this.First_Inn_Bat_Name_5.Name = "First_Inn_Bat_Name_5";
             this.First_Inn_Bat_Name_5.Size = new System.Drawing.Size(154, 20);
             this.First_Inn_Bat_Name_5.TabIndex = 232;
-            this.First_Inn_Bat_Name_5.Text = "Batsman 5";
+            this.First_Inn_Bat_Name_5.Text = "-";
             this.First_Inn_Bat_Name_5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // First_Inn_Bat_Num_10
@@ -5510,7 +7336,7 @@
             this.First_Inn_Bat_Fours_6.Name = "First_Inn_Bat_Fours_6";
             this.First_Inn_Bat_Fours_6.Size = new System.Drawing.Size(30, 20);
             this.First_Inn_Bat_Fours_6.TabIndex = 215;
-            this.First_Inn_Bat_Fours_6.Text = "4";
+            this.First_Inn_Bat_Fours_6.Text = "-";
             this.First_Inn_Bat_Fours_6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // First_Inn_Bat_How_Out_1
@@ -5522,7 +7348,7 @@
             this.First_Inn_Bat_How_Out_1.Name = "First_Inn_Bat_How_Out_1";
             this.First_Inn_Bat_How_Out_1.Size = new System.Drawing.Size(74, 20);
             this.First_Inn_Bat_How_Out_1.TabIndex = 233;
-            this.First_Inn_Bat_How_Out_1.Text = "bowled";
+            this.First_Inn_Bat_How_Out_1.Text = "-";
             this.First_Inn_Bat_How_Out_1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // First_Inn_Bat_How_Out_2
@@ -5534,7 +7360,7 @@
             this.First_Inn_Bat_How_Out_2.Name = "First_Inn_Bat_How_Out_2";
             this.First_Inn_Bat_How_Out_2.Size = new System.Drawing.Size(74, 20);
             this.First_Inn_Bat_How_Out_2.TabIndex = 234;
-            this.First_Inn_Bat_How_Out_2.Text = "ct Fielder";
+            this.First_Inn_Bat_How_Out_2.Text = "-";
             this.First_Inn_Bat_How_Out_2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // First_Inn_Bat_How_Out_3
@@ -5546,7 +7372,7 @@
             this.First_Inn_Bat_How_Out_3.Name = "First_Inn_Bat_How_Out_3";
             this.First_Inn_Bat_How_Out_3.Size = new System.Drawing.Size(74, 20);
             this.First_Inn_Bat_How_Out_3.TabIndex = 235;
-            this.First_Inn_Bat_How_Out_3.Text = "Stumped";
+            this.First_Inn_Bat_How_Out_3.Text = "-";
             this.First_Inn_Bat_How_Out_3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // First_Inn_Bat_How_Out_4
@@ -5558,7 +7384,7 @@
             this.First_Inn_Bat_How_Out_4.Name = "First_Inn_Bat_How_Out_4";
             this.First_Inn_Bat_How_Out_4.Size = new System.Drawing.Size(74, 20);
             this.First_Inn_Bat_How_Out_4.TabIndex = 236;
-            this.First_Inn_Bat_How_Out_4.Text = "LBW";
+            this.First_Inn_Bat_How_Out_4.Text = "-";
             this.First_Inn_Bat_How_Out_4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // First_Inn_Bat_How_Out_5
@@ -5570,7 +7396,7 @@
             this.First_Inn_Bat_How_Out_5.Name = "First_Inn_Bat_How_Out_5";
             this.First_Inn_Bat_How_Out_5.Size = new System.Drawing.Size(74, 20);
             this.First_Inn_Bat_How_Out_5.TabIndex = 237;
-            this.First_Inn_Bat_How_Out_5.Text = "Retired";
+            this.First_Inn_Bat_How_Out_5.Text = "-";
             this.First_Inn_Bat_How_Out_5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // First_Inn_Bat_How_Out_6
@@ -5654,7 +7480,7 @@
             this.First_Inn_Bat_Bwlr_Name_1.Name = "First_Inn_Bat_Bwlr_Name_1";
             this.First_Inn_Bat_Bwlr_Name_1.Size = new System.Drawing.Size(74, 20);
             this.First_Inn_Bat_Bwlr_Name_1.TabIndex = 244;
-            this.First_Inn_Bat_Bwlr_Name_1.Text = "Bowler";
+            this.First_Inn_Bat_Bwlr_Name_1.Text = "-";
             this.First_Inn_Bat_Bwlr_Name_1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // First_Inn_Bat_Bwlr_Name_2
@@ -5666,7 +7492,7 @@
             this.First_Inn_Bat_Bwlr_Name_2.Name = "First_Inn_Bat_Bwlr_Name_2";
             this.First_Inn_Bat_Bwlr_Name_2.Size = new System.Drawing.Size(74, 20);
             this.First_Inn_Bat_Bwlr_Name_2.TabIndex = 245;
-            this.First_Inn_Bat_Bwlr_Name_2.Text = "Bowler";
+            this.First_Inn_Bat_Bwlr_Name_2.Text = "-";
             this.First_Inn_Bat_Bwlr_Name_2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // First_Inn_Bat_Bwlr_Name_3
@@ -5678,7 +7504,7 @@
             this.First_Inn_Bat_Bwlr_Name_3.Name = "First_Inn_Bat_Bwlr_Name_3";
             this.First_Inn_Bat_Bwlr_Name_3.Size = new System.Drawing.Size(74, 20);
             this.First_Inn_Bat_Bwlr_Name_3.TabIndex = 246;
-            this.First_Inn_Bat_Bwlr_Name_3.Text = "Bowler2";
+            this.First_Inn_Bat_Bwlr_Name_3.Text = "-";
             this.First_Inn_Bat_Bwlr_Name_3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // First_Inn_Bat_Bwlr_Name_4
@@ -5690,7 +7516,7 @@
             this.First_Inn_Bat_Bwlr_Name_4.Name = "First_Inn_Bat_Bwlr_Name_4";
             this.First_Inn_Bat_Bwlr_Name_4.Size = new System.Drawing.Size(74, 20);
             this.First_Inn_Bat_Bwlr_Name_4.TabIndex = 247;
-            this.First_Inn_Bat_Bwlr_Name_4.Text = "Bowler3";
+            this.First_Inn_Bat_Bwlr_Name_4.Text = "-";
             this.First_Inn_Bat_Bwlr_Name_4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // First_Inn_Bat_Bwlr_Name_5
@@ -5702,7 +7528,7 @@
             this.First_Inn_Bat_Bwlr_Name_5.Name = "First_Inn_Bat_Bwlr_Name_5";
             this.First_Inn_Bat_Bwlr_Name_5.Size = new System.Drawing.Size(74, 20);
             this.First_Inn_Bat_Bwlr_Name_5.TabIndex = 248;
-            this.First_Inn_Bat_Bwlr_Name_5.Text = "Bowler";
+            this.First_Inn_Bat_Bwlr_Name_5.Text = "-";
             this.First_Inn_Bat_Bwlr_Name_5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // First_Inn_Bat_Bwlr_Name_6
@@ -5714,7 +7540,7 @@
             this.First_Inn_Bat_Bwlr_Name_6.Name = "First_Inn_Bat_Bwlr_Name_6";
             this.First_Inn_Bat_Bwlr_Name_6.Size = new System.Drawing.Size(74, 20);
             this.First_Inn_Bat_Bwlr_Name_6.TabIndex = 249;
-            this.First_Inn_Bat_Bwlr_Name_6.Text = "Bowler2";
+            this.First_Inn_Bat_Bwlr_Name_6.Text = "-";
             this.First_Inn_Bat_Bwlr_Name_6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // First_Inn_Bat_Bwlr_Name_7
@@ -5726,7 +7552,7 @@
             this.First_Inn_Bat_Bwlr_Name_7.Name = "First_Inn_Bat_Bwlr_Name_7";
             this.First_Inn_Bat_Bwlr_Name_7.Size = new System.Drawing.Size(74, 20);
             this.First_Inn_Bat_Bwlr_Name_7.TabIndex = 250;
-            this.First_Inn_Bat_Bwlr_Name_7.Text = "Bowler3";
+            this.First_Inn_Bat_Bwlr_Name_7.Text = "-";
             this.First_Inn_Bat_Bwlr_Name_7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // First_Inn_Bat_Bwlr_Name_8
@@ -5738,7 +7564,7 @@
             this.First_Inn_Bat_Bwlr_Name_8.Name = "First_Inn_Bat_Bwlr_Name_8";
             this.First_Inn_Bat_Bwlr_Name_8.Size = new System.Drawing.Size(74, 20);
             this.First_Inn_Bat_Bwlr_Name_8.TabIndex = 251;
-            this.First_Inn_Bat_Bwlr_Name_8.Text = "Bowler4";
+            this.First_Inn_Bat_Bwlr_Name_8.Text = "-";
             this.First_Inn_Bat_Bwlr_Name_8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // First_Inn_Bat_Bwlr_Name_9
@@ -5750,7 +7576,7 @@
             this.First_Inn_Bat_Bwlr_Name_9.Name = "First_Inn_Bat_Bwlr_Name_9";
             this.First_Inn_Bat_Bwlr_Name_9.Size = new System.Drawing.Size(74, 20);
             this.First_Inn_Bat_Bwlr_Name_9.TabIndex = 252;
-            this.First_Inn_Bat_Bwlr_Name_9.Text = "Bowler4";
+            this.First_Inn_Bat_Bwlr_Name_9.Text = "-";
             this.First_Inn_Bat_Bwlr_Name_9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // First_Inn_Bat_Bwlr_Name_10
@@ -5762,7 +7588,7 @@
             this.First_Inn_Bat_Bwlr_Name_10.Name = "First_Inn_Bat_Bwlr_Name_10";
             this.First_Inn_Bat_Bwlr_Name_10.Size = new System.Drawing.Size(74, 20);
             this.First_Inn_Bat_Bwlr_Name_10.TabIndex = 253;
-            this.First_Inn_Bat_Bwlr_Name_10.Text = "Bowler5";
+            this.First_Inn_Bat_Bwlr_Name_10.Text = "-";
             this.First_Inn_Bat_Bwlr_Name_10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // First_Inn_Bat_Bwlr_Name_11
@@ -5774,7 +7600,7 @@
             this.First_Inn_Bat_Bwlr_Name_11.Name = "First_Inn_Bat_Bwlr_Name_11";
             this.First_Inn_Bat_Bwlr_Name_11.Size = new System.Drawing.Size(74, 21);
             this.First_Inn_Bat_Bwlr_Name_11.TabIndex = 254;
-            this.First_Inn_Bat_Bwlr_Name_11.Text = "Bowler6";
+            this.First_Inn_Bat_Bwlr_Name_11.Text = "-";
             this.First_Inn_Bat_Bwlr_Name_11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // First_Inn_Bat_Balls_8
@@ -5786,7 +7612,7 @@
             this.First_Inn_Bat_Balls_8.Name = "First_Inn_Bat_Balls_8";
             this.First_Inn_Bat_Balls_8.Size = new System.Drawing.Size(45, 20);
             this.First_Inn_Bat_Balls_8.TabIndex = 255;
-            this.First_Inn_Bat_Balls_8.Text = "b";
+            this.First_Inn_Bat_Balls_8.Text = "-";
             this.First_Inn_Bat_Balls_8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // First_Inn_Bat_Balls_9
@@ -5798,7 +7624,7 @@
             this.First_Inn_Bat_Balls_9.Name = "First_Inn_Bat_Balls_9";
             this.First_Inn_Bat_Balls_9.Size = new System.Drawing.Size(45, 20);
             this.First_Inn_Bat_Balls_9.TabIndex = 256;
-            this.First_Inn_Bat_Balls_9.Text = "b";
+            this.First_Inn_Bat_Balls_9.Text = "-";
             this.First_Inn_Bat_Balls_9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // First_Inn_Bat_Balls_10
@@ -5810,7 +7636,7 @@
             this.First_Inn_Bat_Balls_10.Name = "First_Inn_Bat_Balls_10";
             this.First_Inn_Bat_Balls_10.Size = new System.Drawing.Size(45, 20);
             this.First_Inn_Bat_Balls_10.TabIndex = 257;
-            this.First_Inn_Bat_Balls_10.Text = "b";
+            this.First_Inn_Bat_Balls_10.Text = "-";
             this.First_Inn_Bat_Balls_10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // First_Inn_Bat_Balls_11
@@ -5822,7 +7648,7 @@
             this.First_Inn_Bat_Balls_11.Name = "First_Inn_Bat_Balls_11";
             this.First_Inn_Bat_Balls_11.Size = new System.Drawing.Size(45, 21);
             this.First_Inn_Bat_Balls_11.TabIndex = 258;
-            this.First_Inn_Bat_Balls_11.Text = "b";
+            this.First_Inn_Bat_Balls_11.Text = "-";
             this.First_Inn_Bat_Balls_11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // First_Inn_Bat_Runs_2
@@ -5834,7 +7660,7 @@
             this.First_Inn_Bat_Runs_2.Name = "First_Inn_Bat_Runs_2";
             this.First_Inn_Bat_Runs_2.Size = new System.Drawing.Size(47, 20);
             this.First_Inn_Bat_Runs_2.TabIndex = 259;
-            this.First_Inn_Bat_Runs_2.Text = "r";
+            this.First_Inn_Bat_Runs_2.Text = "-";
             this.First_Inn_Bat_Runs_2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // First_Inn_Bat_Runs_3
@@ -5846,7 +7672,7 @@
             this.First_Inn_Bat_Runs_3.Name = "First_Inn_Bat_Runs_3";
             this.First_Inn_Bat_Runs_3.Size = new System.Drawing.Size(47, 20);
             this.First_Inn_Bat_Runs_3.TabIndex = 260;
-            this.First_Inn_Bat_Runs_3.Text = "r";
+            this.First_Inn_Bat_Runs_3.Text = "-";
             this.First_Inn_Bat_Runs_3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // First_Inn_Bat_Runs_4
@@ -5858,7 +7684,7 @@
             this.First_Inn_Bat_Runs_4.Name = "First_Inn_Bat_Runs_4";
             this.First_Inn_Bat_Runs_4.Size = new System.Drawing.Size(47, 20);
             this.First_Inn_Bat_Runs_4.TabIndex = 261;
-            this.First_Inn_Bat_Runs_4.Text = "r";
+            this.First_Inn_Bat_Runs_4.Text = "-";
             this.First_Inn_Bat_Runs_4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // First_Inn_Bat_Runs_5
@@ -5870,7 +7696,7 @@
             this.First_Inn_Bat_Runs_5.Name = "First_Inn_Bat_Runs_5";
             this.First_Inn_Bat_Runs_5.Size = new System.Drawing.Size(47, 20);
             this.First_Inn_Bat_Runs_5.TabIndex = 262;
-            this.First_Inn_Bat_Runs_5.Text = "r";
+            this.First_Inn_Bat_Runs_5.Text = "-";
             this.First_Inn_Bat_Runs_5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // First_Inn_Bat_Runs_6
@@ -5882,7 +7708,7 @@
             this.First_Inn_Bat_Runs_6.Name = "First_Inn_Bat_Runs_6";
             this.First_Inn_Bat_Runs_6.Size = new System.Drawing.Size(47, 20);
             this.First_Inn_Bat_Runs_6.TabIndex = 263;
-            this.First_Inn_Bat_Runs_6.Text = "r";
+            this.First_Inn_Bat_Runs_6.Text = "-";
             this.First_Inn_Bat_Runs_6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // First_Inn_Bat_Runs_7
@@ -5894,7 +7720,7 @@
             this.First_Inn_Bat_Runs_7.Name = "First_Inn_Bat_Runs_7";
             this.First_Inn_Bat_Runs_7.Size = new System.Drawing.Size(47, 20);
             this.First_Inn_Bat_Runs_7.TabIndex = 264;
-            this.First_Inn_Bat_Runs_7.Text = "r";
+            this.First_Inn_Bat_Runs_7.Text = "-";
             this.First_Inn_Bat_Runs_7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // First_Inn_Bat_Runs_8
@@ -5906,7 +7732,7 @@
             this.First_Inn_Bat_Runs_8.Name = "First_Inn_Bat_Runs_8";
             this.First_Inn_Bat_Runs_8.Size = new System.Drawing.Size(47, 20);
             this.First_Inn_Bat_Runs_8.TabIndex = 265;
-            this.First_Inn_Bat_Runs_8.Text = "r";
+            this.First_Inn_Bat_Runs_8.Text = "-";
             this.First_Inn_Bat_Runs_8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // First_Inn_Bat_Runs_9
@@ -5918,7 +7744,7 @@
             this.First_Inn_Bat_Runs_9.Name = "First_Inn_Bat_Runs_9";
             this.First_Inn_Bat_Runs_9.Size = new System.Drawing.Size(47, 20);
             this.First_Inn_Bat_Runs_9.TabIndex = 266;
-            this.First_Inn_Bat_Runs_9.Text = "r";
+            this.First_Inn_Bat_Runs_9.Text = "-";
             this.First_Inn_Bat_Runs_9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // First_Inn_Bat_Runs_10
@@ -5930,7 +7756,7 @@
             this.First_Inn_Bat_Runs_10.Name = "First_Inn_Bat_Runs_10";
             this.First_Inn_Bat_Runs_10.Size = new System.Drawing.Size(47, 20);
             this.First_Inn_Bat_Runs_10.TabIndex = 267;
-            this.First_Inn_Bat_Runs_10.Text = "r";
+            this.First_Inn_Bat_Runs_10.Text = "-";
             this.First_Inn_Bat_Runs_10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // First_Inn_Bat_Runs_11
@@ -5942,7 +7768,7 @@
             this.First_Inn_Bat_Runs_11.Name = "First_Inn_Bat_Runs_11";
             this.First_Inn_Bat_Runs_11.Size = new System.Drawing.Size(47, 21);
             this.First_Inn_Bat_Runs_11.TabIndex = 268;
-            this.First_Inn_Bat_Runs_11.Text = "r";
+            this.First_Inn_Bat_Runs_11.Text = "-";
             this.First_Inn_Bat_Runs_11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // First_Inn_Bat_Minutes_2
@@ -5954,7 +7780,7 @@
             this.First_Inn_Bat_Minutes_2.Name = "First_Inn_Bat_Minutes_2";
             this.First_Inn_Bat_Minutes_2.Size = new System.Drawing.Size(67, 20);
             this.First_Inn_Bat_Minutes_2.TabIndex = 269;
-            this.First_Inn_Bat_Minutes_2.Text = "m";
+            this.First_Inn_Bat_Minutes_2.Text = "-";
             this.First_Inn_Bat_Minutes_2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // First_Inn_Bat_Minutes_3
@@ -5966,7 +7792,7 @@
             this.First_Inn_Bat_Minutes_3.Name = "First_Inn_Bat_Minutes_3";
             this.First_Inn_Bat_Minutes_3.Size = new System.Drawing.Size(67, 20);
             this.First_Inn_Bat_Minutes_3.TabIndex = 270;
-            this.First_Inn_Bat_Minutes_3.Text = "m";
+            this.First_Inn_Bat_Minutes_3.Text = "-";
             this.First_Inn_Bat_Minutes_3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // First_Inn_Bat_Minutes_4
@@ -5978,7 +7804,7 @@
             this.First_Inn_Bat_Minutes_4.Name = "First_Inn_Bat_Minutes_4";
             this.First_Inn_Bat_Minutes_4.Size = new System.Drawing.Size(67, 20);
             this.First_Inn_Bat_Minutes_4.TabIndex = 271;
-            this.First_Inn_Bat_Minutes_4.Text = "m";
+            this.First_Inn_Bat_Minutes_4.Text = "-";
             this.First_Inn_Bat_Minutes_4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // First_Inn_Bat_Minutes_5
@@ -5990,7 +7816,7 @@
             this.First_Inn_Bat_Minutes_5.Name = "First_Inn_Bat_Minutes_5";
             this.First_Inn_Bat_Minutes_5.Size = new System.Drawing.Size(67, 20);
             this.First_Inn_Bat_Minutes_5.TabIndex = 272;
-            this.First_Inn_Bat_Minutes_5.Text = "m";
+            this.First_Inn_Bat_Minutes_5.Text = "-";
             this.First_Inn_Bat_Minutes_5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // First_Inn_Bat_Minutes_6
@@ -6002,7 +7828,7 @@
             this.First_Inn_Bat_Minutes_6.Name = "First_Inn_Bat_Minutes_6";
             this.First_Inn_Bat_Minutes_6.Size = new System.Drawing.Size(67, 20);
             this.First_Inn_Bat_Minutes_6.TabIndex = 273;
-            this.First_Inn_Bat_Minutes_6.Text = "m";
+            this.First_Inn_Bat_Minutes_6.Text = "-";
             this.First_Inn_Bat_Minutes_6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // First_Inn_Bat_Minutes_7
@@ -6014,7 +7840,7 @@
             this.First_Inn_Bat_Minutes_7.Name = "First_Inn_Bat_Minutes_7";
             this.First_Inn_Bat_Minutes_7.Size = new System.Drawing.Size(67, 20);
             this.First_Inn_Bat_Minutes_7.TabIndex = 274;
-            this.First_Inn_Bat_Minutes_7.Text = "m";
+            this.First_Inn_Bat_Minutes_7.Text = "-";
             this.First_Inn_Bat_Minutes_7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // First_Inn_Bat_Minutes_8
@@ -6026,7 +7852,7 @@
             this.First_Inn_Bat_Minutes_8.Name = "First_Inn_Bat_Minutes_8";
             this.First_Inn_Bat_Minutes_8.Size = new System.Drawing.Size(67, 20);
             this.First_Inn_Bat_Minutes_8.TabIndex = 275;
-            this.First_Inn_Bat_Minutes_8.Text = "m";
+            this.First_Inn_Bat_Minutes_8.Text = "-";
             this.First_Inn_Bat_Minutes_8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // First_Inn_Bat_Minutes_9
@@ -6038,7 +7864,7 @@
             this.First_Inn_Bat_Minutes_9.Name = "First_Inn_Bat_Minutes_9";
             this.First_Inn_Bat_Minutes_9.Size = new System.Drawing.Size(67, 20);
             this.First_Inn_Bat_Minutes_9.TabIndex = 276;
-            this.First_Inn_Bat_Minutes_9.Text = "m";
+            this.First_Inn_Bat_Minutes_9.Text = "-";
             this.First_Inn_Bat_Minutes_9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // First_Inn_Bat_Minutes_10
@@ -6050,7 +7876,7 @@
             this.First_Inn_Bat_Minutes_10.Name = "First_Inn_Bat_Minutes_10";
             this.First_Inn_Bat_Minutes_10.Size = new System.Drawing.Size(67, 20);
             this.First_Inn_Bat_Minutes_10.TabIndex = 277;
-            this.First_Inn_Bat_Minutes_10.Text = "m";
+            this.First_Inn_Bat_Minutes_10.Text = "-";
             this.First_Inn_Bat_Minutes_10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // First_Inn_Bat_Minutes_11
@@ -6062,7 +7888,7 @@
             this.First_Inn_Bat_Minutes_11.Name = "First_Inn_Bat_Minutes_11";
             this.First_Inn_Bat_Minutes_11.Size = new System.Drawing.Size(67, 21);
             this.First_Inn_Bat_Minutes_11.TabIndex = 278;
-            this.First_Inn_Bat_Minutes_11.Text = "m";
+            this.First_Inn_Bat_Minutes_11.Text = "-";
             this.First_Inn_Bat_Minutes_11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // First_Inn_Info_Top_Table
@@ -6271,10 +8097,10 @@
             this.Opener_Selector_Tab.PerformLayout();
             this.Scoring_Tab.ResumeLayout(false);
             this.Scoring_Tab.PerformLayout();
-            this.Flow_Panel_New_Bowler.ResumeLayout(false);
             this.Flow_Panel_Run_Out.ResumeLayout(false);
             this.Flow_Panel_Run_Out.PerformLayout();
             this.Flow_Panel_Fielder.ResumeLayout(false);
+            this.Flow_Panel_New_Bowler.ResumeLayout(false);
             this.Flow_Panel_No_Ball_Question.ResumeLayout(false);
             this.Flow_Panel_No_Ball_Question.PerformLayout();
             this.Flow_Panel_No_Ball_No_Bat.ResumeLayout(false);
@@ -6598,8 +8424,8 @@
         private System.Windows.Forms.Label First_Inn_Bowl_Runs_2;
         private System.Windows.Forms.Label First_Inn_Bowl_Mdns_2;
         private System.Windows.Forms.Label First_Inn_Bowl_Overs_2;
-        private System.Windows.Forms.Label First_Inn_Bowl_Total_Nb_2;
-        private System.Windows.Forms.Label First_Inn_Bowl_Total_Wd_2;
+        private System.Windows.Forms.Label First_Inn_Bowl_Nb_2;
+        private System.Windows.Forms.Label First_Inn_Bowl_Wd_2;
         private System.Windows.Forms.Label First_Inn_Bowl_Name_2;
         private System.Windows.Forms.Label First_Inn_Bowl_Num_2;
         private System.Windows.Forms.Label First_Inn_Bowl_Wkts_1;
@@ -6648,7 +8474,7 @@
         private System.Windows.Forms.Label First_Inn_Ovr_Anlys_Wkt_Head;
         private System.Windows.Forms.Label First_Inn_FOW_Head_1;
         private System.Windows.Forms.TableLayoutPanel First_Inn_Bowling_Totals_Table;
-        private System.Windows.Forms.Label First_Inn_Bwl_Ttls_wkts;
+        private System.Windows.Forms.Label First_Inn_Bwl_Ttls_Wkts;
         private System.Windows.Forms.Label First_Inn_Bwl_Ttls_Runs;
         private System.Windows.Forms.Label First_Inn_Bwl_Ttls_Mdns;
         private System.Windows.Forms.Label First_Inn_Bwl_Ttls_Ovrs;
@@ -6743,6 +8569,131 @@
         private System.Windows.Forms.FlowLayoutPanel Flow_Panel_New_Bowler;
         private System.Windows.Forms.Button New_Bowler_Select;
         private System.Windows.Forms.ComboBox New_Bowler_Combo_Box;
+        private System.Windows.Forms.Label First_Inn_Extras_Total_Value;
+        private System.Windows.Forms.Label First_Inn_Penaltys_Value;
+        private System.Windows.Forms.Label First_Inn_Leg_Byes_Value;
+        private System.Windows.Forms.Label First_Inn_Byes_Value;
+        private System.Windows.Forms.Label First_Inn_No_Balls_Value;
+        private System.Windows.Forms.Label First_Inn_Wides_Value;
+        private System.Windows.Forms.Label First_Inn_FOW_Over_Num_10;
+        private System.Windows.Forms.Label First_Inn_FOW_Over_Num_9;
+        private System.Windows.Forms.Label First_Inn_FOW_Over_Num_8;
+        private System.Windows.Forms.Label First_Inn_FOW_Over_Num_7;
+        private System.Windows.Forms.Label First_Inn_FOW_Over_Num_6;
+        private System.Windows.Forms.Label First_Inn_FOW_Over_Num_5;
+        private System.Windows.Forms.Label First_Inn_FOW_Over_Num_4;
+        private System.Windows.Forms.Label First_Inn_FOW_Over_Num_3;
+        private System.Windows.Forms.Label First_Inn_FOW_Over_Num_2;
+        private System.Windows.Forms.Label First_Inn_FOW_Partnership_10;
+        private System.Windows.Forms.Label First_Inn_FOW_Partnership_9;
+        private System.Windows.Forms.Label First_Inn_FOW_Partnership_8;
+        private System.Windows.Forms.Label First_Inn_FOW_Partnership_7;
+        private System.Windows.Forms.Label First_Inn_FOW_Partnership_6;
+        private System.Windows.Forms.Label First_Inn_FOW_Partnership_5;
+        private System.Windows.Forms.Label First_Inn_FOW_Partnership_4;
+        private System.Windows.Forms.Label First_Inn_FOW_Partnership_3;
+        private System.Windows.Forms.Label First_Inn_FOW_Partnership_2;
+        private System.Windows.Forms.Label First_Inn_FOW_Not_Out_Bat_10;
+        private System.Windows.Forms.Label First_Inn_FOW_Not_Out_Bat_9;
+        private System.Windows.Forms.Label First_Inn_FOW_Not_Out_Bat_8;
+        private System.Windows.Forms.Label First_Inn_FOW_Not_Out_Bat_7;
+        private System.Windows.Forms.Label First_Inn_FOW_Not_Out_Bat_6;
+        private System.Windows.Forms.Label First_Inn_FOW_Not_Out_Bat_5;
+        private System.Windows.Forms.Label First_Inn_FOW_Not_Out_Bat_4;
+        private System.Windows.Forms.Label First_Inn_FOW_Not_Out_Bat_3;
+        private System.Windows.Forms.Label First_Inn_FOW_Not_Out_Bat_2;
+        private System.Windows.Forms.Label First_Inn_FOW_Out_Bat_10;
+        private System.Windows.Forms.Label First_Inn_FOW_Out_Bat_9;
+        private System.Windows.Forms.Label First_Inn_FOW_Out_Bat_8;
+        private System.Windows.Forms.Label First_Inn_FOW_Out_Bat_7;
+        private System.Windows.Forms.Label First_Inn_FOW_Out_Bat_6;
+        private System.Windows.Forms.Label First_Inn_FOW_Out_Bat_5;
+        private System.Windows.Forms.Label First_Inn_FOW_Out_Bat_4;
+        private System.Windows.Forms.Label First_Inn_FOW_Out_Bat_3;
+        private System.Windows.Forms.Label First_Inn_FOW_Out_Bat_2;
+        private System.Windows.Forms.Label First_Inn_FOW_Score_10;
+        private System.Windows.Forms.Label First_Inn_FOW_Score_9;
+        private System.Windows.Forms.Label First_Inn_FOW_Score_8;
+        private System.Windows.Forms.Label First_Inn_FOW_Score_7;
+        private System.Windows.Forms.Label First_Inn_FOW_Score_6;
+        private System.Windows.Forms.Label First_Inn_FOW_Score_5;
+        private System.Windows.Forms.Label First_Inn_FOW_Score_4;
+        private System.Windows.Forms.Label First_Inn_FOW_Score_3;
+        private System.Windows.Forms.Label First_Inn_FOW_Score_2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label First_Inn_FOW_Score_1;
+        private System.Windows.Forms.Label First_Inn_FOW_Out_Bat_1;
+        private System.Windows.Forms.Label First_Inn_FOW_Not_Out_Bat_1;
+        private System.Windows.Forms.Label First_Inn_FOW_Partnership_1;
+        private System.Windows.Forms.Label First_Inn_FOW_Over_Num_1;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label First_Inn_Bowl_Nb_8;
+        private System.Windows.Forms.Label First_Inn_Bowl_Overs_8;
+        private System.Windows.Forms.Label First_Inn_Bowl_Wd_8;
+        private System.Windows.Forms.Label First_Inn_Bowl_Num_8;
+        private System.Windows.Forms.Label First_Inn_Bowl_Name_8;
+        private System.Windows.Forms.Label First_Inn_Bowl_Avg_8;
+        private System.Windows.Forms.Label First_Inn_Bowl_Econ_8;
+        private System.Windows.Forms.Label First_Inn_Bowl_Wkts_8;
+        private System.Windows.Forms.Label First_Inn_Bowl_Mdns_8;
+        private System.Windows.Forms.Label First_Inn_Bowl_Runs_8;
+        private System.Windows.Forms.Label First_Inn_Bowl_Nb_7;
+        private System.Windows.Forms.Label First_Inn_Bowl_Overs_7;
+        private System.Windows.Forms.Label First_Inn_Bowl_Wd_7;
+        private System.Windows.Forms.Label First_Inn_Bowl_Num_7;
+        private System.Windows.Forms.Label First_Inn_Bowl_Name_7;
+        private System.Windows.Forms.Label First_Inn_Bowl_Avg_7;
+        private System.Windows.Forms.Label First_Inn_Bowl_Econ_7;
+        private System.Windows.Forms.Label First_Inn_Bowl_Wkts_7;
+        private System.Windows.Forms.Label First_Inn_Bowl_Mdns_7;
+        private System.Windows.Forms.Label First_Inn_Bowl_Runs_7;
+        private System.Windows.Forms.Label First_Inn_Bowl_Nb_6;
+        private System.Windows.Forms.Label First_Inn_Bowl_Overs_6;
+        private System.Windows.Forms.Label First_Inn_Bowl_Wd_6;
+        private System.Windows.Forms.Label First_Inn_Bowl_Num_6;
+        private System.Windows.Forms.Label First_Inn_Bowl_Name_6;
+        private System.Windows.Forms.Label First_Inn_Bowl_Avg_6;
+        private System.Windows.Forms.Label First_Inn_Bowl_Econ_6;
+        private System.Windows.Forms.Label First_Inn_Bowl_Wkts_6;
+        private System.Windows.Forms.Label First_Inn_Bowl_Mdns_6;
+        private System.Windows.Forms.Label First_Inn_Bowl_Runs_6;
+        private System.Windows.Forms.Label First_Inn_Bowl_Nb_5;
+        private System.Windows.Forms.Label First_Inn_Bowl_Overs_5;
+        private System.Windows.Forms.Label First_Inn_Bowl_Wd_5;
+        private System.Windows.Forms.Label First_Inn_Bowl_Num_5;
+        private System.Windows.Forms.Label First_Inn_Bowl_Name_5;
+        private System.Windows.Forms.Label First_Inn_Bowl_Avg_5;
+        private System.Windows.Forms.Label First_Inn_Bowl_Econ_5;
+        private System.Windows.Forms.Label First_Inn_Bowl_Wkts_5;
+        private System.Windows.Forms.Label First_Inn_Bowl_Mdns_5;
+        private System.Windows.Forms.Label First_Inn_Bowl_Runs_5;
+        private System.Windows.Forms.Label First_Inn_Bowl_Runs_4;
+        private System.Windows.Forms.Label First_Inn_Bowl_Mdns_4;
+        private System.Windows.Forms.Label First_Inn_Bowl_Wkts_4;
+        private System.Windows.Forms.Label First_Inn_Bowl_Econ_4;
+        private System.Windows.Forms.Label First_Inn_Bowl_Avg_4;
+        private System.Windows.Forms.Label First_Inn_Bowl_Wd_4;
+        private System.Windows.Forms.Label First_Inn_Bowl_Name_4;
+        private System.Windows.Forms.Label First_Inn_Bowl_Overs_4;
+        private System.Windows.Forms.Label First_Inn_Bowl_Nb_4;
+        private System.Windows.Forms.Label First_Inn_Bowl_Nb_3;
+        private System.Windows.Forms.Label First_Inn_Bowl_Overs_3;
+        private System.Windows.Forms.Label First_Inn_Bowl_Wd_3;
+        private System.Windows.Forms.Label First_Inn_Bowl_Num_3;
+        private System.Windows.Forms.Label First_Inn_Bowl_Name_3;
+        private System.Windows.Forms.Label First_Inn_Bowl_Mdns_3;
+        private System.Windows.Forms.Label First_Inn_Bowl_Econ_3;
+        private System.Windows.Forms.Label First_Inn_Bowl_Num_4;
+        private System.Windows.Forms.Label First_Inn_Bowl_Avg_3;
+        private System.Windows.Forms.Label First_Inn_Bowl_Runs_3;
+        private System.Windows.Forms.Label First_Inn_Bowl_Wkts_3;
 
     }
 }

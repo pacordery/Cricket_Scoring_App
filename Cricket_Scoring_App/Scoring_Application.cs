@@ -28,21 +28,19 @@ namespace Cricket_Scoring_App
         string Innings_Of;
         string Ground_Name;
         string Weather;
-        int    Innings_Total;
-        int    Innings_Wickets;
-        double  Innings_Overs;
+        int Innings_Total;
+        int Innings_Wickets;
+        double Innings_Overs;
+        int Innings_Number;
 
         // Initialising all batting variables
         int Bat_Out;
-        int Bat_Total_Runs;
         int New_Bat_Id;
         int Current_Batsman_Top_Id;
         int Current_Batsman_Bottom_Id;
 
         // Initialising all bowling variables
-        int Bowl_Total_Wides;
-        int Bowl_Total_No_Balls;
-        double Bowl_Total_Overs;
+        bool Maiden;
         int Bowl_Total_Maidens;
         int Bowl_Total_Runs;
         int Bowl_Total_Wickets;
@@ -320,6 +318,12 @@ namespace Cricket_Scoring_App
         {
             HideAllPanels();
 
+            // Set bowler totals to 0
+            Maiden = true;
+            Bowl_Total_Maidens = 0;
+            Bowl_Total_Runs = 0;
+            Bowl_Total_Wickets = 0;
+
             // Set Extras table values to 0
             Extras_Wides = 0;
             Extras_No_Balls = 0;
@@ -339,7 +343,7 @@ namespace Cricket_Scoring_App
             Ground_Name = "";
 
             // TODO move this code into the scorecard handler class
-            // Sets top batsman details
+            // Sets top batsman details in Scoring tab and Innings tab
             Current_Batsman_Name_Top.Text = Innings1BatsmanList[0].Bat_Name;
             Current_Batsman_Number_Of_Fours_Top.Text = Innings1BatsmanList[0].Bat_Fours.ToString();
             Current_Batsman_Number_Of_Sixes_Top.Text = Innings1BatsmanList[0].Bat_Sixes.ToString();
@@ -347,6 +351,8 @@ namespace Cricket_Scoring_App
             Current_Batsman_Runs_Scored_Top.Text = Innings1BatsmanList[0].Bat_Runs.ToString();
             Current_Batsman_Minutes_Batted_Top.Text = Innings1BatsmanList[0].Bat_Minutes.ToString();
             Current_Batsman_Facing_Top.BackColor = Color.Red;
+
+            Update_Innings1_Bat_Row_1();
 
             // Sets bottom batsman details
             Current_Batsman_Name_Bottom.Text = Innings1BatsmanList[1].Bat_Name;
@@ -356,6 +362,8 @@ namespace Cricket_Scoring_App
             Current_Batsman_Runs_Scored_Bottom.Text = Innings1BatsmanList[1].Bat_Runs.ToString();
             Current_Batsman_Minutes_Batted_Bottom.Text = Innings1BatsmanList[1].Bat_Minutes.ToString();
             Current_Batsman_Facing_Bottom.BackColor = Color.Transparent;
+
+            Update_Innings1_Bat_Row_2();
 
             // Sets top bowler details 
             Current_Bowler_Name_Top.Text = Innings1BowlerList[0].Bowl_Name;
@@ -367,6 +375,8 @@ namespace Cricket_Scoring_App
             Current_Bowler_Wickets_Taken_Top.Text = Innings1BowlerList[0].Bowl_Wickets.ToString();
             Current_Bowler_Top.BackColor = Color.Red;
 
+            Update_Innings1_Bowl_Row_1();
+
             // Sets bottom bowler details
             Current_Bowler_Name_Bottom.Text = Innings1BowlerList[1].Bowl_Name;
             Current_Bowler_Wides_Conceded_Bottom.Text = Innings1BowlerList[1].Bowl_Wides.ToString();
@@ -376,6 +386,8 @@ namespace Cricket_Scoring_App
             Current_Bowler_Runs_Conceded_Bottom.Text = Innings1BowlerList[1].Bowl_Runs.ToString();
             Current_Bowler_Wickets_Taken_Bottom.Text = Innings1BowlerList[1].Bowl_Wickets.ToString();
             Current_Bowler_Bottom.BackColor = Color.Transparent;
+
+            Update_Innings1_Bowl_Row_2();
 
             //Scorecard_Handler ScorecardHandler = new Scorecard_Handler();
             //ScorecardHandler.Scorecard_Initialise(Innings1BatsmanList, Innings1BowlerList);
@@ -395,7 +407,10 @@ namespace Cricket_Scoring_App
             Scoring_Innings_Of_Value.Text = Innings_Of;
             Scoring_Total_Value.Text = Innings_Total.ToString();
             Scoring_Wickets_Down_Value.Text = Innings_Wickets.ToString();
-            Scoring_Total_Overs_Value.Text = Innings_Overs.ToString();        
+            Scoring_Total_Overs_Value.Text = Innings_Overs.ToString();  
+      
+            // Set Innings tab table totals
+            First_Inn_Bat_Total_Runs.Text = (Innings_Total - Extras_Total).ToString(); ;
 
             // Switch to the scoring tab
             Scoring_App_Tab_Set.SelectedTab = Scoring_Tab;
@@ -417,6 +432,7 @@ namespace Cricket_Scoring_App
             Temp_Bat_Out = Bat_Out;
 
             // Stores top batsman details
+            Temp_Current_Batsman_Number_Top = Innings1BatsmanList[Temp_Current_Batsman_Top_Id].Bat_Number;
             Temp_Current_Batsman_Name_Top = Innings1BatsmanList[Temp_Current_Batsman_Top_Id].Bat_Name;
             Temp_Current_Batsman_Number_Of_Fours_Top = Innings1BatsmanList[Temp_Current_Batsman_Top_Id].Bat_Fours;
             Temp_Current_Batsman_Number_Of_Sixes_Top = Innings1BatsmanList[Temp_Current_Batsman_Top_Id].Bat_Sixes;
@@ -426,6 +442,7 @@ namespace Cricket_Scoring_App
             Temp_Current_Batsman_Facing_Top = Innings1BatsmanList[Temp_Current_Batsman_Top_Id].Bat_Facing;
 
             // Stores bottom batsman details
+            Temp_Current_Batsman_Number_Bottom = Innings1BatsmanList[Temp_Current_Batsman_Bottom_Id].Bat_Number;
             Temp_Current_Batsman_Name_Bottom = Innings1BatsmanList[Temp_Current_Batsman_Bottom_Id].Bat_Name;
             Temp_Current_Batsman_Number_Of_Fours_Bottom = Innings1BatsmanList[Temp_Current_Batsman_Bottom_Id].Bat_Fours;
             Temp_Current_Batsman_Number_Of_Sixes_Bottom = Innings1BatsmanList[Temp_Current_Batsman_Bottom_Id].Bat_Sixes;
@@ -435,6 +452,7 @@ namespace Cricket_Scoring_App
             Temp_Current_Batsman_Facing_Bottom = Innings1BatsmanList[Temp_Current_Batsman_Bottom_Id].Bat_Facing;
 
             // Stores top bowler details 
+            Temp_Current_Bowler_Number_Top = Innings1BowlerList[Temp_Current_Bowler_Top_Id].Bowl_Number;
             Temp_Current_Bowler_Name_Top = Innings1BowlerList[Temp_Current_Bowler_Top_Id].Bowl_Name;
             Temp_Current_Bowler_Wides_Conceded_Top = Innings1BowlerList[Temp_Current_Bowler_Top_Id].Bowl_Wides;
             Temp_Current_Bowler_No_Balls_Conceded_Top = Innings1BowlerList[Temp_Current_Bowler_Top_Id].Bowl_No_Balls;
@@ -445,6 +463,7 @@ namespace Cricket_Scoring_App
             Temp_Current_Bowler_Top = Innings1BowlerList[Temp_Current_Bowler_Top_Id].Bowl_Bowling;
 
             // Stores bottom bowler details
+            Temp_Current_Bowler_Number_Bottom = Innings1BowlerList[Temp_Current_Bowler_Bottom_Id].Bowl_Number;
             Temp_Current_Bowler_Name_Bottom = Innings1BowlerList[Temp_Current_Bowler_Bottom_Id].Bowl_Name;
             Temp_Current_Bowler_Wides_Conceded_Bottom = Innings1BowlerList[Temp_Current_Bowler_Bottom_Id].Bowl_Wides;
             Temp_Current_Bowler_No_Balls_Conceded_Bottom = Innings1BowlerList[Temp_Current_Bowler_Bottom_Id].Bowl_No_Balls;
@@ -627,7 +646,233 @@ namespace Cricket_Scoring_App
             Scoring_Wickets_Down_Value.Text = Temp_Scoring_Wickets_Down_Value.ToString();
             Scoring_Total_Overs_Value.Text = Temp_Scoring_Total_Overs_Value.ToString();
         }
-        
+
+        private void Update_Innings1_Bat_Row_1()
+        {
+            First_Inn_Bat_Name_1.Text = Innings1BatsmanList[0].Bat_Name;
+            First_Inn_Bat_How_Out_1.Text = Innings1BatsmanList[0].Bat_How_Out;
+            First_Inn_Bat_Bwlr_Name_1.Text = Innings1BatsmanList[0].Bat_Out_Bwlr;
+            First_Inn_Bat_Fours_1.Text = Innings1BatsmanList[0].Bat_Fours.ToString();
+            First_Inn_Bat_Sixes_1.Text = Innings1BatsmanList[0].Bat_Sixes.ToString();
+            First_Inn_Bat_Balls_1.Text = Innings1BatsmanList[0].Bat_Balls.ToString();
+            First_Inn_Bat_Runs_1.Text = Innings1BatsmanList[0].Bat_Runs.ToString();
+            First_Inn_Bat_Minutes_1.Text = Innings1BatsmanList[0].Bat_Minutes.ToString();
+        }
+        private void Update_Innings1_Bat_Row_2()
+        {
+            First_Inn_Bat_Name_2.Text = Innings1BatsmanList[1].Bat_Name;
+            First_Inn_Bat_How_Out_2.Text = Innings1BatsmanList[1].Bat_How_Out;
+            First_Inn_Bat_Bwlr_Name_2.Text = Innings1BatsmanList[1].Bat_Out_Bwlr;
+            First_Inn_Bat_Fours_2.Text = Innings1BatsmanList[1].Bat_Fours.ToString();
+            First_Inn_Bat_Sixes_2.Text = Innings1BatsmanList[1].Bat_Sixes.ToString();
+            First_Inn_Bat_Balls_2.Text = Innings1BatsmanList[1].Bat_Balls.ToString();
+            First_Inn_Bat_Runs_2.Text = Innings1BatsmanList[1].Bat_Runs.ToString();
+            First_Inn_Bat_Minutes_2.Text = Innings1BatsmanList[1].Bat_Minutes.ToString();
+        }
+        private void Update_Innings1_Bat_Row_3()
+        {
+            First_Inn_Bat_Name_3.Text = Innings1BatsmanList[2].Bat_Name;
+            First_Inn_Bat_How_Out_3.Text = Innings1BatsmanList[2].Bat_How_Out;
+            First_Inn_Bat_Bwlr_Name_3.Text = Innings1BatsmanList[2].Bat_Out_Bwlr;
+            First_Inn_Bat_Fours_3.Text = Innings1BatsmanList[2].Bat_Fours.ToString();
+            First_Inn_Bat_Sixes_3.Text = Innings1BatsmanList[2].Bat_Sixes.ToString();
+            First_Inn_Bat_Balls_3.Text = Innings1BatsmanList[2].Bat_Balls.ToString();
+            First_Inn_Bat_Runs_3.Text = Innings1BatsmanList[2].Bat_Runs.ToString();
+            First_Inn_Bat_Minutes_3.Text = Innings1BatsmanList[2].Bat_Minutes.ToString();
+        }
+        private void Update_Innings1_Bat_Row_4()
+        {
+            First_Inn_Bat_Name_4.Text = Innings1BatsmanList[3].Bat_Name;
+            First_Inn_Bat_How_Out_4.Text = Innings1BatsmanList[3].Bat_How_Out;
+            First_Inn_Bat_Bwlr_Name_4.Text = Innings1BatsmanList[3].Bat_Out_Bwlr;
+            First_Inn_Bat_Fours_4.Text = Innings1BatsmanList[3].Bat_Fours.ToString();
+            First_Inn_Bat_Sixes_4.Text = Innings1BatsmanList[3].Bat_Sixes.ToString();
+            First_Inn_Bat_Balls_4.Text = Innings1BatsmanList[3].Bat_Balls.ToString();
+            First_Inn_Bat_Runs_4.Text = Innings1BatsmanList[3].Bat_Runs.ToString();
+            First_Inn_Bat_Minutes_4.Text = Innings1BatsmanList[3].Bat_Minutes.ToString();
+        }
+        private void Update_Innings1_Bat_Row_5()
+        {
+            First_Inn_Bat_Name_5.Text = Innings1BatsmanList[4].Bat_Name;
+            First_Inn_Bat_How_Out_5.Text = Innings1BatsmanList[4].Bat_How_Out;
+            First_Inn_Bat_Bwlr_Name_5.Text = Innings1BatsmanList[4].Bat_Out_Bwlr;
+            First_Inn_Bat_Fours_5.Text = Innings1BatsmanList[4].Bat_Fours.ToString();
+            First_Inn_Bat_Sixes_5.Text = Innings1BatsmanList[4].Bat_Sixes.ToString();
+            First_Inn_Bat_Balls_5.Text = Innings1BatsmanList[4].Bat_Balls.ToString();
+            First_Inn_Bat_Runs_5.Text = Innings1BatsmanList[4].Bat_Runs.ToString();
+            First_Inn_Bat_Minutes_5.Text = Innings1BatsmanList[4].Bat_Minutes.ToString();
+        }
+        private void Update_Innings1_Bat_Row_6()
+        {
+            First_Inn_Bat_Name_6.Text = Innings1BatsmanList[5].Bat_Name;
+            First_Inn_Bat_How_Out_6.Text = Innings1BatsmanList[5].Bat_How_Out;
+            First_Inn_Bat_Bwlr_Name_6.Text = Innings1BatsmanList[5].Bat_Out_Bwlr;
+            First_Inn_Bat_Fours_6.Text = Innings1BatsmanList[5].Bat_Fours.ToString();
+            First_Inn_Bat_Sixes_6.Text = Innings1BatsmanList[5].Bat_Sixes.ToString();
+            First_Inn_Bat_Balls_6.Text = Innings1BatsmanList[5].Bat_Balls.ToString();
+            First_Inn_Bat_Runs_6.Text = Innings1BatsmanList[5].Bat_Runs.ToString();
+            First_Inn_Bat_Minutes_6.Text = Innings1BatsmanList[5].Bat_Minutes.ToString();
+        }
+        private void Update_Innings1_Bat_Row_7()
+        {
+            First_Inn_Bat_Name_7.Text = Innings1BatsmanList[6].Bat_Name;
+            First_Inn_Bat_How_Out_7.Text = Innings1BatsmanList[6].Bat_How_Out;
+            First_Inn_Bat_Bwlr_Name_7.Text = Innings1BatsmanList[6].Bat_Out_Bwlr;
+            First_Inn_Bat_Fours_7.Text = Innings1BatsmanList[6].Bat_Fours.ToString();
+            First_Inn_Bat_Sixes_7.Text = Innings1BatsmanList[6].Bat_Sixes.ToString();
+            First_Inn_Bat_Balls_7.Text = Innings1BatsmanList[6].Bat_Balls.ToString();
+            First_Inn_Bat_Runs_7.Text = Innings1BatsmanList[6].Bat_Runs.ToString();
+            First_Inn_Bat_Minutes_7.Text = Innings1BatsmanList[6].Bat_Minutes.ToString();
+        }
+        private void Update_Innings1_Bat_Row_8()
+        {
+            First_Inn_Bat_Name_8.Text = Innings1BatsmanList[7].Bat_Name;
+            First_Inn_Bat_How_Out_8.Text = Innings1BatsmanList[7].Bat_How_Out;
+            First_Inn_Bat_Bwlr_Name_8.Text = Innings1BatsmanList[7].Bat_Out_Bwlr;
+            First_Inn_Bat_Fours_8.Text = Innings1BatsmanList[7].Bat_Fours.ToString();
+            First_Inn_Bat_Sixes_8.Text = Innings1BatsmanList[7].Bat_Sixes.ToString();
+            First_Inn_Bat_Balls_8.Text = Innings1BatsmanList[7].Bat_Balls.ToString();
+            First_Inn_Bat_Runs_8.Text = Innings1BatsmanList[7].Bat_Runs.ToString();
+            First_Inn_Bat_Minutes_8.Text = Innings1BatsmanList[7].Bat_Minutes.ToString();
+        }
+        private void Update_Innings1_Bat_Row_9()
+        {
+            First_Inn_Bat_Name_9.Text = Innings1BatsmanList[8].Bat_Name;
+            First_Inn_Bat_How_Out_9.Text = Innings1BatsmanList[8].Bat_How_Out;
+            First_Inn_Bat_Bwlr_Name_9.Text = Innings1BatsmanList[8].Bat_Out_Bwlr;
+            First_Inn_Bat_Fours_9.Text = Innings1BatsmanList[8].Bat_Fours.ToString();
+            First_Inn_Bat_Sixes_9.Text = Innings1BatsmanList[8].Bat_Sixes.ToString();
+            First_Inn_Bat_Balls_9.Text = Innings1BatsmanList[8].Bat_Balls.ToString();
+            First_Inn_Bat_Runs_9.Text = Innings1BatsmanList[8].Bat_Runs.ToString();
+            First_Inn_Bat_Minutes_9.Text = Innings1BatsmanList[8].Bat_Minutes.ToString();
+        }
+        private void Update_Innings1_Bat_Row_10()
+        {
+            First_Inn_Bat_Name_10.Text = Innings1BatsmanList[9].Bat_Name;
+            First_Inn_Bat_How_Out_10.Text = Innings1BatsmanList[9].Bat_How_Out;
+            First_Inn_Bat_Bwlr_Name_10.Text = Innings1BatsmanList[9].Bat_Out_Bwlr;
+            First_Inn_Bat_Fours_10.Text = Innings1BatsmanList[9].Bat_Fours.ToString();
+            First_Inn_Bat_Sixes_10.Text = Innings1BatsmanList[9].Bat_Sixes.ToString();
+            First_Inn_Bat_Balls_10.Text = Innings1BatsmanList[9].Bat_Balls.ToString();
+            First_Inn_Bat_Runs_10.Text = Innings1BatsmanList[9].Bat_Runs.ToString();
+            First_Inn_Bat_Minutes_10.Text = Innings1BatsmanList[9].Bat_Minutes.ToString();
+        }
+        private void Update_Innings1_Bat_Row_11()
+        {
+            First_Inn_Bat_Name_11.Text = Innings1BatsmanList[10].Bat_Name;
+            First_Inn_Bat_How_Out_11.Text = Innings1BatsmanList[10].Bat_How_Out;
+            First_Inn_Bat_Bwlr_Name_11.Text = Innings1BatsmanList[10].Bat_Out_Bwlr;
+            First_Inn_Bat_Fours_11.Text = Innings1BatsmanList[10].Bat_Fours.ToString();
+            First_Inn_Bat_Sixes_11.Text = Innings1BatsmanList[10].Bat_Sixes.ToString();
+            First_Inn_Bat_Balls_11.Text = Innings1BatsmanList[10].Bat_Balls.ToString();
+            First_Inn_Bat_Runs_11.Text = Innings1BatsmanList[10].Bat_Runs.ToString();
+            First_Inn_Bat_Minutes_11.Text = Innings1BatsmanList[10].Bat_Minutes.ToString();
+        }
+
+        private void Update_Innings1_Bowl_Row_1()
+        {
+            First_Inn_Bowl_Name_1.Text = Innings1BowlerList[0].Bowl_Name;
+            First_Inn_Bowl_Wd_1.Text = Innings1BowlerList[0].Bowl_Wides.ToString();
+            First_Inn_Bowl_Nb_1.Text = Innings1BowlerList[0].Bowl_No_Balls.ToString();
+            First_Inn_Bowl_Overs_1.Text = Innings1BowlerList[0].Bowl_Overs.ToString();
+            First_Inn_Bowl_Mdns_1.Text = Innings1BowlerList[0].Bowl_Maidens.ToString();
+            First_Inn_Bowl_Runs_1.Text = Innings1BowlerList[0].Bowl_Runs.ToString();
+            First_Inn_Bowl_Wkts_1.Text = Innings1BowlerList[0].Bowl_Wickets.ToString();
+            First_Inn_Bowl_Avg_1.Text = Innings1BowlerList[0].Bowl_Average.ToString();
+            First_Inn_Bowl_Econ_1.Text = Innings1BowlerList[0].Bowl_Economy.ToString();
+        }
+
+        private void Update_Innings1_Bowl_Row_2()
+        {
+            First_Inn_Bowl_Name_2.Text = Innings1BowlerList[1].Bowl_Name;
+            First_Inn_Bowl_Wd_2.Text = Innings1BowlerList[1].Bowl_Wides.ToString();
+            First_Inn_Bowl_Nb_2.Text = Innings1BowlerList[1].Bowl_No_Balls.ToString();
+            First_Inn_Bowl_Overs_2.Text = Innings1BowlerList[1].Bowl_Overs.ToString();
+            First_Inn_Bowl_Mdns_2.Text = Innings1BowlerList[1].Bowl_Maidens.ToString();
+            First_Inn_Bowl_Runs_2.Text = Innings1BowlerList[1].Bowl_Runs.ToString();
+            First_Inn_Bowl_Wkts_2.Text = Innings1BowlerList[1].Bowl_Wickets.ToString();
+            First_Inn_Bowl_Avg_2.Text = Innings1BowlerList[1].Bowl_Average.ToString();
+            First_Inn_Bowl_Econ_2.Text = Innings1BowlerList[1].Bowl_Economy.ToString();
+        }
+
+        private void Update_Innings1_Bowl_Row_3()
+        {
+            First_Inn_Bowl_Name_3.Text = Innings1BowlerList[2].Bowl_Name;
+            First_Inn_Bowl_Wd_3.Text = Innings1BowlerList[2].Bowl_Wides.ToString();
+            First_Inn_Bowl_Nb_3.Text = Innings1BowlerList[2].Bowl_No_Balls.ToString();
+            First_Inn_Bowl_Overs_3.Text = Innings1BowlerList[2].Bowl_Overs.ToString();
+            First_Inn_Bowl_Mdns_3.Text = Innings1BowlerList[2].Bowl_Maidens.ToString();
+            First_Inn_Bowl_Runs_3.Text = Innings1BowlerList[2].Bowl_Runs.ToString();
+            First_Inn_Bowl_Wkts_3.Text = Innings1BowlerList[2].Bowl_Wickets.ToString();
+            First_Inn_Bowl_Avg_3.Text = Innings1BowlerList[2].Bowl_Average.ToString();
+            First_Inn_Bowl_Econ_3.Text = Innings1BowlerList[2].Bowl_Economy.ToString();
+        }
+
+        private void Update_Innings1_Bowl_Row_4()
+        {
+            First_Inn_Bowl_Name_4.Text = Innings1BowlerList[3].Bowl_Name;
+            First_Inn_Bowl_Wd_4.Text = Innings1BowlerList[3].Bowl_Wides.ToString();
+            First_Inn_Bowl_Nb_4.Text = Innings1BowlerList[3].Bowl_No_Balls.ToString();
+            First_Inn_Bowl_Overs_4.Text = Innings1BowlerList[3].Bowl_Overs.ToString();
+            First_Inn_Bowl_Mdns_4.Text = Innings1BowlerList[3].Bowl_Maidens.ToString();
+            First_Inn_Bowl_Runs_4.Text = Innings1BowlerList[3].Bowl_Runs.ToString();
+            First_Inn_Bowl_Wkts_4.Text = Innings1BowlerList[3].Bowl_Wickets.ToString();
+            First_Inn_Bowl_Avg_4.Text = Innings1BowlerList[3].Bowl_Average.ToString();
+            First_Inn_Bowl_Econ_4.Text = Innings1BowlerList[3].Bowl_Economy.ToString();
+        }
+
+        private void Update_Innings1_Bowl_Row_5()
+        {
+            First_Inn_Bowl_Name_5.Text = Innings1BowlerList[4].Bowl_Name;
+            First_Inn_Bowl_Wd_5.Text = Innings1BowlerList[4].Bowl_Wides.ToString();
+            First_Inn_Bowl_Nb_5.Text = Innings1BowlerList[4].Bowl_No_Balls.ToString();
+            First_Inn_Bowl_Overs_5.Text = Innings1BowlerList[4].Bowl_Overs.ToString();
+            First_Inn_Bowl_Mdns_5.Text = Innings1BowlerList[4].Bowl_Maidens.ToString();
+            First_Inn_Bowl_Runs_5.Text = Innings1BowlerList[4].Bowl_Runs.ToString();
+            First_Inn_Bowl_Wkts_5.Text = Innings1BowlerList[4].Bowl_Wickets.ToString();
+            First_Inn_Bowl_Avg_5.Text = Innings1BowlerList[4].Bowl_Average.ToString();
+            First_Inn_Bowl_Econ_5.Text = Innings1BowlerList[4].Bowl_Economy.ToString();
+        }
+
+        private void Update_Innings1_Bowl_Row_6()
+        {
+            First_Inn_Bowl_Name_6.Text = Innings1BowlerList[5].Bowl_Name;
+            First_Inn_Bowl_Wd_6.Text = Innings1BowlerList[5].Bowl_Wides.ToString();
+            First_Inn_Bowl_Nb_6.Text = Innings1BowlerList[5].Bowl_No_Balls.ToString();
+            First_Inn_Bowl_Overs_6.Text = Innings1BowlerList[5].Bowl_Overs.ToString();
+            First_Inn_Bowl_Mdns_6.Text = Innings1BowlerList[5].Bowl_Maidens.ToString();
+            First_Inn_Bowl_Runs_6.Text = Innings1BowlerList[5].Bowl_Runs.ToString();
+            First_Inn_Bowl_Wkts_6.Text = Innings1BowlerList[5].Bowl_Wickets.ToString();
+            First_Inn_Bowl_Avg_6.Text = Innings1BowlerList[5].Bowl_Average.ToString();
+            First_Inn_Bowl_Econ_6.Text = Innings1BowlerList[5].Bowl_Economy.ToString();
+        }
+
+        private void Update_Innings1_Bowl_Row_7()
+        {
+            First_Inn_Bowl_Name_7.Text = Innings1BowlerList[6].Bowl_Name;
+            First_Inn_Bowl_Wd_7.Text = Innings1BowlerList[6].Bowl_Wides.ToString();
+            First_Inn_Bowl_Nb_7.Text = Innings1BowlerList[6].Bowl_No_Balls.ToString();
+            First_Inn_Bowl_Overs_7.Text = Innings1BowlerList[6].Bowl_Overs.ToString();
+            First_Inn_Bowl_Mdns_7.Text = Innings1BowlerList[6].Bowl_Maidens.ToString();
+            First_Inn_Bowl_Runs_7.Text = Innings1BowlerList[6].Bowl_Runs.ToString();
+            First_Inn_Bowl_Wkts_7.Text = Innings1BowlerList[6].Bowl_Wickets.ToString();
+            First_Inn_Bowl_Avg_7.Text = Innings1BowlerList[6].Bowl_Average.ToString();
+            First_Inn_Bowl_Econ_7.Text = Innings1BowlerList[6].Bowl_Economy.ToString();
+        }
+
+        private void Update_Innings1_Bowl_Row_8()
+        {
+            First_Inn_Bowl_Name_8.Text = Innings1BowlerList[7].Bowl_Name;
+            First_Inn_Bowl_Wd_8.Text = Innings1BowlerList[7].Bowl_Wides.ToString();
+            First_Inn_Bowl_Nb_8.Text = Innings1BowlerList[7].Bowl_No_Balls.ToString();
+            First_Inn_Bowl_Overs_8.Text = Innings1BowlerList[7].Bowl_Overs.ToString();
+            First_Inn_Bowl_Mdns_8.Text = Innings1BowlerList[7].Bowl_Maidens.ToString();
+            First_Inn_Bowl_Runs_8.Text = Innings1BowlerList[7].Bowl_Runs.ToString();
+            First_Inn_Bowl_Wkts_8.Text = Innings1BowlerList[7].Bowl_Wickets.ToString();
+            First_Inn_Bowl_Avg_8.Text = Innings1BowlerList[7].Bowl_Average.ToString();
+            First_Inn_Bowl_Econ_8.Text = Innings1BowlerList[7].Bowl_Economy.ToString();
+        }
+
         /*
          *  This function updates all tables in the application after every button click
          *  The first set of statements update the Scoring Tab
@@ -675,9 +920,7 @@ namespace Cricket_Scoring_App
             Penaltys_Total_Value.Text = Extras_Penaltys.ToString();
             Total_Extras_Value.Text = Extras_Total.ToString();
 
-            /* 
-             * Updates Last Man Out table, if no wickets taken then table is blank
-             */
+            // Updates Last Man Out table, if no wickets taken then table is blank
             if (Innings_Wickets == 0)
             {
                 Out_Batsman_Number_Value.Text = "-";
@@ -699,6 +942,185 @@ namespace Cricket_Scoring_App
             Scoring_Total_Value.Text = Innings_Total.ToString();
             Scoring_Wickets_Down_Value.Text = Innings_Wickets.ToString();
             Scoring_Total_Overs_Value.Text = Innings_Overs.ToString();
+
+            // ******* The next set of statements updates the data on the Innings tab *******
+
+            // Updates the batting table
+            if (Innings_Wickets == 0)
+            {
+                Update_Innings1_Bat_Row_1();
+                Update_Innings1_Bat_Row_2();
+            }
+            else if (Innings_Wickets == 1)
+            {
+                Update_Innings1_Bat_Row_1();
+                Update_Innings1_Bat_Row_2();
+                Update_Innings1_Bat_Row_3();
+            }
+            else if (Innings_Wickets == 2)
+            {
+                Update_Innings1_Bat_Row_1();
+                Update_Innings1_Bat_Row_2();
+                Update_Innings1_Bat_Row_3();
+                Update_Innings1_Bat_Row_4();
+            }
+            else if (Innings_Wickets == 3)
+            {
+                Update_Innings1_Bat_Row_1();
+                Update_Innings1_Bat_Row_2();
+                Update_Innings1_Bat_Row_3();
+                Update_Innings1_Bat_Row_4();
+                Update_Innings1_Bat_Row_5();
+            }
+            else if (Innings_Wickets == 4)
+            {
+                Update_Innings1_Bat_Row_1();
+                Update_Innings1_Bat_Row_2();
+                Update_Innings1_Bat_Row_3();
+                Update_Innings1_Bat_Row_4();
+                Update_Innings1_Bat_Row_5();
+                Update_Innings1_Bat_Row_6();
+            }
+            else if (Innings_Wickets == 5)
+            {
+                Update_Innings1_Bat_Row_1();
+                Update_Innings1_Bat_Row_2();
+                Update_Innings1_Bat_Row_3();
+                Update_Innings1_Bat_Row_4();
+                Update_Innings1_Bat_Row_5();
+                Update_Innings1_Bat_Row_6();
+                Update_Innings1_Bat_Row_7();
+            }
+            else if (Innings_Wickets == 6)
+            {
+                Update_Innings1_Bat_Row_1();
+                Update_Innings1_Bat_Row_2();
+                Update_Innings1_Bat_Row_3();
+                Update_Innings1_Bat_Row_4();
+                Update_Innings1_Bat_Row_5();
+                Update_Innings1_Bat_Row_6();
+                Update_Innings1_Bat_Row_7();
+                Update_Innings1_Bat_Row_8();
+            }
+            else if (Innings_Wickets == 7)
+            {
+                Update_Innings1_Bat_Row_1();
+                Update_Innings1_Bat_Row_2();
+                Update_Innings1_Bat_Row_3();
+                Update_Innings1_Bat_Row_4();
+                Update_Innings1_Bat_Row_5();
+                Update_Innings1_Bat_Row_6();
+                Update_Innings1_Bat_Row_7();
+                Update_Innings1_Bat_Row_8();
+                Update_Innings1_Bat_Row_9();
+            }
+            else if (Innings_Wickets == 8)
+            {
+                Update_Innings1_Bat_Row_1();
+                Update_Innings1_Bat_Row_2();
+                Update_Innings1_Bat_Row_3();
+                Update_Innings1_Bat_Row_4();
+                Update_Innings1_Bat_Row_5();
+                Update_Innings1_Bat_Row_6();
+                Update_Innings1_Bat_Row_7();
+                Update_Innings1_Bat_Row_8();
+                Update_Innings1_Bat_Row_9();
+                Update_Innings1_Bat_Row_10();
+            }
+            else
+            {
+                Update_Innings1_Bat_Row_1();
+                Update_Innings1_Bat_Row_2();
+                Update_Innings1_Bat_Row_3();
+                Update_Innings1_Bat_Row_4();
+                Update_Innings1_Bat_Row_5();
+                Update_Innings1_Bat_Row_6();
+                Update_Innings1_Bat_Row_7();
+                Update_Innings1_Bat_Row_8();
+                Update_Innings1_Bat_Row_9();
+                Update_Innings1_Bat_Row_10();
+                Update_Innings1_Bat_Row_11();
+            }
+
+            // Updates the bowling table
+            if (Current_Bowler_Bottom_Id == 1)
+            {
+                Update_Innings1_Bowl_Row_1();
+                Update_Innings1_Bowl_Row_2();
+            }
+            else if (Current_Bowler_Bottom_Id == 2)
+            {
+                Update_Innings1_Bowl_Row_1();
+                Update_Innings1_Bowl_Row_2();
+                Update_Innings1_Bowl_Row_3();
+            }
+            else if (Current_Bowler_Bottom_Id == 3)
+            {
+                Update_Innings1_Bowl_Row_1();
+                Update_Innings1_Bowl_Row_2();
+                Update_Innings1_Bowl_Row_3();
+                Update_Innings1_Bowl_Row_4();
+            }
+            else if (Current_Bowler_Bottom_Id == 4)
+            {
+                Update_Innings1_Bowl_Row_1();
+                Update_Innings1_Bowl_Row_2();
+                Update_Innings1_Bowl_Row_3();
+                Update_Innings1_Bowl_Row_4();
+                Update_Innings1_Bowl_Row_5();
+            }
+            else if (Current_Bowler_Bottom_Id == 5)
+            {
+                Update_Innings1_Bowl_Row_1();
+                Update_Innings1_Bowl_Row_2();
+                Update_Innings1_Bowl_Row_3();
+                Update_Innings1_Bowl_Row_4();
+                Update_Innings1_Bowl_Row_5();
+                Update_Innings1_Bowl_Row_6();
+            }
+            else if (Current_Bowler_Bottom_Id == 6)
+            {
+                Update_Innings1_Bowl_Row_1();
+                Update_Innings1_Bowl_Row_2();
+                Update_Innings1_Bowl_Row_3();
+                Update_Innings1_Bowl_Row_4();
+                Update_Innings1_Bowl_Row_5();
+                Update_Innings1_Bowl_Row_6();
+                Update_Innings1_Bowl_Row_7();
+            }
+            else
+            {
+                Update_Innings1_Bowl_Row_1();
+                Update_Innings1_Bowl_Row_2();
+                Update_Innings1_Bowl_Row_3();
+                Update_Innings1_Bowl_Row_4();
+                Update_Innings1_Bowl_Row_5();
+                Update_Innings1_Bowl_Row_6();
+                Update_Innings1_Bowl_Row_7();
+                Update_Innings1_Bowl_Row_8();
+            }
+
+            // Updates Extras Table
+            First_Inn_Wides_Value.Text = Extras_Wides.ToString();
+            First_Inn_No_Balls_Value.Text = Extras_No_Balls.ToString();
+            First_Inn_Byes_Value.Text = Extras_Byes.ToString();
+            First_Inn_Leg_Byes_Value.Text = Extras_Leg_Byes.ToString();
+            First_Inn_Penaltys_Value.Text = Extras_Penaltys.ToString();
+            First_Inn_Extras_Total_Value.Text = Extras_Total.ToString();
+
+            // Updates table totals
+            First_Inn_Bat_Total_Runs.Text = (Innings_Total - Extras_Total).ToString();
+            First_Inn_Bwl_Ttls_Wds.Text = Extras_Wides.ToString();
+            First_Inn_Bwl_Ttls_Nbs.Text = Extras_No_Balls.ToString();
+            First_Inn_Bwl_Ttls_Ovrs.Text = Innings_Overs.ToString();
+            First_Inn_Bwl_Ttls_Mdns.Text = Bowl_Total_Maidens.ToString();
+            First_Inn_Bwl_Ttls_Runs.Text = Bowl_Total_Runs.ToString();
+            First_Inn_Bwl_Ttls_Wkts.Text = Bowl_Total_Wickets.ToString();
+
+            // Updates match totals
+            First_Inn_Total_Runs.Text = Innings_Total.ToString();
+            First_Inn_Total_Wickets.Text = Innings_Wickets.ToString();
+            First_Inn_Total_Overs.Text = Innings_Overs.ToString();
         }
 
         /* 
@@ -774,6 +1196,18 @@ namespace Cricket_Scoring_App
             {
                 Innings1BowlerList[Current_Bowler_Top_Id].Bowl_Overs = Math.Ceiling(Innings1BowlerList[Current_Bowler_Top_Id].Bowl_Overs);
                 Innings_Overs = Math.Ceiling(Innings_Overs);
+
+                // Check if completed over was a maiden, if not set maiden flag back to true for next over
+                if (Maiden)
+                {
+                    Bowl_Total_Maidens = Bowl_Total_Maidens + 1;
+                    Innings1BowlerList[Current_Bowler_Top_Id].Bowl_Maidens = Innings1BowlerList[Current_Bowler_Top_Id].Bowl_Maidens + 1;
+                }
+                else
+                {
+                    Maiden = true;
+                }
+
                 Swap_Batsman();
                 Swap_Bowler();
             }
@@ -781,6 +1215,17 @@ namespace Cricket_Scoring_App
             {
                 Innings1BowlerList[Current_Bowler_Bottom_Id].Bowl_Overs = Math.Ceiling(Innings1BowlerList[Current_Bowler_Bottom_Id].Bowl_Overs);
                 Innings_Overs = Math.Ceiling(Innings_Overs);
+
+                // Check if completed over was a maiden, if not set maiden flag back to true for next over
+                if (Maiden)
+                {
+                    Bowl_Total_Maidens = Bowl_Total_Maidens + 1;
+                    Innings1BowlerList[Current_Bowler_Bottom_Id].Bowl_Maidens = Innings1BowlerList[Current_Bowler_Bottom_Id].Bowl_Maidens + 1;
+                }
+                else
+                {
+                    Maiden = true;
+                }
                 Swap_Batsman();
                 Swap_Bowler();
             }
@@ -923,6 +1368,7 @@ namespace Cricket_Scoring_App
          */
         private void Run_ScoredOffBat(int numberOfRuns,int batId, int bowlId)
         {
+            Maiden = false;
             int runsScored = 0;
             switch (numberOfRuns)
             {
@@ -951,6 +1397,7 @@ namespace Cricket_Scoring_App
             Innings1BatsmanList[batId].Bat_Runs = Innings1BatsmanList[batId].Bat_Runs + runsScored;
             Innings1BowlerList[bowlId].Bowl_Runs = Innings1BowlerList[bowlId].Bowl_Runs + runsScored;
             Innings_Total = Innings_Total + runsScored;
+            Bowl_Total_Runs = Bowl_Total_Runs + runsScored;
         }
 
         /*
@@ -978,32 +1425,45 @@ namespace Cricket_Scoring_App
                     }
                     break;
                 case "wide":
+                    Maiden = false;
                     Innings1BowlerList[bowlId].Bowl_Runs = Innings1BowlerList[bowlId].Bowl_Runs + runs;
                     Innings1BowlerList[bowlId].Bowl_Wides = Innings1BowlerList[bowlId].Bowl_Wides + runs;
                     Extras_Wides = Extras_Wides + runs;
+                    Bowl_Total_Runs = Bowl_Total_Runs + runs;
                     if (runs % 2 == 0)
                     {
                         Swap_Batsman();
                     }
                     break;
                 case "noBall":
+                    Maiden = false;
                     if (batUsed == true)
                     {
                         Innings1BatsmanList[batId].Bat_Runs = Innings1BatsmanList[batId].Bat_Runs + (runs - 1);
+                        Innings1BowlerList[bowlId].Bowl_No_Balls = Innings1BowlerList[bowlId].Bowl_No_Balls + 1;
+                        Extras_No_Balls = Extras_No_Balls + 1;
+                    }
+                    else
+                    {
+                    Extras_No_Balls = Extras_No_Balls + runs;
+                    Innings1BowlerList[bowlId].Bowl_No_Balls = Innings1BowlerList[bowlId].Bowl_No_Balls + runs;
                     }
                     Innings1BowlerList[bowlId].Bowl_Runs = Innings1BowlerList[bowlId].Bowl_Runs + runs;
-                    Innings1BowlerList[bowlId].Bowl_No_Balls = Innings1BowlerList[bowlId].Bowl_No_Balls + 1;
-                    Extras_No_Balls = Extras_No_Balls + runs;
+
+                    Bowl_Total_Runs = Bowl_Total_Runs + runs;
                     if (runs % 2 == 0)
                     {
                         Swap_Batsman();
                     }
                     break;
                 case "penalty":
+                    Maiden = false;
                     Innings1BowlerList[bowlId].Bowl_Runs = Innings1BowlerList[bowlId].Bowl_Runs + runs;
                     Extras_Penaltys = Extras_Penaltys + runs;
+                    Bowl_Total_Runs = Bowl_Total_Runs + runs;
                     break;
             };
+            Extras_Total = Extras_Byes + Extras_Leg_Byes + Extras_No_Balls + Extras_Penaltys + Extras_Wides;
             Innings_Total = Innings_Total + runs;
         }
 
@@ -1060,6 +1520,8 @@ namespace Cricket_Scoring_App
                 case "caught":
                     Innings1BatsmanList[outBatId].Bat_How_Out = "Ct " + fielderName;
                     Innings1BatsmanList[outBatId].Bat_Out_Bwlr = bowlerName;
+                    Bowl_Total_Wickets = Bowl_Total_Wickets + 1;
+
                     break;
                 case "runOut":
                     Innings1BatsmanList[outBatId].Bat_How_Out = "Run Out";
@@ -1068,18 +1530,22 @@ namespace Cricket_Scoring_App
                 case "bowled":
                     Innings1BatsmanList[outBatId].Bat_How_Out = "Bowled";
                     Innings1BatsmanList[outBatId].Bat_Out_Bwlr = bowlerName;
+                    Bowl_Total_Wickets = Bowl_Total_Wickets + 1;
                     break;
                 case "stumped":
                     Innings1BatsmanList[outBatId].Bat_How_Out = "Stumped";
                     Innings1BatsmanList[outBatId].Bat_Out_Bwlr = bowlerName;
+                    Bowl_Total_Wickets = Bowl_Total_Wickets + 1;
                     break;
                 case "lbw":
                     Innings1BatsmanList[outBatId].Bat_How_Out = "LBW";
                     Innings1BatsmanList[outBatId].Bat_Out_Bwlr = bowlerName;
+                    Bowl_Total_Wickets = Bowl_Total_Wickets + 1;
                     break;
                 case "caughtAndBowled":
                     Innings1BatsmanList[outBatId].Bat_How_Out = "Ct && Bwld";
                     Innings1BatsmanList[outBatId].Bat_Out_Bwlr = bowlerName;
+                    Bowl_Total_Wickets = Bowl_Total_Wickets + 1;
                     break;
                 case "retired":
                     Innings1BatsmanList[outBatId].Bat_How_Out = "Retired";

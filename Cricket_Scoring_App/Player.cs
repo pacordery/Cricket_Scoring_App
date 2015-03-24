@@ -19,7 +19,6 @@ namespace Cricket_Scoring_App
         public int Bat_Runs { get; set; }
         public int Bat_Minutes { get; set; }
         public bool Bat_Facing { get; set; }
-        //int Bat_Total_Runs;
 
         /* Initialising all bowling variables */
         public int Bowl_Number { get; set; }
