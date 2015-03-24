@@ -30,6 +30,7 @@
         {
             this.Details_Tab_Set = new System.Windows.Forms.TabControl();
             this.Home_Tab = new System.Windows.Forms.TabPage();
+            this.Start_New_Match_Button = new System.Windows.Forms.Button();
             this.Previous_Match_Table = new System.Windows.Forms.TableLayoutPanel();
             this.Previous_Match_Table_Row_1 = new System.Windows.Forms.TableLayoutPanel();
             this.Match_Result_1 = new System.Windows.Forms.Label();
@@ -40,7 +41,6 @@
             this.Innings_1_Team_Name_1 = new System.Windows.Forms.Label();
             this.Innings_1_Score_1 = new System.Windows.Forms.Label();
             this.Match_Date_1 = new System.Windows.Forms.Label();
-            this.Start_Match_Button = new System.Windows.Forms.Button();
             this.Season_Results_Table = new System.Windows.Forms.TableLayoutPanel();
             this.Results_Lost_Table = new System.Windows.Forms.TableLayoutPanel();
             this.Lost_Value = new System.Windows.Forms.Label();
@@ -54,16 +54,14 @@
             this.This_Season_Heading = new System.Windows.Forms.Label();
             this.Previous_Match_Heading = new System.Windows.Forms.Label();
             this.Match_Details_Tab = new System.Windows.Forms.TabPage();
+            this.Next_Tab_Button = new System.Windows.Forms.Button();
             this.Match_Type_Selector = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.Match_Details_Button = new System.Windows.Forms.Button();
-            this.Toss_Winner_Selector = new System.Windows.Forms.ComboBox();
             this.Weather_Selector = new System.Windows.Forms.ComboBox();
             this.Venue_Name = new System.Windows.Forms.TextBox();
             this.Away_Team_Name = new System.Windows.Forms.TextBox();
             this.Home_Team_Name = new System.Windows.Forms.TextBox();
             this.Match_Date_Picker = new System.Windows.Forms.DateTimePicker();
-            this.Toss_Winner_Label = new System.Windows.Forms.Label();
             this.Weather_Label = new System.Windows.Forms.Label();
             this.Venue_Label = new System.Windows.Forms.Label();
             this.Away_Team_Label = new System.Windows.Forms.Label();
@@ -72,13 +70,14 @@
             this.Match_Details_Heading = new System.Windows.Forms.Label();
             this.Team_Details_Tab = new System.Windows.Forms.TabPage();
             this.Begin_Match_Button = new System.Windows.Forms.Button();
-            this.Add_Player_Button = new System.Windows.Forms.Button();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.Away_Player_Name_1 = new System.Windows.Forms.TextBox();
-            this.Away_Player_Number = new System.Windows.Forms.Label();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.Add_Player_Home = new System.Windows.Forms.Button();
+            this.Add_Player_Away = new System.Windows.Forms.Button();
+            this.tableLayoutPanel_Home = new System.Windows.Forms.TableLayoutPanel();
             this.Home_Player_1 = new System.Windows.Forms.TextBox();
             this.Home_Player_Number = new System.Windows.Forms.Label();
+            this.tableLayoutPanel_Away = new System.Windows.Forms.TableLayoutPanel();
+            this.Away_Player_Name_1 = new System.Windows.Forms.TextBox();
+            this.Away_Player_Number = new System.Windows.Forms.Label();
             this.Away_Team_Heading = new System.Windows.Forms.Label();
             this.Home_Team_Heading = new System.Windows.Forms.Label();
             this.Details_Tab_Set.SuspendLayout();
@@ -93,8 +92,8 @@
             this.Results_Win_Table.SuspendLayout();
             this.Match_Details_Tab.SuspendLayout();
             this.Team_Details_Tab.SuspendLayout();
-            this.tableLayoutPanel2.SuspendLayout();
-            this.tableLayoutPanel1.SuspendLayout();
+            this.tableLayoutPanel_Home.SuspendLayout();
+            this.tableLayoutPanel_Away.SuspendLayout();
             this.SuspendLayout();
             // 
             // Details_Tab_Set
@@ -112,8 +111,8 @@
             // Home_Tab
             // 
             this.Home_Tab.BackColor = System.Drawing.Color.Green;
+            this.Home_Tab.Controls.Add(this.Start_New_Match_Button);
             this.Home_Tab.Controls.Add(this.Previous_Match_Table);
-            this.Home_Tab.Controls.Add(this.Start_Match_Button);
             this.Home_Tab.Controls.Add(this.Season_Results_Table);
             this.Home_Tab.Controls.Add(this.This_Season_Heading);
             this.Home_Tab.Controls.Add(this.Previous_Match_Heading);
@@ -123,6 +122,19 @@
             this.Home_Tab.Size = new System.Drawing.Size(956, 536);
             this.Home_Tab.TabIndex = 0;
             this.Home_Tab.Text = "Home";
+            // 
+            // Start_New_Match_Button
+            // 
+            this.Start_New_Match_Button.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Start_New_Match_Button.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.Start_New_Match_Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Start_New_Match_Button.Location = new System.Drawing.Point(616, 297);
+            this.Start_New_Match_Button.Name = "Start_New_Match_Button";
+            this.Start_New_Match_Button.Size = new System.Drawing.Size(181, 62);
+            this.Start_New_Match_Button.TabIndex = 7;
+            this.Start_New_Match_Button.Text = "Start New Match";
+            this.Start_New_Match_Button.UseVisualStyleBackColor = true;
+            this.Start_New_Match_Button.Click += new System.EventHandler(this.Start_New_Match_Button_Click);
             // 
             // Previous_Match_Table
             // 
@@ -258,20 +270,6 @@
             this.Match_Date_1.Text = "Date";
             this.Match_Date_1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // Start_Match_Button
-            // 
-            this.Start_Match_Button.BackColor = System.Drawing.Color.Maroon;
-            this.Start_Match_Button.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.Start_Match_Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Start_Match_Button.ForeColor = System.Drawing.Color.Gold;
-            this.Start_Match_Button.Location = new System.Drawing.Point(521, 276);
-            this.Start_Match_Button.Name = "Start_Match_Button";
-            this.Start_Match_Button.Size = new System.Drawing.Size(241, 96);
-            this.Start_Match_Button.TabIndex = 4;
-            this.Start_Match_Button.Text = "Start a New Match";
-            this.Start_Match_Button.UseVisualStyleBackColor = false;
-            this.Start_Match_Button.Click += new System.EventHandler(this.Start_Match_Button_Click);
-            // 
             // Season_Results_Table
             // 
             this.Season_Results_Table.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.OutsetPartial;
@@ -308,7 +306,7 @@
             // 
             this.Lost_Value.AutoSize = true;
             this.Lost_Value.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Lost_Value.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lost_Value.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lost_Value.Location = new System.Drawing.Point(74, 0);
             this.Lost_Value.Name = "Lost_Value";
             this.Lost_Value.Size = new System.Drawing.Size(65, 37);
@@ -320,8 +318,8 @@
             // 
             this.Lost_Description.AutoSize = true;
             this.Lost_Description.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Lost_Description.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lost_Description.ForeColor = System.Drawing.Color.Blue;
+            this.Lost_Description.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lost_Description.ForeColor = System.Drawing.Color.Black;
             this.Lost_Description.Location = new System.Drawing.Point(3, 0);
             this.Lost_Description.Name = "Lost_Description";
             this.Lost_Description.Size = new System.Drawing.Size(65, 37);
@@ -348,7 +346,7 @@
             // 
             this.Drawn_Value.AutoSize = true;
             this.Drawn_Value.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Drawn_Value.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Drawn_Value.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Drawn_Value.Location = new System.Drawing.Point(78, 0);
             this.Drawn_Value.Name = "Drawn_Value";
             this.Drawn_Value.Size = new System.Drawing.Size(70, 37);
@@ -360,8 +358,8 @@
             // 
             this.Drawn_Description.AutoSize = true;
             this.Drawn_Description.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Drawn_Description.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Drawn_Description.ForeColor = System.Drawing.Color.Blue;
+            this.Drawn_Description.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Drawn_Description.ForeColor = System.Drawing.Color.Black;
             this.Drawn_Description.Location = new System.Drawing.Point(3, 0);
             this.Drawn_Description.Name = "Drawn_Description";
             this.Drawn_Description.Size = new System.Drawing.Size(69, 37);
@@ -388,8 +386,8 @@
             // 
             this.Won_Description.AutoSize = true;
             this.Won_Description.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Won_Description.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Won_Description.ForeColor = System.Drawing.Color.Blue;
+            this.Won_Description.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Won_Description.ForeColor = System.Drawing.Color.Black;
             this.Won_Description.Location = new System.Drawing.Point(3, 0);
             this.Won_Description.Name = "Won_Description";
             this.Won_Description.Size = new System.Drawing.Size(64, 37);
@@ -401,7 +399,7 @@
             // 
             this.Won_Value.AutoSize = true;
             this.Won_Value.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Won_Value.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Won_Value.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Won_Value.Location = new System.Drawing.Point(73, 0);
             this.Won_Value.Name = "Won_Value";
             this.Won_Value.Size = new System.Drawing.Size(65, 37);
@@ -434,16 +432,14 @@
             // Match_Details_Tab
             // 
             this.Match_Details_Tab.BackColor = System.Drawing.Color.Green;
+            this.Match_Details_Tab.Controls.Add(this.Next_Tab_Button);
             this.Match_Details_Tab.Controls.Add(this.Match_Type_Selector);
             this.Match_Details_Tab.Controls.Add(this.label1);
-            this.Match_Details_Tab.Controls.Add(this.Match_Details_Button);
-            this.Match_Details_Tab.Controls.Add(this.Toss_Winner_Selector);
             this.Match_Details_Tab.Controls.Add(this.Weather_Selector);
             this.Match_Details_Tab.Controls.Add(this.Venue_Name);
             this.Match_Details_Tab.Controls.Add(this.Away_Team_Name);
             this.Match_Details_Tab.Controls.Add(this.Home_Team_Name);
             this.Match_Details_Tab.Controls.Add(this.Match_Date_Picker);
-            this.Match_Details_Tab.Controls.Add(this.Toss_Winner_Label);
             this.Match_Details_Tab.Controls.Add(this.Weather_Label);
             this.Match_Details_Tab.Controls.Add(this.Venue_Label);
             this.Match_Details_Tab.Controls.Add(this.Away_Team_Label);
@@ -457,6 +453,18 @@
             this.Match_Details_Tab.TabIndex = 1;
             this.Match_Details_Tab.Text = "Match Details";
             // 
+            // Next_Tab_Button
+            // 
+            this.Next_Tab_Button.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.Next_Tab_Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Next_Tab_Button.Location = new System.Drawing.Point(764, 456);
+            this.Next_Tab_Button.Name = "Next_Tab_Button";
+            this.Next_Tab_Button.Size = new System.Drawing.Size(143, 45);
+            this.Next_Tab_Button.TabIndex = 16;
+            this.Next_Tab_Button.Text = "Next";
+            this.Next_Tab_Button.UseVisualStyleBackColor = true;
+            this.Next_Tab_Button.Click += new System.EventHandler(this.Next_Tab_Button_Click);
+            // 
             // Match_Type_Selector
             // 
             this.Match_Type_Selector.FormattingEnabled = true;
@@ -464,7 +472,7 @@
             "Friendly",
             "League",
             "Cup"});
-            this.Match_Type_Selector.Location = new System.Drawing.Point(340, 353);
+            this.Match_Type_Selector.Location = new System.Drawing.Point(436, 353);
             this.Match_Type_Selector.Name = "Match_Type_Selector";
             this.Match_Type_Selector.Size = new System.Drawing.Size(175, 21);
             this.Match_Type_Selector.TabIndex = 15;
@@ -473,36 +481,13 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Blue;
-            this.label1.Location = new System.Drawing.Point(165, 353);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(261, 353);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(95, 20);
+            this.label1.Size = new System.Drawing.Size(106, 20);
             this.label1.TabIndex = 14;
             this.label1.Text = "Match Type:";
-            // 
-            // Match_Details_Button
-            // 
-            this.Match_Details_Button.BackColor = System.Drawing.Color.Maroon;
-            this.Match_Details_Button.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.Match_Details_Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Match_Details_Button.ForeColor = System.Drawing.Color.Gold;
-            this.Match_Details_Button.Location = new System.Drawing.Point(679, 398);
-            this.Match_Details_Button.Name = "Match_Details_Button";
-            this.Match_Details_Button.Size = new System.Drawing.Size(176, 40);
-            this.Match_Details_Button.TabIndex = 13;
-            this.Match_Details_Button.Text = "Next";
-            this.Match_Details_Button.UseVisualStyleBackColor = false;
-            this.Match_Details_Button.Click += new System.EventHandler(this.Match_Details_Button_Click);
-            // 
-            // Toss_Winner_Selector
-            // 
-            this.Toss_Winner_Selector.FormattingEnabled = true;
-            this.Toss_Winner_Selector.Location = new System.Drawing.Point(340, 463);
-            this.Toss_Winner_Selector.Name = "Toss_Winner_Selector";
-            this.Toss_Winner_Selector.Size = new System.Drawing.Size(175, 21);
-            this.Toss_Winner_Selector.TabIndex = 12;
-            this.Toss_Winner_Selector.SelectedIndexChanged += new System.EventHandler(this.Toss_Winner_Selector_SelectedIndexChanged);
             // 
             // Weather_Selector
             // 
@@ -511,7 +496,7 @@
             "Sunny",
             "Overcast",
             "Clear"});
-            this.Weather_Selector.Location = new System.Drawing.Point(340, 407);
+            this.Weather_Selector.Location = new System.Drawing.Point(436, 407);
             this.Weather_Selector.Name = "Weather_Selector";
             this.Weather_Selector.Size = new System.Drawing.Size(175, 21);
             this.Weather_Selector.TabIndex = 11;
@@ -519,7 +504,7 @@
             // 
             // Venue_Name
             // 
-            this.Venue_Name.Location = new System.Drawing.Point(340, 298);
+            this.Venue_Name.Location = new System.Drawing.Point(436, 298);
             this.Venue_Name.Name = "Venue_Name";
             this.Venue_Name.Size = new System.Drawing.Size(175, 20);
             this.Venue_Name.TabIndex = 10;
@@ -527,7 +512,7 @@
             // 
             // Away_Team_Name
             // 
-            this.Away_Team_Name.Location = new System.Drawing.Point(340, 243);
+            this.Away_Team_Name.Location = new System.Drawing.Point(436, 243);
             this.Away_Team_Name.Name = "Away_Team_Name";
             this.Away_Team_Name.Size = new System.Drawing.Size(175, 20);
             this.Away_Team_Name.TabIndex = 9;
@@ -535,7 +520,7 @@
             // 
             // Home_Team_Name
             // 
-            this.Home_Team_Name.Location = new System.Drawing.Point(340, 188);
+            this.Home_Team_Name.Location = new System.Drawing.Point(436, 188);
             this.Home_Team_Name.Name = "Home_Team_Name";
             this.Home_Team_Name.Size = new System.Drawing.Size(175, 20);
             this.Home_Team_Name.TabIndex = 8;
@@ -543,75 +528,64 @@
             // 
             // Match_Date_Picker
             // 
-            this.Match_Date_Picker.Location = new System.Drawing.Point(340, 133);
+            this.Match_Date_Picker.Location = new System.Drawing.Point(436, 133);
             this.Match_Date_Picker.Name = "Match_Date_Picker";
             this.Match_Date_Picker.Size = new System.Drawing.Size(175, 20);
             this.Match_Date_Picker.TabIndex = 7;
             this.Match_Date_Picker.ValueChanged += new System.EventHandler(this.Match_Date_Picker_ValueChanged);
             // 
-            // Toss_Winner_Label
-            // 
-            this.Toss_Winner_Label.AutoSize = true;
-            this.Toss_Winner_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Toss_Winner_Label.ForeColor = System.Drawing.Color.Blue;
-            this.Toss_Winner_Label.Location = new System.Drawing.Point(165, 463);
-            this.Toss_Winner_Label.Name = "Toss_Winner_Label";
-            this.Toss_Winner_Label.Size = new System.Drawing.Size(106, 20);
-            this.Toss_Winner_Label.TabIndex = 6;
-            this.Toss_Winner_Label.Text = "Toss Won By:";
-            // 
             // Weather_Label
             // 
             this.Weather_Label.AutoSize = true;
-            this.Weather_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Weather_Label.ForeColor = System.Drawing.Color.Blue;
-            this.Weather_Label.Location = new System.Drawing.Point(165, 407);
+            this.Weather_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Weather_Label.ForeColor = System.Drawing.Color.Black;
+            this.Weather_Label.Location = new System.Drawing.Point(261, 407);
             this.Weather_Label.Name = "Weather_Label";
-            this.Weather_Label.Size = new System.Drawing.Size(74, 20);
+            this.Weather_Label.Size = new System.Drawing.Size(82, 20);
             this.Weather_Label.TabIndex = 5;
             this.Weather_Label.Text = "Weather:";
             // 
             // Venue_Label
             // 
             this.Venue_Label.AutoSize = true;
-            this.Venue_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Venue_Label.ForeColor = System.Drawing.Color.Blue;
-            this.Venue_Label.Location = new System.Drawing.Point(165, 298);
+            this.Venue_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Venue_Label.ForeColor = System.Drawing.Color.Black;
+            this.Venue_Label.Location = new System.Drawing.Point(261, 298);
             this.Venue_Label.Name = "Venue_Label";
-            this.Venue_Label.Size = new System.Drawing.Size(60, 20);
+            this.Venue_Label.Size = new System.Drawing.Size(66, 20);
             this.Venue_Label.TabIndex = 4;
             this.Venue_Label.Text = "Venue:";
             // 
             // Away_Team_Label
             // 
             this.Away_Team_Label.AutoSize = true;
-            this.Away_Team_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Away_Team_Label.ForeColor = System.Drawing.Color.Blue;
-            this.Away_Team_Label.Location = new System.Drawing.Point(165, 243);
+            this.Away_Team_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Away_Team_Label.ForeColor = System.Drawing.Color.Black;
+            this.Away_Team_Label.Location = new System.Drawing.Point(261, 243);
             this.Away_Team_Label.Name = "Away_Team_Label";
-            this.Away_Team_Label.Size = new System.Drawing.Size(95, 20);
+            this.Away_Team_Label.Size = new System.Drawing.Size(105, 20);
             this.Away_Team_Label.TabIndex = 3;
             this.Away_Team_Label.Text = "Away Team:";
             // 
             // Home_Team_Label
             // 
             this.Home_Team_Label.AutoSize = true;
-            this.Home_Team_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Home_Team_Label.ForeColor = System.Drawing.Color.Blue;
-            this.Home_Team_Label.Location = new System.Drawing.Point(165, 188);
+            this.Home_Team_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Home_Team_Label.ForeColor = System.Drawing.Color.Black;
+            this.Home_Team_Label.Location = new System.Drawing.Point(261, 188);
             this.Home_Team_Label.Name = "Home_Team_Label";
-            this.Home_Team_Label.Size = new System.Drawing.Size(100, 20);
+            this.Home_Team_Label.Size = new System.Drawing.Size(110, 20);
             this.Home_Team_Label.TabIndex = 2;
             this.Home_Team_Label.Text = "Home Team:";
             // 
             // Date_Label
             // 
             this.Date_Label.AutoSize = true;
-            this.Date_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Date_Label.ForeColor = System.Drawing.Color.Blue;
-            this.Date_Label.Location = new System.Drawing.Point(165, 133);
+            this.Date_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Date_Label.ForeColor = System.Drawing.Color.Black;
+            this.Date_Label.Location = new System.Drawing.Point(261, 133);
             this.Date_Label.Name = "Date_Label";
-            this.Date_Label.Size = new System.Drawing.Size(48, 20);
+            this.Date_Label.Size = new System.Drawing.Size(53, 20);
             this.Date_Label.TabIndex = 1;
             this.Date_Label.Text = "Date:";
             // 
@@ -619,7 +593,7 @@
             // 
             this.Match_Details_Heading.AutoSize = true;
             this.Match_Details_Heading.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Match_Details_Heading.Location = new System.Drawing.Point(160, 78);
+            this.Match_Details_Heading.Location = new System.Drawing.Point(256, 78);
             this.Match_Details_Heading.Name = "Match_Details_Heading";
             this.Match_Details_Heading.Size = new System.Drawing.Size(241, 39);
             this.Match_Details_Heading.TabIndex = 0;
@@ -629,9 +603,10 @@
             // 
             this.Team_Details_Tab.BackColor = System.Drawing.Color.Green;
             this.Team_Details_Tab.Controls.Add(this.Begin_Match_Button);
-            this.Team_Details_Tab.Controls.Add(this.Add_Player_Button);
-            this.Team_Details_Tab.Controls.Add(this.tableLayoutPanel2);
-            this.Team_Details_Tab.Controls.Add(this.tableLayoutPanel1);
+            this.Team_Details_Tab.Controls.Add(this.Add_Player_Home);
+            this.Team_Details_Tab.Controls.Add(this.Add_Player_Away);
+            this.Team_Details_Tab.Controls.Add(this.tableLayoutPanel_Home);
+            this.Team_Details_Tab.Controls.Add(this.tableLayoutPanel_Away);
             this.Team_Details_Tab.Controls.Add(this.Away_Team_Heading);
             this.Team_Details_Tab.Controls.Add(this.Home_Team_Heading);
             this.Team_Details_Tab.Location = new System.Drawing.Point(4, 22);
@@ -643,106 +618,132 @@
             // 
             // Begin_Match_Button
             // 
-            this.Begin_Match_Button.BackColor = System.Drawing.Color.Maroon;
-            this.Begin_Match_Button.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.Begin_Match_Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Begin_Match_Button.ForeColor = System.Drawing.Color.Gold;
-            this.Begin_Match_Button.Location = new System.Drawing.Point(732, 373);
+            this.Begin_Match_Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Begin_Match_Button.Location = new System.Drawing.Point(764, 456);
             this.Begin_Match_Button.Name = "Begin_Match_Button";
-            this.Begin_Match_Button.Size = new System.Drawing.Size(172, 69);
-            this.Begin_Match_Button.TabIndex = 6;
+            this.Begin_Match_Button.Size = new System.Drawing.Size(143, 45);
+            this.Begin_Match_Button.TabIndex = 10;
             this.Begin_Match_Button.Text = "Begin Match";
-            this.Begin_Match_Button.UseVisualStyleBackColor = false;
+            this.Begin_Match_Button.UseVisualStyleBackColor = true;
             this.Begin_Match_Button.Click += new System.EventHandler(this.Begin_Match_Button_Click);
             // 
-            // Add_Player_Button
+            // Add_Player_Home
             // 
-            this.Add_Player_Button.BackColor = System.Drawing.Color.Maroon;
-            this.Add_Player_Button.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.Add_Player_Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Add_Player_Button.ForeColor = System.Drawing.Color.Gold;
-            this.Add_Player_Button.Location = new System.Drawing.Point(732, 115);
-            this.Add_Player_Button.Name = "Add_Player_Button";
-            this.Add_Player_Button.Size = new System.Drawing.Size(152, 42);
-            this.Add_Player_Button.TabIndex = 4;
-            this.Add_Player_Button.Text = "Add  Player";
-            this.Add_Player_Button.UseVisualStyleBackColor = false;
-            this.Add_Player_Button.Click += new System.EventHandler(this.Add_Player_Button_Click);
+            this.Add_Player_Home.Location = new System.Drawing.Point(497, 436);
+            this.Add_Player_Home.Name = "Add_Player_Home";
+            this.Add_Player_Home.Size = new System.Drawing.Size(102, 30);
+            this.Add_Player_Home.TabIndex = 9;
+            this.Add_Player_Home.Text = "Add Player";
+            this.Add_Player_Home.UseVisualStyleBackColor = true;
+            this.Add_Player_Home.Click += new System.EventHandler(this.Add_Player_Home_Click);
             // 
-            // tableLayoutPanel2
+            // Add_Player_Away
             // 
-            this.tableLayoutPanel2.ColumnCount = 2;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 196F));
-            this.tableLayoutPanel2.Controls.Add(this.Away_Player_Name_1, 1, 0);
-            this.tableLayoutPanel2.Controls.Add(this.Away_Player_Number, 0, 0);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(49, 120);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 1;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(250, 32);
-            this.tableLayoutPanel2.TabIndex = 3;
+            this.Add_Player_Away.Location = new System.Drawing.Point(65, 436);
+            this.Add_Player_Away.Name = "Add_Player_Away";
+            this.Add_Player_Away.Size = new System.Drawing.Size(102, 30);
+            this.Add_Player_Away.TabIndex = 8;
+            this.Add_Player_Away.Text = "Add Player";
+            this.Add_Player_Away.UseVisualStyleBackColor = true;
+            this.Add_Player_Away.Click += new System.EventHandler(this.Add_Player_Away_Click);
             // 
-            // Away_Player_Name_1
+            // tableLayoutPanel_Home
             // 
-            this.Away_Player_Name_1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Away_Player_Name_1.Location = new System.Drawing.Point(57, 3);
-            this.Away_Player_Name_1.Name = "Away_Player_Name_1";
-            this.Away_Player_Name_1.Size = new System.Drawing.Size(190, 20);
-            this.Away_Player_Name_1.TabIndex = 0;
-            // 
-            // Away_Player_Number
-            // 
-            this.Away_Player_Number.AutoSize = true;
-            this.Away_Player_Number.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Away_Player_Number.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Away_Player_Number.Location = new System.Drawing.Point(3, 0);
-            this.Away_Player_Number.Name = "Away_Player_Number";
-            this.Away_Player_Number.Size = new System.Drawing.Size(48, 32);
-            this.Away_Player_Number.TabIndex = 1;
-            this.Away_Player_Number.Text = "1";
-            this.Away_Player_Number.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 197F));
-            this.tableLayoutPanel1.Controls.Add(this.Home_Player_1, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.Home_Player_Number, 0, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(369, 117);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 1;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 32F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(250, 32);
-            this.tableLayoutPanel1.TabIndex = 2;
+            this.tableLayoutPanel_Home.ColumnCount = 2;
+            this.tableLayoutPanel_Home.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel_Home.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 196F));
+            this.tableLayoutPanel_Home.Controls.Add(this.Home_Player_1, 1, 0);
+            this.tableLayoutPanel_Home.Controls.Add(this.Home_Player_Number, 0, 0);
+            this.tableLayoutPanel_Home.Location = new System.Drawing.Point(497, 108);
+            this.tableLayoutPanel_Home.Name = "tableLayoutPanel_Home";
+            this.tableLayoutPanel_Home.RowCount = 11;
+            this.tableLayoutPanel_Home.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.701492F));
+            this.tableLayoutPanel_Home.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.208955F));
+            this.tableLayoutPanel_Home.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.090909F));
+            this.tableLayoutPanel_Home.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.090909F));
+            this.tableLayoutPanel_Home.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.090909F));
+            this.tableLayoutPanel_Home.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.090909F));
+            this.tableLayoutPanel_Home.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.090909F));
+            this.tableLayoutPanel_Home.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.090909F));
+            this.tableLayoutPanel_Home.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.090909F));
+            this.tableLayoutPanel_Home.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.090909F));
+            this.tableLayoutPanel_Home.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.090909F));
+            this.tableLayoutPanel_Home.Size = new System.Drawing.Size(250, 322);
+            this.tableLayoutPanel_Home.TabIndex = 7;
             // 
             // Home_Player_1
             // 
             this.Home_Player_1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Home_Player_1.Location = new System.Drawing.Point(56, 3);
+            this.Home_Player_1.Location = new System.Drawing.Point(57, 5);
+            this.Home_Player_1.Margin = new System.Windows.Forms.Padding(3, 5, 3, 3);
             this.Home_Player_1.Name = "Home_Player_1";
-            this.Home_Player_1.Size = new System.Drawing.Size(191, 20);
+            this.Home_Player_1.Size = new System.Drawing.Size(190, 20);
             this.Home_Player_1.TabIndex = 0;
+            this.Home_Player_1.Text = "Enter Player Name";
             // 
             // Home_Player_Number
             // 
             this.Home_Player_Number.AutoSize = true;
             this.Home_Player_Number.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Home_Player_Number.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Home_Player_Number.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Home_Player_Number.Location = new System.Drawing.Point(3, 0);
             this.Home_Player_Number.Name = "Home_Player_Number";
-            this.Home_Player_Number.Size = new System.Drawing.Size(47, 32);
+            this.Home_Player_Number.Size = new System.Drawing.Size(48, 31);
             this.Home_Player_Number.TabIndex = 1;
             this.Home_Player_Number.Text = "1";
             this.Home_Player_Number.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // tableLayoutPanel_Away
+            // 
+            this.tableLayoutPanel_Away.ColumnCount = 2;
+            this.tableLayoutPanel_Away.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel_Away.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 196F));
+            this.tableLayoutPanel_Away.Controls.Add(this.Away_Player_Name_1, 1, 0);
+            this.tableLayoutPanel_Away.Controls.Add(this.Away_Player_Number, 0, 0);
+            this.tableLayoutPanel_Away.Location = new System.Drawing.Point(65, 108);
+            this.tableLayoutPanel_Away.Name = "tableLayoutPanel_Away";
+            this.tableLayoutPanel_Away.RowCount = 11;
+            this.tableLayoutPanel_Away.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.701492F));
+            this.tableLayoutPanel_Away.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.208955F));
+            this.tableLayoutPanel_Away.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.090909F));
+            this.tableLayoutPanel_Away.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.090909F));
+            this.tableLayoutPanel_Away.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.090909F));
+            this.tableLayoutPanel_Away.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.090909F));
+            this.tableLayoutPanel_Away.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.090909F));
+            this.tableLayoutPanel_Away.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.090909F));
+            this.tableLayoutPanel_Away.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.090909F));
+            this.tableLayoutPanel_Away.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.090909F));
+            this.tableLayoutPanel_Away.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.090909F));
+            this.tableLayoutPanel_Away.Size = new System.Drawing.Size(250, 322);
+            this.tableLayoutPanel_Away.TabIndex = 3;
+            // 
+            // Away_Player_Name_1
+            // 
+            this.Away_Player_Name_1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Away_Player_Name_1.Location = new System.Drawing.Point(57, 5);
+            this.Away_Player_Name_1.Margin = new System.Windows.Forms.Padding(3, 5, 3, 3);
+            this.Away_Player_Name_1.Name = "Away_Player_Name_1";
+            this.Away_Player_Name_1.Size = new System.Drawing.Size(190, 20);
+            this.Away_Player_Name_1.TabIndex = 0;
+            this.Away_Player_Name_1.Text = "Enter Player Name";
+            // 
+            // Away_Player_Number
+            // 
+            this.Away_Player_Number.AutoSize = true;
+            this.Away_Player_Number.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Away_Player_Number.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Away_Player_Number.Location = new System.Drawing.Point(3, 0);
+            this.Away_Player_Number.Name = "Away_Player_Number";
+            this.Away_Player_Number.Size = new System.Drawing.Size(48, 31);
+            this.Away_Player_Number.TabIndex = 1;
+            this.Away_Player_Number.Text = "1";
+            this.Away_Player_Number.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Away_Team_Heading
             // 
             this.Away_Team_Heading.AutoSize = true;
             this.Away_Team_Heading.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Away_Team_Heading.Location = new System.Drawing.Point(89, 77);
+            this.Away_Team_Heading.Location = new System.Drawing.Point(60, 58);
             this.Away_Team_Heading.Name = "Away_Team_Heading";
             this.Away_Team_Heading.Size = new System.Drawing.Size(133, 25);
             this.Away_Team_Heading.TabIndex = 1;
@@ -752,7 +753,7 @@
             // 
             this.Home_Team_Heading.AutoSize = true;
             this.Home_Team_Heading.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Home_Team_Heading.Location = new System.Drawing.Point(405, 77);
+            this.Home_Team_Heading.Location = new System.Drawing.Point(492, 58);
             this.Home_Team_Heading.Name = "Home_Team_Heading";
             this.Home_Team_Heading.Size = new System.Drawing.Size(137, 25);
             this.Home_Team_Heading.TabIndex = 0;
@@ -790,10 +791,10 @@
             this.Match_Details_Tab.PerformLayout();
             this.Team_Details_Tab.ResumeLayout(false);
             this.Team_Details_Tab.PerformLayout();
-            this.tableLayoutPanel2.ResumeLayout(false);
-            this.tableLayoutPanel2.PerformLayout();
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel1.PerformLayout();
+            this.tableLayoutPanel_Home.ResumeLayout(false);
+            this.tableLayoutPanel_Home.PerformLayout();
+            this.tableLayoutPanel_Away.ResumeLayout(false);
+            this.tableLayoutPanel_Away.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -813,22 +814,17 @@
         private System.Windows.Forms.Label Won_Description;
         private System.Windows.Forms.Label This_Season_Heading;
         private System.Windows.Forms.Label Previous_Match_Heading;
-        private System.Windows.Forms.Button Start_Match_Button;
         private System.Windows.Forms.Label Lost_Value;
         private System.Windows.Forms.Label Drawn_Value;
         private System.Windows.Forms.Label Won_Value;
-        private System.Windows.Forms.Label Toss_Winner_Label;
         private System.Windows.Forms.Label Weather_Label;
         private System.Windows.Forms.Label Venue_Label;
         private System.Windows.Forms.Label Away_Team_Label;
         private System.Windows.Forms.Label Home_Team_Label;
         private System.Windows.Forms.Label Date_Label;
         private System.Windows.Forms.Label Match_Details_Heading;
-        private System.Windows.Forms.Button Match_Details_Button;
         private System.Windows.Forms.Label Away_Team_Heading;
         private System.Windows.Forms.Label Home_Team_Heading;
-        private System.Windows.Forms.Button Begin_Match_Button;
-        private System.Windows.Forms.Button Add_Player_Button;
         private System.Windows.Forms.TextBox Away_Player_Name_1;
         private System.Windows.Forms.Label Away_Player_Number;
         private System.Windows.Forms.TextBox Home_Player_1;
@@ -846,13 +842,17 @@
         private System.Windows.Forms.Label label1;
         public System.Windows.Forms.TextBox Away_Team_Name;
         public System.Windows.Forms.TextBox Home_Team_Name;
-        public System.Windows.Forms.ComboBox Toss_Winner_Selector;
         public System.Windows.Forms.ComboBox Weather_Selector;
         public System.Windows.Forms.TextBox Venue_Name;
         public System.Windows.Forms.DateTimePicker Match_Date_Picker;
         public System.Windows.Forms.ComboBox Match_Type_Selector;
-        public System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        public System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        public System.Windows.Forms.TableLayoutPanel tableLayoutPanel_Away;
+        private System.Windows.Forms.Button Start_New_Match_Button;
+        private System.Windows.Forms.Button Next_Tab_Button;
+        public System.Windows.Forms.TableLayoutPanel tableLayoutPanel_Home;
+        private System.Windows.Forms.Button Add_Player_Away;
+        private System.Windows.Forms.Button Add_Player_Home;
+        private System.Windows.Forms.Button Begin_Match_Button;
     }
 }
 

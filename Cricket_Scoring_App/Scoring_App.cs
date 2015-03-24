@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace Cricket_Scoring_App
 {
@@ -17,16 +18,21 @@ namespace Cricket_Scoring_App
             InitializeComponent();
         }
 
-        private DateTime MatchDate;
-        private string HomeTeamName;
-        private string AwayTeamName;
+        string winDir=System.Environment.GetEnvironmentVariable("windir");
+
+        bool DateChanged = false;
+        private string MatchDate;
+        private string HomeTeamNameText;
+        private string AwayTeamNameText;
         private string VenueName;
         private string MatchType;
         private string MatchWeather;
         private string TossWonBy;
-
-        // ******* Handlers *******
-
+        int currentTableRowAway = 1;
+        int currentTableRowHome = 1;
+        List<string> HomeTeamList = new List<string>();
+        List<string> AwayTeamList = new List<string>();
+        List<string> MatchDetailsList = new List<string>();
 
         // ******* Code for Home tab *******
 
@@ -34,36 +40,31 @@ namespace Cricket_Scoring_App
            shown in Begin_Match_Button_Click() is called.*/
         Scoring_Application_Form ScoringApplicationForm = new Scoring_Application_Form();
 
-        // When Start New Match Button Clicked, go to Match Details Tab.
-        private void Start_Match_Button_Click(object sender, EventArgs e)
+        private void Start_New_Match_Button_Click(object sender, EventArgs e)
         {
             Details_Tab_Set.SelectedTab = Match_Details_Tab;
         }
-
         // *******  Code for Match Details tab *******
 
         // Gets date of the match
         private void Match_Date_Picker_ValueChanged(object sender, EventArgs e)
         {
-            MatchDate = Match_Date_Picker.Value;
+            DateChanged = true;
+            MatchDate = Match_Date_Picker.Value.ToShortDateString();
         }
 
         // Gets name of home side
         private void Home_Team_Name_TextChanged(object sender, EventArgs e)
         {
-            HomeTeamName = "";
-            HomeTeamName = Home_Team_Name.Text;
-            Toss_Winner_Selector.Items.Add(HomeTeamName);
-            Home_Team_Heading.Text = HomeTeamName;
+            HomeTeamNameText = Home_Team_Name.Text;
+            Home_Team_Heading.Text = HomeTeamNameText;
         }
 
         // Gets name of away side
         private void Away_Team_Name_TextChanged(object sender, EventArgs e)
         {
-            AwayTeamName = "";
-            AwayTeamName = Away_Team_Name.Text;
-            Toss_Winner_Selector.Items.Add(AwayTeamName);
-            Away_Team_Heading.Text = AwayTeamName;
+            AwayTeamNameText = Away_Team_Name.Text;
+            Away_Team_Heading.Text = AwayTeamNameText;
         }
 
         // Gets name of venue
@@ -84,41 +85,90 @@ namespace Cricket_Scoring_App
         {
             MatchWeather = Weather_Selector.SelectedItem.ToString();
         }
-
-        // Gets name of team that won toss
-        private void Toss_Winner_Selector_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            TossWonBy = Toss_Winner_Selector.SelectedItem.ToString();
-        }
         
         // When Next button pressed on Match Details Tab, go to Team Details Tab.
         // TODO add fuctionality to send team names to the next tab.
         // Add validation for each input before moving to next tab
-        private void Match_Details_Button_Click(object sender, EventArgs e)
+        private void Next_Tab_Button_Click(object sender, EventArgs e)
         {
+            if (DateChanged == false)
+            {
+                MatchDate = DateTime.Now.ToShortDateString();
+            }
+            // Add all match details into MatchDetailsList ready to write to file
+            MatchDetailsList.Add(MatchDate);
+            MatchDetailsList.Add(HomeTeamNameText);
+            MatchDetailsList.Add(AwayTeamNameText);
+            MatchDetailsList.Add(VenueName);
+            MatchDetailsList.Add(MatchType);
+            MatchDetailsList.Add(MatchWeather);
+
+            StreamWriter matchDetailsWriter = new StreamWriter("C:\\Users\\Philip\\Desktop\\MatchDetails.txt");
+
+            for (int i = 0; i < MatchDetailsList.Count(); i = i + 1)
+            {
+                matchDetailsWriter.WriteLine(MatchDetailsList[i]);
+            }
+            matchDetailsWriter.Close();
+
+            // Selects the first textbox in the lefthand table on Team Details Tab to allow user
+            // to quickly add players without needing to select the textbox.
+            tableLayoutPanel_Away.GetControlFromPosition(1,0).Select();
+
             Details_Tab_Set.SelectedTab = Team_Details_Tab;
         }
 
         // ******* Code for Team Details tab *******
 
-        // Shows the add player form.
-        // TODO need to give it a counter to check how many home and away players have been added
-        private void Add_Player_Button_Click(object sender, EventArgs e)
+        // Adds an extra row for the user to add away team members
+        private void Add_Player_Away_Click(object sender, EventArgs e)
         {
-            // Initialises the add player form.
-            Player_Addition_Form AddPlayerForm = new Player_Addition_Form();
-            AddPlayerForm.Show();
+            if (currentTableRowAway < 11)
+            {
+                tableLayoutPanel_Away.Controls.Add(new Label() { Text = (currentTableRowAway + 1).ToString(), Dock = DockStyle.Fill, TextAlign = System.Drawing.ContentAlignment.MiddleCenter }, 0, currentTableRowAway);
+                tableLayoutPanel_Away.Controls.Add(new TextBox() { Text = "Enter Player Name", Dock = DockStyle.Fill }, 1, currentTableRowAway);
+                tableLayoutPanel_Away.GetControlFromPosition(1, currentTableRowAway).Select();
+                currentTableRowAway = currentTableRowAway + 1;
+            }
+        }
+
+        // Adds an extra row for the user to add home team members
+        private void Add_Player_Home_Click(object sender, EventArgs e)
+        {
+            if (currentTableRowHome < 11)
+            {
+                tableLayoutPanel_Home.Controls.Add(new Label() { Text = (currentTableRowHome + 1).ToString(), Dock = DockStyle.Fill, TextAlign = System.Drawing.ContentAlignment.MiddleCenter }, 0, currentTableRowHome);
+                tableLayoutPanel_Home.Controls.Add(new TextBox() { Text = "Enter Player Name", Dock = DockStyle.Fill }, 1, currentTableRowHome);
+                tableLayoutPanel_Home.GetControlFromPosition(1, currentTableRowHome).Select();
+                currentTableRowHome = currentTableRowHome + 1;
+            }
         }
 
         // Shows the main scoring application when button is clicked.
-        // TODO create a csv file with the match and team details,
         // this will be read by the scoring application to complete the relevant fields.
         private void Begin_Match_Button_Click(object sender, EventArgs e)
         {
-            ScoringApplicationForm.Show();
-            // TODO Add extra tab to allow user to save the completed match result/scorecard to file
-            // Make the application default to this tab once button pressed, but do it behind the new form
-        }
-       
+            StreamWriter AwayWriter = new StreamWriter("C:\\Users\\Philip\\Desktop\\" + AwayTeamNameText + ".txt");
+
+            // Write player names to away team file
+            for (int i = 0; i < currentTableRowAway; i = i + 1)
+            {
+                Control c = tableLayoutPanel_Away.GetControlFromPosition(1,i);
+                AwayWriter.WriteLine(c.Text);
+            }
+            AwayWriter.Close();
+
+            StreamWriter HomeWriter = new StreamWriter("C:\\Users\\Philip\\Desktop\\" + HomeTeamNameText + ".txt");
+
+            // Write player names to home team file
+            for (int j = 0; j < currentTableRowHome; j = j + 1)
+            {
+                Control d = tableLayoutPanel_Home.GetControlFromPosition(1, j);
+                HomeWriter.WriteLine(d.Text);
+            }
+            HomeWriter.Close();
+
+           ScoringApplicationForm.Show();
+        }  
     }
 }
