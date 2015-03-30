@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace Cricket_Scoring_App
 {
@@ -32,5 +33,130 @@ namespace Cricket_Scoring_App
         public double Bowl_Average { get; set; }
         public double Bowl_Economy { get; set; }
         public bool Bowl_Bowling { get; set; }
+
+        public void Create_Batsman(int BatNumber, string BatsmanName, bool Facing)
+        {
+            Bat_Number = BatNumber;
+            Bat_Name = BatsmanName;
+            Bat_How_Out = "Not";
+            Bat_Out_Bwlr = "Out";
+            Bat_Fours = 0;
+            Bat_Sixes = 0;
+            Bat_Balls = 0;
+            Bat_Runs = 0;
+            Bat_Minutes = 0;
+            Bat_Facing = Facing;
+        }
+
+        public void Create_Bowler(int BowlNumber, string BowlerName, bool Bowling)
+        {
+            Bowl_Number = BowlNumber;
+            Bowl_Name = BowlerName;
+            Bowl_Wides = 0;
+            Bowl_No_Balls = 0;
+            Bowl_Overs = 0.0;
+            Bowl_Maidens = 0;
+            Bowl_Runs = 0;
+            Bowl_Wickets = 0;
+            Bowl_Average = 0.0;
+            Bowl_Economy = 0.0;
+            Bowl_Bowling = Bowling;
+        }
+
+        public void Save_Batsmen(List<Player> batList, int InningsNumber)
+        {
+            StreamWriter batDetailsWriter = new StreamWriter("C:\\Users\\Philip\\Desktop\\Inn" + InningsNumber + ".BatDetails.txt");
+            
+            for (int i = 0; i < batList.Count; i = i + 1)
+            {
+                batDetailsWriter.WriteLine(batList[i].Bat_Number);
+                batDetailsWriter.WriteLine(batList[i].Bat_Name);
+                batDetailsWriter.WriteLine(batList[i].Bat_How_Out);
+                batDetailsWriter.WriteLine(batList[i].Bat_Out_Bwlr);
+                batDetailsWriter.WriteLine(batList[i].Bat_Fours);
+                batDetailsWriter.WriteLine(batList[i].Bat_Sixes);
+                batDetailsWriter.WriteLine(batList[i].Bat_Balls);
+                batDetailsWriter.WriteLine(batList[i].Bat_Runs);
+                batDetailsWriter.WriteLine(batList[i].Bat_Minutes);
+                batDetailsWriter.WriteLine(batList[i].Bat_Facing);
+            }
+            batDetailsWriter.Close();
+        }
+
+        public void Save_Bowlers(List<Player> bowlList, int InningsNumber)
+        {
+            StreamWriter bowlDetailWriter = new StreamWriter("C:\\Users\\Philip\\Desktop\\Inn" + InningsNumber.ToString() + ".BowlDetails.txt");
+            for (int j = 0; j < bowlList.Count; j = j + 1)
+            {
+                bowlDetailWriter.WriteLine(bowlList[j].Bowl_Number);
+                bowlDetailWriter.WriteLine(bowlList[j].Bowl_Name);
+                bowlDetailWriter.WriteLine(bowlList[j].Bowl_Wides);
+                bowlDetailWriter.WriteLine(bowlList[j].Bowl_No_Balls);
+                bowlDetailWriter.WriteLine(bowlList[j].Bowl_Overs);
+                bowlDetailWriter.WriteLine(bowlList[j].Bowl_Maidens);
+                bowlDetailWriter.WriteLine(bowlList[j].Bowl_Runs);
+                bowlDetailWriter.WriteLine(bowlList[j].Bowl_Wickets);
+                bowlDetailWriter.WriteLine(bowlList[j].Bowl_Average);
+                bowlDetailWriter.WriteLine(bowlList[j].Bowl_Economy);
+                bowlDetailWriter.WriteLine(bowlList[j].Bowl_Bowling);
+            }
+            bowlDetailWriter.Close();
+        }
+
+        public List<Player> Load_Batsman()
+        {
+            List<Player> batsman = new List<Player>();
+            return batsman;
+        }
+        public List<Player> Load_Bowlers()
+        {
+            List<Player> bowler = new List<Player>();
+            return bowler;
+        }
+
+
+        //
+        public void Batting_Add_Ball(List<Player> batList, int batid)
+        {
+            batList[batid].Bat_Balls = batList[batid].Bat_Balls + 1;
+        }
+
+        //
+        public void Bowling_Add_Ball(List<Player> bowlList, int bowlId)
+        {
+            bowlList[bowlId].Bowl_Overs = bowlList[bowlId].Bowl_Overs + 0.1;
+        }
+
+        //
+        public int Check_Batsman_Facing(List<Player> batList, int batTopId, int batBottomId)
+        {
+            int batsmanId;
+
+            if (batList[batTopId].Bat_Facing == true)
+            {
+                batsmanId = batTopId;
+            }
+            else
+            {
+                batsmanId = batBottomId;
+            }
+            return batsmanId;
+        }
+
+        //
+        public int Check_Bowler_Bowling(List<Player> bowlList, int bowlTopId, int bowlBottomId)
+        {
+            int bowlerId;
+
+            if (bowlList[bowlTopId].Bowl_Bowling == true)
+            {
+                bowlerId = bowlTopId;
+            }
+            else
+            {
+                bowlerId = bowlBottomId;
+            }
+            return bowlerId;
+        }
     }
 }

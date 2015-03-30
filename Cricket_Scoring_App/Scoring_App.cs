@@ -87,8 +87,6 @@ namespace Cricket_Scoring_App
         }
         
         // When Next button pressed on Match Details Tab, go to Team Details Tab.
-        // TODO add fuctionality to send team names to the next tab.
-        // Add validation for each input before moving to next tab
         private void Next_Tab_Button_Click(object sender, EventArgs e)
         {
             if (DateChanged == false)
@@ -110,11 +108,6 @@ namespace Cricket_Scoring_App
                 matchDetailsWriter.WriteLine(MatchDetailsList[i]);
             }
             matchDetailsWriter.Close();
-
-            // Selects the first textbox in the lefthand table on Team Details Tab to allow user
-            // to quickly add players without needing to select the textbox.
-            tableLayoutPanel_Away.GetControlFromPosition(1,0).Select();
-
             Details_Tab_Set.SelectedTab = Team_Details_Tab;
         }
 

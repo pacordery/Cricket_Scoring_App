@@ -45,8 +45,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FallOfWicket.cs" />
+    <Compile Include="Innings.cs" />
+    <Compile Include="Match.cs" />
+    <Compile Include="Over.cs" />
     <Compile Include="Player.cs" />
-    <Compile Include="Scorecard_Handler.cs" />
+    <Compile Include="ScorecardHandler.cs" />
     <Compile Include="Scoring_App.cs">
       <SubType>Form</SubType>
     </Compile>

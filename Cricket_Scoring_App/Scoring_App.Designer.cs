@@ -101,6 +101,7 @@
             this.Details_Tab_Set.Controls.Add(this.Home_Tab);
             this.Details_Tab_Set.Controls.Add(this.Match_Details_Tab);
             this.Details_Tab_Set.Controls.Add(this.Team_Details_Tab);
+            this.Details_Tab_Set.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Details_Tab_Set.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Details_Tab_Set.Location = new System.Drawing.Point(0, 0);
             this.Details_Tab_Set.Name = "Details_Tab_Set";
@@ -455,6 +456,7 @@
             // 
             // Next_Tab_Button
             // 
+            this.Next_Tab_Button.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Next_Tab_Button.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.Next_Tab_Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Next_Tab_Button.Location = new System.Drawing.Point(764, 456);
@@ -467,11 +469,12 @@
             // 
             // Match_Type_Selector
             // 
+            this.Match_Type_Selector.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Match_Type_Selector.FormattingEnabled = true;
             this.Match_Type_Selector.Items.AddRange(new object[] {
-            "Friendly",
-            "League",
-            "Cup"});
+            "T20",
+            "40 Over",
+            "Friendly"});
             this.Match_Type_Selector.Location = new System.Drawing.Point(436, 353);
             this.Match_Type_Selector.Name = "Match_Type_Selector";
             this.Match_Type_Selector.Size = new System.Drawing.Size(175, 21);
@@ -491,6 +494,7 @@
             // 
             // Weather_Selector
             // 
+            this.Weather_Selector.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Weather_Selector.FormattingEnabled = true;
             this.Weather_Selector.Items.AddRange(new object[] {
             "Sunny",
@@ -504,6 +508,7 @@
             // 
             // Venue_Name
             // 
+            this.Venue_Name.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Venue_Name.Location = new System.Drawing.Point(436, 298);
             this.Venue_Name.Name = "Venue_Name";
             this.Venue_Name.Size = new System.Drawing.Size(175, 20);
@@ -512,6 +517,7 @@
             // 
             // Away_Team_Name
             // 
+            this.Away_Team_Name.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Away_Team_Name.Location = new System.Drawing.Point(436, 243);
             this.Away_Team_Name.Name = "Away_Team_Name";
             this.Away_Team_Name.Size = new System.Drawing.Size(175, 20);
@@ -520,6 +526,7 @@
             // 
             // Home_Team_Name
             // 
+            this.Home_Team_Name.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Home_Team_Name.Location = new System.Drawing.Point(436, 188);
             this.Home_Team_Name.Name = "Home_Team_Name";
             this.Home_Team_Name.Size = new System.Drawing.Size(175, 20);
@@ -528,6 +535,7 @@
             // 
             // Match_Date_Picker
             // 
+            this.Match_Date_Picker.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Match_Date_Picker.Location = new System.Drawing.Point(436, 133);
             this.Match_Date_Picker.Name = "Match_Date_Picker";
             this.Match_Date_Picker.Size = new System.Drawing.Size(175, 20);
@@ -618,6 +626,7 @@
             // 
             // Begin_Match_Button
             // 
+            this.Begin_Match_Button.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Begin_Match_Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Begin_Match_Button.Location = new System.Drawing.Point(764, 456);
             this.Begin_Match_Button.Name = "Begin_Match_Button";
@@ -629,6 +638,7 @@
             // 
             // Add_Player_Home
             // 
+            this.Add_Player_Home.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Add_Player_Home.Location = new System.Drawing.Point(497, 436);
             this.Add_Player_Home.Name = "Add_Player_Home";
             this.Add_Player_Home.Size = new System.Drawing.Size(102, 30);
@@ -639,6 +649,7 @@
             // 
             // Add_Player_Away
             // 
+            this.Add_Player_Away.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Add_Player_Away.Location = new System.Drawing.Point(65, 436);
             this.Add_Player_Away.Name = "Add_Player_Away";
             this.Add_Player_Away.Size = new System.Drawing.Size(102, 30);
