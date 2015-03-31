@@ -52,43 +52,18 @@ namespace Cricket_Scoring_App
             DateChanged = true;
             MatchDate = Match_Date_Picker.Value.ToShortDateString();
         }
-
-        // Gets name of home side
-        private void Home_Team_Name_TextChanged(object sender, EventArgs e)
-        {
-            HomeTeamNameText = Home_Team_Name.Text;
-            Home_Team_Heading.Text = HomeTeamNameText;
-        }
-
-        // Gets name of away side
-        private void Away_Team_Name_TextChanged(object sender, EventArgs e)
-        {
-            AwayTeamNameText = Away_Team_Name.Text;
-            Away_Team_Heading.Text = AwayTeamNameText;
-        }
-
-        // Gets name of venue
-        private void Venue_Name_TextChanged(object sender, EventArgs e)
-        {
-            VenueName = "";
-            VenueName = Venue_Name.Text;
-        }
-
-        // Gets match type
-        private void Match_Type_Selector_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            MatchType = Match_Type_Selector.SelectedItem.ToString();
-        }
-
-        // Gets match weather
-        private void Weather_Selector_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            MatchWeather = Weather_Selector.SelectedItem.ToString();
-        }
         
         // When Next button pressed on Match Details Tab, go to Team Details Tab.
         private void Next_Tab_Button_Click(object sender, EventArgs e)
         {
+            HomeTeamNameText = Home_Team_Name.Text;
+            Home_Team_Heading.Text = HomeTeamNameText;
+            AwayTeamNameText = Away_Team_Name.Text;
+            Away_Team_Heading.Text = AwayTeamNameText;
+            VenueName = Venue_Name.Text;
+            MatchType = Match_Type_Selector.SelectedItem.ToString();
+            MatchWeather = Weather_Selector.SelectedItem.ToString();
+
             if (DateChanged == false)
             {
                 MatchDate = DateTime.Now.ToShortDateString();
@@ -118,7 +93,7 @@ namespace Cricket_Scoring_App
         {
             if (currentTableRowAway < 11)
             {
-                tableLayoutPanel_Away.Controls.Add(new Label() { Text = (currentTableRowAway + 1).ToString(), Dock = DockStyle.Fill, TextAlign = System.Drawing.ContentAlignment.MiddleCenter }, 0, currentTableRowAway);
+                tableLayoutPanel_Away.Controls.Add(new Label() { Text = (currentTableRowAway + 1).ToString(), Dock = DockStyle.Fill, TextAlign = System.Drawing.ContentAlignment.MiddleCenter, Font = new Font("Serif", 10, FontStyle.Bold) }, 0, currentTableRowAway);
                 tableLayoutPanel_Away.Controls.Add(new TextBox() { Text = "Enter Player Name", Dock = DockStyle.Fill }, 1, currentTableRowAway);
                 tableLayoutPanel_Away.GetControlFromPosition(1, currentTableRowAway).Select();
                 currentTableRowAway = currentTableRowAway + 1;
@@ -130,7 +105,7 @@ namespace Cricket_Scoring_App
         {
             if (currentTableRowHome < 11)
             {
-                tableLayoutPanel_Home.Controls.Add(new Label() { Text = (currentTableRowHome + 1).ToString(), Dock = DockStyle.Fill, TextAlign = System.Drawing.ContentAlignment.MiddleCenter }, 0, currentTableRowHome);
+                tableLayoutPanel_Home.Controls.Add(new Label() { Text = (currentTableRowHome + 1).ToString(), Dock = DockStyle.Fill, TextAlign = System.Drawing.ContentAlignment.MiddleCenter, Font = new Font("Serif", 10, FontStyle.Bold) }, 0, currentTableRowHome);
                 tableLayoutPanel_Home.Controls.Add(new TextBox() { Text = "Enter Player Name", Dock = DockStyle.Fill }, 1, currentTableRowHome);
                 tableLayoutPanel_Home.GetControlFromPosition(1, currentTableRowHome).Select();
                 currentTableRowHome = currentTableRowHome + 1;
@@ -162,6 +137,126 @@ namespace Cricket_Scoring_App
             HomeWriter.Close();
 
            ScoringApplicationForm.Show();
+        }
+
+        private void Load_Match_Details_Button_Click(object sender, EventArgs e)
+        {
+            DialogResult loadMatch = Load_Match_Details_Dialog.ShowDialog();
+            if (loadMatch == DialogResult.OK)
+            {
+                string file = Load_Match_Details_Dialog.FileName;
+                try
+                {
+                    StreamReader matchDetailsReader = new StreamReader(file);
+                    try
+                    {
+                        do
+                        {
+                            MatchDetailsList.Add(matchDetailsReader.ReadLine());
+                        }
+                        while (matchDetailsReader.Peek() != -1);
+                    }
+                    catch
+                    {
+                        MatchDetailsList.Add("File is empty");
+                    }
+                    finally
+                    {
+                        matchDetailsReader.Close();
+                    }
+                    Match_Date_Picker.Value = Convert.ToDateTime(MatchDetailsList[0]);
+                    Home_Team_Name.Text = MatchDetailsList[1];
+                    Home_Team_Heading.Text = HomeTeamNameText;
+                    Away_Team_Name.Text = MatchDetailsList[2];
+                    Away_Team_Heading.Text = AwayTeamNameText;
+                    Venue_Name.Text = MatchDetailsList[3];
+                    Match_Type_Selector.SelectedItem = MatchDetailsList[4];
+                    Weather_Selector.SelectedItem = MatchDetailsList[5];
+                }
+                catch (IOException)
+                {
+                }
+            }
+        }
+
+        private void Load_Away_Team_Click(object sender, EventArgs e)
+        {
+            DialogResult loadAwayTeam = Load_Away_Team_Dialog.ShowDialog();
+            if (loadAwayTeam == DialogResult.OK)
+            {
+                string file = Load_Away_Team_Dialog.FileName;
+                try
+                {
+                    StreamReader awayTeamReader = new StreamReader(file);
+                    try
+                    {
+                        do
+                        {
+                            AwayTeamList.Add(awayTeamReader.ReadLine());
+                        }
+                        while (awayTeamReader.Peek() != -1);
+                    }
+                    catch
+                    {
+                        AwayTeamList.Add("File is empty");
+                    }
+                    finally
+                    {
+                        awayTeamReader.Close();
+                    }
+                    currentTableRowAway = 0;
+                    tableLayoutPanel_Away.Controls.Clear();
+                    for (int i = 0; i < AwayTeamList.Count; i = i + 1)
+                    {
+                        tableLayoutPanel_Away.Controls.Add(new Label(){ Text = (i+1).ToString(), Dock = DockStyle.Fill, TextAlign = System.Drawing.ContentAlignment.MiddleCenter, AutoSize = true, Font = new Font("Serif", 10, FontStyle.Bold) }, 0, i);
+                        tableLayoutPanel_Away.Controls.Add(new TextBox() { Text = AwayTeamList[i], Dock = DockStyle.Fill });
+                        currentTableRowAway = currentTableRowAway + 1;
+                    }
+                }
+                catch (IOException)
+                {
+                }
+            }
+        }
+
+        private void Load_Home_Team_Click(object sender, EventArgs e)
+        {
+            DialogResult loadHomeTeam = Load_Home_Team_Dialog.ShowDialog();
+            if (loadHomeTeam == DialogResult.OK)
+            {
+                string file = Load_Home_Team_Dialog.FileName;
+                try
+                {
+                    StreamReader HomeTeamReader = new StreamReader(file);
+                    try
+                    {
+                        do
+                        {
+                            HomeTeamList.Add(HomeTeamReader.ReadLine());
+                        }
+                        while (HomeTeamReader.Peek() != -1);
+                    }
+                    catch
+                    {
+                        HomeTeamList.Add("File is empty");
+                    }
+                    finally
+                    {
+                        HomeTeamReader.Close();
+                    }
+                    currentTableRowHome = 0;
+                    tableLayoutPanel_Home.Controls.Clear();
+                    for (int i = 0; i < HomeTeamList.Count; i = i + 1)
+                    {
+                        tableLayoutPanel_Home.Controls.Add(new Label() { Text = (i + 1).ToString(), Dock = DockStyle.Fill, TextAlign = System.Drawing.ContentAlignment.MiddleCenter, AutoSize = true, Font = new Font("Serif", 10, FontStyle.Bold) }, 0, i);
+                        tableLayoutPanel_Home.Controls.Add(new TextBox() { Text = HomeTeamList[i], Dock = DockStyle.Fill });
+                        currentTableRowHome =  currentTableRowHome + 1;
+                    }
+                }
+                catch (IOException)
+                {
+                }
+            }
         }  
     }
 }

@@ -267,10 +267,10 @@ namespace Cricket_Scoring_App
             Update_Bowler_Top();
             Update_Bowler_Bottom();
 
-            Current_Batsman_Facing_Top.BackColor = Color.Red;
-            Current_Batsman_Facing_Bottom.BackColor = Color.Transparent;
-            Current_Bowler_Top.BackColor = Color.Red;
-            Current_Bowler_Bottom.BackColor = Color.Transparent;
+            Current_Batsman_Number_Top.BackColor = Color.White;
+            Current_Batsman_Number_Bottom.BackColor = Color.Transparent;
+            Current_Bowler_Number_Top.BackColor = Color.White;
+            Current_Bowler_Number_Bottom.BackColor = Color.Transparent;
             Create_Undo_Point();
             Update_Innings_Bat_Rows();
             Update_Innings_Bowl_Rows();
@@ -301,10 +301,10 @@ namespace Cricket_Scoring_App
             Update_Bowler_Top();
             Update_Bowler_Bottom();
 
-            Current_Batsman_Facing_Top.BackColor = Color.Red;
-            Current_Batsman_Facing_Bottom.BackColor = Color.Transparent;
-            Current_Bowler_Top.BackColor = Color.Red;
-            Current_Bowler_Bottom.BackColor = Color.Transparent;
+            Current_Batsman_Number_Top.BackColor = Color.White;
+            Current_Batsman_Number_Bottom.BackColor = Color.Transparent;
+            Current_Bowler_Number_Top.BackColor = Color.White;
+            Current_Bowler_Number_Bottom.BackColor = Color.Transparent;
             Create_Undo_Point();
             Update_Innings_Bat_Rows();
             Update_Innings_Bowl_Rows();
@@ -435,25 +435,25 @@ namespace Cricket_Scoring_App
             // Set the current batsman flag
             if (batList[Current_Batsman_Top_Id].Bat_Facing)
             {
-                Current_Batsman_Facing_Top.BackColor = Color.Red;
-                Current_Batsman_Facing_Bottom.BackColor = Color.Transparent;  
+                Current_Batsman_Number_Top.BackColor = Color.White;
+                Current_Batsman_Number_Bottom.BackColor = Color.Transparent;  
             }
             else
             {
-                Current_Batsman_Facing_Top.BackColor = Color.Transparent;
-                Current_Batsman_Facing_Bottom.BackColor = Color.Red;
+                Current_Batsman_Number_Top.BackColor = Color.Transparent;
+                Current_Batsman_Number_Bottom.BackColor = Color.White;
             }
 
             // Set the current bowler flag
             if (bowlList[Current_Bowler_Top_Id].Bowl_Bowling)
             {
-                Current_Bowler_Top.BackColor = Color.Red;
-                Current_Bowler_Bottom.BackColor = Color.Transparent;
+                Current_Bowler_Number_Top.BackColor = Color.White;
+                Current_Bowler_Number_Bottom.BackColor = Color.Transparent;
             }
             else
             {
-                Current_Bowler_Top.BackColor = Color.Transparent;
-                Current_Bowler_Bottom.BackColor = Color.Red;
+                Current_Bowler_Number_Top.BackColor = Color.Transparent;
+                Current_Bowler_Number_Bottom.BackColor = Color.White;
             }
 
             // Restore extra totals
@@ -927,21 +927,21 @@ namespace Cricket_Scoring_App
             {
                 // Set current facing batsman to not facing and change indicator colour
                 batList[Current_Batsman_Top_Id].Bat_Facing = false;
-                Current_Batsman_Facing_Top.BackColor = Color.Transparent;
+                Current_Batsman_Number_Top.BackColor = Color.Transparent;
 
                 // Set non facing batsman to true and change indicator colour
                 batList[Current_Batsman_Bottom_Id].Bat_Facing = true;
-                Current_Batsman_Facing_Bottom.BackColor = Color.Red;
+                Current_Batsman_Number_Bottom.BackColor = Color.White;
             }
             else
             {
                 // Set current facing batsman to false and change indicator colour
                 batList[Current_Batsman_Bottom_Id].Bat_Facing = false;
-                Current_Batsman_Facing_Bottom.BackColor = Color.Transparent;
+                Current_Batsman_Number_Bottom.BackColor = Color.Transparent;
 
                 // Set non facing batsman to true and change indicator colour
                 batList[Current_Batsman_Top_Id].Bat_Facing = true;
-                Current_Batsman_Facing_Top.BackColor = Color.Red;
+                Current_Batsman_Number_Top.BackColor = Color.White;
             }
         }
 
@@ -954,21 +954,21 @@ namespace Cricket_Scoring_App
             {
                 // Set current bowler to not bowling and change indicator colour
                 bowlList[Current_Bowler_Top_Id].Bowl_Bowling = false;
-                Current_Bowler_Top.BackColor = Color.Transparent;
+                Current_Bowler_Number_Top.BackColor = Color.Transparent;
 
                 // Set other bowler to bowling and change indicator colour
                 bowlList[Current_Bowler_Bottom_Id].Bowl_Bowling = true;
-                Current_Bowler_Bottom.BackColor = Color.Red;
+                Current_Bowler_Number_Bottom.BackColor = Color.White;
             }
             else
             {
                 // Set current bowler to not bowling and change indicator colour
                 bowlList[Current_Bowler_Bottom_Id].Bowl_Bowling = false;
-                Current_Bowler_Bottom.BackColor = Color.Transparent;
+                Current_Bowler_Number_Bottom.BackColor = Color.Transparent;
 
                 // Set other bowler to bowling and change indicator colour
                 bowlList[Current_Bowler_Top_Id].Bowl_Bowling = true;
-                Current_Bowler_Top.BackColor = Color.Red;
+                Current_Bowler_Number_Top.BackColor = Color.White;
             }
         }
 
@@ -1065,7 +1065,7 @@ namespace Cricket_Scoring_App
             // Move bottom bowler details to the top row.
             Current_Bowler_Top_Id = Current_Bowler_Bottom_Id;
             Update_Bowler_Top();
-            Current_Bowler_Top.BackColor = Color.Transparent;
+            Current_Bowler_Number_Top.BackColor = Color.Transparent;
         }
         //
         /*
@@ -1216,8 +1216,8 @@ namespace Cricket_Scoring_App
             else
             {
                 batList[outBatId].Bat_Facing = false;
-                Current_Batsman_Facing_Top.BackColor = Color.Transparent;
-                Current_Batsman_Facing_Bottom.BackColor = Color.Red;
+                Current_Batsman_Number_Top.BackColor = Color.Transparent;
+                Current_Batsman_Number_Bottom.BackColor = Color.White;
             }
             switch (wicketType)
             {
@@ -1813,7 +1813,7 @@ namespace Cricket_Scoring_App
             bowlList.Add(player);
             Current_Bowler_Bottom_Id = New_Bowler_Id;
             Update_Bowler_Bottom();
-            Current_Bowler_Bottom.BackColor = Color.Red;
+            Current_Bowler_Number_Bottom.BackColor = Color.White;
         }
     }
 }
