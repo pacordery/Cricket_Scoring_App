@@ -27,9 +27,9 @@ namespace Cricket_Scoring_App
         private string VenueName;
         private string MatchType;
         private string MatchWeather;
-        private string TossWonBy;
         int currentTableRowAway = 1;
         int currentTableRowHome = 1;
+        public static string folderName;
         List<string> HomeTeamList = new List<string>();
         List<string> AwayTeamList = new List<string>();
         List<string> MatchDetailsList = new List<string>();
@@ -38,7 +38,7 @@ namespace Cricket_Scoring_App
 
         /* Initialises the Main scoring application form to allow it to be 
            shown in Begin_Match_Button_Click() is called.*/
-        Scoring_Application_Form ScoringApplicationForm = new Scoring_Application_Form();
+        Scoring_Application_Form ScoringApplicationForm = new Scoring_Application_Form(folderName);
 
         private void Start_New_Match_Button_Click(object sender, EventArgs e)
         {
@@ -56,34 +56,45 @@ namespace Cricket_Scoring_App
         // When Next button pressed on Match Details Tab, go to Team Details Tab.
         private void Next_Tab_Button_Click(object sender, EventArgs e)
         {
-            HomeTeamNameText = Home_Team_Name.Text;
-            Home_Team_Heading.Text = HomeTeamNameText;
-            AwayTeamNameText = Away_Team_Name.Text;
-            Away_Team_Heading.Text = AwayTeamNameText;
-            VenueName = Venue_Name.Text;
-            MatchType = Match_Type_Selector.SelectedItem.ToString();
-            MatchWeather = Weather_Selector.SelectedItem.ToString();
-
             if (DateChanged == false)
             {
                 MatchDate = DateTime.Now.ToShortDateString();
             }
-            // Add all match details into MatchDetailsList ready to write to file
-            MatchDetailsList.Add(MatchDate);
-            MatchDetailsList.Add(HomeTeamNameText);
-            MatchDetailsList.Add(AwayTeamNameText);
-            MatchDetailsList.Add(VenueName);
-            MatchDetailsList.Add(MatchType);
-            MatchDetailsList.Add(MatchWeather);
-
-            StreamWriter matchDetailsWriter = new StreamWriter("C:\\Users\\Philip\\Desktop\\MatchDetails.txt");
-
-            for (int i = 0; i < MatchDetailsList.Count(); i = i + 1)
+            if (Verify_Table_Entrys(tableLayoutPanel_Match))
             {
-                matchDetailsWriter.WriteLine(MatchDetailsList[i]);
+                // Get match details from the text and combo boxes.
+                HomeTeamNameText = Home_Team_Name.Text;
+                Home_Team_Heading.Text = HomeTeamNameText;
+                AwayTeamNameText = Away_Team_Name.Text;
+                Away_Team_Heading.Text = AwayTeamNameText;
+                VenueName = Venue_Name.Text;
+                MatchType = Match_Type_Selector.SelectedItem.ToString();
+                MatchWeather = Weather_Selector.SelectedItem.ToString();
+
+                // Clear the match details list of any loaded inputs to allow new inputs to be written correctly.
+                MatchDetailsList.Clear();
+
+                // Add all match details into MatchDetailsList ready to write to file.
+                MatchDetailsList.Add(MatchDate);
+                MatchDetailsList.Add(HomeTeamNameText);
+                MatchDetailsList.Add(AwayTeamNameText);
+                MatchDetailsList.Add(VenueName);
+                MatchDetailsList.Add(MatchType);
+                MatchDetailsList.Add(MatchWeather);
+
+                folderName = "C:\\Users\\Philip\\Desktop\\Scoring Application\\" + MatchDate.Substring(5, 5) + " Season\\" + MatchDate.Replace('/', '.') + "." + HomeTeamNameText;
+                Directory.CreateDirectory(folderName);
+                Directory.CreateDirectory(folderName + "\\" + HomeTeamNameText);
+                Directory.CreateDirectory(folderName + "\\" + AwayTeamNameText);
+                StreamWriter matchDetailsWriter = new StreamWriter(folderName + "\\MatchDetails.txt");
+
+                for (int i = 0; i < MatchDetailsList.Count(); i = i + 1)
+                {
+                    matchDetailsWriter.WriteLine(MatchDetailsList[i]);
+                }
+                matchDetailsWriter.Close();
+                Details_Tab_Set.SelectedTab = Team_Details_Tab;
             }
-            matchDetailsWriter.Close();
-            Details_Tab_Set.SelectedTab = Team_Details_Tab;
         }
 
         // ******* Code for Team Details tab *******
@@ -112,33 +123,94 @@ namespace Cricket_Scoring_App
             }
         }
 
+        // Checks all inputs in the named table to find any that have not been filled in.
+        private bool Verify_Table_Entrys(TableLayoutPanel tableName)
+        {
+            bool verified = true;
+            // Check away team table entries
+            for (int i = 0; i < tableName.RowCount; i = i + 1)
+            {
+                // Gets the name of the control from the table
+                Control c = tableName.GetControlFromPosition(1, i);
+
+                // If the control is in the Match table and is empty the method 
+                if (tableName.Name == "tableLayoutPanel_Match" && String.IsNullOrWhiteSpace(c.Text))
+                {
+                    if (c.Name == "Home_Team_Name")
+                    {
+                        c.Text = "* Enter home team name";
+                    }
+                    else if (c.Name == "Away_Team_Name")
+                    {
+                        c.Text = "* Enter away team name";
+                    }
+                    else if (c.Name == "Venue_Name")
+                    {
+                        c.Text = "* Enter venue name";
+                    }
+                    else if (c.Name == "Match_Type_Selector")
+                    {
+                        c.Text = "* Select match type";
+                    }
+                    else if (c.Name == "Weather_Selector")
+                    {
+                        c.Text = "* Select weather";
+                    }
+                    c.BackColor = Color.DarkOrange;
+                    c.Font = new Font("Serif", 9, FontStyle.Bold);
+                    verified = false;
+                }
+                else if (String.IsNullOrWhiteSpace(c.Text))
+                {
+                    c.Text = "* Enter player name";
+                    c.BackColor = Color.DarkOrange;
+                    c.Font = new Font("Serif", 9, FontStyle.Bold);
+                    verified = false;
+                }
+                else
+                {
+                    c.BackColor = Color.White;
+                    c.Font = new Font("Serif", 8, FontStyle.Regular);
+                }
+            }
+            return verified;
+        }
+
         // Shows the main scoring application when button is clicked.
         // this will be read by the scoring application to complete the relevant fields.
         private void Begin_Match_Button_Click(object sender, EventArgs e)
         {
-            StreamWriter AwayWriter = new StreamWriter("C:\\Users\\Philip\\Desktop\\" + AwayTeamNameText + ".txt");
-
-            // Write player names to away team file
-            for (int i = 0; i < currentTableRowAway; i = i + 1)
+            // Checks if both player tables have values in all the text boxes.
+            if ((Verify_Table_Entrys(tableLayoutPanel_Away))||(Verify_Table_Entrys(tableLayoutPanel_Home)))
             {
-                Control c = tableLayoutPanel_Away.GetControlFromPosition(1,i);
-                AwayWriter.WriteLine(c.Text);
+                // Create away team file.
+                StreamWriter AwayWriter = new StreamWriter(folderName + "\\" + AwayTeamNameText + ".txt");
+
+                // Write player names to away team file.
+                for (int i = 0; i < currentTableRowAway; i = i + 1)
+                {
+                    Control c = tableLayoutPanel_Away.GetControlFromPosition(1, i);
+                    AwayWriter.WriteLine(c.Text);
+                }
+                AwayWriter.Close();
+
+                // Create home team file.
+                StreamWriter HomeWriter = new StreamWriter(folderName + "\\" + HomeTeamNameText + ".txt");
+
+                // Write player names to home team file.
+                for (int j = 0; j < currentTableRowHome; j = j + 1)
+                {
+                    Control d = tableLayoutPanel_Home.GetControlFromPosition(1, j);
+                    HomeWriter.WriteLine(d.Text);
+                }
+                HomeWriter.Close();
+                // Passes the folder name to the scoring application and opens the form.
+                ScoringApplicationForm.folderName = folderName;
+                ScoringApplicationForm.Show();
             }
-            AwayWriter.Close();
-
-            StreamWriter HomeWriter = new StreamWriter("C:\\Users\\Philip\\Desktop\\" + HomeTeamNameText + ".txt");
-
-            // Write player names to home team file
-            for (int j = 0; j < currentTableRowHome; j = j + 1)
-            {
-                Control d = tableLayoutPanel_Home.GetControlFromPosition(1, j);
-                HomeWriter.WriteLine(d.Text);
-            }
-            HomeWriter.Close();
-
-           ScoringApplicationForm.Show();
         }
 
+        // Reads the match details from a pre-made match details file, uses an open file dialog.
         private void Load_Match_Details_Button_Click(object sender, EventArgs e)
         {
             DialogResult loadMatch = Load_Match_Details_Dialog.ShowDialog();
@@ -179,8 +251,10 @@ namespace Cricket_Scoring_App
             }
         }
 
+        // Reads the away team details from a pre-made away team file, uses an open file dialog.
         private void Load_Away_Team_Click(object sender, EventArgs e)
         {
+            Load_Away_Team_Dialog.FileName = "Select "+ AwayTeamNameText + " player file";
             DialogResult loadAwayTeam = Load_Away_Team_Dialog.ShowDialog();
             if (loadAwayTeam == DialogResult.OK)
             {
@@ -219,8 +293,10 @@ namespace Cricket_Scoring_App
             }
         }
 
+        // Reads the home team details from a pre-made home team file, uses an open file dialog
         private void Load_Home_Team_Click(object sender, EventArgs e)
         {
+            Load_Home_Team_Dialog.FileName = "Select " + HomeTeamNameText + " player file";
             DialogResult loadHomeTeam = Load_Home_Team_Dialog.ShowDialog();
             if (loadHomeTeam == DialogResult.OK)
             {
@@ -257,6 +333,6 @@ namespace Cricket_Scoring_App
                 {
                 }
             }
-        }  
+        }
     }
 }

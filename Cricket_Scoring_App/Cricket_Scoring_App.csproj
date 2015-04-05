@@ -45,6 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ButtonHandler.cs" />
     <Compile Include="FallOfWicket.cs" />
     <Compile Include="Innings.cs" />
     <Compile Include="Match.cs" />

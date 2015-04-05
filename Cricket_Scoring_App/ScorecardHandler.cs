@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace Cricket_Scoring_App
 {
-    class ScorecardHandler
+    public class ScorecardHandler
     {
+        // Initialise all lists and variables to store temporary information to allow undo button to work
         public List<string> TempMatchDetailsList = new List<string>();
         public List<Player> TempBatList = new List<Player>();
         public List<Player> TempBowList = new List<Player>();
@@ -42,15 +43,22 @@ namespace Cricket_Scoring_App
         public int Temp_Scoring_Wickets_Down_Value { get; set; }
         public double Temp_Scoring_Total_Overs_Value { get; set; }
 
-        //
-        public void Create_Temp_Bat_Bowl(List<FallOfWicket> fallOfWicketList, List<Player> batList, List<Player> bowlList, List<Innings> inningsList, List<Over> overAnalysisList, List<string> matchDetailsList, int batOut, int batTopId, int batIdBottom, int bowlIdTop, int bowlIdBottom)
+        // Populates the temporary variables with current live values. Called before any information is updated
+        public void Create_Temp_Variables(List<FallOfWicket> fallOfWicketList, List<Player> batList, List<Player> bowlList, List<Innings> inningsList, List<Over> overAnalysisList, List<string> matchDetailsList, int inningsId)
         {
             // Stores batsman, bowler and last batsman out details
-            Temp_Current_Batsman_Top_Id = batTopId;
-            Temp_Current_Batsman_Bottom_Id = batIdBottom;
-            Temp_Current_Bowler_Top_Id = bowlIdTop;
-            Temp_Current_Bowler_Bottom_Id = bowlIdBottom;
-            Temp_Bat_Out = batOut;
+            Temp_Current_Batsman_Top_Id = inningsList[inningsId].topBatId;
+            Temp_Current_Batsman_Bottom_Id = inningsList[inningsId].bottomBatId;
+            Temp_Current_Bowler_Top_Id = inningsList[inningsId].topBowlId;
+            Temp_Current_Bowler_Bottom_Id = inningsList[inningsId].bottomBowlId;
+            if (fallOfWicketList.Count != 0)
+            {
+                Temp_Bat_Out = (Convert.ToInt32(fallOfWicketList.Last().bat_Out_Detail.Substring(0, 1)) - 1);
+            }
+            else if (fallOfWicketList.Count > 9)
+            {
+                Temp_Bat_Out = (Convert.ToInt32(fallOfWicketList.Last().bat_Out_Detail.Substring(0, 2)) - 1);
+            }
             TempBatList = batList;
             TempBowList = bowlList;
             TempFallOfWicketList = fallOfWicketList;
@@ -58,32 +66,24 @@ namespace Cricket_Scoring_App
             TempOverAnalysisList = overAnalysisList;
             TempMatchDetailsList = matchDetailsList;
 
-            Temp_Out_Batsman_Number_Value = batList[batOut].Bat_Number;
-            Temp_Out_Batsman_Name = batList[batOut].Bat_Name;
-            Temp_Out_Batsman_How_Out_Value = batList[batOut].Bat_How_Out;
-            Temp_Out_Batsman_Bowler_Value = batList[batOut].Bat_Out_Bwlr;
-            Temp_Out_Batsman_Total_Runs_Scored_Value = batList[batOut].Bat_Runs;
-        }
+            Temp_Out_Batsman_Number_Value = batList[Temp_Bat_Out].Bat_Number;
+            Temp_Out_Batsman_Name = batList[Temp_Bat_Out].Bat_Name;
+            Temp_Out_Batsman_How_Out_Value = batList[Temp_Bat_Out].Bat_How_Out;
+            Temp_Out_Batsman_Bowler_Value = batList[Temp_Bat_Out].Bat_Out_Bwlr;
+            Temp_Out_Batsman_Total_Runs_Scored_Value = batList[Temp_Bat_Out].Bat_Runs;
 
-        //
-        public void Create_Temp_Extras(int extrasWides, int extrasNoBalls, int extrasByes, int extrasLegByes, int extrasPenaltys, int extrasTotal)
-        {
             // Stores Extra table details
-            Temp_Wides_Total_Value = extrasWides;
-            Temp_No_Balls_Total_Value = extrasNoBalls;
-            Temp_Byes_Total_Value = extrasByes;
-            Temp_Leg_Byes_Total_Value = extrasLegByes;
-            Temp_Penaltys_Total_Value = extrasPenaltys;
-            Temp_Total_Extras_Value = extrasTotal;
-        }
+            Temp_Wides_Total_Value = inningsList[inningsId].Extras_Wides;
+            Temp_No_Balls_Total_Value = inningsList[inningsId].Extras_No_Balls;
+            Temp_Byes_Total_Value = inningsList[inningsId].Extras_Byes;
+            Temp_Leg_Byes_Total_Value = inningsList[inningsId].Extras_Leg_Byes;
+            Temp_Penaltys_Total_Value = inningsList[inningsId].Extras_Penaltys;
+            Temp_Total_Extras_Value = inningsList[inningsId].Extras_Total;
 
-        //
-        public void Create_Temp_Match_Totals(int inningsTotal, int inningsWickets, double inningsOvers )
-        {
             // Stores match details
-            Temp_Scoring_Total_Value = inningsTotal;
-            Temp_Scoring_Wickets_Down_Value = inningsWickets;
-            Temp_Scoring_Total_Overs_Value = inningsOvers;
+            Temp_Scoring_Total_Value = inningsList[inningsId].Innings_Total;
+            Temp_Scoring_Wickets_Down_Value = inningsList[inningsId].Innings_Wickets;
+            Temp_Scoring_Total_Overs_Value = inningsList[inningsId].Innings_Overs;
         }
     }
 }

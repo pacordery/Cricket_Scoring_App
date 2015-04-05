@@ -9,7 +9,10 @@ namespace Cricket_Scoring_App
 {
     public class Player
     {
-        /* Initialising all batting variables */
+        // Initialises the windows directory for read/write access.
+        string winDir = System.Environment.GetEnvironmentVariable("windir");
+
+        // Initialising all batting variables
         public int Bat_Number { get; set; }
         public string Bat_Name { get; set; }
         public string Bat_How_Out { get; set; }
@@ -21,7 +24,7 @@ namespace Cricket_Scoring_App
         public int Bat_Minutes { get; set; }
         public bool Bat_Facing { get; set; }
 
-        /* Initialising all bowling variables */
+        // Initialising all bowling variables.
         public int Bowl_Number { get; set; }
         public string Bowl_Name { get; set; }
         public int Bowl_Wides { get; set; }
@@ -34,6 +37,7 @@ namespace Cricket_Scoring_App
         public double Bowl_Economy { get; set; }
         public bool Bowl_Bowling { get; set; }
 
+        // Creates a new batsman object, all values are defaulted to 0 or 'not out'.
         public void Create_Batsman(int BatNumber, string BatsmanName, bool Facing)
         {
             Bat_Number = BatNumber;
@@ -48,6 +52,7 @@ namespace Cricket_Scoring_App
             Bat_Facing = Facing;
         }
 
+        // Creates a new bowler object, all values are defaulted to 0.
         public void Create_Bowler(int BowlNumber, string BowlerName, bool Bowling)
         {
             Bowl_Number = BowlNumber;
@@ -63,9 +68,73 @@ namespace Cricket_Scoring_App
             Bowl_Bowling = Bowling;
         }
 
-        public void Save_Batsmen(List<Player> batList, int InningsNumber)
+        // Gets the name of the player in the form Initial.Surname e.g. Joe Bloggs = J.Bloggs
+        // If player does not have a surname e.g. Pele (if he ever decided to play cricket) then 
+        // this method returns only the singlular name.
+        public string Get_Player_Short_Name(string player_Name)
         {
-            StreamWriter batDetailsWriter = new StreamWriter("C:\\Users\\Philip\\Desktop\\Inn" + InningsNumber + ".BatDetails.txt");
+            string playerName;
+            if (player_Name.IndexOf(' ') > -1)
+            {
+                string initial = player_Name.Substring(0, 1);
+                string surname = player_Name.Substring(player_Name.IndexOf(' '), player_Name.Length);
+                playerName = initial + "." + surname;
+            }
+            else
+            {
+                playerName = player_Name;
+            }
+            return playerName;
+        }
+
+        // Adds a ball to the batsman facing the last deleivery.
+        public void Batting_Add_Ball(List<Player> batList, int batid)
+        {
+            batList[batid].Bat_Balls = batList[batid].Bat_Balls + 1;
+        }
+
+        // Add a ball to the bowler whom bowled the last delivery.
+        public void Bowling_Add_Ball(List<Player> bowlList, int bowlId)
+        {
+            bowlList[bowlId].Bowl_Overs = bowlList[bowlId].Bowl_Overs + 0.1;
+        }
+
+        // Check which batsman is curently facing the bowler and return their id.
+        public int Check_Batsman_Facing(List<Player> batList, int batTopId, int batBottomId)
+        {
+            int batsmanId;
+
+            if (batList[batTopId].Bat_Facing == true)
+            {
+                batsmanId = batTopId;
+            }
+            else
+            {
+                batsmanId = batBottomId;
+            }
+            return batsmanId;
+        }
+
+        // Check which bowler is curently bowling and return their id.
+        public int Check_Bowler_Bowling(List<Player> bowlList, int bowlTopId, int bowlBottomId)
+        {
+            int bowlerId;
+
+            if (bowlList[bowlTopId].Bowl_Bowling == true)
+            {
+                bowlerId = bowlTopId;
+            }
+            else
+            {
+                bowlerId = bowlBottomId;
+            }
+            return bowlerId;
+        }
+
+        // Save all batsmen whom have batted or are currently batting to a file, one file per team.
+        public void Save_Batsmen(List<Player> batList, string inningsOf, string folderName)
+        {
+            StreamWriter batDetailsWriter = new StreamWriter(folderName + "\\" + inningsOf + "\\BatDetails.txt");
             
             for (int i = 0; i < batList.Count; i = i + 1)
             {
@@ -83,9 +152,10 @@ namespace Cricket_Scoring_App
             batDetailsWriter.Close();
         }
 
-        public void Save_Bowlers(List<Player> bowlList, int InningsNumber)
+        // Save all bowlers whom have bowled or are currently bowling to a file, one file per team.
+        public void Save_Bowlers(List<Player> bowlList, string inningsOf, string folderName)
         {
-            StreamWriter bowlDetailWriter = new StreamWriter("C:\\Users\\Philip\\Desktop\\Inn" + InningsNumber.ToString() + ".BowlDetails.txt");
+            StreamWriter bowlDetailWriter = new StreamWriter(folderName + "\\" + inningsOf + "\\BowlDetails.txt");
             for (int j = 0; j < bowlList.Count; j = j + 1)
             {
                 bowlDetailWriter.WriteLine(bowlList[j].Bowl_Number);
@@ -103,60 +173,18 @@ namespace Cricket_Scoring_App
             bowlDetailWriter.Close();
         }
 
+        // Load all batsman objects into the batting list, enables a match to be recoverd.
         public List<Player> Load_Batsman()
         {
             List<Player> batsman = new List<Player>();
             return batsman;
         }
+
+        // Load all bowler objects into the bowling list, enables a match to be recoverd.
         public List<Player> Load_Bowlers()
         {
             List<Player> bowler = new List<Player>();
             return bowler;
-        }
-
-
-        //
-        public void Batting_Add_Ball(List<Player> batList, int batid)
-        {
-            batList[batid].Bat_Balls = batList[batid].Bat_Balls + 1;
-        }
-
-        //
-        public void Bowling_Add_Ball(List<Player> bowlList, int bowlId)
-        {
-            bowlList[bowlId].Bowl_Overs = bowlList[bowlId].Bowl_Overs + 0.1;
-        }
-
-        //
-        public int Check_Batsman_Facing(List<Player> batList, int batTopId, int batBottomId)
-        {
-            int batsmanId;
-
-            if (batList[batTopId].Bat_Facing == true)
-            {
-                batsmanId = batTopId;
-            }
-            else
-            {
-                batsmanId = batBottomId;
-            }
-            return batsmanId;
-        }
-
-        //
-        public int Check_Bowler_Bowling(List<Player> bowlList, int bowlTopId, int bowlBottomId)
-        {
-            int bowlerId;
-
-            if (bowlList[bowlTopId].Bowl_Bowling == true)
-            {
-                bowlerId = bowlTopId;
-            }
-            else
-            {
-                bowlerId = bowlBottomId;
-            }
-            return bowlerId;
         }
     }
 }

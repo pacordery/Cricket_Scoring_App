@@ -7,77 +7,69 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.IO;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace Cricket_Scoring_App
 {
     public partial class Scoring_Application_Form : Form
     {
-        public Scoring_Application_Form()
-        {
-            InitializeComponent();
-        }
-        // Initialises the windows directory for read/write access
-        string winDir = System.Environment.GetEnvironmentVariable("windir");
-
         // Initialise all lists required for the application
         List<string> MatchDetailsList = new List<string>();
         List<string> HomeTeamList = new List<string>();
         List<string> AwayTeamList = new List<string>();
-        List<Innings> InningsList = new List<Innings>();
-        List<Player> Innings1BatsmanList = new List<Player>();
-        List<Player> Innings1BowlerList = new List<Player>();
-        List<Player> Innings2BatsmanList = new List<Player>();
-        List<Player> Innings2BowlerList = new List<Player>();
+        List<string> NextBatsmanList = new List<string>();
+        List<string> NewBowlerList = new List<string>();
+        public List<Innings> InningsList = new List<Innings>();
         List<Player> batList = new List<Player>();
         List<Player> bowlList = new List<Player>();
         List<FallOfWicket> fallOfWicketList = new List<FallOfWicket>();
-        List<Over> overAnalsisList = new List<Over>();
+        List<string> GraphSeriesList = new List<string>();
+        List<Over> overAnalysisList = new List<Over>();
 
-        // Initialising all match detail variables
+        List<Player> Innings1BatsmanList = new List<Player>();
+        List<Player> Innings1BowlerList = new List<Player>();
+        List<Over> Innings1OverList = new List<Over>();
+        List<FallOfWicket> Innings1fallOfWicketList = new List<FallOfWicket>();
+
+        List<Over> Innings2OverList = new List<Over>();
+        List<Player> Innings2BatsmanList = new List<Player>();
+        List<Player> Innings2BowlerList = new List<Player>();
+        List<FallOfWicket> Innings2fallOfWicketList = new List<FallOfWicket>();
+
+        // Initialises the destination folder for all files. This is created after match details are entered.
+        public string folderName { get; set; }
+
+        // Initialising variables required in this class
         string Home_Team;
         string Away_Team;
-        int Innings_Number;
+        int Innings_Id;
         string Innings_Of;
         string First_Inn_Team;
         string Second_Inn_Team;
-        int Target_Total;
-        int Runs_Remaining;
-        int Balls_Remain;
-        string Innings_Complete_Reason;
-        string notes;
-
-        // Initialising all batting variables
         int Bat_Out;
         int Bat_Not_Out;
-        int Current_Batsman_Top_Id;
-        int Current_Batsman_Bottom_Id;
-
-        // Initialising all bowling variables
-        int Current_Bowler_Top_Id;
-        int Current_Bowler_Bottom_Id;
-        int New_Bowler_Id;
-
-        // Stores match result details
         string Innings_1_Score;
         string Innings_2_Score;
-        string Match_Result;
 
-        /* Load function to read all text files created in the previous form,
-         * information is stored into the applications lists
-         */
+        public Scoring_Application_Form(string FolderName)
+        {
+            InitializeComponent();
+            this.folderName = FolderName;
+        }
+
+        // Load function to read all text files created in the previous form, information is stored into the applications lists
         private void Scoring_Application_Form_Load(object sender, EventArgs e)
         {
             // On load the innings to be scored is the first innings
-            Innings_Number = 1;
+            Innings_Id = 0;
 
             Match match = new Match();
             Match awayTeamHandler = new Match();
 
             // Storing match and team details into lists
-            MatchDetailsList = match.GetMatchDetails();
-            HomeTeamList = match.GetTeamDetails(MatchDetailsList[1]);
-            AwayTeamList = awayTeamHandler.GetTeamDetails(MatchDetailsList[2]);
+            MatchDetailsList = match.GetMatchDetails(this.folderName);
+            HomeTeamList = match.GetTeamDetails(MatchDetailsList[1], this.folderName);
+            AwayTeamList = awayTeamHandler.GetTeamDetails(MatchDetailsList[2], this.folderName);
 
             // Insert team names into the Toss Winner combo box on the Opener Selection tab
             Toss_Winner_Combo_Box.Items.Clear();
@@ -90,7 +82,7 @@ namespace Cricket_Scoring_App
             Open_Select_Bat_Side.Items.Add(MatchDetailsList[2]);
         }
 
-        //
+        // // Populates all dropdowns on the scoring tab, depending on which side is batting
         private void Populate_Scorecard_Player_Combo_Boxes(List<string> battingList, string batting, List<string> bowlingList, string bowling)
         {
             Wicket_Next_Bat_Combo_Box.Items.Clear();
@@ -110,7 +102,7 @@ namespace Cricket_Scoring_App
             }
         }
 
-        //
+        // Populates batsman and bowler dropdowns on both select openers tabs, depending on which side is batting
         private void Populate_Bat_Bowl_Select_Combo_Boxes(List<string> battingList, string batting, List<string> bowlingList, string bowling)
         {
             for (int i = 0; i < battingList.Count(); i = i + 1)
@@ -129,11 +121,25 @@ namespace Cricket_Scoring_App
             }
         }
 
-        /*
-         *  When the user selects which side is batting in the Batting Side Combo Box,
-         *  the application will only show the batting side in the batsman select boxes
-         *  and only the bowling side in the bowler select boxes.
-         */
+        // Updates the combo box in the wickets flow panel to only show the batsmen left to bat
+        private void Update_Next_Batsman_List(string batsmanName)
+        {
+            Wicket_Next_Bat_Combo_Box.Items.Clear();
+            NextBatsmanList.Remove(batsmanName);
+
+            for (int i = 0; i < NextBatsmanList.Count; i = i + 1)
+            {
+                Wicket_Next_Bat_Combo_Box.Items.Add(NextBatsmanList[i]);
+                if (i < 1)
+                {
+                    Wicket_Next_Bat_Combo_Box.Items.Add("End of Innings");
+                }
+            }
+        }
+
+        /* When the user selects which side is batting in the Batting Side Combo Box,
+         * the application will only show the batting side in the batsman select boxes
+         * and only the bowling side in the bowler select boxes. */
         private void Open_Select_Bat_Side_SelectedIndexChanged(object sender, EventArgs e)
         {
             // Clear all current items from batting and bowing selection lists
@@ -165,10 +171,8 @@ namespace Cricket_Scoring_App
             First_Inn_Innings_Of.Text = Innings_Of;
         }
 
-        /*
-         * This function hides all of the flow control panels for extras and wickets
-         */
-        private void HideAllPanels()
+        // This function hides all of the flow control panels that are not reqired
+        public void HideAllPanels()
         {         
             Flow_Panel_Byes.Hide();
             Flow_Panel_Leg_Byes.Hide();
@@ -183,12 +187,27 @@ namespace Cricket_Scoring_App
             Flow_Panel_End_Of_Innings.Hide();
         }
 
+        // Inintialises all variables at the start of an innings
         private void Set_Default_Variables()
         {
             HideAllPanels();
             Innings innings = new Innings();
-            innings.Create_Innings(MatchDetailsList, Toss_Winner_Combo_Box.SelectedItem.ToString());
+            innings.Create_Innings(MatchDetailsList, Toss_Winner_Combo_Box.SelectedItem.ToString(), Innings_Of);
             InningsList.Add(innings);
+            // Gets the team name for the second innings
+            if ((Innings_Id == 1) && (InningsList[0].Team_Name == Home_Team))
+            {
+                InningsList[1].Team_Name = Away_Team;
+            }
+            else if(Innings_Id == 1)
+            {
+                InningsList[1].Team_Name = Home_Team;
+            }
+            GraphSeriesList.Add(InningsList[Innings_Id].Team_Name);
+            Over over = new Over();
+            over.Create_Over(0,0,0,0);
+            overAnalysisList.Add(over);
+            Create_Graphs();
 
             // Sets Extra table details
             Wides_Total_Value.Text = innings.Extras_Wides.ToString();
@@ -202,228 +221,269 @@ namespace Cricket_Scoring_App
             Scoring_Date_Value.Text = innings.Date;
             Scoring_Home_Team_Name_Value.Text = Home_Team;
             Scoring_Away_Team_Name_Value.Text = Away_Team;
-            Scoring_Innings_Of_Value.Text = Innings_Of;
+            Scoring_Innings_Of_Value.Text = InningsList[Innings_Id].Team_Name;
             Scoring_Total_Value.Text = innings.Innings_Total.ToString();
             Scoring_Wickets_Down_Value.Text = innings.Innings_Wickets.ToString();
             Scoring_Total_Overs_Value.Text = innings.Innings_Overs.ToString();
 
             // Initialise opening player objects
-            Current_Batsman_Top_Id = 0;
-            Current_Batsman_Bottom_Id = 1;
-            Current_Bowler_Top_Id = 0;
-            Current_Bowler_Bottom_Id = 1;
-
             Player batTop = new Player();
             Player batBottom = new Player();
             Player bowlTop = new Player();
             Player bowlBottom = new Player();
 
-            if (Innings_Number == 1)
+            if (Innings_Id == 0)
             {
-                batTop.Create_Batsman((Current_Batsman_Top_Id + 1), Open_Select_Bat_1.SelectedItem.ToString(), true);
-                batBottom.Create_Batsman((Current_Batsman_Bottom_Id + 1), Open_Select_Bat_2.SelectedItem.ToString(), false);
-                bowlTop.Create_Bowler((Current_Bowler_Top_Id + 1), Open_Select_Bowl_1.SelectedItem.ToString(), true);
-                bowlBottom.Create_Bowler((Current_Bowler_Bottom_Id + 1), Open_Select_Bowl_2.SelectedItem.ToString(), false);
+                batTop.Create_Batsman((InningsList[0].topBatId + 1), Open_Select_Bat_1.SelectedItem.ToString(), true);
+                batBottom.Create_Batsman((InningsList[0].bottomBatId + 1), Open_Select_Bat_2.SelectedItem.ToString(), false);
+                bowlTop.Create_Bowler((InningsList[0].topBowlId + 1), Open_Select_Bowl_1.SelectedItem.ToString(), true);
+                bowlBottom.Create_Bowler((InningsList[0].bottomBowlId + 1), Open_Select_Bowl_2.SelectedItem.ToString(), false);
             }
             else
             {
-                batTop.Create_Batsman((Current_Batsman_Top_Id + 1), Open_Select_Bat_1_Inn_2.SelectedItem.ToString(), true);
-                batBottom.Create_Batsman((Current_Batsman_Bottom_Id + 1), Open_Select_Bat_2_Inn_2.SelectedItem.ToString(), false);
-                bowlTop.Create_Bowler((Current_Bowler_Top_Id + 1), Open_Select_Bowl_1_Inn_2.SelectedItem.ToString(), true);
-                bowlBottom.Create_Bowler((Current_Bowler_Bottom_Id + 1), Open_Select_Bowl_2_Inn_2.SelectedItem.ToString(), false);
+                batTop.Create_Batsman((InningsList[1].topBatId + 1), Open_Select_Bat_1_Inn_2.SelectedItem.ToString(), true);
+                batBottom.Create_Batsman((InningsList[1].bottomBatId + 1), Open_Select_Bat_2_Inn_2.SelectedItem.ToString(), false);
+                bowlTop.Create_Bowler((InningsList[1].topBowlId + 1), Open_Select_Bowl_1_Inn_2.SelectedItem.ToString(), true);
+                bowlBottom.Create_Bowler((InningsList[1].bottomBowlId + 1), Open_Select_Bowl_2_Inn_2.SelectedItem.ToString(), false);
             }          
             batList.Add(batTop);
             batList.Add(batBottom);
             bowlList.Add(bowlTop);
             bowlList.Add(bowlBottom);
+            Update_Next_Batsman_List(batTop.Bat_Name);
+            Update_Next_Batsman_List(batBottom.Bat_Name);
         }
 
-        /* 
-         * This function handles the assignment of batsman and bowlers into
-         * the batting and bowling tables in the first innings tab
-         */
-        private void First_Inn_Openers_Confirm_Button_Click(object sender, EventArgs e)
+        // Verify all table entrys in the supplied table. If entries missing, the user will not be able to move to next screen.
+        // This stops the application from falling over due to a null exception.
+        private bool Verify_Table_Entrys(TableLayoutPanel tableName)
         {
-            batList = Innings1BatsmanList;
-            bowlList = Innings1BowlerList;
-
-            First_Innings_Tab.Text = Open_Select_Bat_Side.SelectedItem.ToString();
-            First_Inn_Team = Open_Select_Bat_Side.SelectedItem.ToString();
-            if (First_Innings_Tab.Text == Home_Team)
+            bool verified = true;
+            // Check away team table entries
+            for (int i = 0; i < tableName.RowCount; i = i + 1)
             {
-                Second_Inn_Tab.Text = Away_Team;
-                Second_Inn_Team = Away_Team;
-            }
-            else
-            {
-                Second_Inn_Tab.Text = Home_Team;
-                Second_Inn_Team = Home_Team;
-            }
-
-            // Sets all variables, creates opening player objects and sets all table information for first innings
-            Set_Default_Variables();
-            Update_Batsman_Top();
-            Update_Batsman_Bottom();
-            Update_Bowler_Top();
-            Update_Bowler_Bottom();
-
-            Current_Batsman_Number_Top.BackColor = Color.White;
-            Current_Batsman_Number_Bottom.BackColor = Color.Transparent;
-            Current_Bowler_Number_Top.BackColor = Color.White;
-            Current_Bowler_Number_Bottom.BackColor = Color.Transparent;
-            Create_Undo_Point();
-            Update_Innings_Bat_Rows();
-            Update_Innings_Bowl_Rows();
-
-            // Set Innings 1 tab table totals
-            First_Inn_Bat_Total_Runs.Text = (InningsList[0].Innings_Total - InningsList[0].Extras_Total).ToString();
-            First_Inn_Home_Team.Text = Home_Team;
-            First_Inn_Away_Team.Text = Away_Team;
-            First_Inn_Venue.Text = InningsList[0].Ground_Name;
-            First_Inn_Weather.Text = InningsList[0].Weather;
-            First_Inn_Total_Overs.Text = InningsList[0].Innings_Overs.ToString();
-            First_Inn_Total_Runs.Text = InningsList[0].Innings_Total.ToString();
-            First_Inn_Total_Wickets.Text = InningsList[0].Innings_Wickets.ToString(); ;
-
-            // Switch to the scoring tab
-            Scoring_App_Tab_Set.SelectedTab = Scoring_Tab;
-        }
-
-        private void Second_Inn_Openers_Confirm_Button_Click(object sender, EventArgs e)
-        {
-            batList = Innings2BatsmanList;
-            bowlList = Innings2BowlerList;
-
-            // Sets all variables, creates opening player objects and sets all table information for second innings
-            Set_Default_Variables();
-            Update_Batsman_Top();
-            Update_Batsman_Bottom();
-            Update_Bowler_Top();
-            Update_Bowler_Bottom();
-
-            Current_Batsman_Number_Top.BackColor = Color.White;
-            Current_Batsman_Number_Bottom.BackColor = Color.Transparent;
-            Current_Bowler_Number_Top.BackColor = Color.White;
-            Current_Bowler_Number_Bottom.BackColor = Color.Transparent;
-            Create_Undo_Point();
-            Update_Innings_Bat_Rows();
-            Update_Innings_Bowl_Rows();
-
-            // Set Innings 2 tab table totals
-            Second_Inn_Bat_Total_Runs.Text = (InningsList[1].Innings_Total - InningsList[1].Extras_Total).ToString();
-            Second_Inn_Home_Team.Text = Home_Team;
-            Second_Inn_Away_Team.Text = Away_Team;
-            Second_Inn_Venue.Text = InningsList[1].Ground_Name;
-            Second_Inn_Weather.Text = InningsList[1].Weather;
-            Second_Inn_Total_Overs.Text = InningsList[1].Innings_Overs.ToString();
-            Second_Inn_Total_Runs.Text = InningsList[1].Innings_Total.ToString(); ;
-            Second_Inn_Total_Wickets.Text = InningsList[1].Innings_Wickets.ToString();
-
-            // Switch to the scoring tab
-            Scoring_App_Tab_Set.SelectedTab = Scoring_Tab; 
-        }
-
-        /* Triggered when the first innings is completed, either by:
-         *      1. declaration
-         *      2. no more wickets left
-         *      3. no more overs left
-         *      4. bad weather
-         */
-        private void End_Of_Innings()
-        {
-            if (Innings_Number == 1)
-            {
-                Innings1BatsmanList = batList;
-                Innings1BowlerList = bowlList;
-                Innings_Number = 2;
-                Target_Total = InningsList[0].Innings_Total + 1;
-                Runs_Remaining = Target_Total;
-                Innings_1_Score = Innings_Of + "," + InningsList[0].Innings_Total.ToString() + "-" + InningsList[0].Innings_Wickets.ToString();
-
-                if (InningsList[0].Match_Type == "T20")
+                Control c = tableName.GetControlFromPosition(1, i);
+                if (String.IsNullOrWhiteSpace(c.Text))
                 {
-                    Balls_Remain = 120;
-                }
-                else if (InningsList[0].Match_Type == "40 Over")
-                {
-                    Balls_Remain = 240;
-                }
-                else if (InningsList[0].Match_Type == "Friendly")
-                {
-                    Balls_Remain = 0;
-                }
-                Second_Inn_Target.Text = Target_Total.ToString();
-                Second_Inn_Runs_Remain.Text = Runs_Remaining.ToString();
-                Second_Inn_Balls_Remain.Text = Balls_Remain.ToString();
-
-                if (Innings_Of == Home_Team)
-                {
-                    Innings_Of = Away_Team;
+                    if (c.Name == "Toss_Winner_Combo_Box")
+                    {
+                        c.Text = "* Select toss winner";
+                    }
+                    else if (c.Name == "Open_Select_Bat_Side")
+                    {
+                        c.Text = "* Select batting side";
+                    }
+                    else if (c.Name == "Open_Select_Bat_1" || c.Name == "Open_Select_Bat_2" || c.Name == "Open_Select_Bat_1_Inn_2" || c.Name == "Open_Select_Bat_2_Inn_2")
+                    {
+                        c.Text = "* Select batsman";
+                    }
+                    else if (c.Name == "Open_Select_Bowl_1" || c.Name == "Open_Select_Bowl_2" || c.Name == "Open_Select_Bowl_1_Inn_2" || c.Name == "Open_Select_Bowl_2_Inn_2")
+                    {
+                        c.Text = "* Select bowler";
+                    }
+                    c.BackColor = Color.DarkOrange;
+                    c.Font = new Font("Serif", 9, FontStyle.Bold);
+                    verified = false;
                 }
                 else
                 {
-                    Innings_Of = Home_Team;
-                }             
-                Second_Inn_Innings_Of.Text = Innings_Of;
+                    c.BackColor = Color.White;
+                    c.Font = new Font("Serif", 8, FontStyle.Regular);
+                }
+            }
+            return verified;
+        }
+
+        // Checks that the named combo box has had a value selected before button function is run.
+        // This stops the application from falling over due to a null exception.
+        private bool Verify_Combo_Selection(ComboBox comboBoxName)
+        {
+            bool selected = true;
+            if(String.IsNullOrWhiteSpace(comboBoxName.SelectedItem.ToString()))
+            {
+                comboBoxName.Text = "* Select player";
+                comboBoxName.BackColor = Color.DarkOrange;
+                comboBoxName.Font = new Font("Serif", 9, FontStyle.Bold);
+                selected = false;
+            }
+            else
+            {
+                comboBoxName.BackColor = Color.White;
+                comboBoxName.Font = new Font("Serif", 8, FontStyle.Regular);
+            }
+            return selected;
+        }
+        // When confirm button clicked on select openers 1 tab, this function loads all variables into the lists and tables
+        private void First_Inn_Openers_Confirm_Button_Click(object sender, EventArgs e)
+        {
+            if (Verify_Table_Entrys(tableLayoutPanel_Openers_1))
+            {
+                Innings2_Pie.Hide();
+                fallOfWicketList = Innings1fallOfWicketList;
+                batList = Innings1BatsmanList;
+                bowlList = Innings1BowlerList;
+                overAnalysisList = Innings1OverList;
+
+                First_Innings_Tab.Text = Open_Select_Bat_Side.SelectedItem.ToString();
+                First_Inn_Team = Open_Select_Bat_Side.SelectedItem.ToString();
+                if (First_Innings_Tab.Text == Home_Team)
+                {
+                    Second_Inn_Tab.Text = Away_Team;
+                    Second_Inn_Team = Away_Team;
+                }
+                else
+                {
+                    Second_Inn_Tab.Text = Home_Team;
+                    Second_Inn_Team = Home_Team;
+                }
+
+                // Sets all variables, creates opening player objects and sets all table information for first innings
+                Twenty_Overs_Button.Hide();
+                Set_Default_Variables();
+                Update_Batsman_Top();
+                Update_Batsman_Bottom();
+                Update_Bowler_Top();
+                Update_Bowler_Bottom();
+
+                Current_Batsman_Number_Top.BackColor = Color.White;
+                Current_Batsman_Number_Bottom.BackColor = Color.Transparent;
+                Current_Bowler_Number_Top.BackColor = Color.White;
+                Current_Bowler_Number_Bottom.BackColor = Color.Transparent;
+                Create_Undo_Point();
+                Update_Innings_Bat_Rows();
+                Update_Innings_Bowl_Rows();
+
+                // Set Innings 1 tab table totals
+                First_Inn_Bat_Total_Runs.Text = (InningsList[0].Innings_Total - InningsList[0].Extras_Total).ToString();
+                First_Inn_Home_Team.Text = Home_Team;
+                First_Inn_Away_Team.Text = Away_Team;
+                First_Inn_Venue.Text = InningsList[0].Ground_Name;
+                First_Inn_Weather.Text = InningsList[0].Weather;
+                First_Inn_Total_Overs.Text = InningsList[0].Innings_Overs.ToString();
+                First_Inn_Total_Runs.Text = InningsList[0].Innings_Total.ToString();
+                First_Inn_Total_Wickets.Text = InningsList[0].Innings_Wickets.ToString();
+
+                // Switch to the scoring tab
+                Scoring_App_Tab_Set.SelectedTab = Scoring_Tab;
+            }
+        }
+
+        // When confirm button clicked on select openers 2 tab, this function loads all variables into the lists and tables
+        private void Second_Inn_Openers_Confirm_Button_Click(object sender, EventArgs e)
+        {
+            if (Verify_Table_Entrys(tableLayoutPanel_Openers_2))
+            {
+                Innings2_Pie.Show();
+                Twenty_Overs_Button.Show();
+                Innings_Id = 1;
+                fallOfWicketList = Innings2fallOfWicketList;
+                batList = Innings2BatsmanList;
+                bowlList = Innings2BowlerList;
+                overAnalysisList = Innings2OverList;
+
+                // Sets all variables, creates opening player objects for second innings
+                Set_Default_Variables();
+
+                // Get the target total, balls remaining and runs remaining for second innings
+                InningsList[1].targetTotal = InningsList[0].Innings_Total + 1;
+                InningsList[1].runsRemaining = InningsList[1].targetTotal;
+
+                if (InningsList[0].Match_Type == "T20")
+                {
+                    InningsList[1].ballsRemaining = 120;
+                }
+                else if (InningsList[0].Match_Type == "40 Over")
+                {
+                    InningsList[1].ballsRemaining = 240;
+                }
+                else if (InningsList[0].Match_Type == "Friendly")
+                {
+                    InningsList[1].ballsRemaining = 0;
+                }
+                // Sets the target total, balls remaining and runs remaining for second innings
+                Second_Inn_Target.Text = InningsList[1].targetTotal.ToString();
+                Second_Inn_Runs_Remain.Text = InningsList[1].runsRemaining.ToString();
+                Second_Inn_Balls_Remain.Text = InningsList[1].ballsRemaining.ToString();
+
+                // Sets the team name of the second innings
+                Second_Inn_Innings_Of.Text = InningsList[1].Team_Name;
+
+                // Sets all table information 
+                Update_Batsman_Top();
+                Update_Batsman_Bottom();
+                Update_Bowler_Top();
+                Update_Bowler_Bottom();
+
+                Current_Batsman_Number_Top.BackColor = Color.White;
+                Current_Batsman_Number_Bottom.BackColor = Color.Transparent;
+                Current_Bowler_Number_Top.BackColor = Color.White;
+                Current_Bowler_Number_Bottom.BackColor = Color.Transparent;
+                Create_Undo_Point();
+                Update_Innings_Bat_Rows();
+                Update_Innings_Bowl_Rows();
+
+                // Set Innings 2 tab table totals
+                Second_Inn_Bat_Total_Runs.Text = (InningsList[1].Innings_Total - InningsList[1].Extras_Total).ToString();
+                Second_Inn_Home_Team.Text = Home_Team;
+                Second_Inn_Away_Team.Text = Away_Team;
+                Second_Inn_Venue.Text = InningsList[1].Ground_Name;
+                Second_Inn_Weather.Text = InningsList[1].Weather;
+                Second_Inn_Total_Overs.Text = InningsList[1].Innings_Overs.ToString();
+                Second_Inn_Total_Runs.Text = InningsList[1].Innings_Total.ToString(); ;
+                Second_Inn_Total_Wickets.Text = InningsList[1].Innings_Wickets.ToString();
+
+                // Switch to the scoring tab
+                Scoring_App_Tab_Set.SelectedTab = Scoring_Tab;
+            }
+        }
+
+        // Triggered when each innings has been completed, either due to declaration, weather or full result
+        public void End_Of_Innings()
+        { 
+            if (Innings_Id == 0)
+            {
+                InningsList[0].Notes = First_Inn_Notes_Textbox.Text;
+                Innings1fallOfWicketList = fallOfWicketList;
+                Innings1BatsmanList = batList;
+                Innings1BowlerList = bowlList;
+                Innings1OverList = overAnalysisList;
+                Innings_1_Score = InningsList[0].Team_Name + "," + InningsList[0].Innings_Total.ToString() + "-" + InningsList[0].Innings_Wickets.ToString();
                 Scoring_App_Tab_Set.SelectedTab = Second_Inn_Select_Tab;
             }
             else
             {
+                Innings2fallOfWicketList = fallOfWicketList;
+                InningsList[1].Notes = Second_Inn_Notes_Textbox.Text;
                 Innings2BatsmanList = batList;
                 Innings2BowlerList = bowlList;
-                Innings_2_Score = Innings_Of + "," + InningsList[1].Innings_Total.ToString() + "-" + InningsList[1].Innings_Wickets.ToString();
+                Innings_2_Score = InningsList[1].Team_Name + "," + InningsList[1].Innings_Total.ToString() + "-" + InningsList[1].Innings_Wickets.ToString();
 
-                // Get Match result based on end of 2nd innings reason
-                if (((Target_Total - InningsList[1].Innings_Total) == 1) && ((Innings_Complete_Reason == "All Out") || (Innings_Complete_Reason == "No More Overs")))
-                {
-                    Match_Result = "Tied";
-                }
-                else if ((Innings_Complete_Reason == "No More Overs") && (InningsList[0].Match_Type == "Friendly"))
-                {
-                    Match_Result = "Drawn";
-                }
-                else if ((Innings_Complete_Reason == "All Out") || ((Innings_Complete_Reason == "No More Overs") && ((InningsList[0].Match_Type == "T20") || (InningsList[0].Match_Type == "40 Over"))))
-                {
-                    Match_Result = First_Inn_Team + " Won by " + (((Target_Total - 1) - InningsList[1].Innings_Total).ToString()) + " runs";
-                }
-                else if (Target_Total <= InningsList[1].Innings_Total)
-                {
-                    Match_Result = Second_Inn_Team + " Won by " + ((10 - InningsList[1].Innings_Wickets).ToString()) + " wickets";
-                }
                 Match match = new Match();
-                match.Create_Match_Result(Innings1BatsmanList,Innings1BowlerList,Innings2BatsmanList,Innings2BowlerList, Home_Team, Away_Team, InningsList[0].Date, Innings_1_Score, Innings_2_Score, Match_Result);
+                match.Save_Match_Result(Innings1BatsmanList, Innings1BowlerList, Innings2BatsmanList, Innings2BowlerList, Home_Team, Away_Team, InningsList[0].Date, Innings_1_Score, Innings_2_Score, match.Get_Match_Result(InningsList), this.folderName);
             }
         }
 
         // This function creates an undo point to allow the user to undo their last operation.
-        private void Create_Undo_Point()
+        public void Create_Undo_Point()
         {
             ScorecardHandler scorecardHandler = new ScorecardHandler();
-            scorecardHandler.Create_Temp_Bat_Bowl(fallOfWicketList, batList, bowlList, InningsList, overAnalsisList, MatchDetailsList, Bat_Out, Current_Batsman_Top_Id, Current_Batsman_Bottom_Id, Current_Bowler_Top_Id, Current_Bowler_Bottom_Id);
-            scorecardHandler.Create_Temp_Extras(InningsList[Innings_Number - 1].Extras_Wides, InningsList[Innings_Number - 1].Extras_No_Balls, InningsList[Innings_Number - 1].Extras_Byes, InningsList[Innings_Number - 1].Extras_Leg_Byes, InningsList[Innings_Number - 1].Extras_Penaltys, InningsList[Innings_Number - 1].Extras_Total);
-            scorecardHandler.Create_Temp_Match_Totals(InningsList[Innings_Number - 1].Innings_Total, InningsList[Innings_Number - 1].Innings_Wickets, InningsList[Innings_Number - 1].Innings_Overs);
+            scorecardHandler.Create_Temp_Variables(fallOfWicketList, batList, bowlList, InningsList, overAnalysisList, MatchDetailsList, Innings_Id);
         }
 
-        /*
-         * Restores the score back to the state before the incorrect operation was carried out.
-         * It:
-         *      Updates the batsman and bowler objects, extras totals and match totals
-         *      Updates all tables
-         */
+        /* Restores the score back to the state before the incorrect operation was carried out.
+                * Updates the batsman and bowler objects, extras totals and match totals
+                * Updates all tables */
         private void Restore_Last_State()
         {
+            // Restore all lists from the temp variables, then update the tables
             ScorecardHandler scorecardHandler = new ScorecardHandler();
             Player player = new Player();
-            Current_Batsman_Top_Id = scorecardHandler.Temp_Current_Batsman_Top_Id;
-            Current_Batsman_Bottom_Id = scorecardHandler.Temp_Current_Batsman_Bottom_Id;
-            Current_Bowler_Top_Id = scorecardHandler.Temp_Current_Bowler_Top_Id;
-            Current_Bowler_Bottom_Id = scorecardHandler.Temp_Current_Bowler_Bottom_Id;
             Bat_Out = scorecardHandler.Temp_Bat_Out;
             batList = scorecardHandler.TempBatList;
             bowlList = scorecardHandler.TempBowList;
             fallOfWicketList = scorecardHandler.TempFallOfWicketList;
             InningsList = scorecardHandler.TempInningsList;
-            overAnalsisList = scorecardHandler.TempOverAnalysisList;
+            overAnalysisList = scorecardHandler.TempOverAnalysisList;
             Update_Batsman_Top();
             Update_Batsman_Bottom();
             Update_Bowler_Top();
@@ -433,7 +493,7 @@ namespace Cricket_Scoring_App
             Update_Innings_Over_Analysis();
 
             // Set the current batsman flag
-            if (batList[Current_Batsman_Top_Id].Bat_Facing)
+            if (batList[InningsList[Innings_Id].topBatId].Bat_Facing)
             {
                 Current_Batsman_Number_Top.BackColor = Color.White;
                 Current_Batsman_Number_Bottom.BackColor = Color.Transparent;  
@@ -445,7 +505,7 @@ namespace Cricket_Scoring_App
             }
 
             // Set the current bowler flag
-            if (bowlList[Current_Bowler_Top_Id].Bowl_Bowling)
+            if (bowlList[InningsList[Innings_Id].topBowlId].Bowl_Bowling)
             {
                 Current_Bowler_Number_Top.BackColor = Color.White;
                 Current_Bowler_Number_Bottom.BackColor = Color.Transparent;
@@ -456,15 +516,15 @@ namespace Cricket_Scoring_App
                 Current_Bowler_Number_Bottom.BackColor = Color.White;
             }
 
-            // Restore extra totals
-            InningsList[Innings_Number - 1].Extras_Wides = scorecardHandler.Temp_Wides_Total_Value;
-            InningsList[Innings_Number - 1].Extras_No_Balls = scorecardHandler.Temp_No_Balls_Total_Value;
-            InningsList[Innings_Number - 1].Extras_Byes = scorecardHandler.Temp_Byes_Total_Value;
-            InningsList[Innings_Number - 1].Extras_Leg_Byes = scorecardHandler.Temp_Leg_Byes_Total_Value;
-            InningsList[Innings_Number - 1].Extras_Penaltys = scorecardHandler.Temp_Penaltys_Total_Value;
-            InningsList[Innings_Number - 1].Extras_Total = scorecardHandler.Temp_Total_Extras_Value;
+            // Restores the scoring tab extra totals
+            InningsList[Innings_Id].Extras_Wides = scorecardHandler.Temp_Wides_Total_Value;
+            InningsList[Innings_Id].Extras_No_Balls = scorecardHandler.Temp_No_Balls_Total_Value;
+            InningsList[Innings_Id].Extras_Byes = scorecardHandler.Temp_Byes_Total_Value;
+            InningsList[Innings_Id].Extras_Leg_Byes = scorecardHandler.Temp_Leg_Byes_Total_Value;
+            InningsList[Innings_Id].Extras_Penaltys = scorecardHandler.Temp_Penaltys_Total_Value;
+            InningsList[Innings_Id].Extras_Total = scorecardHandler.Temp_Total_Extras_Value;
 
-            // Restores Extra table details
+            // Restores the scoring tab Extra table details
             Wides_Total_Value.Text = scorecardHandler.Temp_Wides_Total_Value.ToString();
             No_Balls_Total_Value.Text = scorecardHandler.Temp_No_Balls_Total_Value.ToString();
             Byes_Total_Value.Text = scorecardHandler.Temp_Byes_Total_Value.ToString();
@@ -472,10 +532,8 @@ namespace Cricket_Scoring_App
             Penaltys_Total_Value.Text = scorecardHandler.Temp_Penaltys_Total_Value.ToString();
             Total_Extras_Value.Text = scorecardHandler.Temp_Total_Extras_Value.ToString();
 
-            /* Restores Last Man Out table details,
-             * if no wickets have been taken then the table should be blank
-             */
-            if (InningsList[Innings_Number - 1].Innings_Wickets == 0)
+            // Restores Last Man Out table details, if wickets == 0 then table should be blank
+            if (InningsList[Innings_Id].Innings_Wickets == 0)
             {
                 Out_Batsman_Number_Value.Text = "";
                 Out_Batsman_Name.Text = "";
@@ -492,9 +550,9 @@ namespace Cricket_Scoring_App
                 Out_Batsman_Total_Runs_Scored_Value.Text = scorecardHandler.Temp_Out_Batsman_Total_Runs_Scored_Value.ToString();
             }
             // Restores match details values
-            InningsList[Innings_Number - 1].Innings_Overs = scorecardHandler.Temp_Scoring_Total_Overs_Value;
-            InningsList[Innings_Number - 1].Innings_Total = scorecardHandler.Temp_Scoring_Total_Value;
-            InningsList[Innings_Number - 1].Innings_Wickets = scorecardHandler.Temp_Scoring_Wickets_Down_Value;
+            InningsList[Innings_Id].Innings_Overs = scorecardHandler.Temp_Scoring_Total_Overs_Value;
+            InningsList[Innings_Id].Innings_Total = scorecardHandler.Temp_Scoring_Total_Value;
+            InningsList[Innings_Id].Innings_Wickets = scorecardHandler.Temp_Scoring_Wickets_Down_Value;
 
             // Restores match details table
             Scoring_Total_Value.Text = scorecardHandler.Temp_Scoring_Total_Value.ToString();
@@ -502,10 +560,10 @@ namespace Cricket_Scoring_App
             Scoring_Total_Overs_Value.Text = scorecardHandler.Temp_Scoring_Total_Overs_Value.ToString();
         }
 
-        //
+        // Updates the batting table for the respective innings
         private void Update_Innings_Bat_Rows()
         {
-            if (Innings_Number == 1)
+            if (Innings_Id == 0)
             {
                 First_Inn_Bat_Table.Controls.Clear();
                 First_Inn_Bat_Table.Controls.Add(new Label() { Text = "#", Dock = DockStyle.Fill, TextAlign = System.Drawing.ContentAlignment.MiddleCenter, AutoSize = true, Font = new Font("Serif", 11, FontStyle.Bold) }, 0, 0);
@@ -591,10 +649,10 @@ namespace Cricket_Scoring_App
             }
         }
 
-        //
+        // Updates the bowling table for the respective innings
         private void Update_Innings_Bowl_Rows()
         {
-            if (Innings_Number == 1)
+            if (Innings_Id == 0)
             {
                 First_Inn_Bowl_Table.Controls.Clear();
                 First_Inn_Bowl_Table.Controls.Add(new Label() { Text = "#", Dock = DockStyle.Fill, TextAlign = System.Drawing.ContentAlignment.MiddleCenter, AutoSize = true, Font = new Font("Serif", 11, FontStyle.Bold) }, 0, 0);
@@ -680,10 +738,10 @@ namespace Cricket_Scoring_App
             }
         }
 
-        //
+        // Updates the fall of wicket table for the respective innings
         private void Update_Innings_Fall_Of_Wicket()
         {
-            if (Innings_Number == 1)
+            if (Innings_Id == 0)
             {
                 First_Inn_Fall_Of_Wckt_Table.Controls.Clear();
                 First_Inn_Fall_Of_Wckt_Table.Controls.Add(new Label() { Text = "Fall of Wicket", Dock = DockStyle.Fill, TextAlign = System.Drawing.ContentAlignment.MiddleCenter, AutoSize = true, Font = new Font("Serif", 11, FontStyle.Bold) }, 0, 0);
@@ -723,13 +781,13 @@ namespace Cricket_Scoring_App
                     Second_Inn_Fall_Of_Wckt_Table.Controls.Add(new Label() { Text = fallOfWicketList[i].over_Number.ToString(), Dock = DockStyle.Fill, TextAlign = System.Drawing.ContentAlignment.MiddleCenter, AutoSize = true, Font = new Font("Serif", 10, FontStyle.Regular) }, fallOfWicketList[i].wicket_Number, 5);
                 }
             }
-            InningsList[Innings_Number - 1].Partnership = 0;
+            InningsList[Innings_Id].Partnership = 0;
         }
 
-        //
-        private void Update_Innings_Over_Analysis()
+        // Updates the over analysis table for the respective innings
+        public void Update_Innings_Over_Analysis()
         {
-            if (Innings_Number == 1)
+            if (Innings_Id == 0)
             {
                 First_Inn_Over_Analysis_Table.Controls.Clear();
                 First_Inn_Over_Analysis_Table.Controls.Add(new Label() { Text = "Over #", Dock = DockStyle.Fill, TextAlign = System.Drawing.ContentAlignment.MiddleCenter, AutoSize = true, Font = new Font("Serif", 11, FontStyle.Bold) }, 0, 0);
@@ -737,12 +795,12 @@ namespace Cricket_Scoring_App
                 First_Inn_Over_Analysis_Table.Controls.Add(new Label() { Text = "Runs", Dock = DockStyle.Fill, TextAlign = System.Drawing.ContentAlignment.MiddleCenter, AutoSize = true, Font = new Font("Serif", 11, FontStyle.Bold) }, 0, 2);
                 First_Inn_Over_Analysis_Table.Controls.Add(new Label() { Text = "Wickets", Dock = DockStyle.Fill, TextAlign = System.Drawing.ContentAlignment.MiddleCenter, AutoSize = true, Font = new Font("Serif", 11, FontStyle.Bold) }, 0, 3);
 
-                for (int i = 0; i < overAnalsisList.Count; i = i + 1)
+                for (int i = 1; i < overAnalysisList.Count; i = i + 1)
                 {
-                    First_Inn_Over_Analysis_Table.Controls.Add(new Label() { Text = overAnalsisList[i].over_Number.ToString(), Dock = DockStyle.Fill, TextAlign = System.Drawing.ContentAlignment.MiddleCenter, AutoSize = true, Font = new Font("Serif", 10, FontStyle.Bold) }, overAnalsisList[i].over_Number, 0);
-                    First_Inn_Over_Analysis_Table.Controls.Add(new Label() { Text = overAnalsisList[i].over_Bowler_Number.ToString(), Dock = DockStyle.Fill, TextAlign = System.Drawing.ContentAlignment.MiddleCenter, AutoSize = true, Font = new Font("Serif", 9, FontStyle.Regular) }, overAnalsisList[i].over_Number, 1);
-                    First_Inn_Over_Analysis_Table.Controls.Add(new Label() { Text = overAnalsisList[i].over_Runs.ToString(), Dock = DockStyle.Fill, TextAlign = System.Drawing.ContentAlignment.MiddleCenter, AutoSize = true, Font = new Font("Serif", 9, FontStyle.Regular) }, overAnalsisList[i].over_Number, 2);
-                    First_Inn_Over_Analysis_Table.Controls.Add(new Label() { Text = overAnalsisList[i].over_Wickets.ToString(), Dock = DockStyle.Fill, TextAlign = System.Drawing.ContentAlignment.MiddleCenter, AutoSize = true, Font = new Font("Serif", 9, FontStyle.Regular) }, overAnalsisList[i].over_Number, 3);
+                        First_Inn_Over_Analysis_Table.Controls.Add(new Label() { Text = overAnalysisList[i].over_Number.ToString(), Dock = DockStyle.Fill, TextAlign = System.Drawing.ContentAlignment.MiddleCenter, AutoSize = true, Font = new Font("Serif", 10, FontStyle.Bold) }, overAnalysisList[i].over_Number, 0);
+                        First_Inn_Over_Analysis_Table.Controls.Add(new Label() { Text = overAnalysisList[i].over_Bowler_Number.ToString(), Dock = DockStyle.Fill, TextAlign = System.Drawing.ContentAlignment.MiddleCenter, AutoSize = true, Font = new Font("Serif", 9, FontStyle.Regular) }, overAnalysisList[i].over_Number, 1);
+                        First_Inn_Over_Analysis_Table.Controls.Add(new Label() { Text = overAnalysisList[i].over_Runs.ToString(), Dock = DockStyle.Fill, TextAlign = System.Drawing.ContentAlignment.MiddleCenter, AutoSize = true, Font = new Font("Serif", 9, FontStyle.Regular) }, overAnalysisList[i].over_Number, 2);
+                        First_Inn_Over_Analysis_Table.Controls.Add(new Label() { Text = overAnalysisList[i].over_Wickets.ToString(), Dock = DockStyle.Fill, TextAlign = System.Drawing.ContentAlignment.MiddleCenter, AutoSize = true, Font = new Font("Serif", 9, FontStyle.Regular) }, overAnalysisList[i].over_Number, 3);
                 }
             }
             else
@@ -753,67 +811,86 @@ namespace Cricket_Scoring_App
                 Second_Inn_Over_Analysis_Table.Controls.Add(new Label() { Text = "Runs", Dock = DockStyle.Fill, TextAlign = System.Drawing.ContentAlignment.MiddleCenter, AutoSize = true, Font = new Font("Serif", 11, FontStyle.Bold) }, 0, 2);
                 Second_Inn_Over_Analysis_Table.Controls.Add(new Label() { Text = "Wickets", Dock = DockStyle.Fill, TextAlign = System.Drawing.ContentAlignment.MiddleCenter, AutoSize = true, Font = new Font("Serif", 11, FontStyle.Bold) }, 0, 3);
 
-                for (int i = 0; i < overAnalsisList.Count; i = i + 1)
+                for (int i = 1; i < overAnalysisList.Count; i = i + 1)
                 {
-                    Second_Inn_Over_Analysis_Table.Controls.Add(new Label() { Text = overAnalsisList[i].over_Number.ToString(), Dock = DockStyle.Fill, TextAlign = System.Drawing.ContentAlignment.MiddleCenter, AutoSize = true, Font = new Font("Serif", 10, FontStyle.Bold) }, overAnalsisList[i].over_Number, 0);
-                    Second_Inn_Over_Analysis_Table.Controls.Add(new Label() { Text = overAnalsisList[i].over_Bowler_Number.ToString(), Dock = DockStyle.Fill, TextAlign = System.Drawing.ContentAlignment.MiddleCenter, AutoSize = true, Font = new Font("Serif", 9, FontStyle.Regular) }, overAnalsisList[i].over_Number, 1);
-                    Second_Inn_Over_Analysis_Table.Controls.Add(new Label() { Text = overAnalsisList[i].over_Runs.ToString(), Dock = DockStyle.Fill, TextAlign = System.Drawing.ContentAlignment.MiddleCenter, AutoSize = true, Font = new Font("Serif", 9, FontStyle.Regular) }, overAnalsisList[i].over_Number, 2);
-                    Second_Inn_Over_Analysis_Table.Controls.Add(new Label() { Text = overAnalsisList[i].over_Wickets.ToString(), Dock = DockStyle.Fill, TextAlign = System.Drawing.ContentAlignment.MiddleCenter, AutoSize = true, Font = new Font("Serif", 9, FontStyle.Regular) }, overAnalsisList[i].over_Number, 3);
+                    /* If the over analysis column to be created is greater or equal to the start of the final 20 overs in a friendly match,
+                     * shade the bacground of the column white to allow it to be differentiated from the overs before.*/
+                    if(overAnalysisList[i].over_Number >= InningsList[1].startOfTwentyOvers)
+                    {
+                        Second_Inn_Over_Analysis_Table.Controls.Add(new Label() { Text = overAnalysisList[i].over_Number.ToString(), Dock = DockStyle.Fill, TextAlign = System.Drawing.ContentAlignment.MiddleCenter, AutoSize = true, Font = new Font("Serif", 10, FontStyle.Bold), BackColor = Color.White }, overAnalysisList[i].over_Number, 0);
+                        Second_Inn_Over_Analysis_Table.Controls.Add(new Label() { Text = overAnalysisList[i].over_Bowler_Number.ToString(), Dock = DockStyle.Fill, TextAlign = System.Drawing.ContentAlignment.MiddleCenter, AutoSize = true, Font = new Font("Serif", 9, FontStyle.Regular), BackColor = Color.White }, overAnalysisList[i].over_Number, 1);
+                        Second_Inn_Over_Analysis_Table.Controls.Add(new Label() { Text = overAnalysisList[i].over_Runs.ToString(), Dock = DockStyle.Fill, TextAlign = System.Drawing.ContentAlignment.MiddleCenter, AutoSize = true, Font = new Font("Serif", 9, FontStyle.Regular), BackColor = Color.White }, overAnalysisList[i].over_Number, 2);
+                        Second_Inn_Over_Analysis_Table.Controls.Add(new Label() { Text = overAnalysisList[i].over_Wickets.ToString(), Dock = DockStyle.Fill, TextAlign = System.Drawing.ContentAlignment.MiddleCenter, AutoSize = true, Font = new Font("Serif", 9, FontStyle.Regular), BackColor = Color.White }, overAnalysisList[i].over_Number, 3);
+                    }
+                    else
+                    {
+                        Second_Inn_Over_Analysis_Table.Controls.Add(new Label() { Text = overAnalysisList[i].over_Number.ToString(), Dock = DockStyle.Fill, TextAlign = System.Drawing.ContentAlignment.MiddleCenter, AutoSize = true, Font = new Font("Serif", 10, FontStyle.Bold) }, overAnalysisList[i].over_Number, 0);
+                        Second_Inn_Over_Analysis_Table.Controls.Add(new Label() { Text = overAnalysisList[i].over_Bowler_Number.ToString(), Dock = DockStyle.Fill, TextAlign = System.Drawing.ContentAlignment.MiddleCenter, AutoSize = true, Font = new Font("Serif", 9, FontStyle.Regular) }, overAnalysisList[i].over_Number, 1);
+                        Second_Inn_Over_Analysis_Table.Controls.Add(new Label() { Text = overAnalysisList[i].over_Runs.ToString(), Dock = DockStyle.Fill, TextAlign = System.Drawing.ContentAlignment.MiddleCenter, AutoSize = true, Font = new Font("Serif", 9, FontStyle.Regular) }, overAnalysisList[i].over_Number, 2);
+                        Second_Inn_Over_Analysis_Table.Controls.Add(new Label() { Text = overAnalysisList[i].over_Wickets.ToString(), Dock = DockStyle.Fill, TextAlign = System.Drawing.ContentAlignment.MiddleCenter, AutoSize = true, Font = new Font("Serif", 9, FontStyle.Regular) }, overAnalysisList[i].over_Number, 3);
+                
+                    }
                 }
             }
-            InningsList[Innings_Number - 1].Over_Analysis_Runs = 0;
-            InningsList[Innings_Number - 1].Over_Analysis_Wickets = 0;
+            InningsList[Innings_Id].Over_Analysis_Runs = 0;
+            InningsList[Innings_Id].Over_Analysis_Wickets = 0;
         }
 
+        // Updates the scoring tab top batsman row
         private void Update_Batsman_Top()
         {
-            Current_Batsman_Number_Top.Text = batList[Current_Batsman_Top_Id].Bat_Number.ToString();
-            Current_Batsman_Name_Top.Text = batList[Current_Batsman_Top_Id].Bat_Name.ToString();
-            Current_Batsman_Number_Of_Fours_Top.Text = batList[Current_Batsman_Top_Id].Bat_Fours.ToString();
-            Current_Batsman_Number_Of_Sixes_Top.Text = batList[Current_Batsman_Top_Id].Bat_Sixes.ToString();
-            Current_Batsman_Balls_Faced_Top.Text = batList[Current_Batsman_Top_Id].Bat_Balls.ToString();
-            Current_Batsman_Runs_Scored_Top.Text = batList[Current_Batsman_Top_Id].Bat_Runs.ToString();
-            Current_Batsman_Minutes_Batted_Top.Text = batList[Current_Batsman_Top_Id].Bat_Minutes.ToString();
+            Current_Batsman_Number_Top.Text = batList[InningsList[Innings_Id].topBatId].Bat_Number.ToString();
+            Current_Batsman_Name_Top.Text = batList[InningsList[Innings_Id].topBatId].Bat_Name.ToString();
+            Current_Batsman_Number_Of_Fours_Top.Text = batList[InningsList[Innings_Id].topBatId].Bat_Fours.ToString();
+            Current_Batsman_Number_Of_Sixes_Top.Text = batList[InningsList[Innings_Id].topBatId].Bat_Sixes.ToString();
+            Current_Batsman_Balls_Faced_Top.Text = batList[InningsList[Innings_Id].topBatId].Bat_Balls.ToString();
+            Current_Batsman_Runs_Scored_Top.Text = batList[InningsList[Innings_Id].topBatId].Bat_Runs.ToString();
+            Current_Batsman_Minutes_Batted_Top.Text = batList[InningsList[Innings_Id].topBatId].Bat_Minutes.ToString();
         }
 
+        // Updates the scoring tab bottom batsman row
         private void Update_Batsman_Bottom()
         {
-            Current_Batsman_Number_Bottom.Text = batList[Current_Batsman_Bottom_Id].Bat_Number.ToString();
-            Current_Batsman_Name_Bottom.Text = batList[Current_Batsman_Bottom_Id].Bat_Name;
-            Current_Batsman_Number_Of_Fours_Bottom.Text = batList[Current_Batsman_Bottom_Id].Bat_Fours.ToString();
-            Current_Batsman_Number_Of_Sixes_Bottom.Text = batList[Current_Batsman_Bottom_Id].Bat_Sixes.ToString();
-            Current_Batsman_Balls_Faced_Bottom.Text = batList[Current_Batsman_Bottom_Id].Bat_Balls.ToString();
-            Current_Batsman_Runs_Scored_Bottom.Text = batList[Current_Batsman_Bottom_Id].Bat_Runs.ToString();
-            Current_Batsman_Minutes_Batted_Bottom.Text = batList[Current_Batsman_Bottom_Id].Bat_Minutes.ToString();
+            Current_Batsman_Number_Bottom.Text = batList[InningsList[Innings_Id].bottomBatId].Bat_Number.ToString();
+            Current_Batsman_Name_Bottom.Text = batList[InningsList[Innings_Id].bottomBatId].Bat_Name;
+            Current_Batsman_Number_Of_Fours_Bottom.Text = batList[InningsList[Innings_Id].bottomBatId].Bat_Fours.ToString();
+            Current_Batsman_Number_Of_Sixes_Bottom.Text = batList[InningsList[Innings_Id].bottomBatId].Bat_Sixes.ToString();
+            Current_Batsman_Balls_Faced_Bottom.Text = batList[InningsList[Innings_Id].bottomBatId].Bat_Balls.ToString();
+            Current_Batsman_Runs_Scored_Bottom.Text = batList[InningsList[Innings_Id].bottomBatId].Bat_Runs.ToString();
+            Current_Batsman_Minutes_Batted_Bottom.Text = batList[InningsList[Innings_Id].bottomBatId].Bat_Minutes.ToString();
         }
 
+        // Updates the scoring tab top bowler row
         private void Update_Bowler_Top()
         {
-            Current_Bowler_Name_Top.Text = bowlList[Current_Bowler_Top_Id].Bowl_Name;
-            Current_Bowler_Wides_Conceded_Top.Text = bowlList[Current_Bowler_Top_Id].Bowl_Wides.ToString();
-            Current_Bowler_No_Balls_Conceded_Top.Text = bowlList[Current_Bowler_Top_Id].Bowl_No_Balls.ToString();
-            Current_Bowler_Overs_Bowled_Top.Text = bowlList[Current_Bowler_Top_Id].Bowl_Overs.ToString();
-            Current_Bowler_Maidens_Bowled_Top.Text = bowlList[Current_Bowler_Top_Id].Bowl_Maidens.ToString();
-            Current_Bowler_Runs_Conceded_Top.Text = bowlList[Current_Bowler_Top_Id].Bowl_Runs.ToString();
-            Current_Bowler_Wickets_Taken_Top.Text = bowlList[Current_Bowler_Top_Id].Bowl_Wickets.ToString();
+            Current_Bowler_Number_Top.Text = bowlList[Innings_Id].Bowl_Number.ToString();
+            Current_Bowler_Name_Top.Text = bowlList[InningsList[Innings_Id].topBowlId].Bowl_Name;
+            Current_Bowler_Wides_Conceded_Top.Text = bowlList[InningsList[Innings_Id].topBowlId].Bowl_Wides.ToString();
+            Current_Bowler_No_Balls_Conceded_Top.Text = bowlList[InningsList[Innings_Id].topBowlId].Bowl_No_Balls.ToString();
+            Current_Bowler_Overs_Bowled_Top.Text = bowlList[InningsList[Innings_Id].topBowlId].Bowl_Overs.ToString();
+            Current_Bowler_Maidens_Bowled_Top.Text = bowlList[InningsList[Innings_Id].topBowlId].Bowl_Maidens.ToString();
+            Current_Bowler_Runs_Conceded_Top.Text = bowlList[InningsList[Innings_Id].topBowlId].Bowl_Runs.ToString();
+            Current_Bowler_Wickets_Taken_Top.Text = bowlList[InningsList[Innings_Id].topBowlId].Bowl_Wickets.ToString();
         }
 
+        // Updates the scoring tab bottom bowler row
         private void Update_Bowler_Bottom()
         {
-            Current_Bowler_Number_Bottom.Text = bowlList[Current_Bowler_Bottom_Id].Bowl_Number.ToString();
-            Current_Bowler_Name_Bottom.Text = bowlList[Current_Bowler_Bottom_Id].Bowl_Name;
-            Current_Bowler_Wides_Conceded_Bottom.Text = bowlList[Current_Bowler_Bottom_Id].Bowl_Wides.ToString();
-            Current_Bowler_No_Balls_Conceded_Bottom.Text = bowlList[Current_Bowler_Bottom_Id].Bowl_No_Balls.ToString();
-            Current_Bowler_Overs_Bowled_Bottom.Text = bowlList[Current_Bowler_Bottom_Id].Bowl_Overs.ToString();
-            Current_Bowler_Maidens_Bowled_Bottom.Text = bowlList[Current_Bowler_Bottom_Id].Bowl_Maidens.ToString();
-            Current_Bowler_Runs_Conceded_Bottom.Text = bowlList[Current_Bowler_Bottom_Id].Bowl_Runs.ToString();
-            Current_Bowler_Wickets_Taken_Bottom.Text = bowlList[Current_Bowler_Bottom_Id].Bowl_Wickets.ToString();
+            Current_Bowler_Number_Bottom.Text = bowlList[InningsList[Innings_Id].bottomBowlId].Bowl_Number.ToString();
+            Current_Bowler_Name_Bottom.Text = bowlList[InningsList[Innings_Id].bottomBowlId].Bowl_Name;
+            Current_Bowler_Wides_Conceded_Bottom.Text = bowlList[InningsList[Innings_Id].bottomBowlId].Bowl_Wides.ToString();
+            Current_Bowler_No_Balls_Conceded_Bottom.Text = bowlList[InningsList[Innings_Id].bottomBowlId].Bowl_No_Balls.ToString();
+            Current_Bowler_Overs_Bowled_Bottom.Text = bowlList[InningsList[Innings_Id].bottomBowlId].Bowl_Overs.ToString();
+            Current_Bowler_Maidens_Bowled_Bottom.Text = bowlList[InningsList[Innings_Id].bottomBowlId].Bowl_Maidens.ToString();
+            Current_Bowler_Runs_Conceded_Bottom.Text = bowlList[InningsList[Innings_Id].bottomBowlId].Bowl_Runs.ToString();
+            Current_Bowler_Wickets_Taken_Bottom.Text = bowlList[InningsList[Innings_Id].bottomBowlId].Bowl_Wickets.ToString();
         }
 
+        // Function to update the last man out table
         private void Update_Last_Man_Out_Table()
         {
             // Updates Last Man Out table, if no wickets taken then table is blank
-            if (InningsList[Innings_Number - 1].Innings_Wickets == 0)
+            if (InningsList[Innings_Id].Innings_Wickets == 0)
             {
                 Out_Batsman_Number_Value.Text = "";
                 Out_Batsman_Name.Text = "";
@@ -837,36 +914,35 @@ namespace Cricket_Scoring_App
          *  The second set of statements update the Innings 1 tab
          *  The third set of statements update the Innings 2 tab
          */
-        private void Update_Score()
+        public void Update_Score()
         {
+            // Update the scoring tab tables
             Update_Batsman_Top();
             Update_Batsman_Bottom();
             Update_Bowler_Top();
             Update_Bowler_Bottom();
             Update_Last_Man_Out_Table();
 
-            // Updates Extra table details
-            Wides_Total_Value.Text = InningsList[Innings_Number - 1].Extras_Wides.ToString();
-            No_Balls_Total_Value.Text = InningsList[Innings_Number - 1].Extras_No_Balls.ToString();
-            Byes_Total_Value.Text = InningsList[Innings_Number - 1].Extras_Byes.ToString();
-            Leg_Byes_Total_Value.Text = InningsList[Innings_Number - 1].Extras_Leg_Byes.ToString();
-            Penaltys_Total_Value.Text = InningsList[Innings_Number - 1].Extras_Penaltys.ToString();
-            Total_Extras_Value.Text = InningsList[Innings_Number - 1].Extras_Total.ToString();
+            // Update the scoring tab Extra table
+            Wides_Total_Value.Text = InningsList[Innings_Id].Extras_Wides.ToString();
+            No_Balls_Total_Value.Text = InningsList[Innings_Id].Extras_No_Balls.ToString();
+            Byes_Total_Value.Text = InningsList[Innings_Id].Extras_Byes.ToString();
+            Leg_Byes_Total_Value.Text = InningsList[Innings_Id].Extras_Leg_Byes.ToString();
+            Penaltys_Total_Value.Text = InningsList[Innings_Id].Extras_Penaltys.ToString();
+            Total_Extras_Value.Text = InningsList[Innings_Id].Extras_Total.ToString();
 
-            // Updates match details
-            Scoring_Total_Value.Text = InningsList[Innings_Number - 1].Innings_Total.ToString();
-            Scoring_Wickets_Down_Value.Text = InningsList[Innings_Number - 1].Innings_Wickets.ToString();
-            Scoring_Total_Overs_Value.Text = InningsList[Innings_Number - 1].Innings_Overs.ToString();
+            // Update the scoring tab match details
+            Scoring_Total_Value.Text = InningsList[Innings_Id].Innings_Total.ToString();
+            Scoring_Wickets_Down_Value.Text = InningsList[Innings_Id].Innings_Wickets.ToString();
+            Scoring_Total_Overs_Value.Text = InningsList[Innings_Id].Innings_Overs.ToString();
 
-            // Updates the batting table
+            // Update the innings tab batting and bowling tables
             Update_Innings_Bat_Rows();
-
-            // Updates the bowling table
             Update_Innings_Bowl_Rows();
 
-            if (Innings_Number == 1)
+            if (Innings_Id == 0)
             {
-                // Updates Extras table
+                // Update the first innings tab Extras table
                 First_Inn_Wides_Value.Text = InningsList[0].Extras_Wides.ToString();
                 First_Inn_No_Balls_Value.Text = InningsList[0].Extras_No_Balls.ToString();
                 First_Inn_Byes_Value.Text = InningsList[0].Extras_Byes.ToString();
@@ -874,7 +950,7 @@ namespace Cricket_Scoring_App
                 First_Inn_Penaltys_Value.Text = InningsList[0].Extras_Penaltys.ToString();
                 First_Inn_Extras_Total_Value.Text = InningsList[0].Extras_Total.ToString();
 
-                // Updates table totals
+                // Update the first innings tab table totals
                 First_Inn_Bat_Total_Runs.Text = (InningsList[0].Innings_Total - InningsList[0].Extras_Total).ToString();
                 First_Inn_Bwl_Ttls_Wds.Text = InningsList[0].Extras_Wides.ToString();
                 First_Inn_Bwl_Ttls_Nbs.Text = InningsList[0].Extras_No_Balls.ToString();
@@ -883,14 +959,14 @@ namespace Cricket_Scoring_App
                 First_Inn_Bwl_Ttls_Runs.Text = InningsList[0].Bowl_Total_Runs.ToString();
                 First_Inn_Bwl_Ttls_Wkts.Text = InningsList[0].Bowl_Total_Wickets.ToString();
 
-                // Updates match totals
+                // Update the first innings tab match totals
                 First_Inn_Total_Runs.Text = InningsList[0].Innings_Total.ToString();
                 First_Inn_Total_Wickets.Text = InningsList[0].Innings_Wickets.ToString();
                 First_Inn_Total_Overs.Text = InningsList[0].Innings_Overs.ToString();
             }
             else
             {
-                // Updates Extras table
+                // Update the second innings tab Extras table
                 Second_Inn_Wides_Value.Text = InningsList[1].Extras_Wides.ToString();
                 Second_Inn_No_Balls_Value.Text = InningsList[1].Extras_No_Balls.ToString();
                 Second_Inn_Byes_Value.Text = InningsList[1].Extras_Byes.ToString();
@@ -898,7 +974,7 @@ namespace Cricket_Scoring_App
                 Second_Inn_Penaltys_Value.Text = InningsList[1].Extras_Penaltys.ToString();
                 Second_Inn_Extras_Total_Value.Text = InningsList[1].Extras_Total.ToString();
 
-                // Updates table totals
+                // Update the second innings tab table totals
                 Second_Inn_Bat_Total_Runs.Text = (InningsList[1].Innings_Total - InningsList[1].Extras_Total).ToString();
                 Second_Inn_Bwl_Ttls_Wds.Text = InningsList[1].Extras_Wides.ToString();
                 Second_Inn_Bwl_Ttls_Nbs.Text = InningsList[1].Extras_No_Balls.ToString();
@@ -907,279 +983,158 @@ namespace Cricket_Scoring_App
                 Second_Inn_Bwl_Ttls_Runs.Text = InningsList[1].Bowl_Total_Runs.ToString();
                 Second_Inn_Bwl_Ttls_Wkts.Text = InningsList[1].Bowl_Total_Wickets.ToString();
 
-                // Updates match totals
+                // Update the second innings tab match totals
                 Second_Inn_Total_Runs.Text = InningsList[1].Innings_Total.ToString();
                 Second_Inn_Total_Wickets.Text = InningsList[1].Innings_Wickets.ToString();
                 Second_Inn_Total_Overs.Text = InningsList[1].Innings_Overs.ToString();
-                Second_Inn_Balls_Remain.Text = Balls_Remain.ToString();
-                Second_Inn_Runs_Remain.Text = Runs_Remaining.ToString();
-                Second_Inn_Target.Text = Target_Total.ToString();
+                Second_Inn_Balls_Remain.Text = InningsList[1].ballsRemaining.ToString();
+                Second_Inn_Runs_Remain.Text = InningsList[1].runsRemaining.ToString();
+                Second_Inn_Target.Text = InningsList[1].targetTotal.ToString();
             }
         }
 
-        /* 
-         *  This function swaps the batsman during the match either after runs being scored,
-         *  wicket being taken or the end of the over.
-        */
-        private void Swap_Batsman()
+        // Creates points for each pie chart.
+        private void Create_Pie_Chart_Points(Series seriesName)
         {
-            if (batList[Current_Batsman_Top_Id].Bat_Facing == true)
+            // Initialis the index variable outside the for loop to allow extras to be added to the end of the chart
+            int i;
+            for (i = 0; i < batList.Count; i = i + 1)
+            {
+                seriesName.Points.AddXY(i, batList[i].Bat_Runs);
+                seriesName.Points[i].Label = batList[i].Bat_Name;
+                seriesName.Points[i].LabelForeColor = Color.Transparent;
+            }
+            // Add the extras total to the pie chart
+            seriesName.Points.AddXY(i+1,InningsList[Innings_Id].Extras_Total);
+        }
+
+        // Creates points for the manhattan graph.
+        private void Create_Manhattan_Chart_Points(Series seriesName, List<Over> overList)
+        {
+            // Initialised from 1 as the first over is element 2 in the list.
+            for (int j = 1; j < overAnalysisList.Count; j = j + 1)
+            {
+                seriesName.Points.Add(overList[j].over_Runs);
+            }
+        }
+
+        // Creates the graphs on the Graphics tab, Manhattan is the column graph and Worm is the line graph
+        public void Create_Graphs()
+        {
+            Manhattan_Graph.Palette = ChartColorPalette.Excel;
+            Innings1_Pie.Palette = ChartColorPalette.Pastel;
+            Innings2_Pie.Palette = ChartColorPalette.Pastel;
+            Manhattan_Graph.Series.Clear();
+            Innings1_Pie.Series.Clear();
+            Innings2_Pie.Series.Clear();
+
+            for (int i = 0; i < GraphSeriesList.Count; i = i + 1)
+            {
+                Series manhattanSeries = this.Manhattan_Graph.Series.Add(GraphSeriesList[i]);
+                manhattanSeries.ChartType = SeriesChartType.Column;
+
+                if (Innings_Id == 0)
+                {
+                    Series innings1PieSeries = this.Innings1_Pie.Series.Add(GraphSeriesList[0]);
+                    innings1PieSeries.ChartType = SeriesChartType.Pie;
+                    Create_Pie_Chart_Points(innings1PieSeries);
+                    Create_Manhattan_Chart_Points(manhattanSeries, overAnalysisList);
+                }
+                else
+                {
+                    Series innings2PieSeries = this.Innings2_Pie.Series.Add(GraphSeriesList[1]);
+                    innings2PieSeries.ChartType = SeriesChartType.Pie;
+                    Create_Pie_Chart_Points(innings2PieSeries);
+
+                    if (i == 0)
+                    {
+                        Create_Manhattan_Chart_Points(manhattanSeries, Innings1OverList);
+                    }
+                    else
+                    {
+                        Create_Manhattan_Chart_Points(manhattanSeries, overAnalysisList);
+                    }
+                }
+            }
+        }
+
+        // When called, swap the current batsman facing
+        public void Swap_Batsman()
+        {
+            if (batList[InningsList[Innings_Id].topBatId].Bat_Facing == true)
             {
                 // Set current facing batsman to not facing and change indicator colour
-                batList[Current_Batsman_Top_Id].Bat_Facing = false;
+                batList[InningsList[Innings_Id].topBatId].Bat_Facing = false;
                 Current_Batsman_Number_Top.BackColor = Color.Transparent;
 
                 // Set non facing batsman to true and change indicator colour
-                batList[Current_Batsman_Bottom_Id].Bat_Facing = true;
+                batList[InningsList[Innings_Id].bottomBatId].Bat_Facing = true;
                 Current_Batsman_Number_Bottom.BackColor = Color.White;
             }
             else
             {
                 // Set current facing batsman to false and change indicator colour
-                batList[Current_Batsman_Bottom_Id].Bat_Facing = false;
+                batList[InningsList[Innings_Id].bottomBatId].Bat_Facing = false;
                 Current_Batsman_Number_Bottom.BackColor = Color.Transparent;
 
                 // Set non facing batsman to true and change indicator colour
-                batList[Current_Batsman_Top_Id].Bat_Facing = true;
+                batList[InningsList[Innings_Id].topBatId].Bat_Facing = true;
                 Current_Batsman_Number_Top.BackColor = Color.White;
             }
         }
 
-        /*
-         *  When an over is completed this function swaps to the other bowler in the bowling table
-         */
-        private void Swap_Bowler()
+        // When called, swap the current bowler bowling
+        public void Swap_Bowler()
         {
-            if (bowlList[Current_Bowler_Top_Id].Bowl_Bowling == true)
+            if (bowlList[InningsList[Innings_Id].topBowlId].Bowl_Bowling == true)
             {
                 // Set current bowler to not bowling and change indicator colour
-                bowlList[Current_Bowler_Top_Id].Bowl_Bowling = false;
+                bowlList[InningsList[Innings_Id].topBowlId].Bowl_Bowling = false;
                 Current_Bowler_Number_Top.BackColor = Color.Transparent;
 
                 // Set other bowler to bowling and change indicator colour
-                bowlList[Current_Bowler_Bottom_Id].Bowl_Bowling = true;
+                bowlList[InningsList[Innings_Id].bottomBowlId].Bowl_Bowling = true;
                 Current_Bowler_Number_Bottom.BackColor = Color.White;
             }
             else
             {
                 // Set current bowler to not bowling and change indicator colour
-                bowlList[Current_Bowler_Bottom_Id].Bowl_Bowling = false;
+                bowlList[InningsList[Innings_Id].bottomBowlId].Bowl_Bowling = false;
                 Current_Bowler_Number_Bottom.BackColor = Color.Transparent;
 
                 // Set other bowler to bowling and change indicator colour
-                bowlList[Current_Bowler_Top_Id].Bowl_Bowling = true;
+                bowlList[InningsList[Innings_Id].topBowlId].Bowl_Bowling = true;
                 Current_Bowler_Number_Top.BackColor = Color.White;
             }
         }
 
-        /*
-         *  Checks if the last deliveery was the last in the over
-         *  if so it updates the total overs number to the next highest round number
-         */
-        private void Check_End_Of_Over(double oversTotal, int bowlId)
-        {
-            oversTotal = Math.Round(oversTotal, 1);
-            double Updated_Over_Amount = oversTotal;
-            double test_total = Math.Round((oversTotal - Math.Truncate(oversTotal)),1);
-            if (test_total == .6)
-            {
-                Updated_Over_Amount = Math.Ceiling(Updated_Over_Amount);
-            }
-
-            if (Updated_Over_Amount - Math.Truncate(Updated_Over_Amount) == 0)
-            {
-                bowlList[bowlId].Bowl_Overs = Math.Ceiling(bowlList[bowlId].Bowl_Overs);
-                InningsList[Innings_Number - 1].Innings_Overs = Math.Ceiling(InningsList[Innings_Number - 1].Innings_Overs);
-
-                // Check if completed over was a maiden, if not set maiden flag back to true for next over
-                if (InningsList[Innings_Number - 1].maiden)
-                {
-                    InningsList[Innings_Number - 1].Bowl_Total_Maidens = InningsList[Innings_Number - 1].Bowl_Total_Maidens + 1;
-                    bowlList[bowlId].Bowl_Maidens = bowlList[bowlId].Bowl_Maidens + 1;
-                }
-                else
-                {
-                    InningsList[Innings_Number - 1].maiden = true;
-                }
-                // Convert over number from double to int to allow new line to be added to Over Analysis table
-                InningsList[Innings_Number - 1].Over_Analysis_Overs = Convert.ToInt32(InningsList[Innings_Number - 1].Innings_Overs);
-                Over over = new Over();
-                over.Create_Over(InningsList[Innings_Number - 1].Over_Analysis_Overs, (bowlId) + 1, InningsList[Innings_Number - 1].Over_Analysis_Runs, InningsList[Innings_Number - 1].Over_Analysis_Wickets);
-                overAnalsisList.Add(over);
-                Update_Innings_Over_Analysis();
-
-                // Get innings notes
-                if (Innings_Number == 1)
-                {
-                    // Save any notes made in the Notes textbox to end of over file
-                    notes = First_Inn_Notes_Textbox.Text;
-                }
-                else
-                {
-                    // Save any notes made in the Notes textbox to end of over file
-                    notes = Second_Inn_Notes_Textbox.Text;
-                }
-
-                // Save the over to a new text file
-                Innings innings = new Innings();
-                over.Save_Over(fallOfWicketList, batList, bowlList,
-                    Innings_Number, Innings_Of, InningsList[Innings_Number - 1].Innings_Total, InningsList[Innings_Number - 1].Innings_Overs, InningsList[Innings_Number - 1].Innings_Wickets,
-                    Current_Batsman_Top_Id, Current_Batsman_Bottom_Id, Current_Bowler_Top_Id, Current_Bowler_Bottom_Id,
-                    InningsList[Innings_Number - 1].Extras_Byes, InningsList[Innings_Number - 1].Extras_Leg_Byes, InningsList[Innings_Number - 1].Extras_No_Balls, InningsList[Innings_Number - 1].Extras_Wides, InningsList[Innings_Number - 1].Extras_Penaltys, InningsList[Innings_Number - 1].Extras_Total,
-                    Bat_Out, notes);
-
-                // Swap batsmen and bowlers for start of new over
-                Swap_Batsman();
-                Swap_Bowler();
-                // Check if end of innings has been reached
-                if (innings.Check_End_Of_Innings(Innings_Number, Target_Total, InningsList[Innings_Number - 1].Innings_Total, Innings_Complete_Reason, InningsList[Innings_Number - 1].Innings_Overs, InningsList[Innings_Number - 1].Max_Overs, InningsList[Innings_Number - 1].Innings_Wickets))
-                {
-                    End_Of_Innings();
-                }
-            }
-        }
-
-        /*
-         * If the last batsman out was in the top row of the batsman table on the Scoring tab.
-         * This function swaps the details of the batsman on the bottom row to the top row.
-         * This allows the new batsman to be placed on the bottom row to keep the batsman number
-         * convention correct.
-         */
+        // If outgoing batsman is on top row of batting table, swap bottom batsman to top.
         private void Wicket_Change_Top_Batsman()
         {
             // Move bottom batsman details to the top row.
-            Current_Batsman_Top_Id = Current_Batsman_Bottom_Id;
+            InningsList[Innings_Id].topBatId = InningsList[Innings_Id].bottomBatId;
             Update_Batsman_Top();
         }
 
-        /*
-         * If the bowler to be replaced is in the top row of the current bowler table in the Scoring tab,
-         * The bowler on the bottom row is moved up to the top row to allow the new bowler's details to be
-         * entered on the bottom row.
-         */
+        // If outgoing bowler is on top row of the bowling table, swap bottom bowler to top.
         private void New_Bowler_Change_Top_Bowler()
         {
             // set current bowler flag of bowler being replaced to false
-            bowlList[Current_Bowler_Top_Id].Bowl_Bowling = false;
+            bowlList[InningsList[Innings_Id].topBowlId].Bowl_Bowling = false;
 
             // Move bottom bowler details to the top row.
-            Current_Bowler_Top_Id = Current_Bowler_Bottom_Id;
+            InningsList[Innings_Id].topBowlId = InningsList[Innings_Id].bottomBowlId;
             Update_Bowler_Top();
             Current_Bowler_Number_Top.BackColor = Color.Transparent;
         }
-        //
-        /*
-         *  If a run is scored from an extra the runs are added to the relevant row in the extra's table.
-         *  If a wide or no ball is bowled no additional balls are added to the bowler, batsman or total overs.
-         *  If the batsman scores runs off a no ball, 1 no ball is added to the row and the rest of the runs
-         *  are attributed to the batsman.
-         */
-        private void Runs_Scored(string type, bool batUsed, int runs, int batId, int bowlId)
-        {
-            Player player = new Player();
-            if (type == "runs" || type == "bye" || type == "legBye" || type == "penalty")
-            {
-                // Add one ball to total over amount
-                InningsList[Innings_Number - 1].Innings_Overs = InningsList[Innings_Number - 1].Innings_Overs + 0.1;
-                player.Bowling_Add_Ball(bowlList, bowlId);
-                player.Batting_Add_Ball(batList, batId);
-            }
-            
-            if (type == "runs" || type == "wide" || type == "noBall" || type == "penalty")
-            {
-                InningsList[Innings_Number - 1].maiden = false;
-                bowlList[bowlId].Bowl_Runs = bowlList[bowlId].Bowl_Runs + runs;
-                InningsList[Innings_Number - 1].Bowl_Total_Runs = InningsList[Innings_Number - 1].Bowl_Total_Runs + runs;
-            }
-            switch (type)
-            { 
-                case "runs":
-                    batList[batId].Bat_Runs = batList[batId].Bat_Runs + runs;
-                    if (runs % 2 == 1)
-                    {
-                        Swap_Batsman();
-                    }
-                    else if (runs == 4)
-                    {
-                        batList[batId].Bat_Fours = batList[batId].Bat_Fours + 1;
-                    }
-                    else if (runs == 6)
-                    {
-                        batList[batId].Bat_Sixes = batList[batId].Bat_Sixes + 1;
-                    }
-                    break;
-                case "bye":
-                    InningsList[Innings_Number - 1].Extras_Byes = InningsList[Innings_Number - 1].Extras_Byes + runs;
-                    if (runs % 2 == 1)
-                    {
-                        Swap_Batsman();
-                    }
-                    break;
-                case "legBye":
-                    InningsList[Innings_Number - 1].Extras_Leg_Byes = InningsList[Innings_Number - 1].Extras_Leg_Byes + runs;
-                    if (runs % 2 == 1)
-                    {
-                        Swap_Batsman();
-                    }
-                    break;
-                case "wide":
-                    bowlList[bowlId].Bowl_Wides = bowlList[bowlId].Bowl_Wides + runs;
-                    InningsList[Innings_Number - 1].Extras_Wides = InningsList[Innings_Number - 1].Extras_Wides + runs;
-                    if (runs % 2 == 0)
-                    {
-                        Swap_Batsman();
-                    }
-                    break;
-                case "noBall":
-                    if (batUsed == true)
-                    {
-                        batList[batId].Bat_Runs = batList[batId].Bat_Runs + (runs - 1);
-                        bowlList[bowlId].Bowl_No_Balls = bowlList[bowlId].Bowl_No_Balls + 1;
-                        InningsList[Innings_Number - 1].Extras_No_Balls = InningsList[Innings_Number - 1].Extras_No_Balls + 1;
-                    }
-                    else
-                    {
-                        InningsList[Innings_Number - 1].Extras_No_Balls = InningsList[Innings_Number - 1].Extras_No_Balls + runs;
-                        bowlList[bowlId].Bowl_No_Balls = bowlList[bowlId].Bowl_No_Balls + runs;
-                    }
 
-                    if (runs % 2 == 0)
-                    {
-                        Swap_Batsman();
-                    }
-                    break;
-                case "penalty":
-                    InningsList[Innings_Number - 1].Extras_Penaltys = InningsList[Innings_Number - 1].Extras_Penaltys + runs;
-                    break;
-            };
-            InningsList[Innings_Number - 1].Extras_Total = InningsList[Innings_Number - 1].Extras_Byes + InningsList[Innings_Number - 1].Extras_Leg_Byes + InningsList[Innings_Number - 1].Extras_No_Balls + InningsList[Innings_Number - 1].Extras_Penaltys + InningsList[Innings_Number - 1].Extras_Wides;
-            InningsList[Innings_Number - 1].Innings_Total = InningsList[Innings_Number - 1].Innings_Total + runs;
-            InningsList[Innings_Number - 1].Partnership = InningsList[Innings_Number - 1].Partnership + runs;
-            InningsList[Innings_Number - 1].Over_Analysis_Runs = InningsList[Innings_Number - 1].Over_Analysis_Runs + runs;
-
-            if (Innings_Number == 2)
-            {
-                Runs_Remaining = Runs_Remaining - runs;
-            }
-            Innings innings = new Innings();
-            if (innings.Check_End_Of_Innings(Innings_Number, Target_Total, InningsList[Innings_Number - 1].Innings_Total, Innings_Complete_Reason, InningsList[Innings_Number - 1].Innings_Overs, InningsList[Innings_Number - 1].Max_Overs, InningsList[Innings_Number - 1].Innings_Wickets))
-            {
-                End_Of_Innings();
-            }
-        }
-
-        /*
-         * When a wicket is taken the application updates the Last Man Out table, Fall Of Wicket table
-         * and the batting tables.
-         * It:
+        /* When a wicket is taken the application updates the Last Man Out table, Fall Of Wicket table and the batting tables.
          *  1. Adds 1 ball to the batsman, bowler and total overs
          *  2. Adds 1 to bowler and total wickets if batsman is 'caught', 'bowled', 'lbw', 'stumped' or 'caught and bowled'
-         *  3. Adds 1 to total wickets if batsman is 'run out' or 'retired'
-         */
-        private void WicketTaken(string wicketType, string fielder_Name, bool crossed, int outBatId, int notOutBatId, int bowlId)
+         *  3. Adds 1 to total wickets if batsman is 'run out' or 'retired' */
+        public void WicketTaken(string wicketType, string fielder_Name, bool crossed, int outBatId, int notOutBatId, int bowlId)
         {
             Player player = new Player();
-            string fielderName;
             bool newBatFacing = true;
             // add ball to bowler and out batsman
             player.Bowling_Add_Ball(bowlList, bowlId);
@@ -1189,24 +1144,16 @@ namespace Cricket_Scoring_App
             {
             bowlList[bowlId].Bowl_Wickets = bowlList[bowlId].Bowl_Wickets + 1;
             }
-            InningsList[Innings_Number - 1].Innings_Wickets = InningsList[Innings_Number - 1].Innings_Wickets + 1;
+            InningsList[Innings_Id].Innings_Wickets = InningsList[Innings_Id].Innings_Wickets + 1;
 
             // Used to update the last man out table in Update_Score()
             Bat_Out = outBatId;
             Bat_Not_Out = notOutBatId;
 
-            // Make fielder name into format = Initial.Surname e.g. Joe Bloggs = J.Bloggs
-            string[] fielderFullName = fielder_Name.Split(' ');
-            string fielderInitial = fielderFullName[0].Substring(0, 1);
-            string fielderLastName = fielderFullName[1];
-            fielderName = fielderInitial + "." + fielderLastName;
+            // Get the fielder and bowler names associated with the wicket.
+            string fielderName = player.Get_Player_Short_Name(fielder_Name);
+            string bowlerName = player.Get_Player_Short_Name(bowlList[bowlId].Bowl_Name);
 
-            // Make bowler name into format = Initial.Surname e.g. Joe Bloggs = J.Bloggs
-            string[] bowlerFullName = bowlList[bowlId].Bowl_Name.Split(' ');
-            string bowlerInitial = bowlerFullName[0].Substring(0, 1);
-            string bowlerLastName = bowlerFullName[1];
-            string bowlerName = bowlerInitial + "." + bowlerLastName;
-            
             // Checks if the crossed checkbox has been checked
             if (crossed)
             {
@@ -1224,7 +1171,7 @@ namespace Cricket_Scoring_App
                 case "caught":
                     batList[outBatId].Bat_How_Out = "Ct " + fielderName;
                     batList[outBatId].Bat_Out_Bwlr = bowlerName;
-                    InningsList[Innings_Number - 1].Bowl_Total_Wickets = InningsList[Innings_Number - 1].Bowl_Total_Wickets + 1;
+                    InningsList[Innings_Id].Bowl_Total_Wickets = InningsList[Innings_Id].Bowl_Total_Wickets + 1;
 
                     break;
                 case "runOut":
@@ -1234,22 +1181,22 @@ namespace Cricket_Scoring_App
                 case "bowled":
                     batList[outBatId].Bat_How_Out = "Bowled";
                     batList[outBatId].Bat_Out_Bwlr = bowlerName;
-                    InningsList[Innings_Number - 1].Bowl_Total_Wickets = InningsList[Innings_Number - 1].Bowl_Total_Wickets + 1;
+                    InningsList[Innings_Id].Bowl_Total_Wickets = InningsList[Innings_Id].Bowl_Total_Wickets + 1;
                     break;
                 case "stumped":
                     batList[outBatId].Bat_How_Out = "Stumped";
                     batList[outBatId].Bat_Out_Bwlr = bowlerName;
-                    InningsList[Innings_Number - 1].Bowl_Total_Wickets = InningsList[Innings_Number - 1].Bowl_Total_Wickets + 1;
+                    InningsList[Innings_Id].Bowl_Total_Wickets = InningsList[Innings_Id].Bowl_Total_Wickets + 1;
                     break;
                 case "lbw":
                     batList[outBatId].Bat_How_Out = "LBW";
                     batList[outBatId].Bat_Out_Bwlr = bowlerName;
-                    InningsList[Innings_Number - 1].Bowl_Total_Wickets = InningsList[Innings_Number - 1].Bowl_Total_Wickets + 1;
+                    InningsList[Innings_Id].Bowl_Total_Wickets = InningsList[Innings_Id].Bowl_Total_Wickets + 1;
                     break;
                 case "caughtAndBowled":
                     batList[outBatId].Bat_How_Out = "Ct && Bwld";
                     batList[outBatId].Bat_Out_Bwlr = bowlerName;
-                    InningsList[Innings_Number - 1].Bowl_Total_Wickets = InningsList[Innings_Number - 1].Bowl_Total_Wickets + 1;
+                    InningsList[Innings_Id].Bowl_Total_Wickets = InningsList[Innings_Id].Bowl_Total_Wickets + 1;
                     break;
                 case "retired":
                     batList[outBatId].Bat_How_Out = "Retired";
@@ -1257,11 +1204,11 @@ namespace Cricket_Scoring_App
                     break;
             }
             FallOfWicket fallOfWicket = new FallOfWicket();
-            fallOfWicket.Create_Fall_Of_Wicket(InningsList[Innings_Number - 1].Innings_Wickets, batList, outBatId, notOutBatId, InningsList[Innings_Number - 1].Partnership, InningsList[Innings_Number - 1].Innings_Overs,InningsList[Innings_Number - 1].Innings_Total);
+            fallOfWicket.Create_Fall_Of_Wicket(InningsList, batList, Innings_Id, outBatId, notOutBatId);
             fallOfWicketList.Add(fallOfWicket);
-            fallOfWicket.Save_Fall_Of_Wicket_List(fallOfWicketList, Innings_Number);
+            fallOfWicket.Save_Fall_Of_Wicket_List(fallOfWicketList, InningsList[Innings_Id].Team_Name, this.folderName);
 
-            if (InningsList[Innings_Number - 1].Innings_Wickets < 10)
+            if (InningsList[Innings_Id].Innings_Wickets < 10)
             {
                 // Checks if the Current Batsman table rows need to be swapped.
                 // Only if the batting side has wickets in hand
@@ -1271,112 +1218,134 @@ namespace Cricket_Scoring_App
                 }
                 // Adds new batsman object into the table and list with Id one greater than the batsman on the bottom row.
                 Player newBatsman = new Player();
-                newBatsman.Create_Batsman((batList[Current_Batsman_Bottom_Id].Bat_Number + 1), (Wicket_Next_Bat_Combo_Box.SelectedItem.ToString()), newBatFacing);
+                newBatsman.Create_Batsman((batList[InningsList[Innings_Id].bottomBatId].Bat_Number + 1), (Wicket_Next_Bat_Combo_Box.SelectedItem.ToString()), newBatFacing);
                 batList.Add(newBatsman);
-                Current_Batsman_Bottom_Id = Current_Batsman_Bottom_Id + 1;
+                Update_Next_Batsman_List(newBatsman.Bat_Name);
+                InningsList[Innings_Id].bottomBatId = InningsList[Innings_Id].bottomBatId + 1;
                 Update_Batsman_Bottom();
-                InningsList[Innings_Number - 1].Over_Analysis_Wickets = InningsList[Innings_Number - 1].Over_Analysis_Wickets + 1;
+                InningsList[Innings_Id].Over_Analysis_Wickets = InningsList[Innings_Id].Over_Analysis_Wickets + 1;
             }
             Innings innings = new Innings();
-            if (innings.Check_End_Of_Innings(Innings_Number, Target_Total, InningsList[Innings_Number - 1].Innings_Total, Innings_Complete_Reason, InningsList[Innings_Number - 1].Innings_Overs, InningsList[Innings_Number - 1].Max_Overs, InningsList[Innings_Number - 1].Innings_Wickets))
+            if (innings.Check_End_Of_Innings(Innings_Id, InningsList))
             {
                 End_Of_Innings();
             }
         }
 
-        private void GeneralButtonClick(string type, bool batUsed, int runs)
+        private void End_OF_Over_Check()
         {
-            Player player = new Player();
-            Create_Undo_Point();
-            Runs_Scored(type, batUsed, runs, player.Check_Batsman_Facing(batList,Current_Batsman_Top_Id,Current_Batsman_Bottom_Id), player.Check_Bowler_Bowling(bowlList,Current_Bowler_Top_Id,Current_Bowler_Bottom_Id));
-            Check_End_Of_Over(InningsList[Innings_Number - 1].Innings_Overs, player.Check_Bowler_Bowling(bowlList, Current_Bowler_Top_Id, Current_Bowler_Bottom_Id));
-            Update_Score();
-            HideAllPanels();
+            Over over = new Over();
+            if (over.Check_End_Of_Over(batList, bowlList, InningsList, overAnalysisList, fallOfWicketList, Innings_Id, folderName))
+            {
+                Update_Innings_Over_Analysis();
+                Create_Graphs();
+                // Swap batsmen and bowlers for start of new over
+                Swap_Batsman();
+                Swap_Bowler();
+
+                // Check if end of innings has been reached
+                Innings innings = new Innings();
+                if (innings.Check_End_Of_Innings(Innings_Id, InningsList))
+                {
+                    End_Of_Innings();
+                }
+            }
         }
 
-        /*
-         *  When a wicket is taken, this function is called to ensure that the correct batsman is selected as out
-         *  and that the correct players from the fielding side are referenced for the wicket.
-         */
+        /* When a wicket is taken, this function is called to ensure that the correct batsman is selected as out
+         * and that the correct players from the fielding side are referenced for the wicket. */
         private void WicketButtonClick(string howOut, string fielder_Name, bool crossed)
         {
             Player player = new Player();
             Create_Undo_Point();
             // Add one ball to total over amount
-            InningsList[Innings_Number - 1].Innings_Overs = InningsList[Innings_Number - 1].Innings_Overs + 0.1;
+            InningsList[Innings_Id].Innings_Overs = InningsList[Innings_Id].Innings_Overs + 0.1;
             if (howOut == "runOut")
             {
                 if (Radio_Run_Out_Bat_Top.Checked)
                 {
-                    WicketTaken(howOut, fielder_Name, crossed, Current_Batsman_Top_Id, Current_Batsman_Bottom_Id, player.Check_Bowler_Bowling(bowlList,Current_Bowler_Top_Id,Current_Bowler_Bottom_Id));
+                    WicketTaken(howOut, fielder_Name, crossed, InningsList[Innings_Id].topBatId, InningsList[Innings_Id].bottomBatId, player.Check_Bowler_Bowling(bowlList, InningsList[Innings_Id].topBowlId, InningsList[Innings_Id].bottomBowlId));
                 }
                 else if (Radio_Run_Out_Bat_Bottom.Checked)
                 {
-                    WicketTaken(howOut, fielder_Name, crossed, Current_Batsman_Bottom_Id, Current_Batsman_Top_Id, player.Check_Bowler_Bowling(bowlList, Current_Bowler_Top_Id, Current_Bowler_Bottom_Id));
+                    WicketTaken(howOut, fielder_Name, crossed, InningsList[Innings_Id].bottomBatId, InningsList[Innings_Id].topBatId, player.Check_Bowler_Bowling(bowlList, InningsList[Innings_Id].topBowlId, InningsList[Innings_Id].bottomBowlId));
                 }
             }
             else
             {
-                if (batList[Current_Batsman_Top_Id].Bat_Facing == true)
+                if (batList[InningsList[Innings_Id].topBatId].Bat_Facing == true)
                 {
-                    WicketTaken(howOut, fielder_Name, crossed, Current_Batsman_Top_Id, Current_Batsman_Bottom_Id, player.Check_Bowler_Bowling(bowlList,Current_Bowler_Top_Id,Current_Bowler_Bottom_Id));
+                    WicketTaken(howOut, fielder_Name, crossed, InningsList[Innings_Id].topBatId, InningsList[Innings_Id].bottomBatId, player.Check_Bowler_Bowling(bowlList, InningsList[Innings_Id].topBowlId, InningsList[Innings_Id].bottomBowlId));
                 }
                 else
                 {
-                    WicketTaken(howOut, fielder_Name, crossed, Current_Batsman_Bottom_Id, Current_Batsman_Top_Id, player.Check_Bowler_Bowling(bowlList,Current_Bowler_Top_Id,Current_Bowler_Bottom_Id));
+                    WicketTaken(howOut, fielder_Name, crossed, InningsList[Innings_Id].bottomBatId, InningsList[Innings_Id].topBatId, player.Check_Bowler_Bowling(bowlList, InningsList[Innings_Id].topBowlId, InningsList[Innings_Id].bottomBowlId));
                 }
             }
-            Check_End_Of_Over(InningsList[Innings_Number - 1].Innings_Overs, player.Check_Bowler_Bowling(bowlList, Current_Bowler_Top_Id, Current_Bowler_Bottom_Id));
-            // Updates the FOW table
+            // Check if delivery was last in the over, then update the FOW table and all other tables and hide all flow panels
+            End_OF_Over_Check();
             Update_Innings_Fall_Of_Wicket();
             Update_Score();
             HideAllPanels();
         }
 
-        /* 
-         * This function adds:
-         *  1 ball to the batsmans total balls faced
-         *  0.1 overs to the bowlers total overs bowled
-         *  0.1 overs to the total overs bowled
-         */  
+        // Gets the button type, number of runs and if runs are off the bat. Calls button handler to update scores.
+        private void General_Button_Click(string buttonTypeClicked,bool batUsed, int runs)
+        {
+            Create_Undo_Point();
+
+            ButtonHandler button = new ButtonHandler();
+            button.GeneralButtonClickHandler(batList, bowlList, InningsList, overAnalysisList, fallOfWicketList, Innings_Id, folderName, buttonTypeClicked, batUsed, runs);
+
+            if (((buttonTypeClicked == "wide" || buttonTypeClicked == "noBall") && (runs % 2 == 0)) || ((buttonTypeClicked == "legBye" || buttonTypeClicked == "bye" || buttonTypeClicked == "runs") && (runs % 2 == 1)))
+            {
+                Swap_Batsman();
+            }
+            // Check if delivery was last in the over, then update tables and hide all flow panels
+            End_OF_Over_Check();
+            Update_Score();
+            HideAllPanels();
+        }
+
+        // Add 0 runs to the score 
         private void Dot_Button_Click(object sender, EventArgs e)
         {
-            GeneralButtonClick("runs", true, 0);
+            General_Button_Click("runs", true, 0);
         }
  
-         /* **** The following functions add runs when the relevant buttons are pressed **** */
+         // **** The following functions add runs when the relevant buttons are pressed ****
 
         // Adds one run to the batsman, bowler and total runs
         private void One_Button_Click(object sender, EventArgs e)
         {
-            GeneralButtonClick("runs", true, 1);
+            General_Button_Click("runs", true, 1);
         }
 
         // Adds two runs to the batsman, bowler and total runs
         private void Two_Button_Click(object sender, EventArgs e)
         {
-            GeneralButtonClick("runs", true, 2);
+            General_Button_Click("runs", true, 2);
         }
 
         // Adds three runs to the batsman, bowler and total runs
         private void Three_Button_Click(object sender, EventArgs e)
         {
-            GeneralButtonClick("runs", true, 3);
+            General_Button_Click("runs", true, 3);
         }
 
         // Adds four runs to the batsman, bowler and total runs
         private void Four_Button_Click(object sender, EventArgs e)
         {
-            GeneralButtonClick("runs", true, 4);
+            General_Button_Click("runs", true, 4);
         }
 
         // Adds six runs to the batsman, bowler and total runs
         private void Six_Button_Click(object sender, EventArgs e)
         {
-            GeneralButtonClick("runs", true, 6);
+            General_Button_Click("runs", true, 6);
         }
 
-        /* **** The next collection of buttons will allow the user to add byes to the score. **** */
+        // **** The next collection of buttons will allow the user to add byes to the score. ****
 
         // Shows the byes flow control panel to enter number of runs
         private void Bye_Button_Click(object sender, EventArgs e)
@@ -1388,36 +1357,38 @@ namespace Cricket_Scoring_App
         // Adds one bye to the total
         private void Bye_1_Click(object sender, EventArgs e)
         {
-            GeneralButtonClick("bye", false, 1);
+            General_Button_Click("bye", false, 1);
         }
 
         // Adds two byes to the total
         private void Bye_2_Click(object sender, EventArgs e)
         {
-            GeneralButtonClick("bye", false, 2);
+            General_Button_Click("bye", false, 2);
         }
 
         // Adds three byes to the total
         private void Bye_3_Click(object sender, EventArgs e)
-        {
-            GeneralButtonClick("bye", false, 3);
+        {General_Button_Click("bye", false, 3);
         }
 
         // Adds four byes to the total
         private void Bye_4_Click(object sender, EventArgs e)
         {
-            GeneralButtonClick("bye", false, 4);
+            General_Button_Click("bye", false, 4);
         }
 
         // Adds number of runs selected from the Byes_Combo_Box
         private void Bye_Ok_Click(object sender, EventArgs e)
         {
-            int byesToAdd;
-            byesToAdd = int.Parse(Bye_Combo_Box.SelectedItem.ToString());
-            GeneralButtonClick("bye", false, byesToAdd);
+            if (Verify_Combo_Selection(Bye_Combo_Box))
+            {
+            int byesToAdd = int.Parse(Bye_Combo_Box.SelectedItem.ToString());
+            General_Button_Click("bye", false, byesToAdd);
+            Bye_Combo_Box.Text = "Other Score";
+            }
         }
 
-        /* **** The next collection of buttons will allow the user to add leg byes to the score. **** */
+        // **** The next collection of buttons will allow the user to add leg byes to the score. ****
 
         // Shows the leg bye flow control panel
         private void Leg_Bye_Button_Click(object sender, EventArgs e)
@@ -1429,38 +1400,41 @@ namespace Cricket_Scoring_App
         // Adds 1 leg bye
         private void Leg_Bye_1_Click(object sender, EventArgs e)
         {
-            GeneralButtonClick("legBye", false, 1);
+            General_Button_Click("legBye", false, 1);
         }
 
         // Adds 2 leg byes
         private void Leg_Bye_2_Click(object sender, EventArgs e)
         {
-            GeneralButtonClick("legBye", false, 2);
+            General_Button_Click("legBye", false, 2);
         }
 
         // Adds 3 leg byes
         private void Leg_Bye_3_Click(object sender, EventArgs e)
         {
-            GeneralButtonClick("legBye", false, 3);
+            General_Button_Click("legBye", false, 3);
         }
 
         // Adds 4 leg byes
         private void Leg_Bye_4_Click(object sender, EventArgs e)
         {
-            GeneralButtonClick("legBye", false, 4);
+            General_Button_Click("legBye", false, 4);
         }
 
         // Adds the number of leg byes selected in the leg byes combo box
         private void Leg_Bye_Ok_Click(object sender, EventArgs e)
         {
-            int legByesToAdd;
-            legByesToAdd = int.Parse(Leg_Byes_Combo_Box.SelectedItem.ToString());
-            GeneralButtonClick("legBye", false, legByesToAdd);
+            if (Verify_Combo_Selection(Leg_Byes_Combo_Box))
+            {
+            int legByesToAdd = int.Parse(Leg_Byes_Combo_Box.SelectedItem.ToString());
+            General_Button_Click("legBye", false, legByesToAdd);
+            Leg_Byes_Combo_Box.Text = "Other Score";
+            }
         }
 
-        /* **** The next collection of buttons will allow the user to add wides to the score. **** */
+        // **** The next collection of buttons will allow the user to add wides to the score. ****
 
-        //
+        // Allows the user to add wides to the score
         private void Wide_Button_Click(object sender, EventArgs e)
         {
             HideAllPanels();
@@ -1470,48 +1444,47 @@ namespace Cricket_Scoring_App
         // Adds 1 wide
         private void Wides_1_Click(object sender, EventArgs e)
         {
-            GeneralButtonClick("wide", false, 1);
+            General_Button_Click("wide", false, 1);
         }
 
         // Adds 2 wides
         private void Wides_2_Click(object sender, EventArgs e)
         {
-            GeneralButtonClick("wide", false, 2);
+            General_Button_Click("wide", false, 2);
         }
 
         // Adds 3 wides
         private void Wides_3_Click(object sender, EventArgs e)
         {
-            GeneralButtonClick("wide", false, 3);
+            General_Button_Click("wide", false, 3);
         }
 
         // Adds 4 wides
         private void Wides_4_Click(object sender, EventArgs e)
         {
-            GeneralButtonClick("wide", false, 4);
+            General_Button_Click("wide", false, 4);
         }
 
         // Adds 5 wides
         private void Wides_5_Click(object sender, EventArgs e)
         {
-            GeneralButtonClick("wide", false, 5);
+            General_Button_Click("wide", false, 5);
         }
 
         // Adds the number of wides selected in the wides combo box
         private void Wides_Ok_Click(object sender, EventArgs e)
         {
-            int widesToAdd;
-            widesToAdd = int.Parse(Wides_Combo_Box.SelectedItem.ToString());
-            GeneralButtonClick("wide", false, widesToAdd);
+            if (Verify_Combo_Selection(Wides_Combo_Box))
+            {
+            int widesToAdd = int.Parse(Wides_Combo_Box.SelectedItem.ToString());
+            General_Button_Click("wide", false, widesToAdd);
+            Wides_Combo_Box.Text = "Other Score";
+            }
         }
 
-        /* **** The next collection of buttons will allow the user to add wides to the score. **** */
+        // **** The next collection of buttons will allow the user to add wides to the score. ****
 
-        /* 
-         * Adds one run to the total runs
-         * Adds one to the total number of bowler no balls
-         * Adds one to the total number of no balls in the extras table
-        */
+        // Allows the user to enter runs scored from a no ball
         private void No_Ball_Button_Click(object sender, EventArgs e)
         {
             HideAllPanels();
@@ -1519,9 +1492,8 @@ namespace Cricket_Scoring_App
         }
 
         /* The next two functions allow the user to add no balls
-         *      The first allows the user to add no ball runs when the batsman has hit the ball
-         *      The second allows the user to add no ball runs when the batsman has not hit the ball
-         */
+         * The first allows the user to add no ball runs when the batsman has hit the ball
+         *The second allows the user to add no ball runs when the batsman has not hit the ball */
         private void No_Ball_Question_Yes_Click(object sender, EventArgs e)
         {
             Flow_Panel_No_Ball_Question.Hide();
@@ -1534,105 +1506,105 @@ namespace Cricket_Scoring_App
             Flow_Panel_No_Ball_No_Bat.Show();
         }
 
-        /* **** The next collection of buttons will allow the user to add no balls without batsman runs to the score. **** */
+        // **** The next collection of buttons will allow the user to add no balls without batsman runs to the score. ****
         
         // Adds 1 run
         private void No_Ball_No_Bat_1_Click(object sender, EventArgs e)
         {
-            GeneralButtonClick("noBall", false, 1);
+            General_Button_Click("noBall", false, 1);
         }
 
         // Adds 2 runs
         private void No_Ball_No_Bat_2_Click(object sender, EventArgs e)
         {
-            GeneralButtonClick("noBall", false, 2);
+            General_Button_Click("noBall", false, 2);
         }
 
         // Adds 3 runs
         private void No_Ball_No_Bat_3_Click(object sender, EventArgs e)
         {
-            GeneralButtonClick("noBall", false, 3);
+            General_Button_Click("noBall", false, 3);
         }
 
         // Adds 4 runs
         private void No_Ball_No_Bat_4_Click(object sender, EventArgs e)
         {
-            GeneralButtonClick("noBall", false, 4);
+            General_Button_Click("noBall", false, 4);
         }
 
         // Adds 5 runs
         private void No_Ball_No_Bat_5_Click(object sender, EventArgs e)
         {
-            GeneralButtonClick("noBall", false, 5);
+            General_Button_Click("noBall", false, 5);
         }
 
         // Adds the number of no balls selected in the no ball no bat combo box
         private void No_Ball_No_Bat_Ok_Click(object sender, EventArgs e)
         {
-            int NoBallsToAdd;
-            NoBallsToAdd = int.Parse(No_Ball_No_Bat_Combo_Box.SelectedItem.ToString());
-            GeneralButtonClick("noBall", false, NoBallsToAdd);
+            if (Verify_Combo_Selection(No_Ball_No_Bat_Combo_Box))
+            {
+                int NoBallsToAdd = int.Parse(No_Ball_No_Bat_Combo_Box.SelectedItem.ToString());
+                General_Button_Click("noBall", false, NoBallsToAdd);
+                No_Ball_No_Bat_Combo_Box.Text = "Other Score";
+            }
         }
 
-        /* **** The next collection of buttons will allow the user to add no balls with batsman runs to the score. **** */
+        // **** The next collection of buttons will allow the user to add no balls with batsman runs to the score. ****
         
         // Adds 2 runs (1 for batsman, 1 for no ball)
         private void No_Ball_Bat_2_Click(object sender, EventArgs e)
         {
-            GeneralButtonClick("noBall", true, 2);
+            General_Button_Click("noBall", true, 2);
         }
 
         // Adds 3 runs (2 for batsman, 1 for no ball)
         private void No_Ball_Bat_3_Click(object sender, EventArgs e)
         {
-            GeneralButtonClick("noBall", true, 3);
+            General_Button_Click("noBall", true, 3);
         }
 
         // Adds 4 runs (3 for batsman, 1 for no ball)
         private void No_Ball_Bat_4_Click(object sender, EventArgs e)
         {
-            GeneralButtonClick("noBall", true, 4);
+            General_Button_Click("noBall", true, 4);
         }
 
         // Adds 5 runs (4 for batsman, 1 for no ball)
         private void No_Ball_Bat_5_Click(object sender, EventArgs e)
         {
-            GeneralButtonClick("noBall", true, 5);
+            General_Button_Click("noBall", true, 5);
         }
 
         // Adds 6 runs (5 for batsman, 1 for no ball)
         private void No_Ball_Bat_6_Click(object sender, EventArgs e)
         {
-            GeneralButtonClick("noBall", true, 6);
+            General_Button_Click("noBall", true, 6);
         }
 
         // Adds 7 runs (6 for batsman, 1 for no ball)
         private void No_Ball_Bat_7_Click(object sender, EventArgs e)
         {
-            GeneralButtonClick("noBall", true, 7);
+            General_Button_Click("noBall", true, 7);
         }
 
         // Adds the number of no balls selected in the no ball bat combo box (always 1 no ball + x-1 runs for batsman)
         private void No_Ball_Bat_Ok_Click(object sender, EventArgs e)
         {
-            int NoBallsToAdd;
-            NoBallsToAdd = int.Parse(No_Ball_Bat_Combo_Box.SelectedItem.ToString());
-            GeneralButtonClick("noBall", true, NoBallsToAdd);
+            if (Verify_Combo_Selection(No_Ball_Bat_Combo_Box))
+            {
+            int NoBallsToAdd = int.Parse(No_Ball_Bat_Combo_Box.SelectedItem.ToString());
+            General_Button_Click("noBall", true, NoBallsToAdd);
+            No_Ball_Bat_Combo_Box.Text = "Other Score";
+            }
         }
 
-        /* 
-         * Adds one wicket to the bowler and total wickets
-         * Adds one ball to the batsman, bowler and total overs
-         * Inserts new row into last man out table
-         * Inserts new batsman after user selection
-        */
+        /* Allows the user to select how the wicket was taken, via the wicket flow panel*/
         private void Wicket_Button_Click(object sender, EventArgs e)
         {
             HideAllPanels();
             Flow_Panel_Wicket.Show();
         }
-
-        /* **** The following set of radio buttons allow the user to select how the batsman was out **** */
+        // **** The following set of radio buttons allow the user to select how the batsman was out ****
 
         // If batsman was caught, the user must select the fielder who caught the batsman
         private void Radio_Button_Caught_CheckedChanged(object sender, EventArgs e)
@@ -1644,8 +1616,8 @@ namespace Cricket_Scoring_App
         // If batsman was run out, the user must select the fielder who ran out the batsman
         private void Radio_Button_Run_Out_CheckedChanged(object sender, EventArgs e)
         {
-            Radio_Run_Out_Bat_Top.Text = batList[Current_Batsman_Top_Id].Bat_Number.ToString();
-            Radio_Run_Out_Bat_Bottom.Text = batList[Current_Batsman_Bottom_Id].Bat_Number.ToString();
+            Radio_Run_Out_Bat_Top.Text = batList[InningsList[Innings_Id].topBatId].Bat_Number.ToString();
+            Radio_Run_Out_Bat_Bottom.Text = batList[InningsList[Innings_Id].bottomBatId].Bat_Number.ToString();
             Flow_Panel_Fielder.Hide();
             Flow_Panel_Run_Out.Show();
         }
@@ -1688,84 +1660,81 @@ namespace Cricket_Scoring_App
 
         /* Once the relevant radio button has been selected and the new batsman has also been selected
          * the user confirms the details by clicking on the wicket confirm button.
-         * This function gets the betails from the controls in the flow panel and calls the 
-         * relevant function to handle the wicket.
-         * 
-         * Note that fielder name is only needed for run out and caught
-         */
+         * Note that fielder name is only needed for run out and caught */
         private void Wicket_Confirm_Button_Click(object sender, EventArgs e)
         {
-            bool crossed = false;
-            if (Check_Box_Crossed.Checked)
+            if (Verify_Combo_Selection(Wicket_Next_Bat_Combo_Box))
             {
-                crossed = true;
-            }
+                bool crossed = false;
+                if (Check_Box_Crossed.Checked)
+                {
+                    crossed = true;
+                }
 
-            if (Radio_Button_Run_Out.Checked)
-            {
-                string fielderName;
-                fielderName = Run_Out_Fielder_Combo.SelectedItem.ToString();
-                WicketButtonClick("runOut", fielderName, crossed);
-            }
-            else if (Radio_Button_Caught.Checked)
-            {
-                string fielderName;
-                fielderName = Wicket_Fielder_Select_Combo_Box.SelectedItem.ToString();
-                WicketButtonClick("caught", fielderName, crossed);
-            }
-            else if (Radio_Button_Bowled.Checked)
-            {
-                WicketButtonClick("bowled", "none ",false);
-            }
-            else if (Radio_Button_Caught_And_Bowled.Checked)
-            {
-                WicketButtonClick("caughtAndBowled", "none ",false);
-            }
-            else if (Radio_Button_Stumped.Checked)
-            {
-                WicketButtonClick("stumped", "none ",false);
-            }
-            else if (Radio_Button_LBW.Checked)
-            {
-                WicketButtonClick("lbw", "none ", false);
-            }
-            else
-            {
-                WicketButtonClick("retired", "none ", crossed);
+                if (Radio_Button_Run_Out.Checked && Verify_Combo_Selection(Run_Out_Fielder_Combo))
+                {
+                    string fielderName;
+                    fielderName = Run_Out_Fielder_Combo.SelectedItem.ToString();
+                    WicketButtonClick("runOut", fielderName, crossed);
+                    Run_Out_Fielder_Combo.Text = "Select Fielder";
+                }
+                else if (Radio_Button_Caught.Checked && Verify_Combo_Selection(Wicket_Fielder_Select_Combo_Box))
+                {
+                    string fielderName;
+                    fielderName = Wicket_Fielder_Select_Combo_Box.SelectedItem.ToString();
+                    WicketButtonClick("caught", fielderName, crossed);
+                    Wicket_Fielder_Select_Combo_Box.Text = "Select Fielder";
+                }
+                else if (Radio_Button_Bowled.Checked)
+                {
+                    WicketButtonClick("bowled", "none", false);
+                }
+                else if (Radio_Button_Caught_And_Bowled.Checked)
+                {
+                    WicketButtonClick("caughtAndBowled", "none", false);
+                }
+                else if (Radio_Button_Stumped.Checked)
+                {
+                    WicketButtonClick("stumped", "none", false);
+                }
+                else if (Radio_Button_LBW.Checked)
+                {
+                    WicketButtonClick("lbw", "none", false);
+                }
+                else if(Radio_Button_Retired.Checked)
+                {
+                    WicketButtonClick("retired", "none", crossed);
+                }
+                Wicket_Next_Bat_Combo_Box.Text = "Next Batsman";
             }
         }
 
-        /*
-         * If there are penalty runs conceded the application adds these to the score
-         */
+        // If there are penalty runs conceded the application adds these to the score.
         private void Penalty_Button_Click(object sender, EventArgs e)
         {
-            GeneralButtonClick("penalty", false, 5);
+            General_Button_Click("penalty", false, 5);
         }
 
-        /*
-         * This fuction allows the user to add runs from the other score combo box.
-         */
+        // This fuction allows the user to add runs from the other score combo box.
         private void Ok_Button_Click(object sender, EventArgs e)
         {
-            HideAllPanels();
-            int runsToAdd;
-            runsToAdd = int.Parse(Other_Score_Combo_Box.SelectedItem.ToString());
-            GeneralButtonClick("runs", true, runsToAdd);
+            if (Verify_Combo_Selection(End_Of_Innings_Combo_Box))
+            {
+                HideAllPanels();
+                int runsToAdd = int.Parse(Other_Score_Combo_Box.SelectedItem.ToString());
+                General_Button_Click("runs", true, runsToAdd);
+                Other_Score_Combo_Box.Text = "Other Score";
+            }
         }
 
-        /*
-         * This function calls the restore last state function to undo the last action taken by the user.
-         */
+        // This function calls the restore last state function to undo the last action taken by the user.
         private void Undo_Last_Button_Click(object sender, EventArgs e)
         {
             HideAllPanels();
             Restore_Last_State();
         }
 
-        /*
-         * When the end of innings button if clicked the end of innings flow panel is shown
-         */
+        // When the end of innings button if clicked the end of innings flow panel is shown 
         private void End_Of_Innings_Button_Click(object sender, EventArgs e)
         {
             HideAllPanels();
@@ -1773,47 +1742,53 @@ namespace Cricket_Scoring_App
         }
         private void End_Of_Innings_Select_Button_Click(object sender, EventArgs e)
         {
-            Innings_Complete_Reason = End_Of_Innings_Combo_Box.SelectedItem.ToString();
-            End_Of_Innings();
+            if (Verify_Combo_Selection(End_Of_Innings_Combo_Box))
+            {
+                InningsList[Innings_Id].reason = End_Of_Innings_Combo_Box.SelectedItem.ToString();
+                End_Of_Innings();
+                End_Of_Innings_Combo_Box.Text = "Select Reason";
+            }
         }
 
-        /*
-         * When the user needs to enter a new bowler this function shows the combo box to select
-         * the next bowler's name,
-         * 
-         */
+        // When the user needs to enter a new bowler this function shows the combo box to select the next bowler's name.
         private void New_Bowler_Button_Click(object sender, EventArgs e)
         {
             HideAllPanels();
             Flow_Panel_New_Bowler.Show();
         }
 
-        /*
-         * When the user selects the new bowler's name and clicks the select button,
+         /* When the user selects the new bowler's name and clicks the select button,
          * this function checks if the bowler being replaced is in the top row of the current bowlers
          * tables, if so the function swaps the bottom bowler details to the top row and inserts
-         * the new bowler into the bottom row.
-         * 
-         */
+         * the new bowler into the bottom row. */
         private void New_Bowler_Select_Click(object sender, EventArgs e)
         {
-            Player player = new Player();
-            Create_Undo_Point();
-            New_Bowler_Id = Current_Bowler_Bottom_Id + 1;
+            if (Verify_Combo_Selection(New_Bowler_Combo_Box))
+            {
+                Player player = new Player();
+                Create_Undo_Point();
 
-            if (bowlList[Current_Bowler_Top_Id].Bowl_Bowling)
-            {
-                New_Bowler_Change_Top_Bowler();
-                player.Create_Bowler((New_Bowler_Id + 1), (New_Bowler_Combo_Box.SelectedItem.ToString()), true);
+                if (bowlList[InningsList[Innings_Id].topBowlId].Bowl_Bowling)
+                {
+                    New_Bowler_Change_Top_Bowler();
+                    player.Create_Bowler((InningsList[Innings_Id].bottomBowlId + 2), (New_Bowler_Combo_Box.SelectedItem.ToString()), true);
+                }
+                else
+                {
+                    player.Create_Bowler((InningsList[Innings_Id].bottomBowlId + 2), (New_Bowler_Combo_Box.SelectedItem.ToString()), true);
+                }
+                bowlList.Add(player);
+                InningsList[Innings_Id].bottomBowlId = InningsList[Innings_Id].bottomBowlId + 1;
+                Update_Bowler_Bottom();
+                Current_Bowler_Number_Bottom.BackColor = Color.White;
+                New_Bowler_Combo_Box.Text = "Select New Bowler";
             }
-            else
-            {
-                player.Create_Bowler((New_Bowler_Id + 1), (New_Bowler_Combo_Box.SelectedItem.ToString()), true);
-            }
-            bowlList.Add(player);
-            Current_Bowler_Bottom_Id = New_Bowler_Id;
-            Update_Bowler_Bottom();
-            Current_Bowler_Number_Bottom.BackColor = Color.White;
+        }
+
+        // When clicked by the user, it starts the last 20 overs of a friendly match.
+        private void Twenty_Overs_Button_Click(object sender, EventArgs e)
+        {
+            InningsList[1].twentyOvers = true;
         }
     }
 }

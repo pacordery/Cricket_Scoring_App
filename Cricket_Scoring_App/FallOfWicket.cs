@@ -9,6 +9,10 @@ namespace Cricket_Scoring_App
 {
     public class FallOfWicket
     {
+        // Initialises the windows directory for read/write access
+        string winDir = System.Environment.GetEnvironmentVariable("windir");
+
+        //Initialises all fall of wicket lists and variables
         List<FallOfWicket> fallOfWicketList = new List<FallOfWicket>();
         public int wicket_Number { get; set; }
         public int total_Score { get; set; }
@@ -17,23 +21,26 @@ namespace Cricket_Scoring_App
         public int partnership { get; set; }
         public double over_Number { get; set; }
 
-        public void Create_Fall_Of_Wicket(int wicketNumber, List<Player> batList, int batOutNumber, int batNotOutNumber, int _partnership, double overNumber, int totalScore)
+        // Creates a new fall of wicket object.
+        public void Create_Fall_Of_Wicket(List<Innings> inningsList, List<Player> batList, int inningsId, int batOutNumber, int batNotOutNumber)
         {
-            wicket_Number = wicketNumber;
-            total_Score = totalScore;
+            wicket_Number = inningsList[inningsId].Innings_Wickets;
+            total_Score = inningsList[inningsId].Innings_Total;
             bat_Out_Detail = (batList[batOutNumber].Bat_Number.ToString()) + "/" + (batList[batOutNumber].Bat_Runs.ToString());
             bat_Not_Out_Detail = (batList[batNotOutNumber].Bat_Number.ToString()) + "/" + (batList[batNotOutNumber].Bat_Runs.ToString());
-            partnership = _partnership;
-            over_Number = overNumber;
+            partnership = inningsList[inningsId].Partnership;
+            over_Number = inningsList[inningsId].Innings_Overs;
         }
 
-        public void Save_Fall_Of_Wicket_List(List<FallOfWicket> fallOfWicketList, int InningsNumber)
+        // Saves each innings fall of wicket information, each innings gets a separate file
+        public void Save_Fall_Of_Wicket_List(List<FallOfWicket> fallOfWicketList, string inningsOf, string folderName)
         {
-            StreamWriter fallOfWicketWriter = new StreamWriter("C:\\Users\\Philip\\Desktop\\Inn" + InningsNumber + ".FallOfWicket.txt");
+            StreamWriter fallOfWicketWriter = new StreamWriter(folderName + "\\" + inningsOf + "\\FallOfWicket.txt");
 
             for (int i = 0; i < fallOfWicketList.Count; i = i + 1)
             {
                 fallOfWicketWriter.WriteLine(fallOfWicketList[i].wicket_Number);
+                fallOfWicketWriter.WriteLine(fallOfWicketList[i].total_Score);
                 fallOfWicketWriter.WriteLine(fallOfWicketList[i].bat_Out_Detail);
                 fallOfWicketWriter.WriteLine(fallOfWicketList[i].bat_Not_Out_Detail);
                 fallOfWicketWriter.WriteLine(fallOfWicketList[i].partnership);
