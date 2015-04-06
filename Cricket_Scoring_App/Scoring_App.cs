@@ -36,13 +36,15 @@ namespace Cricket_Scoring_App
 
         // ******* Code for Home tab *******
 
-        /* Initialises the Main scoring application form to allow it to be 
-           shown in Begin_Match_Button_Click() is called.*/
-        Scoring_Application_Form ScoringApplicationForm = new Scoring_Application_Form(folderName);
-
         private void Start_New_Match_Button_Click(object sender, EventArgs e)
         {
-            Details_Tab_Set.SelectedTab = Match_Details_Tab;
+            DialogResult selectFolderResult = Select_Folder_Dialog.ShowDialog();
+            if (selectFolderResult == DialogResult.OK)
+            {
+                folderName = Select_Folder_Dialog.SelectedPath;
+                Begin_Match_Confirm_Table.Hide();
+                Details_Tab_Set.SelectedTab = Match_Details_Tab;
+            }
         }
         // *******  Code for Match Details tab *******
 
@@ -82,7 +84,7 @@ namespace Cricket_Scoring_App
                 MatchDetailsList.Add(MatchType);
                 MatchDetailsList.Add(MatchWeather);
 
-                folderName = "C:\\Users\\Philip\\Desktop\\Scoring Application\\" + MatchDate.Substring(5, 5) + " Season\\" + MatchDate.Replace('/', '.') + "." + HomeTeamNameText;
+                folderName = folderName + "\\" + MatchDate.Substring(5, 5) + " Season\\" + MatchDate.Replace('/', '.') + "." + HomeTeamNameText;
                 Directory.CreateDirectory(folderName);
                 Directory.CreateDirectory(folderName + "\\" + HomeTeamNameText);
                 Directory.CreateDirectory(folderName + "\\" + AwayTeamNameText);
@@ -106,6 +108,7 @@ namespace Cricket_Scoring_App
             {
                 tableLayoutPanel_Away.Controls.Add(new Label() { Text = (currentTableRowAway + 1).ToString(), Dock = DockStyle.Fill, TextAlign = System.Drawing.ContentAlignment.MiddleCenter, Font = new Font("Serif", 10, FontStyle.Bold) }, 0, currentTableRowAway);
                 tableLayoutPanel_Away.Controls.Add(new TextBox() { Text = "Enter Player Name", Dock = DockStyle.Fill }, 1, currentTableRowAway);
+                tableLayoutPanel_Away.Controls.Add(new Label() { Text = "", Dock = DockStyle.Fill, TextAlign = System.Drawing.ContentAlignment.MiddleCenter, Font = new Font("Serif", 20, FontStyle.Regular), ForeColor = Color.White }, 2, currentTableRowAway);
                 tableLayoutPanel_Away.GetControlFromPosition(1, currentTableRowAway).Select();
                 currentTableRowAway = currentTableRowAway + 1;
             }
@@ -118,6 +121,7 @@ namespace Cricket_Scoring_App
             {
                 tableLayoutPanel_Home.Controls.Add(new Label() { Text = (currentTableRowHome + 1).ToString(), Dock = DockStyle.Fill, TextAlign = System.Drawing.ContentAlignment.MiddleCenter, Font = new Font("Serif", 10, FontStyle.Bold) }, 0, currentTableRowHome);
                 tableLayoutPanel_Home.Controls.Add(new TextBox() { Text = "Enter Player Name", Dock = DockStyle.Fill }, 1, currentTableRowHome);
+                tableLayoutPanel_Home.Controls.Add(new Label() { Text = "", Dock = DockStyle.Fill, TextAlign = System.Drawing.ContentAlignment.MiddleCenter, Font = new Font("Serif", 20, FontStyle.Regular), ForeColor = Color.White }, 2, currentTableRowHome);
                 tableLayoutPanel_Home.GetControlFromPosition(1, currentTableRowHome).Select();
                 currentTableRowHome = currentTableRowHome + 1;
             }
@@ -127,92 +131,73 @@ namespace Cricket_Scoring_App
         private bool Verify_Table_Entrys(TableLayoutPanel tableName)
         {
             bool verified = true;
+            int numberOfRows = 0;
+            if (tableName.Name == "tableLayoutPanel_Match")
+            {
+                numberOfRows = tableName.RowCount;
+            }
+            else if (tableName.Name == "tableLayoutPanel_Away")
+            {
+                numberOfRows = currentTableRowAway;
+            }
+            else if (tableName.Name == "tableLayoutPanel_Home")
+            {
+                numberOfRows = currentTableRowHome;
+            }
+
             // Check away team table entries
-            for (int i = 0; i < tableName.RowCount; i = i + 1)
+            for (int i = 0; i < numberOfRows; i = i + 1)
             {
                 // Gets the name of the control from the table
                 Control c = tableName.GetControlFromPosition(1, i);
+                Control d = tableName.GetControlFromPosition(2, i);
 
                 // If the control is in the Match table and is empty the method 
-                if (tableName.Name == "tableLayoutPanel_Match" && String.IsNullOrWhiteSpace(c.Text))
+                if (String.IsNullOrWhiteSpace(c.Text))
                 {
-                    if (c.Name == "Home_Team_Name")
-                    {
-                        c.Text = "* Enter home team name";
-                    }
-                    else if (c.Name == "Away_Team_Name")
-                    {
-                        c.Text = "* Enter away team name";
-                    }
-                    else if (c.Name == "Venue_Name")
-                    {
-                        c.Text = "* Enter venue name";
-                    }
-                    else if (c.Name == "Match_Type_Selector")
-                    {
-                        c.Text = "* Select match type";
-                    }
-                    else if (c.Name == "Weather_Selector")
-                    {
-                        c.Text = "* Select weather";
-                    }
+                    d.Text = "*";
                     c.BackColor = Color.DarkOrange;
-                    c.Font = new Font("Serif", 9, FontStyle.Bold);
-                    verified = false;
-                }
-                else if (String.IsNullOrWhiteSpace(c.Text))
-                {
-                    c.Text = "* Enter player name";
-                    c.BackColor = Color.DarkOrange;
-                    c.Font = new Font("Serif", 9, FontStyle.Bold);
                     verified = false;
                 }
                 else
                 {
                     c.BackColor = Color.White;
-                    c.Font = new Font("Serif", 8, FontStyle.Regular);
+                    d.Text = "";
                 }
             }
             return verified;
         }
 
-        // Shows the main scoring application when button is clicked.
-        // this will be read by the scoring application to complete the relevant fields.
+        // Checks if both teams have 11 players, if less than this it shows the confirmation buttons.
+        // This makes sure that the user has input the correct number of players.
         private void Begin_Match_Button_Click(object sender, EventArgs e)
         {
-            // Checks if both player tables have values in all the text boxes.
-            if ((Verify_Table_Entrys(tableLayoutPanel_Away))||(Verify_Table_Entrys(tableLayoutPanel_Home)))
+            if (currentTableRowAway < 11 || currentTableRowHome < 11)
             {
-                // Create away team file.
-                StreamWriter AwayWriter = new StreamWriter(folderName + "\\" + AwayTeamNameText + ".txt");
-
-                // Write player names to away team file.
-                for (int i = 0; i < currentTableRowAway; i = i + 1)
+                if (currentTableRowAway < 8 || currentTableRowHome < 8)
                 {
-                    Control c = tableLayoutPanel_Away.GetControlFromPosition(1, i);
-                    AwayWriter.WriteLine(c.Text);
+                    Begin_Match_Confirm_Label.Text = "Each team must have a minimum of 8 players";
+                    Begin_Match_Confirm_Table.Show();
+                    Begin_Match_Cancel_Button.Hide();
+                    Begin_Match_Confirm_Button.Hide();
                 }
-                AwayWriter.Close();
-
-                // Create home team file.
-                StreamWriter HomeWriter = new StreamWriter(folderName + "\\" + HomeTeamNameText + ".txt");
-
-                // Write player names to home team file.
-                for (int j = 0; j < currentTableRowHome; j = j + 1)
+                else
                 {
-                    Control d = tableLayoutPanel_Home.GetControlFromPosition(1, j);
-                    HomeWriter.WriteLine(d.Text);
+                Begin_Match_Button.Hide();
+                Begin_Match_Confirm_Label.Text = AwayTeamNameText + " has " + currentTableRowAway + " players, " + HomeTeamNameText + " has " + currentTableRowHome + " players";
+                Begin_Match_Confirm_Table.Show();
                 }
-                HomeWriter.Close();
-                // Passes the folder name to the scoring application and opens the form.
-                ScoringApplicationForm.folderName = folderName;
-                ScoringApplicationForm.Show();
+            }
+            else
+            {
+                BeginMatch();
             }
         }
 
         // Reads the match details from a pre-made match details file, uses an open file dialog.
         private void Load_Match_Details_Button_Click(object sender, EventArgs e)
         {
+            MatchDetailsList.Clear();
             DialogResult loadMatch = Load_Match_Details_Dialog.ShowDialog();
             if (loadMatch == DialogResult.OK)
             {
@@ -254,10 +239,12 @@ namespace Cricket_Scoring_App
         // Reads the away team details from a pre-made away team file, uses an open file dialog.
         private void Load_Away_Team_Click(object sender, EventArgs e)
         {
-            Load_Away_Team_Dialog.FileName = "Select "+ AwayTeamNameText + " player file";
+            Load_Away_Team_Dialog.Title = AwayTeamNameText + " team selection";
             DialogResult loadAwayTeam = Load_Away_Team_Dialog.ShowDialog();
             if (loadAwayTeam == DialogResult.OK)
             {
+                AwayTeamList.Clear();
+                tableLayoutPanel_Away.Controls.Clear();
                 string file = Load_Away_Team_Dialog.FileName;
                 try
                 {
@@ -279,11 +266,11 @@ namespace Cricket_Scoring_App
                         awayTeamReader.Close();
                     }
                     currentTableRowAway = 0;
-                    tableLayoutPanel_Away.Controls.Clear();
                     for (int i = 0; i < AwayTeamList.Count; i = i + 1)
                     {
                         tableLayoutPanel_Away.Controls.Add(new Label(){ Text = (i+1).ToString(), Dock = DockStyle.Fill, TextAlign = System.Drawing.ContentAlignment.MiddleCenter, AutoSize = true, Font = new Font("Serif", 10, FontStyle.Bold) }, 0, i);
-                        tableLayoutPanel_Away.Controls.Add(new TextBox() { Text = AwayTeamList[i], Dock = DockStyle.Fill });
+                        tableLayoutPanel_Away.Controls.Add(new TextBox() { Text = AwayTeamList[i], Dock = DockStyle.Fill },1,i);
+                        tableLayoutPanel_Away.Controls.Add(new Label() { Text = "", Dock = DockStyle.Fill, TextAlign = System.Drawing.ContentAlignment.MiddleCenter, Font = new Font("Serif", 20, FontStyle.Regular), ForeColor = Color.White }, 2, i);
                         currentTableRowAway = currentTableRowAway + 1;
                     }
                 }
@@ -296,10 +283,12 @@ namespace Cricket_Scoring_App
         // Reads the home team details from a pre-made home team file, uses an open file dialog
         private void Load_Home_Team_Click(object sender, EventArgs e)
         {
-            Load_Home_Team_Dialog.FileName = "Select " + HomeTeamNameText + " player file";
+            Load_Home_Team_Dialog.Title = HomeTeamNameText + " team selection";
             DialogResult loadHomeTeam = Load_Home_Team_Dialog.ShowDialog();
             if (loadHomeTeam == DialogResult.OK)
             {
+                HomeTeamList.Clear();
+                tableLayoutPanel_Home.Controls.Clear();
                 string file = Load_Home_Team_Dialog.FileName;
                 try
                 {
@@ -321,11 +310,11 @@ namespace Cricket_Scoring_App
                         HomeTeamReader.Close();
                     }
                     currentTableRowHome = 0;
-                    tableLayoutPanel_Home.Controls.Clear();
                     for (int i = 0; i < HomeTeamList.Count; i = i + 1)
                     {
                         tableLayoutPanel_Home.Controls.Add(new Label() { Text = (i + 1).ToString(), Dock = DockStyle.Fill, TextAlign = System.Drawing.ContentAlignment.MiddleCenter, AutoSize = true, Font = new Font("Serif", 10, FontStyle.Bold) }, 0, i);
-                        tableLayoutPanel_Home.Controls.Add(new TextBox() { Text = HomeTeamList[i], Dock = DockStyle.Fill });
+                        tableLayoutPanel_Home.Controls.Add(new TextBox() { Text = HomeTeamList[i], Dock = DockStyle.Fill },1,i);
+                        tableLayoutPanel_Home.Controls.Add(new Label() { Text = "", Dock = DockStyle.Fill, TextAlign = System.Drawing.ContentAlignment.MiddleCenter, Font = new Font("Serif", 20, FontStyle.Regular), ForeColor = Color.White }, 2, i);
                         currentTableRowHome =  currentTableRowHome + 1;
                     }
                 }
@@ -333,6 +322,55 @@ namespace Cricket_Scoring_App
                 {
                 }
             }
+        }
+
+        // Shows the main scoring application if all table entrys are verified.
+        private void BeginMatch()
+        {
+            // Checks if both player tables have values in all the text boxes.
+            if ((Verify_Table_Entrys(tableLayoutPanel_Away)) || (Verify_Table_Entrys(tableLayoutPanel_Home)))
+            {
+                // Create away team file.
+                StreamWriter AwayWriter = new StreamWriter(folderName + "\\" + AwayTeamNameText + ".txt");
+
+                // Write player names to away team file.
+                for (int i = 0; i < currentTableRowAway; i = i + 1)
+                {
+                    Control c = tableLayoutPanel_Away.GetControlFromPosition(1, i);
+                    AwayWriter.WriteLine(c.Text);
+                }
+                AwayWriter.Close();
+
+                // Create home team file.
+                StreamWriter HomeWriter = new StreamWriter(folderName + "\\" + HomeTeamNameText + ".txt");
+
+                // Write player names to home team file.
+                for (int j = 0; j < currentTableRowHome; j = j + 1)
+                {
+                    Control d = tableLayoutPanel_Home.GetControlFromPosition(1, j);
+                    HomeWriter.WriteLine(d.Text);
+                }
+                HomeWriter.Close();
+
+                // Initialises the Main scoring application form object.
+                Scoring_Application_Form ScoringApplicationForm = new Scoring_Application_Form(folderName);
+                // Passes the folder name to the scoring application and opens the form.
+                ScoringApplicationForm.folderName = folderName;
+                ScoringApplicationForm.Show();
+            }
+        }
+
+        // Calls the begin match function when the user confirms that the team lists are correct.
+        private void Begin_Match_Confirm_Button_Click(object sender, EventArgs e)
+        {
+            BeginMatch();
+        }
+
+        // Hides the confirmation table and allows the user to make changes to the team lists.
+        private void Begin_Match_Cancel_Button_Click(object sender, EventArgs e)
+        {
+            Begin_Match_Confirm_Table.Hide();
+            Begin_Match_Button.Show();
         }
     }
 }

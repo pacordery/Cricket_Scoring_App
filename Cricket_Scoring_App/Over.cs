@@ -98,7 +98,7 @@ namespace Cricket_Scoring_App
 
                 Over over = new Over();
                 over.Create_Over(inningsList[inningsId].Over_Analysis_Overs, (bowlId) + 1, inningsList[inningsId].Over_Analysis_Runs, inningsList[inningsId].Over_Analysis_Wickets);
-                overAnalysisList.Add(over);;
+                overAnalysisList.Add(over);
 
                 // Save the over to a new text file
                 over.Save_Over(fallOfWicketList, batList, bowlList, inningsList, overAnalysisList, inningsId, folderName);

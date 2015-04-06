@@ -73,11 +73,12 @@ namespace Cricket_Scoring_App
         // this method returns only the singlular name.
         public string Get_Player_Short_Name(string player_Name)
         {
+            int spaceIndex = player_Name.IndexOf(" ");
             string playerName;
             if (player_Name.IndexOf(' ') > -1)
             {
                 string initial = player_Name.Substring(0, 1);
-                string surname = player_Name.Substring(player_Name.IndexOf(' '), player_Name.Length);
+                string surname = player_Name.Substring(spaceIndex, ((player_Name.Length - 1)-spaceIndex));
                 playerName = initial + "." + surname;
             }
             else
@@ -87,6 +88,21 @@ namespace Cricket_Scoring_App
             return playerName;
         }
 
+        // Checks if the bowler name provided is currently in the bowling list, if so it returns the bowlers Id.
+        public int Get_Bowler_Id(List<Player> bowlList, string bowlerName)
+        {
+            /* Initialise the bowler Id as -1 to allow new bowler to be created in the main method */  
+            int bowlId = -1;
+            for (int i = 0; i < bowlList.Count; i = i + 1)
+            {
+                if (bowlList[i].Bowl_Name == bowlerName)
+                {
+                    // bowler Id is set if name provided = a bowler in the list.
+                    bowlId = i;
+                }
+            }
+            return bowlId;
+        }
         // Adds a ball to the batsman facing the last deleivery.
         public void Batting_Add_Ball(List<Player> batList, int batid)
         {

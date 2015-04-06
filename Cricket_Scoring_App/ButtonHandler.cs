@@ -37,18 +37,18 @@ namespace Cricket_Scoring_App
                 bowlList[bowlId].Bowl_Runs = bowlList[bowlId].Bowl_Runs + runs;
                 inningsList[inningsId].Bowl_Total_Runs = inningsList[inningsId].Bowl_Total_Runs + runs;
             }
-            if (runs == 4 && (type == "runs" || type == "noBall") && batUsed == true)
-            {
-                batList[batId].Bat_Fours = batList[batId].Bat_Fours + 1;
-            }
-            else if (runs == 6 && (type == "runs" || type == "noBall") && batUsed == true)
-            {
-                batList[batId].Bat_Sixes = batList[batId].Bat_Sixes + 1;
-            }
             switch (type)
             {
                 case "runs":
                     batList[batId].Bat_Runs = batList[batId].Bat_Runs + runs;
+                    if (runs == 4 && type == "runs")
+                    {
+                        batList[batId].Bat_Fours = batList[batId].Bat_Fours + 1;
+                    }
+                    else if (runs == 6 && type == "runs")
+                    {
+                        batList[batId].Bat_Sixes = batList[batId].Bat_Sixes + 1;
+                    }
                     break;
                 case "bye":
                     inningsList[inningsId].Extras_Byes = inningsList[inningsId].Extras_Byes + runs;
@@ -67,6 +67,14 @@ namespace Cricket_Scoring_App
                         batList[batId].Bat_Runs = batList[batId].Bat_Runs + (runs - 1);
                         bowlList[bowlId].Bowl_No_Balls = bowlList[bowlId].Bowl_No_Balls + 1;
                         inningsList[inningsId].Extras_No_Balls = inningsList[inningsId].Extras_No_Balls + 1;
+                        if (runs == 5)
+                        {
+                            batList[batId].Bat_Fours = batList[batId].Bat_Fours + 1;
+                        }
+                        else if (runs == 7)
+                        {
+                            batList[batId].Bat_Sixes = batList[batId].Bat_Sixes + 1;
+                        }
                     }
                     else
                     {
