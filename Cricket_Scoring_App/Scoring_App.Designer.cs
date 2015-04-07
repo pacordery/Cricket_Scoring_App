@@ -1465,6 +1465,7 @@
             // Begin_Match_Confirm_Button
             // 
             this.Begin_Match_Confirm_Button.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Begin_Match_Confirm_Button.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.Begin_Match_Confirm_Button.Location = new System.Drawing.Point(538, 3);
             this.Begin_Match_Confirm_Button.Name = "Begin_Match_Confirm_Button";
             this.Begin_Match_Confirm_Button.Size = new System.Drawing.Size(74, 25);
@@ -1487,6 +1488,7 @@
             // Begin_Match_Cancel_Button
             // 
             this.Begin_Match_Cancel_Button.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Begin_Match_Cancel_Button.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.Begin_Match_Cancel_Button.Location = new System.Drawing.Point(618, 3);
             this.Begin_Match_Cancel_Button.Name = "Begin_Match_Cancel_Button";
             this.Begin_Match_Cancel_Button.Size = new System.Drawing.Size(74, 25);
@@ -1498,6 +1500,7 @@
             // Load_Home_Team
             // 
             this.Load_Home_Team.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Load_Home_Team.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.Load_Home_Team.Location = new System.Drawing.Point(645, 436);
             this.Load_Home_Team.Name = "Load_Home_Team";
             this.Load_Home_Team.Size = new System.Drawing.Size(102, 30);
@@ -1509,6 +1512,7 @@
             // Load_Away_Team
             // 
             this.Load_Away_Team.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Load_Away_Team.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.Load_Away_Team.Location = new System.Drawing.Point(213, 436);
             this.Load_Away_Team.Name = "Load_Away_Team";
             this.Load_Away_Team.Size = new System.Drawing.Size(102, 30);
@@ -1520,6 +1524,7 @@
             // Begin_Match_Button
             // 
             this.Begin_Match_Button.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Begin_Match_Button.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.Begin_Match_Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Begin_Match_Button.Location = new System.Drawing.Point(781, 465);
             this.Begin_Match_Button.Name = "Begin_Match_Button";
@@ -1532,6 +1537,7 @@
             // Add_Player_Home
             // 
             this.Add_Player_Home.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Add_Player_Home.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.Add_Player_Home.Location = new System.Drawing.Point(497, 436);
             this.Add_Player_Home.Name = "Add_Player_Home";
             this.Add_Player_Home.Size = new System.Drawing.Size(102, 30);
@@ -1543,6 +1549,7 @@
             // Add_Player_Away
             // 
             this.Add_Player_Away.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Add_Player_Away.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.Add_Player_Away.Location = new System.Drawing.Point(65, 436);
             this.Add_Player_Away.Name = "Add_Player_Away";
             this.Add_Player_Away.Size = new System.Drawing.Size(102, 30);

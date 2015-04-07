@@ -87,9 +87,10 @@ namespace Cricket_Scoring_App
             Wicket_Fielder_Select_Combo_Box.Items.Clear();
             Run_Out_Fielder_Combo.Items.Clear();
             New_Bowler_Combo_Box.Items.Clear();
-            NextBatsmanList = battingList;
+            NextBatsmanList.Clear();
             for (int i = 0; i < battingList.Count(); i = i + 1)
             {
+                NextBatsmanList.Add(battingList[i]);
                 Wicket_Next_Bat_Combo_Box.Items.Add(battingList[i]);
             }
             for (int j = 0; j < bowlingList.Count(); j = j + 1)
@@ -132,7 +133,6 @@ namespace Cricket_Scoring_App
                     Wicket_Next_Bat_Combo_Box.Items.Add("End of Innings");
                 }
                 Wicket_Next_Bat_Combo_Box.Items.Add(NextBatsmanList[i]);
-
             }
         }
 
@@ -194,14 +194,6 @@ namespace Cricket_Scoring_App
             innings.Create_Innings(MatchDetailsList, Toss_Winner_Combo_Box.SelectedItem.ToString(), Innings_Of);
             InningsList.Add(innings);
             // Gets the team name for the second innings
-            if ((Innings_Id == 1) && (InningsList[0].Team_Name == Home_Team))
-            {
-                InningsList[1].Team_Name = Away_Team;
-            }
-            else if(Innings_Id == 1)
-            {
-                InningsList[1].Team_Name = Home_Team;
-            }
             GraphSeriesList.Add(InningsList[Innings_Id].Team_Name);
             Over over = new Over();
             over.Create_Over(0,0,0,0);
@@ -217,8 +209,6 @@ namespace Cricket_Scoring_App
 
             // Sets match details
             Scoring_Date_Value.Text = innings.Date;
-            Scoring_Home_Team_Name_Value.Text = Home_Team;
-            Scoring_Away_Team_Name_Value.Text = Away_Team;
             Scoring_Innings_Of_Value.Text = InningsList[Innings_Id].Team_Name;
             Scoring_Total_Value.Text = innings.Innings_Total.ToString();
             Scoring_Wickets_Down_Value.Text = innings.Innings_Wickets.ToString();
@@ -251,6 +241,7 @@ namespace Cricket_Scoring_App
             Update_Next_Batsman_List(batTop.Bat_Name);
             Update_Next_Batsman_List(batBottom.Bat_Name);
             Create_Graphs();
+            Update_Last_Man_Out_Table();
         }
 
         // Verify all table entrys in the supplied table. If entries missing, the user will not be able to move to next screen.
@@ -304,14 +295,15 @@ namespace Cricket_Scoring_App
         {
             if (Verify_Table_Entrys(tableLayoutPanel_Openers_1))
             {
+                Second_Inn_Target_Table.Hide();
                 Innings2_Pie.Hide();
                 FallOfWicketList = Innings1fallOfWicketList;
                 BatList = Innings1BatsmanList;
                 BowlList = Innings1BowlerList;
                 OverAnalysisList = Innings1OverList;
 
-                First_Innings_Tab.Text = Open_Select_Bat_Side.SelectedItem.ToString();
-                if (First_Innings_Tab.Text == Home_Team)
+                First_Innings_Tab.Text = Innings_Of;
+                if (Innings_Of == Home_Team)
                 {
                     Second_Inn_Tab.Text = Away_Team;
                 }
@@ -356,16 +348,28 @@ namespace Cricket_Scoring_App
         {
             if (Verify_Table_Entrys(tableLayoutPanel_Openers_2))
             {
+                Second_Inn_Target_Table.Show();
                 Innings2_Pie.Show();
-                Twenty_Overs_Button.Show();
+                if (InningsList[0].Match_Type == "Friendly")
+                {
+                    Twenty_Overs_Button.Show();
+                }
                 Innings_Id = 1;
                 FallOfWicketList = Innings2fallOfWicketList;
                 BatList = Innings2BatsmanList;
                 BowlList = Innings2BowlerList;
                 OverAnalysisList = Innings2OverList;
-
+                if (Innings_Of == Home_Team)
+                {
+                    Populate_Scorecard_Player_Combo_Boxes(HomeTeamList, Home_Team, AwayTeamList, Away_Team);
+                }
+                else
+                {
+                    Populate_Scorecard_Player_Combo_Boxes(AwayTeamList, Away_Team, HomeTeamList, Home_Team);
+                }
                 // Sets all variables, creates opening player objects for second innings
                 Set_Default_Variables();
+
 
                 // Get the target total, balls remaining and runs remaining for second innings
                 InningsList[1].targetTotal = InningsList[0].Innings_Total + 1;
@@ -432,6 +436,7 @@ namespace Cricket_Scoring_App
                 Innings1OverList = OverAnalysisList;
                 Innings_1_Score = InningsList[0].Team_Name + "," + InningsList[0].Innings_Total.ToString() + "-" + InningsList[0].Innings_Wickets.ToString();
                 Scoring_App_Tab_Set.SelectedTab = Second_Inn_Select_Tab;
+                Innings_Of = Second_Inn_Tab.Text;
             }
             else
             {
@@ -676,14 +681,14 @@ namespace Cricket_Scoring_App
             if (Innings_Id == 0)
             {
                 First_Inn_Over_Analysis_Table.Controls.Clear();
-                First_Inn_Over_Analysis_Table.Controls.Add(new Label() { Text = "Over #", Dock = DockStyle.Fill, TextAlign = System.Drawing.ContentAlignment.MiddleCenter, AutoSize = true, Font = new Font("Serif", 11, FontStyle.Bold) }, 0, 0);
-                First_Inn_Over_Analysis_Table.Controls.Add(new Label() { Text = "Bowler", Dock = DockStyle.Fill, TextAlign = System.Drawing.ContentAlignment.MiddleCenter, AutoSize = true, Font = new Font("Serif", 11, FontStyle.Bold) }, 0, 1);
-                First_Inn_Over_Analysis_Table.Controls.Add(new Label() { Text = "Runs", Dock = DockStyle.Fill, TextAlign = System.Drawing.ContentAlignment.MiddleCenter, AutoSize = true, Font = new Font("Serif", 11, FontStyle.Bold) }, 0, 2);
-                First_Inn_Over_Analysis_Table.Controls.Add(new Label() { Text = "Wickets", Dock = DockStyle.Fill, TextAlign = System.Drawing.ContentAlignment.MiddleCenter, AutoSize = true, Font = new Font("Serif", 11, FontStyle.Bold) }, 0, 3);
+                First_Inn_Over_Analysis_Table.Controls.Add(new Label() { Text = "Over #", Dock = DockStyle.Fill, TextAlign = System.Drawing.ContentAlignment.MiddleCenter, AutoSize = true, Font = new Font("Serif", 10, FontStyle.Bold) }, 0, 0);
+                First_Inn_Over_Analysis_Table.Controls.Add(new Label() { Text = "Bowler", Dock = DockStyle.Fill, TextAlign = System.Drawing.ContentAlignment.MiddleCenter, AutoSize = true, Font = new Font("Serif", 10, FontStyle.Bold) }, 0, 1);
+                First_Inn_Over_Analysis_Table.Controls.Add(new Label() { Text = "Runs", Dock = DockStyle.Fill, TextAlign = System.Drawing.ContentAlignment.MiddleCenter, AutoSize = true, Font = new Font("Serif", 10, FontStyle.Bold) }, 0, 2);
+                First_Inn_Over_Analysis_Table.Controls.Add(new Label() { Text = "Wickets", Dock = DockStyle.Fill, TextAlign = System.Drawing.ContentAlignment.MiddleCenter, AutoSize = true, Font = new Font("Serif", 10, FontStyle.Bold) }, 0, 3);
 
                 for (int i = 1; i < OverAnalysisList.Count; i = i + 1)
                 {
-                        First_Inn_Over_Analysis_Table.Controls.Add(new Label() { Text = OverAnalysisList[i].over_Number.ToString(), Dock = DockStyle.Fill, TextAlign = System.Drawing.ContentAlignment.MiddleCenter, AutoSize = true, Font = new Font("Serif", 10, FontStyle.Bold) }, OverAnalysisList[i].over_Number, 0);
+                        First_Inn_Over_Analysis_Table.Controls.Add(new Label() { Text = OverAnalysisList[i].over_Number.ToString(), Dock = DockStyle.Fill, TextAlign = System.Drawing.ContentAlignment.MiddleCenter, AutoSize = true, Font = new Font("Serif", 9, FontStyle.Bold) }, OverAnalysisList[i].over_Number, 0);
                         First_Inn_Over_Analysis_Table.Controls.Add(new Label() { Text = OverAnalysisList[i].over_Bowler_Number.ToString(), Dock = DockStyle.Fill, TextAlign = System.Drawing.ContentAlignment.MiddleCenter, AutoSize = true, Font = new Font("Serif", 9, FontStyle.Regular) }, OverAnalysisList[i].over_Number, 1);
                         First_Inn_Over_Analysis_Table.Controls.Add(new Label() { Text = OverAnalysisList[i].over_Runs.ToString(), Dock = DockStyle.Fill, TextAlign = System.Drawing.ContentAlignment.MiddleCenter, AutoSize = true, Font = new Font("Serif", 9, FontStyle.Regular) }, OverAnalysisList[i].over_Number, 2);
                         First_Inn_Over_Analysis_Table.Controls.Add(new Label() { Text = OverAnalysisList[i].over_Wickets.ToString(), Dock = DockStyle.Fill, TextAlign = System.Drawing.ContentAlignment.MiddleCenter, AutoSize = true, Font = new Font("Serif", 9, FontStyle.Regular) }, OverAnalysisList[i].over_Number, 3);
@@ -692,10 +697,10 @@ namespace Cricket_Scoring_App
             else
             {
                 Second_Inn_Over_Analysis_Table.Controls.Clear();
-                Second_Inn_Over_Analysis_Table.Controls.Add(new Label() { Text = "Over #", Dock = DockStyle.Fill, TextAlign = System.Drawing.ContentAlignment.MiddleCenter, AutoSize = true, Font = new Font("Serif", 11, FontStyle.Bold) }, 0, 0);
-                Second_Inn_Over_Analysis_Table.Controls.Add(new Label() { Text = "Bowler", Dock = DockStyle.Fill, TextAlign = System.Drawing.ContentAlignment.MiddleCenter, AutoSize = true, Font = new Font("Serif", 11, FontStyle.Bold) }, 0, 1);
-                Second_Inn_Over_Analysis_Table.Controls.Add(new Label() { Text = "Runs", Dock = DockStyle.Fill, TextAlign = System.Drawing.ContentAlignment.MiddleCenter, AutoSize = true, Font = new Font("Serif", 11, FontStyle.Bold) }, 0, 2);
-                Second_Inn_Over_Analysis_Table.Controls.Add(new Label() { Text = "Wickets", Dock = DockStyle.Fill, TextAlign = System.Drawing.ContentAlignment.MiddleCenter, AutoSize = true, Font = new Font("Serif", 11, FontStyle.Bold) }, 0, 3);
+                Second_Inn_Over_Analysis_Table.Controls.Add(new Label() { Text = "Over #", Dock = DockStyle.Fill, TextAlign = System.Drawing.ContentAlignment.MiddleCenter, AutoSize = true, Font = new Font("Serif", 10, FontStyle.Bold) }, 0, 0);
+                Second_Inn_Over_Analysis_Table.Controls.Add(new Label() { Text = "Bowler", Dock = DockStyle.Fill, TextAlign = System.Drawing.ContentAlignment.MiddleCenter, AutoSize = true, Font = new Font("Serif", 10, FontStyle.Bold) }, 0, 1);
+                Second_Inn_Over_Analysis_Table.Controls.Add(new Label() { Text = "Runs", Dock = DockStyle.Fill, TextAlign = System.Drawing.ContentAlignment.MiddleCenter, AutoSize = true, Font = new Font("Serif", 10, FontStyle.Bold) }, 0, 2);
+                Second_Inn_Over_Analysis_Table.Controls.Add(new Label() { Text = "Wickets", Dock = DockStyle.Fill, TextAlign = System.Drawing.ContentAlignment.MiddleCenter, AutoSize = true, Font = new Font("Serif", 10, FontStyle.Bold) }, 0, 3);
 
                 for (int i = 1; i < OverAnalysisList.Count; i = i + 1)
                 {
@@ -703,14 +708,14 @@ namespace Cricket_Scoring_App
                      * shade the bacground of the column white to allow it to be differentiated from the overs before.*/
                     if(OverAnalysisList[i].over_Number >= InningsList[1].startOfTwentyOvers)
                     {
-                        Second_Inn_Over_Analysis_Table.Controls.Add(new Label() { Text = OverAnalysisList[i].over_Number.ToString(), Dock = DockStyle.Fill, TextAlign = System.Drawing.ContentAlignment.MiddleCenter, AutoSize = true, Font = new Font("Serif", 10, FontStyle.Bold), BackColor = Color.White }, OverAnalysisList[i].over_Number, 0);
+                        Second_Inn_Over_Analysis_Table.Controls.Add(new Label() { Text = OverAnalysisList[i].over_Number.ToString(), Dock = DockStyle.Fill, TextAlign = System.Drawing.ContentAlignment.MiddleCenter, AutoSize = true, Font = new Font("Serif", 9, FontStyle.Bold), BackColor = Color.White }, OverAnalysisList[i].over_Number, 0);
                         Second_Inn_Over_Analysis_Table.Controls.Add(new Label() { Text = OverAnalysisList[i].over_Bowler_Number.ToString(), Dock = DockStyle.Fill, TextAlign = System.Drawing.ContentAlignment.MiddleCenter, AutoSize = true, Font = new Font("Serif", 9, FontStyle.Regular), BackColor = Color.White }, OverAnalysisList[i].over_Number, 1);
                         Second_Inn_Over_Analysis_Table.Controls.Add(new Label() { Text = OverAnalysisList[i].over_Runs.ToString(), Dock = DockStyle.Fill, TextAlign = System.Drawing.ContentAlignment.MiddleCenter, AutoSize = true, Font = new Font("Serif", 9, FontStyle.Regular), BackColor = Color.White }, OverAnalysisList[i].over_Number, 2);
                         Second_Inn_Over_Analysis_Table.Controls.Add(new Label() { Text = OverAnalysisList[i].over_Wickets.ToString(), Dock = DockStyle.Fill, TextAlign = System.Drawing.ContentAlignment.MiddleCenter, AutoSize = true, Font = new Font("Serif", 9, FontStyle.Regular), BackColor = Color.White }, OverAnalysisList[i].over_Number, 3);
                     }
                     else
                     {
-                        Second_Inn_Over_Analysis_Table.Controls.Add(new Label() { Text = OverAnalysisList[i].over_Number.ToString(), Dock = DockStyle.Fill, TextAlign = System.Drawing.ContentAlignment.MiddleCenter, AutoSize = true, Font = new Font("Serif", 10, FontStyle.Bold) }, OverAnalysisList[i].over_Number, 0);
+                        Second_Inn_Over_Analysis_Table.Controls.Add(new Label() { Text = OverAnalysisList[i].over_Number.ToString(), Dock = DockStyle.Fill, TextAlign = System.Drawing.ContentAlignment.MiddleCenter, AutoSize = true, Font = new Font("Serif", 9, FontStyle.Bold) }, OverAnalysisList[i].over_Number, 0);
                         Second_Inn_Over_Analysis_Table.Controls.Add(new Label() { Text = OverAnalysisList[i].over_Bowler_Number.ToString(), Dock = DockStyle.Fill, TextAlign = System.Drawing.ContentAlignment.MiddleCenter, AutoSize = true, Font = new Font("Serif", 9, FontStyle.Regular) }, OverAnalysisList[i].over_Number, 1);
                         Second_Inn_Over_Analysis_Table.Controls.Add(new Label() { Text = OverAnalysisList[i].over_Runs.ToString(), Dock = DockStyle.Fill, TextAlign = System.Drawing.ContentAlignment.MiddleCenter, AutoSize = true, Font = new Font("Serif", 9, FontStyle.Regular) }, OverAnalysisList[i].over_Number, 2);
                         Second_Inn_Over_Analysis_Table.Controls.Add(new Label() { Text = OverAnalysisList[i].over_Wickets.ToString(), Dock = DockStyle.Fill, TextAlign = System.Drawing.ContentAlignment.MiddleCenter, AutoSize = true, Font = new Font("Serif", 9, FontStyle.Regular) }, OverAnalysisList[i].over_Number, 3);
@@ -777,15 +782,16 @@ namespace Cricket_Scoring_App
             if (InningsList[Innings_Id].Innings_Wickets == 0)
             {
                 Out_Batsman_Number_Value.Text = "";
-                Out_Batsman_Name.Text = "";
-                Out_Batsman_How_Out_Value.Text = "";
-                Out_Batsman_Bowler_Value.Text = "";
+                Out_Batsman_Name.Text = "                    ";
+                Out_Batsman_How_Out_Value.Text = "                    ";
+                Out_Batsman_Bowler_Value.Text = "                    ";
                 Out_Batsman_Total_Runs_Scored_Value.Text = "";
             }
             else
             {
+                Player player = new Player();
                 Out_Batsman_Number_Value.Text = BatList[Last_Bat_Out].Bat_Number.ToString();
-                Out_Batsman_Name.Text = BatList[Last_Bat_Out].Bat_Name;
+                Out_Batsman_Name.Text = player.Get_Player_Short_Name(BatList[Last_Bat_Out].Bat_Name);
                 Out_Batsman_How_Out_Value.Text = BatList[Last_Bat_Out].Bat_How_Out;
                 Out_Batsman_Bowler_Value.Text = BatList[Last_Bat_Out].Bat_Out_Bwlr;
                 Out_Batsman_Total_Runs_Scored_Value.Text = BatList[Last_Bat_Out].Bat_Runs.ToString();
@@ -1677,7 +1683,7 @@ namespace Cricket_Scoring_App
                 }
                 else
                 {
-                    player.Create_Bowler((BowlList.Last().Bowl_Number)+1, newBowlerName, true);
+                    player.Create_Bowler((BowlList.Last().Bowl_Number) + 1, newBowlerName, true);
                     InningsList[Innings_Id].bottomBowlId = BowlList.Last().Bowl_Number;
                     BowlList.Add(player);
                 }        
@@ -1685,12 +1691,14 @@ namespace Cricket_Scoring_App
                 Current_Bowler_Number_Bottom.BackColor = Color.White;
                 New_Bowler_Combo_Box.Text = "Select New Bowler";
             }
+            HideAllPanels();
         }
 
         // When clicked by the user, it starts the last 20 overs of a friendly match.
         private void Twenty_Overs_Button_Click(object sender, EventArgs e)
         {
             InningsList[1].twentyOvers = true;
+            HideAllPanels();
         }
     }
 }

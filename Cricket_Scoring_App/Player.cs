@@ -78,7 +78,7 @@ namespace Cricket_Scoring_App
             if (player_Name.IndexOf(' ') > -1)
             {
                 string initial = player_Name.Substring(0, 1);
-                string surname = player_Name.Substring(spaceIndex, ((player_Name.Length - 1)-spaceIndex));
+                string surname = player_Name.Substring(spaceIndex + 1, ((player_Name.Length - 1)-spaceIndex));
                 playerName = initial + "." + surname;
             }
             else

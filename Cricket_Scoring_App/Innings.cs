@@ -105,6 +105,8 @@ namespace Cricket_Scoring_App
             targetTotal = 0;
             ballsRemaining = 0;
             twentyOvers = false;
+            startOfTwentyOvers = 100;
+
 
             if (Match_Type == "T20")
             {
