@@ -239,7 +239,7 @@
             this.Previous_Match_Table.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.Previous_Match_Table.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.Previous_Match_Table.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.Previous_Match_Table.Size = new System.Drawing.Size(404, 356);
+            this.Previous_Match_Table.Size = new System.Drawing.Size(438, 356);
             this.Previous_Match_Table.TabIndex = 6;
             // 
             // tableLayoutPanel13
@@ -259,7 +259,7 @@
             this.tableLayoutPanel13.RowCount = 1;
             this.tableLayoutPanel13.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel13.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 54F));
-            this.tableLayoutPanel13.Size = new System.Drawing.Size(392, 54);
+            this.tableLayoutPanel13.Size = new System.Drawing.Size(426, 54);
             this.tableLayoutPanel13.TabIndex = 9;
             // 
             // label26
@@ -267,11 +267,11 @@
             this.label26.AutoSize = true;
             this.label26.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label26.Location = new System.Drawing.Point(300, 0);
+            this.label26.Location = new System.Drawing.Point(325, 0);
             this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(89, 54);
+            this.label26.Size = new System.Drawing.Size(98, 54);
             this.label26.TabIndex = 3;
-            this.label26.Text = "Won by 70 Runs";
+            this.label26.Text = "Draw";
             this.label26.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // tableLayoutPanel14
@@ -281,12 +281,12 @@
             this.tableLayoutPanel14.Controls.Add(this.label27, 0, 0);
             this.tableLayoutPanel14.Controls.Add(this.label28, 0, 1);
             this.tableLayoutPanel14.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel14.Location = new System.Drawing.Point(183, 3);
+            this.tableLayoutPanel14.Location = new System.Drawing.Point(198, 3);
             this.tableLayoutPanel14.Name = "tableLayoutPanel14";
             this.tableLayoutPanel14.RowCount = 2;
             this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel14.Size = new System.Drawing.Size(111, 48);
+            this.tableLayoutPanel14.Size = new System.Drawing.Size(121, 48);
             this.tableLayoutPanel14.TabIndex = 1;
             // 
             // label27
@@ -296,9 +296,9 @@
             this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label27.Location = new System.Drawing.Point(3, 0);
             this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(105, 24);
+            this.label27.Size = new System.Drawing.Size(115, 24);
             this.label27.TabIndex = 0;
-            this.label27.Text = "Team Name";
+            this.label27.Text = "Uplands";
             this.label27.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label28
@@ -308,9 +308,9 @@
             this.label28.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label28.Location = new System.Drawing.Point(3, 24);
             this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(105, 24);
+            this.label28.Size = new System.Drawing.Size(115, 24);
             this.label28.TabIndex = 1;
-            this.label28.Text = "150-8";
+            this.label28.Text = "120-8";
             this.label28.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // tableLayoutPanel15
@@ -320,12 +320,12 @@
             this.tableLayoutPanel15.Controls.Add(this.label29, 0, 0);
             this.tableLayoutPanel15.Controls.Add(this.label30, 0, 1);
             this.tableLayoutPanel15.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel15.Location = new System.Drawing.Point(76, 3);
+            this.tableLayoutPanel15.Location = new System.Drawing.Point(82, 3);
             this.tableLayoutPanel15.Name = "tableLayoutPanel15";
             this.tableLayoutPanel15.RowCount = 2;
             this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel15.Size = new System.Drawing.Size(101, 48);
+            this.tableLayoutPanel15.Size = new System.Drawing.Size(110, 48);
             this.tableLayoutPanel15.TabIndex = 0;
             // 
             // label29
@@ -335,9 +335,9 @@
             this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label29.Location = new System.Drawing.Point(3, 0);
             this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(95, 24);
+            this.label29.Size = new System.Drawing.Size(104, 24);
             this.label29.TabIndex = 0;
-            this.label29.Text = "Team Name";
+            this.label29.Text = "Thursley";
             this.label29.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label30
@@ -347,9 +347,9 @@
             this.label30.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label30.Location = new System.Drawing.Point(3, 24);
             this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(95, 24);
+            this.label30.Size = new System.Drawing.Size(104, 24);
             this.label30.TabIndex = 1;
-            this.label30.Text = "147-6";
+            this.label30.Text = "122-9";
             this.label30.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label31
@@ -359,9 +359,9 @@
             this.label31.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label31.Location = new System.Drawing.Point(3, 0);
             this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(67, 54);
+            this.label31.Size = new System.Drawing.Size(73, 54);
             this.label31.TabIndex = 2;
-            this.label31.Text = "Date";
+            this.label31.Text = "07/09/2014";
             this.label31.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // tableLayoutPanel10
@@ -381,7 +381,7 @@
             this.tableLayoutPanel10.RowCount = 1;
             this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 49F));
-            this.tableLayoutPanel10.Size = new System.Drawing.Size(392, 49);
+            this.tableLayoutPanel10.Size = new System.Drawing.Size(426, 49);
             this.tableLayoutPanel10.TabIndex = 9;
             // 
             // label20
@@ -389,11 +389,11 @@
             this.label20.AutoSize = true;
             this.label20.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(300, 0);
+            this.label20.Location = new System.Drawing.Point(325, 0);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(89, 49);
+            this.label20.Size = new System.Drawing.Size(98, 49);
             this.label20.TabIndex = 3;
-            this.label20.Text = "Won by 70 Runs";
+            this.label20.Text = "Won by 7 Wickets";
             this.label20.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // tableLayoutPanel11
@@ -403,12 +403,12 @@
             this.tableLayoutPanel11.Controls.Add(this.label21, 0, 0);
             this.tableLayoutPanel11.Controls.Add(this.label22, 0, 1);
             this.tableLayoutPanel11.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel11.Location = new System.Drawing.Point(183, 3);
+            this.tableLayoutPanel11.Location = new System.Drawing.Point(198, 3);
             this.tableLayoutPanel11.Name = "tableLayoutPanel11";
             this.tableLayoutPanel11.RowCount = 2;
             this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel11.Size = new System.Drawing.Size(111, 43);
+            this.tableLayoutPanel11.Size = new System.Drawing.Size(121, 43);
             this.tableLayoutPanel11.TabIndex = 1;
             // 
             // label21
@@ -418,9 +418,9 @@
             this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label21.Location = new System.Drawing.Point(3, 0);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(105, 21);
+            this.label21.Size = new System.Drawing.Size(115, 21);
             this.label21.TabIndex = 0;
-            this.label21.Text = "Team Name";
+            this.label21.Text = "Uplands";
             this.label21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label22
@@ -430,9 +430,9 @@
             this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label22.Location = new System.Drawing.Point(3, 21);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(105, 22);
+            this.label22.Size = new System.Drawing.Size(115, 22);
             this.label22.TabIndex = 1;
-            this.label22.Text = "150-8";
+            this.label22.Text = "182-3";
             this.label22.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // tableLayoutPanel12
@@ -442,12 +442,12 @@
             this.tableLayoutPanel12.Controls.Add(this.label23, 0, 0);
             this.tableLayoutPanel12.Controls.Add(this.label24, 0, 1);
             this.tableLayoutPanel12.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel12.Location = new System.Drawing.Point(76, 3);
+            this.tableLayoutPanel12.Location = new System.Drawing.Point(82, 3);
             this.tableLayoutPanel12.Name = "tableLayoutPanel12";
             this.tableLayoutPanel12.RowCount = 2;
             this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel12.Size = new System.Drawing.Size(101, 43);
+            this.tableLayoutPanel12.Size = new System.Drawing.Size(110, 43);
             this.tableLayoutPanel12.TabIndex = 0;
             // 
             // label23
@@ -457,9 +457,9 @@
             this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label23.Location = new System.Drawing.Point(3, 0);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(95, 21);
+            this.label23.Size = new System.Drawing.Size(104, 21);
             this.label23.TabIndex = 0;
-            this.label23.Text = "Team Name";
+            this.label23.Text = "Mynthurst";
             this.label23.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label24
@@ -469,9 +469,9 @@
             this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label24.Location = new System.Drawing.Point(3, 21);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(95, 22);
+            this.label24.Size = new System.Drawing.Size(104, 22);
             this.label24.TabIndex = 1;
-            this.label24.Text = "147-6";
+            this.label24.Text = "180-5";
             this.label24.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label25
@@ -481,9 +481,9 @@
             this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label25.Location = new System.Drawing.Point(3, 0);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(67, 49);
+            this.label25.Size = new System.Drawing.Size(73, 49);
             this.label25.TabIndex = 2;
-            this.label25.Text = "Date";
+            this.label25.Text = "31/08/2014";
             this.label25.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // tableLayoutPanel7
@@ -497,12 +497,13 @@
             this.tableLayoutPanel7.Controls.Add(this.tableLayoutPanel8, 2, 0);
             this.tableLayoutPanel7.Controls.Add(this.tableLayoutPanel9, 1, 0);
             this.tableLayoutPanel7.Controls.Add(this.label19, 0, 0);
+            this.tableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel7.Location = new System.Drawing.Point(6, 180);
             this.tableLayoutPanel7.Name = "tableLayoutPanel7";
             this.tableLayoutPanel7.RowCount = 1;
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 49F));
-            this.tableLayoutPanel7.Size = new System.Drawing.Size(392, 49);
+            this.tableLayoutPanel7.Size = new System.Drawing.Size(426, 49);
             this.tableLayoutPanel7.TabIndex = 9;
             // 
             // label14
@@ -510,11 +511,11 @@
             this.label14.AutoSize = true;
             this.label14.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(300, 0);
+            this.label14.Location = new System.Drawing.Point(325, 0);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(89, 49);
+            this.label14.Size = new System.Drawing.Size(98, 49);
             this.label14.TabIndex = 3;
-            this.label14.Text = "Won by 70 Runs";
+            this.label14.Text = "Lost by 3 Runs";
             this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // tableLayoutPanel8
@@ -524,12 +525,12 @@
             this.tableLayoutPanel8.Controls.Add(this.label15, 0, 0);
             this.tableLayoutPanel8.Controls.Add(this.label16, 0, 1);
             this.tableLayoutPanel8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel8.Location = new System.Drawing.Point(183, 3);
+            this.tableLayoutPanel8.Location = new System.Drawing.Point(198, 3);
             this.tableLayoutPanel8.Name = "tableLayoutPanel8";
             this.tableLayoutPanel8.RowCount = 2;
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel8.Size = new System.Drawing.Size(111, 43);
+            this.tableLayoutPanel8.Size = new System.Drawing.Size(121, 43);
             this.tableLayoutPanel8.TabIndex = 1;
             // 
             // label15
@@ -539,9 +540,9 @@
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.Location = new System.Drawing.Point(3, 0);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(105, 21);
+            this.label15.Size = new System.Drawing.Size(115, 21);
             this.label15.TabIndex = 0;
-            this.label15.Text = "Team Name";
+            this.label15.Text = "Uplands";
             this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label16
@@ -551,9 +552,9 @@
             this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label16.Location = new System.Drawing.Point(3, 21);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(105, 22);
+            this.label16.Size = new System.Drawing.Size(115, 22);
             this.label16.TabIndex = 1;
-            this.label16.Text = "150-8";
+            this.label16.Text = "144-10";
             this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // tableLayoutPanel9
@@ -563,12 +564,12 @@
             this.tableLayoutPanel9.Controls.Add(this.label17, 0, 0);
             this.tableLayoutPanel9.Controls.Add(this.label18, 0, 1);
             this.tableLayoutPanel9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel9.Location = new System.Drawing.Point(76, 3);
+            this.tableLayoutPanel9.Location = new System.Drawing.Point(82, 3);
             this.tableLayoutPanel9.Name = "tableLayoutPanel9";
             this.tableLayoutPanel9.RowCount = 2;
             this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel9.Size = new System.Drawing.Size(101, 43);
+            this.tableLayoutPanel9.Size = new System.Drawing.Size(110, 43);
             this.tableLayoutPanel9.TabIndex = 0;
             // 
             // label17
@@ -578,9 +579,9 @@
             this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label17.Location = new System.Drawing.Point(3, 0);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(95, 21);
+            this.label17.Size = new System.Drawing.Size(104, 21);
             this.label17.TabIndex = 0;
-            this.label17.Text = "Team Name";
+            this.label17.Text = "Abinger";
             this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label18
@@ -590,7 +591,7 @@
             this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label18.Location = new System.Drawing.Point(3, 21);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(95, 22);
+            this.label18.Size = new System.Drawing.Size(104, 22);
             this.label18.TabIndex = 1;
             this.label18.Text = "147-6";
             this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -602,9 +603,9 @@
             this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label19.Location = new System.Drawing.Point(3, 0);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(67, 49);
+            this.label19.Size = new System.Drawing.Size(73, 49);
             this.label19.TabIndex = 2;
-            this.label19.Text = "Date";
+            this.label19.Text = "24/08/2014";
             this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // tableLayoutPanel4
@@ -624,7 +625,7 @@
             this.tableLayoutPanel4.RowCount = 1;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 49F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(392, 49);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(426, 49);
             this.tableLayoutPanel4.TabIndex = 9;
             // 
             // label8
@@ -632,11 +633,11 @@
             this.label8.AutoSize = true;
             this.label8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(300, 0);
+            this.label8.Location = new System.Drawing.Point(325, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(89, 49);
+            this.label8.Size = new System.Drawing.Size(98, 49);
             this.label8.TabIndex = 3;
-            this.label8.Text = "Won by 70 Runs";
+            this.label8.Text = "Won by 2 Wickets";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // tableLayoutPanel5
@@ -646,12 +647,12 @@
             this.tableLayoutPanel5.Controls.Add(this.label9, 0, 0);
             this.tableLayoutPanel5.Controls.Add(this.label10, 0, 1);
             this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel5.Location = new System.Drawing.Point(183, 3);
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(198, 3);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 2;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(111, 43);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(121, 43);
             this.tableLayoutPanel5.TabIndex = 1;
             // 
             // label9
@@ -661,9 +662,9 @@
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.Location = new System.Drawing.Point(3, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(105, 21);
+            this.label9.Size = new System.Drawing.Size(115, 21);
             this.label9.TabIndex = 0;
-            this.label9.Text = "Team Name";
+            this.label9.Text = "Uplands";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label10
@@ -673,9 +674,9 @@
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.Location = new System.Drawing.Point(3, 21);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(105, 22);
+            this.label10.Size = new System.Drawing.Size(115, 22);
             this.label10.TabIndex = 1;
-            this.label10.Text = "150-8";
+            this.label10.Text = "118-8";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // tableLayoutPanel6
@@ -685,12 +686,12 @@
             this.tableLayoutPanel6.Controls.Add(this.label11, 0, 0);
             this.tableLayoutPanel6.Controls.Add(this.label12, 0, 1);
             this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel6.Location = new System.Drawing.Point(76, 3);
+            this.tableLayoutPanel6.Location = new System.Drawing.Point(82, 3);
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
             this.tableLayoutPanel6.RowCount = 2;
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(101, 43);
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(110, 43);
             this.tableLayoutPanel6.TabIndex = 0;
             // 
             // label11
@@ -700,9 +701,9 @@
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.Location = new System.Drawing.Point(3, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(95, 21);
+            this.label11.Size = new System.Drawing.Size(104, 21);
             this.label11.TabIndex = 0;
-            this.label11.Text = "Team Name";
+            this.label11.Text = "Shalford";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label12
@@ -712,9 +713,9 @@
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.Location = new System.Drawing.Point(3, 21);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(95, 22);
+            this.label12.Size = new System.Drawing.Size(104, 22);
             this.label12.TabIndex = 1;
-            this.label12.Text = "147-6";
+            this.label12.Text = "115-10";
             this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label13
@@ -724,9 +725,9 @@
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.Location = new System.Drawing.Point(3, 0);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(67, 49);
+            this.label13.Size = new System.Drawing.Size(73, 49);
             this.label13.TabIndex = 2;
-            this.label13.Text = "Date";
+            this.label13.Text = "17/08/2014";
             this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Previous_Match_Table_Row_1
@@ -746,7 +747,7 @@
             this.Previous_Match_Table_Row_1.RowCount = 1;
             this.Previous_Match_Table_Row_1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.Previous_Match_Table_Row_1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 49F));
-            this.Previous_Match_Table_Row_1.Size = new System.Drawing.Size(392, 49);
+            this.Previous_Match_Table_Row_1.Size = new System.Drawing.Size(426, 49);
             this.Previous_Match_Table_Row_1.TabIndex = 0;
             // 
             // Match_Result_1
@@ -754,11 +755,11 @@
             this.Match_Result_1.AutoSize = true;
             this.Match_Result_1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Match_Result_1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Match_Result_1.Location = new System.Drawing.Point(299, 0);
+            this.Match_Result_1.Location = new System.Drawing.Point(325, 0);
             this.Match_Result_1.Name = "Match_Result_1";
-            this.Match_Result_1.Size = new System.Drawing.Size(90, 49);
+            this.Match_Result_1.Size = new System.Drawing.Size(98, 49);
             this.Match_Result_1.TabIndex = 3;
-            this.Match_Result_1.Text = "Won by 70 Runs";
+            this.Match_Result_1.Text = "Won by 28 Runs";
             this.Match_Result_1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Innings_2_Table_2
@@ -768,12 +769,12 @@
             this.Innings_2_Table_2.Controls.Add(this.Innings_2_Team_Name_1, 0, 0);
             this.Innings_2_Table_2.Controls.Add(this.Innings_1_Score_2, 0, 1);
             this.Innings_2_Table_2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Innings_2_Table_2.Location = new System.Drawing.Point(186, 3);
+            this.Innings_2_Table_2.Location = new System.Drawing.Point(202, 3);
             this.Innings_2_Table_2.Name = "Innings_2_Table_2";
             this.Innings_2_Table_2.RowCount = 2;
             this.Innings_2_Table_2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.Innings_2_Table_2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.Innings_2_Table_2.Size = new System.Drawing.Size(107, 43);
+            this.Innings_2_Table_2.Size = new System.Drawing.Size(117, 43);
             this.Innings_2_Table_2.TabIndex = 1;
             // 
             // Innings_2_Team_Name_1
@@ -783,9 +784,9 @@
             this.Innings_2_Team_Name_1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Innings_2_Team_Name_1.Location = new System.Drawing.Point(3, 0);
             this.Innings_2_Team_Name_1.Name = "Innings_2_Team_Name_1";
-            this.Innings_2_Team_Name_1.Size = new System.Drawing.Size(101, 21);
+            this.Innings_2_Team_Name_1.Size = new System.Drawing.Size(111, 21);
             this.Innings_2_Team_Name_1.TabIndex = 0;
-            this.Innings_2_Team_Name_1.Text = "Team Name";
+            this.Innings_2_Team_Name_1.Text = "Loxwood";
             this.Innings_2_Team_Name_1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Innings_1_Score_2
@@ -795,9 +796,9 @@
             this.Innings_1_Score_2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Innings_1_Score_2.Location = new System.Drawing.Point(3, 21);
             this.Innings_1_Score_2.Name = "Innings_1_Score_2";
-            this.Innings_1_Score_2.Size = new System.Drawing.Size(101, 22);
+            this.Innings_1_Score_2.Size = new System.Drawing.Size(111, 22);
             this.Innings_1_Score_2.TabIndex = 1;
-            this.Innings_1_Score_2.Text = "150-8";
+            this.Innings_1_Score_2.Text = "150-10";
             this.Innings_1_Score_2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Innings_1_Table_1
@@ -807,12 +808,12 @@
             this.Innings_1_Table_1.Controls.Add(this.Innings_1_Team_Name_1, 0, 0);
             this.Innings_1_Table_1.Controls.Add(this.Innings_1_Score_1, 0, 1);
             this.Innings_1_Table_1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Innings_1_Table_1.Location = new System.Drawing.Point(75, 3);
+            this.Innings_1_Table_1.Location = new System.Drawing.Point(81, 3);
             this.Innings_1_Table_1.Name = "Innings_1_Table_1";
             this.Innings_1_Table_1.RowCount = 2;
             this.Innings_1_Table_1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.Innings_1_Table_1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.Innings_1_Table_1.Size = new System.Drawing.Size(105, 43);
+            this.Innings_1_Table_1.Size = new System.Drawing.Size(115, 43);
             this.Innings_1_Table_1.TabIndex = 0;
             // 
             // Innings_1_Team_Name_1
@@ -822,9 +823,9 @@
             this.Innings_1_Team_Name_1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Innings_1_Team_Name_1.Location = new System.Drawing.Point(3, 0);
             this.Innings_1_Team_Name_1.Name = "Innings_1_Team_Name_1";
-            this.Innings_1_Team_Name_1.Size = new System.Drawing.Size(99, 21);
+            this.Innings_1_Team_Name_1.Size = new System.Drawing.Size(109, 21);
             this.Innings_1_Team_Name_1.TabIndex = 0;
-            this.Innings_1_Team_Name_1.Text = "Team Name";
+            this.Innings_1_Team_Name_1.Text = "Uplands";
             this.Innings_1_Team_Name_1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Innings_1_Score_1
@@ -834,9 +835,9 @@
             this.Innings_1_Score_1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Innings_1_Score_1.Location = new System.Drawing.Point(3, 21);
             this.Innings_1_Score_1.Name = "Innings_1_Score_1";
-            this.Innings_1_Score_1.Size = new System.Drawing.Size(99, 22);
+            this.Innings_1_Score_1.Size = new System.Drawing.Size(109, 22);
             this.Innings_1_Score_1.TabIndex = 1;
-            this.Innings_1_Score_1.Text = "147-6";
+            this.Innings_1_Score_1.Text = "178-9";
             this.Innings_1_Score_1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Match_Date_1
@@ -846,9 +847,9 @@
             this.Match_Date_1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Match_Date_1.Location = new System.Drawing.Point(3, 0);
             this.Match_Date_1.Name = "Match_Date_1";
-            this.Match_Date_1.Size = new System.Drawing.Size(66, 49);
+            this.Match_Date_1.Size = new System.Drawing.Size(72, 49);
             this.Match_Date_1.TabIndex = 2;
-            this.Match_Date_1.Text = "Date";
+            this.Match_Date_1.Text = "03/08/2014";
             this.Match_Date_1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // tableLayoutPanel1
@@ -868,7 +869,7 @@
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 49F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(392, 49);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(426, 49);
             this.tableLayoutPanel1.TabIndex = 8;
             // 
             // label2
@@ -876,11 +877,11 @@
             this.label2.AutoSize = true;
             this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(300, 0);
+            this.label2.Location = new System.Drawing.Point(325, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(89, 49);
+            this.label2.Size = new System.Drawing.Size(98, 49);
             this.label2.TabIndex = 3;
-            this.label2.Text = "Won by 70 Runs";
+            this.label2.Text = "Draw";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // tableLayoutPanel2
@@ -890,12 +891,12 @@
             this.tableLayoutPanel2.Controls.Add(this.label3, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.label4, 0, 1);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(183, 3);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(198, 3);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 2;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(111, 43);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(121, 43);
             this.tableLayoutPanel2.TabIndex = 1;
             // 
             // label3
@@ -905,9 +906,9 @@
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(3, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(105, 21);
+            this.label3.Size = new System.Drawing.Size(115, 21);
             this.label3.TabIndex = 0;
-            this.label3.Text = "Team Name";
+            this.label3.Text = "Uplands";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label4
@@ -917,9 +918,9 @@
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(3, 21);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(105, 22);
+            this.label4.Size = new System.Drawing.Size(115, 22);
             this.label4.TabIndex = 1;
-            this.label4.Text = "150-8";
+            this.label4.Text = "192-7";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // tableLayoutPanel3
@@ -929,12 +930,12 @@
             this.tableLayoutPanel3.Controls.Add(this.label5, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.label6, 0, 1);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(76, 3);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(82, 3);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 2;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(101, 43);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(110, 43);
             this.tableLayoutPanel3.TabIndex = 0;
             // 
             // label5
@@ -944,9 +945,9 @@
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(3, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(95, 21);
+            this.label5.Size = new System.Drawing.Size(104, 21);
             this.label5.TabIndex = 0;
-            this.label5.Text = "Team Name";
+            this.label5.Text = "Hambledon";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label6
@@ -956,9 +957,9 @@
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(3, 21);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(95, 22);
+            this.label6.Size = new System.Drawing.Size(104, 22);
             this.label6.TabIndex = 1;
-            this.label6.Text = "147-6";
+            this.label6.Text = "241-8";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label7
@@ -968,9 +969,9 @@
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(3, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(67, 49);
+            this.label7.Size = new System.Drawing.Size(73, 49);
             this.label7.TabIndex = 2;
-            this.label7.Text = "Date";
+            this.label7.Text = "10/08/2014";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Season_Results_Table
@@ -1054,7 +1055,7 @@
             this.Drawn_Value.Name = "Drawn_Value";
             this.Drawn_Value.Size = new System.Drawing.Size(57, 37);
             this.Drawn_Value.TabIndex = 2;
-            this.Drawn_Value.Text = "2";
+            this.Drawn_Value.Text = "8";
             this.Drawn_Value.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Drawn_Description
@@ -1107,7 +1108,7 @@
             this.Won_Value.Name = "Won_Value";
             this.Won_Value.Size = new System.Drawing.Size(58, 37);
             this.Won_Value.TabIndex = 1;
-            this.Won_Value.Text = "11";
+            this.Won_Value.Text = "6";
             this.Won_Value.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // This_Season_Heading

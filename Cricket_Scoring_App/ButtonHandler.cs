@@ -29,6 +29,10 @@ namespace Cricket_Scoring_App
                 inningsList[inningsId].Innings_Overs = inningsList[inningsId].Innings_Overs + 0.1;
                 player.Bowling_Add_Ball(bowlList, bowlId);
                 player.Batting_Add_Ball(batList, batId);
+                if (inningsList[inningsId].twentyOvers && inningsId == 1)
+                {
+                    inningsList[inningsId].ballsRemaining = inningsList[inningsId].ballsRemaining - 1;
+                }
             }
             // Add runs to bowler and mark maiden as false, unless runs = 0.
             if ((type == "runs" && runs != 0) || type == "wide" || type == "noBall" || type == "penalty")

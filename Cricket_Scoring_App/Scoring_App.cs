@@ -186,6 +186,8 @@ namespace Cricket_Scoring_App
                 Begin_Match_Button.Hide();
                 Begin_Match_Confirm_Label.Text = AwayTeamNameText + " has " + currentTableRowAway + " players, " + HomeTeamNameText + " has " + currentTableRowHome + " players";
                 Begin_Match_Confirm_Table.Show();
+                Begin_Match_Cancel_Button.Show();
+                Begin_Match_Confirm_Button.Show();
                 }
             }
             else

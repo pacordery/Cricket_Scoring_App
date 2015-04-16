@@ -128,11 +128,11 @@ namespace Cricket_Scoring_App
 
             for (int i = 0; i < NextBatsmanList.Count; i = i + 1)
             {
-                if (NextBatsmanList.Count == 1)
-                {
-                    Wicket_Next_Bat_Combo_Box.Items.Add("End of Innings");
-                }
                 Wicket_Next_Bat_Combo_Box.Items.Add(NextBatsmanList[i]);
+            }
+            if (NextBatsmanList.Count == 0)
+            {
+                Wicket_Next_Bat_Combo_Box.Items.Add("End of Innings");
             }
         }
 
@@ -275,7 +275,7 @@ namespace Cricket_Scoring_App
         {
             bool selected = true;
             if ( comboBoxName.SelectedItem.ToString() == "Select Batsman" || comboBoxName.SelectedItem.ToString() == "Select Bowler"
-              || comboBoxName.SelectedItem.ToString() == "Select Other Score" || comboBoxName.SelectedItem.ToString() == "Select Fielder"
+              || comboBoxName.SelectedItem.ToString() == "Other Score" || comboBoxName.SelectedItem.ToString() == "Select Fielder"
               || comboBoxName.SelectedItem.ToString() == "Select Reason" )
             {
                 comboBoxName.Text = "* Select player";
@@ -369,7 +369,6 @@ namespace Cricket_Scoring_App
                 }
                 // Sets all variables, creates opening player objects for second innings
                 Set_Default_Variables();
-
 
                 // Get the target total, balls remaining and runs remaining for second innings
                 InningsList[1].targetTotal = InningsList[0].Innings_Total + 1;
@@ -466,21 +465,21 @@ namespace Cricket_Scoring_App
         {
             // Restore all lists from the temp variables, then update the tables
             
-            MatchDetailsList = scorecardHandler.Temp_MatchDetailsList;
-            HomeTeamList = scorecardHandler.Temp_HomeTeamList;
-            AwayTeamList = scorecardHandler.Temp_AwayTeamList;
-            NextBatsmanList = scorecardHandler.Temp_NextBatsmanList;
-            NewBowlerList = scorecardHandler.Temp_NewBowlerList;
-            InningsList = scorecardHandler.Temp_InningsList;
-            BatList = scorecardHandler.Temp_BatList;
-            BowlList = scorecardHandler.Temp_BowlList;
-            FallOfWicketList = scorecardHandler.Temp_FallOfWicketList;
-            GraphSeriesList = scorecardHandler.Temp_GraphSeriesList;
-            OverAnalysisList = scorecardHandler.Temp_OverAnalysisList;
-            Innings1BatsmanList = scorecardHandler.Temp_Innings1BatsmanList;
-            Innings1BowlerList = scorecardHandler.Temp_Innings1BowlerList;
-            Innings1OverList = scorecardHandler.Temp_Innings1OverList;
-            Innings1fallOfWicketList = scorecardHandler.Temp_Innings1FallOfWicketList;
+            MatchDetailsList = scorecardHandler.Get_String_List(scorecardHandler.Temp_MatchDetailsList);
+            HomeTeamList = scorecardHandler.Get_String_List(scorecardHandler.Temp_HomeTeamList);
+            AwayTeamList = scorecardHandler.Get_String_List(scorecardHandler.Temp_AwayTeamList);
+            NextBatsmanList = scorecardHandler.Get_String_List(scorecardHandler.Temp_NextBatsmanList);
+            NewBowlerList = scorecardHandler.Get_String_List(scorecardHandler.Temp_NewBowlerList);
+            InningsList = scorecardHandler.Get_Innings_List(scorecardHandler.Temp_InningsList);
+            BatList = scorecardHandler.Get_Player_List(scorecardHandler.Temp_BatList);
+            BowlList = scorecardHandler.Get_Player_List(scorecardHandler.Temp_BowlList);
+            FallOfWicketList = scorecardHandler.Get_Fall_Of_Wicket_List(scorecardHandler.Temp_FallOfWicketList);
+            GraphSeriesList = scorecardHandler.Get_String_List(scorecardHandler.Temp_GraphSeriesList);
+            OverAnalysisList = scorecardHandler.Get_Over_Analysis_List(scorecardHandler.Temp_OverAnalysisList);
+            Innings1BatsmanList = scorecardHandler.Get_Player_List(scorecardHandler.Temp_Innings1BatsmanList);
+            Innings1BowlerList = scorecardHandler.Get_Player_List(scorecardHandler.Temp_Innings1BowlerList);
+            Innings1OverList = scorecardHandler.Get_Over_Analysis_List(scorecardHandler.Temp_Innings1OverList);
+            Innings1fallOfWicketList = scorecardHandler.Get_Fall_Of_Wicket_List(scorecardHandler.Temp_Innings1FallOfWicketList);
             Innings_Id = scorecardHandler.Temp_InningsId;
             Home_Team = scorecardHandler.Temp_HomeTeamName;
             Away_Team = scorecardHandler.Temp_AwayTeamName;
@@ -782,9 +781,9 @@ namespace Cricket_Scoring_App
             if (InningsList[Innings_Id].Innings_Wickets == 0)
             {
                 Out_Batsman_Number_Value.Text = "";
-                Out_Batsman_Name.Text = "                    ";
-                Out_Batsman_How_Out_Value.Text = "                    ";
-                Out_Batsman_Bowler_Value.Text = "                    ";
+                Out_Batsman_Name.Text = "";
+                Out_Batsman_How_Out_Value.Text = "";
+                Out_Batsman_Bowler_Value.Text = "";
                 Out_Batsman_Total_Runs_Scored_Value.Text = "";
             }
             else
@@ -1180,6 +1179,12 @@ namespace Cricket_Scoring_App
             Update_Innings_Fall_Of_Wicket();
             Update_Score();
             HideAllPanels();
+            // Check end of innings.
+            Innings innings = new Innings();
+            if (innings.Check_End_Of_Innings(Innings_Id, InningsList))
+            {
+                End_Of_Innings();
+            }
         }
 
         // Gets the button type, number of runs and if runs are off the bat. Calls button handler to update scores.
@@ -1202,6 +1207,12 @@ namespace Cricket_Scoring_App
             //Update tables and hide all flow panels
             Update_Score();
             HideAllPanels();
+            // Check end of innings.
+            Innings innings = new Innings();
+            if (innings.Check_End_Of_Innings(Innings_Id, InningsList))
+            {
+                End_Of_Innings();
+            }
         }
 
         // Add 0 runs to the score 
@@ -1621,7 +1632,7 @@ namespace Cricket_Scoring_App
         // This fuction allows the user to add runs from the other score combo box.
         private void Ok_Button_Click(object sender, EventArgs e)
         {
-            if (Verify_Combo_Selection(End_Of_Innings_Combo_Box))
+            if (Verify_Combo_Selection(Other_Score_Combo_Box))
             {
                 HideAllPanels();
                 int runsToAdd = int.Parse(Other_Score_Combo_Box.SelectedItem.ToString());

@@ -35,25 +35,80 @@ namespace Cricket_Scoring_App
                                           List<Player> innings1BowlerList, List<Over> innings1OverList, List<FallOfWicket> innings1FallOfWicketList, int inningsId,
                                           string homeTeamName, string awayTeamName, int lastBatOut)
         {
-           Temp_MatchDetailsList = matchDetailsList;
-           Temp_HomeTeamList  = homeTeamList;
-           Temp_AwayTeamList = awayTeamList;
-           Temp_NextBatsmanList = nextBatsmanList;
-           Temp_NewBowlerList = newBowlerList;
-           Temp_InningsList = inningsList;
-           Temp_BatList = batList;
-           Temp_BowlList = bowlList;
-           Temp_FallOfWicketList = fallOfWicketList;
-           Temp_GraphSeriesList = graphSeriesList;
-           Temp_OverAnalysisList = overAnalysisList;
-           Temp_Innings1BatsmanList = innings1BatsmanList;
-           Temp_Innings1BowlerList = innings1BowlerList;
-           Temp_Innings1OverList  = innings1OverList;
-           Temp_Innings1FallOfWicketList = innings1FallOfWicketList;
+           Temp_MatchDetailsList = Get_String_List(matchDetailsList);
+           Temp_HomeTeamList  = Get_String_List(homeTeamList);
+           Temp_AwayTeamList = Get_String_List(awayTeamList);
+           Temp_NextBatsmanList = Get_String_List(nextBatsmanList);
+           Temp_NewBowlerList = Get_String_List(newBowlerList);
+           Temp_InningsList = Get_Innings_List(inningsList);
+           Temp_BatList = Get_Player_List(batList);
+           Temp_BowlList = Get_Player_List(bowlList);
+           Temp_FallOfWicketList = Get_Fall_Of_Wicket_List(fallOfWicketList);
+           Temp_GraphSeriesList = Get_String_List(graphSeriesList);
+           Temp_OverAnalysisList = Get_Over_Analysis_List(overAnalysisList);
+           Temp_Innings1BatsmanList = Get_Player_List(innings1BatsmanList);
+           Temp_Innings1BowlerList = Get_Player_List(innings1BowlerList);
+           Temp_Innings1OverList  = Get_Over_Analysis_List(innings1OverList);
+           Temp_Innings1FallOfWicketList = Get_Fall_Of_Wicket_List(innings1FallOfWicketList);
            Temp_InningsId = inningsId;
            Temp_HomeTeamName = homeTeamName;
            Temp_AwayTeamName = awayTeamName;
            Temp_LastBatOut = lastBatOut;
+        }
+
+        // Takes the elements of the input list and adds them to the return list
+        public List<string> Get_String_List(List<string> stringListName)
+        {
+            List<string> stringList = new List<string>();
+            for (int i = 0; i < stringListName.Count; i = i + 1)
+            {
+                stringList.Add(stringListName[i]);
+            }
+            return stringList;
+        }
+
+        // Takes the elements of the input list and adds them to the return list
+        public List<Player> Get_Player_List(List<Player> playerListName)
+        {
+            List<Player> playerList = new List<Player>();
+            for (int i = 0; i < playerListName.Count; i = i + 1)
+            {
+                playerList.Add(playerListName[i]);
+            }
+            return playerList;
+        }
+
+        // Takes the elements of the input list and adds them to the return list
+        public List<Over> Get_Over_Analysis_List(List<Over> overAnalysisListName)
+        {
+            List<Over> overAnalysisList = new List<Over>();
+            for (int i = 0; i < overAnalysisListName.Count; i = i + 1)
+            {
+                overAnalysisList.Add(overAnalysisListName[i]);
+            }
+            return overAnalysisList;
+        }
+
+        // Takes the elements of the input list and adds them to the return list
+        public List<Innings> Get_Innings_List(List<Innings> inningsListName)
+        {
+            List<Innings> inningsList = new List<Innings>();
+            for (int i = 0; i < inningsListName.Count; i = i + 1)
+            {
+                inningsList.Add(inningsListName[i]);
+            }
+            return inningsList;
+        }
+
+        // Takes the elements of the input list and adds them to the return list
+        public List<FallOfWicket> Get_Fall_Of_Wicket_List(List<FallOfWicket> FOWListName)
+        {
+            List<FallOfWicket> fallOfWicketList = new List<FallOfWicket>();
+            for (int i = 0; i < FOWListName.Count; i = i + 1)
+            {
+                fallOfWicketList.Add(FOWListName[i]);
+            }
+            return fallOfWicketList;
         }
     }
 }
